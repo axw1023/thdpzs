@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ERPandBI</title>
+    <!--外部css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
+
+    <!--外部js-->
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/ProjectScripts/it/ERPandBI.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.js}"></script>
+</head>
+<div style="background: #002845;width: 2816px;height: 512px">
+    <div style="width: 800px;height: 500px;float: left;">
+        <span style="position: absolute;color: lavender;">原料来源</span>
+        <div style="width: 442px;height:231px;background: blueviolet;float:left;">
+            <img src="../img/top1.png" style="height: 231px;width: 442px">
+            <span style="position: absolute;color: lavender;">库存</span>
+        </div>
+        <div style="width: 400px;height: 250px;float:left;" id="cbgc">
+        </div>
+        <div style="height: 231px;width: 442px;background: blue;float: left">
+            <img src="../img/top1.png" style="height: 231px;width: 442px">
+        </div>
+        <div id="synhzb" style="height: 250px;width: 400px;float: left">
+            下2
+        </div>
+    </div>
+    <div style="width: 400px;height: 500px;float:left;">
+        <div style="width: 400px;height: 500px;background:gold;float: contour;">
+            <img src="../img/center.png" style="width: 400px;height: 500px;">
+        </div>
+    </div>
+    <div id="" style="width: 400px;height: 250px;float:right;">
+        <img src="../img/right.png" style="width: 400px;height: 250px">
+    </div>
+    <div id="xsqk" style="width: 400px;height: 250px;float:right;">
+        上4
+    </div>
+    <div id="zxl" style="width: 800px;height: 250px;float:right;">
+        下5
+    </div>
+
+</div>
+</body>
+<script type="text/javascript"   th:src="@{/ProjectScripts/it/ERPandBI.js}"></script>
+</html>
