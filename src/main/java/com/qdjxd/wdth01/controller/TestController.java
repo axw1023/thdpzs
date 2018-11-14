@@ -8,25 +8,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 @Controller
 @RequestMapping("/IT")
-public class ITController {
+public class TestController {
 
     @Resource
     com.qdjxd.wdth01.dao.UserMapper UserImpl;
 
     @RequestMapping("/IT")
     public String index(){
-        return "it";
+        return "test";
     }
 
-    @RequestMapping(value = "/getGjtj", method = RequestMethod.GET)
+    @RequestMapping(value = "/getGjtj", method = RequestMethod. POST)
     @ResponseBody
     //获取ajax参数
-    public List<User> getGjtj(@RequestParam("pointType")String pointType){
-        List<User> getGjtj = UserImpl.selectByPrimaryKey(pointType);
+    public User getGjtj(@RequestParam("pointType")String pointType){
+        User getGjtj = UserImpl.selectByPrimaryKey(pointType);
         return getGjtj;
     }
 
