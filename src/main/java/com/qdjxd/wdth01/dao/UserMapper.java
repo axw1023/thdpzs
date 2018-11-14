@@ -1,9 +1,9 @@
 package com.qdjxd.wdth01.dao;
 
 import com.qdjxd.wdth01.model.User;
+import org.apache.ibatis.annotations.Mapper;
 
-import java.util.List;
-
+@Mapper
 public interface UserMapper {
     int deleteByPrimaryKey(String userid);
 
@@ -11,7 +11,7 @@ public interface UserMapper {
 
     int insertSelective(User record);
 
-    List<User> selectByPrimaryKey(String userid);
+    User selectByPrimaryKey(String userid);
 
     int updateByPrimaryKeySelective(User record);
 

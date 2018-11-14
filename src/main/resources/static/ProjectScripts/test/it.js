@@ -1,3 +1,4 @@
+
 $(function () {
 
 // 告警统计数据查询
@@ -9,8 +10,9 @@ $(function () {
 function getGjtj() {
     $.ajax({
         url: "/IT/getGjtj",
-        type: "get",
+        type: "post",
         async: false,
+        data: {pointType:"0000001"},
         success: function (result) {
             //更新数据
             setGjtj(result);
