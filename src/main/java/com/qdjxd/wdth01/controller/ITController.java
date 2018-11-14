@@ -15,7 +15,7 @@ import java.util.List;
 public class ITController {
 
     @Resource
-    com.qdjxd.wdth01.serviceImpl.UserImpl UserImpl;
+    com.qdjxd.wdth01.dao.UserMapper UserImpl;
 
     @RequestMapping("/IT")
     public String index(){
