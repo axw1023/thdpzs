@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--外部css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
+
+    <!--外部js-->
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+
+    <style type="text/css">
+        #one{height:700px;width: 900px;
+            background: url("../image/one.png");float: left}
+        #Source{ width:460px;height: 315px;background:url("../image/source.png");
+            margin: 0 auto;}
+
+        #three{ height:100%;width: 1100px; float: left;background: url("../image/center.png");}
+        #info{ width:490px;height: 320px;background:url("../image/info.png");
+            margin: 0 auto;}
+        #five{height:700px;width: 900px; float: left}
+    </style>
+
+
+</head>
+<body>
+<!--整体div-->
+<div id="body">
+    <div id="one">
+        <!--<img src="../image/one.png"></div>-->
+    </div>
+    <div id="two">
+        <div id="Source">
+
+        </div>
+        <div id="warn">
+
+        </div>
+    </div>
+
+    <div id="three"> </div>
+    <div id="four">
+        <div id="Apple">
+
+        </div>
+        <div id="info">
+
+        </div>
+    </div>
+    <div id="five"> </div>
+</div>
+
+</body>
+<script type="text/javascript"   th:src="@{/ProjectScripts/it/it.js}"></script>
+<script type="text/javascript"   th:src="@{/ProjectScripts/it/itecharts.js}"></script>
+<script type="text/javascript"   th:src="@{/ProjectScripts/it/itecharzhe.js}"></script>
+</html>

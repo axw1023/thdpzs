@@ -139,7 +139,7 @@ function setGjtj(result) {
         series: seriesObj
     }
 
-    gjtj = echarts.init(document.getElementById('gjtj'));
+    gjtj = echarts.init(document.getElementById(''));
 
     gjtj.setOption(option);
 
