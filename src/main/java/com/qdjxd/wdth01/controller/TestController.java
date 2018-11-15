@@ -21,10 +21,26 @@ public class TestController {
         return "test";
     }
 
+    //视频测试
     @RequestMapping("/vadio")
     public String vadio(){
         return "vadio";
     }
+
+
+    //图片旋转测试
+    @RequestMapping("/rotate")
+    public String imgRotate(){
+        return "test/imgrotate";
+    }
+
+
+    //图片飞入测试
+    @RequestMapping("/img")
+    public String imgEffect(){
+        return "imgEffect";
+    }
+
 
     @RequestMapping(value = "/getGjtj", method = RequestMethod. POST)
     @ResponseBody
