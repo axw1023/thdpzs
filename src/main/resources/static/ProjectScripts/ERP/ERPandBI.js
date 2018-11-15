@@ -417,6 +417,14 @@ function setYlly() {
 
     // 指定图表的配置项和数据
     var  option = {
+        title: {
+            text: '原料来源',
+            x:'center',
+            textStyle: {
+                //文字颜色
+                color: '#208198',
+            },
+        },
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -605,7 +613,7 @@ function setKc() {
     // 指定图表的配置项和数据
     var  option = {
         title: {
-            text: '折线图堆叠',
+            text: '库存',
             x:'center',
             textStyle: {
                 //文字颜色
@@ -801,26 +809,33 @@ function setJhzxl() {
     // 指定图表的配置项和数据
     var option = {
         title : {
-            text: '食品生产情况',
-            subtext: '每年企业新办/注销许可证趋势'
+            text: '计划执行率',
+                x:'center',
+                textStyle: {
+                    //文字颜色
+                    color: '#208198',
+            },
         },
         tooltip : {
             trigger: 'axis'
         },
         grid: {
             left: '3%',
-            top:'15%',
+            top:'20%',
             containLabel: true
         },
         legend: {
-            data:['新办数','注销数']
+            x:'right',
+            y:'top',
+            data:['实际执行','计划执行']
+            
         },
         calculable : true,
         xAxis : [
             {
                 type : 'category',
                 boundaryGap : false,
-                data : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
             }
         ],
         yAxis : {
@@ -829,7 +844,7 @@ function setJhzxl() {
         ,
         series : [
             {
-                name:'新办数',
+                name:'实际执行',
                 type:'line',
                 areaStyle: {
                     normal: {type: 'default',
@@ -849,10 +864,11 @@ function setJhzxl() {
                 data:[136,375,380,449,114,267,142,318,357,193,421,391]
             },
             {
-                name:'注销数',
+                name:'计划执行',
                 type:'line',
                 areaStyle: {
-                    normal: {type: 'default',
+                    normal: {
+                        type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
                             color: 'rgba(19, 37, 250,0.2)'
