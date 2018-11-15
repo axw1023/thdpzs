@@ -428,7 +428,7 @@ function setYlly() {
         },
         xAxis: [{
             type: 'category',
-            data: ['0601', '0602', '0603', '0604', '0605', '0606', '0607', '0608', '0609', '0610', '0611', '0612'],
+            data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
             axisPointer: {
                 type: 'none'
             },
@@ -442,7 +442,7 @@ function setYlly() {
             axisLine: {
 
                 lineStyle: {
-                    color: '#51e5fc'
+                    color: '#EE8F57'
                 }
             },
             axisTick: {
@@ -453,7 +453,7 @@ function setYlly() {
                 type: 'category',
                 show: false,
                 position: '',
-                data: ['0601', '0602', '0603', '0604', '0605', '0606', '0607', '0608', '0609', '0610', '0611', '0612'],
+                data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
                 offset:20,
                 axisPointer: {
                     type: 'none',
@@ -480,7 +480,7 @@ function setYlly() {
             axisLine: {
                 show: true,
                 lineStyle: {
-                    color: '#51e5fc'
+                    color: '#EE8F57'
                 }
             },
             axisTick: {
@@ -508,33 +508,9 @@ function setYlly() {
 
             type: 'bar',
             //                barWidth:27,
-            data: [40, 50, 60, 30, 80, {
-                value: 70,
-                z: 3,
-                itemStyle: {
-                    normal: {
-                        barBorderRadius: 7,
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 1,
-                            y2: 0,
-                            colorStops: [{
-                                offset: 0,
-                                color: '#f11dc8' // 0% 处的颜色
-                            }, {
-                                offset: 1,
-                                color: '#ff2575' // 100% 处的颜色
-                            }],
-                            globalCoord: false // 缺省为 false
-                        }
-                    },
-                    emphasis: {
-                        barBorderRadius: 7,
-                    }
-                },
-            }, 50, 24, 85, 66, 53, 35],
+            barWidth : 12,
+            
+            data: [210, 470, 300, 480, 400, 500],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -562,18 +538,20 @@ function setYlly() {
         },
 
             {
-                name: '所占比例',
-                type: 'line',
-                yAxisIndex: 1,
-                xAxisIndex: 1,
-                symbol: 'none',
-                data: [160, 170, 140, 110, 160, 170, 130, 110, 125, 166, 143, 125],
+               /* name: '所占比例',*/
+                type:'line',
+                symbol:'star',//拐点样式
+                symbolSize: 8,//拐点大小
+                /*yAxisIndex: 1,
+                xAxisIndex: 1,*/
+                data: [210, 470, 300, 480, 400, 590],
                 itemStyle: {
                     normal: {
-                        color: '#51e5fc',
+                        color: '#ee992f',
                     }
                 },
                 areaStyle: {
+                    
                     normal: {
                         color: {
                             type: 'linear',
@@ -613,7 +591,7 @@ function setYlly() {
                         }
                     }
                 },
-                smooth: true
+                smooth: false
             }
         ]
     };
