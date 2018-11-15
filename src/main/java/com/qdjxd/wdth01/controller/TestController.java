@@ -21,6 +21,11 @@ public class TestController {
         return "test";
     }
 
+    @RequestMapping("/vadio")
+    public String vadio(){
+        return "vadio";
+    }
+
     @RequestMapping(value = "/getGjtj", method = RequestMethod. POST)
     @ResponseBody
     //获取ajax参数
