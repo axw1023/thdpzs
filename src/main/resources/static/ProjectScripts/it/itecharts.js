@@ -1,11 +1,6 @@
-var dom = document.getElementById("warn");
+var dom = document.getElementById("char");
 var myChart2 = echarts.init((dom));
 
-
-// var grade;warn
-// var currentIndex2 = -1;
-// var pieint=null;
-// getNumByGrade();
 option = {
     color: ["#4A31A6", "#6B3253",
         "#ffff00", "#1D9F88"],
@@ -33,7 +28,7 @@ option = {
         {
 
             type: 'pie',
-            radius: ['30%', '50%'],
+            radius: ['91%', '65%'],
             center: ['30%', '50%'],
             avoidLabelOverlap: false,
             label: {
@@ -43,10 +38,10 @@ option = {
                 },
                 emphasis: {
                     show: true,
-                    formatter: "{b}\r\n{c}个",
+                    formatter: "{b}{c}个",
                     textStyle: {
                         fontSize: 15,
-                        color: '#1D9F88'
+                        color: '#92F1FF'
                     }
                 }
             },
@@ -66,28 +61,6 @@ option = {
     ]
 };
 myChart2.setOption(option);
-
-// pieint=setInterval(function () {
-//     var dataLen = option.series.length;
-//     // 取消之前高亮的图形
-//     myChart2.dispatchAction({
-//         type: 'downplay',
-//         seriesIndex: 0,
-//         dataIndex: currentIndex2
-//     });
-//     currentIndex2 = (currentIndex2 + 1) % dataLen;
-//     // 高亮当前图形
-//     myChart2.dispatchAction({
-//         type: 'highlight',
-//         seriesIndex: 0,
-//         dataIndex: currentIndex2
-//     });
-//
-// }, 3000);
-
-
-
-
 
 function getNumByGrade() {
     $.ajax({
