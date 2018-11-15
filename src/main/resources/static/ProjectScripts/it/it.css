@@ -2,12 +2,11 @@
 body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软雅黑}
 #body{height: 100%;width: 100%}
 
-#two{ height: 700px;width: 500px ;float: left;margin-top: 30px;}
+#two{ height: 947px;width: 633px ;float: left;margin-top: 39px;margin-left: 26px;/*border: 1px solid white*/}
 
-#warn{ width: 300px;height: 270px;border: 1px solid white;margin: 0 auto;margin-top: 20px}
-#three{ height:100%;width: 1100px; float: left}
-#four{height:700px;width: 500px ;float: left ;margin-top: 30px;}
-#Apple{width:460px;height: 315px; /*border: 1px solid white;*/
-    margin: 0 auto; }
 
-span{font-size: 18px;text-align: center}
+#charzhe{ height:409px;width: 620px}
+#four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
+
+
+span{font-size: 25px;text-align: center;line-height: 51px;color: #92F1FF;font-family: 微软雅黑}

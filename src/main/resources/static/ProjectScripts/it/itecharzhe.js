@@ -1,4 +1,4 @@
-var dom = document.getElementById("Apple");
+var dom = document.getElementById("charzhe");
 var myChart1 = echarts.init((dom));
 
 
@@ -39,12 +39,10 @@ option = {
             axisLine: {
                 lineStyle: {
                     // 设置x轴颜色
-                    color: '#071424'
+                    color: 'rgba(1,1,1,0)'
                 }
             },
             axisLabel: {
-                color: "#1D9F88" //刻度线标签颜色
-            }, axisLabel: {
                 color: "#1D9F88" //刻度线标签颜色
             },
 
@@ -58,12 +56,12 @@ option = {
         {
             type : 'value',
             axisLabel: {
-                color: "#1D9F88" //刻度线标签颜色
+                color: "#1d9f88" //刻度线标签颜色
             },
             axisLine: {
                 lineStyle: {
                     // 设置x轴颜色
-                    color: '#071424'
+                    color: 'rgba(1,1,1,0)'
                 }
             },
             splitLine:{show: false},//去除网格线

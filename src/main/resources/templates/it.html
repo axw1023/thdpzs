@@ -11,15 +11,21 @@
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
 
     <style type="text/css">
-        #one{height:700px;width: 900px;
-            background: url("../image/one.png");float: left}
-        #Source{ width:460px;height: 315px;background:url("../image/source.png");
-            margin: 0 auto;}
+        #one{height:947px;width: 1135px; margin-left: 38px;margin-top: 39px;
+            background: url("../image/1135.png");float: left}
+        .oneBanner{ text-align:center; height: 50px;width: 331px ;background: url("../image/331.png");margin: 0 auto;z-index: 5}
+        #man{ height: 793px;width: 1078px;background: url("../image/1078.png");margin-left: 28px;margin-top: 47px}
+        #Source{ width:633px;height: 460px;background:url("../image/633.png");}
+       #source1{ width:539px;height: 326px;background:url("../image/APP.png");margin-left: 49px;margin-top: 26px}
+        #warn{ width: 633px;height:461px;margin-top: 26px;background:url("../image/YY.png");}
+       #char{ width: 520px;height: 310px;margin-left: 48px;margin-top: 46px;/*border: 1px solid salmon*/}
 
-        #three{ height:100%;width: 1100px; float: left;background: url("../image/center.png");}
-        #info{ width:490px;height: 320px;background:url("../image/info.png");
-            margin: 0 auto;}
-        #five{height:700px;width: 900px; float: left}
+        #three{ height:1024px;width: 1964px; float: left;background: url("../image/1964.png");}
+        #Apple{width:633px;height: 461px; /*border: 1px solid white;*/background:url("../image/633.png");}
+        #info{ width:633px;height: 461px;background:url("../image/633.png");
+            margin-top: 25px;}
+        #tbl{ width:481px;height: 330px;background:url("../image/table.png");margin-left: 34px;margin-top: 38px}
+        #five{height:947px;width: 1137px; float: left;background:url("../image/1135.png");margin-top: 39px;margin-left: 26px}
     </style>
 
 
@@ -27,28 +33,61 @@
 <body>
 <!--整体div-->
 <div id="body">
+    <!--左侧第一-->
     <div id="one">
-        <!--<img src="../image/one.png"></div>-->
+        <!--标题-->
+        <div class="oneBanner">
+        <span>IT基础设施架构拓扑图</span>
+        </div>
+        <div id="man">
+            <!--内容-->
+        </div>
     </div>
     <div id="two">
-        <div id="Source">
-
+<!--左二-->
+        <div id="Source"><!--上部-->
+            <div class="oneBanner">
+                <span>云计算中心资源池</span>
+            </div>
+            <div id="source1"></div>
         </div>
-        <div id="warn">
 
+        <div id="warn"><!--下部-->
+            <div class="oneBanner">
+                <span>告警统计</span>
+            </div>
+            <div id="char">
+
+            </div>
         </div>
     </div>
-
+<!--中间部分-->
     <div id="three"> </div>
+    <!--右侧第二-->
     <div id="four">
         <div id="Apple">
+            <div class="oneBanner">
+                <span>总体应用流速趋势</span>
+            </div>
+            <div id="charzhe">
 
+            </div>
         </div>
         <div id="info">
+            <div class="oneBanner">
+                <span>资产信息</span>
+            </div>
+            <div id="tbl">
 
+            </div>
         </div>
     </div>
-    <div id="five"> </div>
+    <!--视频-->
+    <div id="five">
+        <div class="oneBanner">
+            <span>3D可视化机房</span>
+        </div>
+    </div>
 </div>
 
 </body>
