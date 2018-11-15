@@ -8,41 +8,38 @@
 
     <!--外部js-->
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
-    <script type="text/javascript"   th:src="@{/ProjectScripts/it/ERPandBI.js}"></script>
-    <script type="text/javascript"   th:src="@{/Scripts/echarts.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
 </head>
-<div style="background: #002845;width: 2816px;height: 512px">
-    <div style="width: 800px;height: 500px;float: left;">
-        <span style="position: absolute;color: lavender;">原料来源</span>
-        <div style="width: 442px;height:231px;background: blueviolet;float:left;">
-            <img src="../img/top1.png" style="height: 231px;width: 442px">
-            <span style="position: absolute;color: lavender;">库存</span>
-        </div>
-        <div style="width: 400px;height: 250px;float:left;" id="cbgc">
-        </div>
-        <div style="height: 231px;width: 442px;background: blue;float: left">
-            <img src="../img/top1.png" style="height: 231px;width: 442px">
-        </div>
-        <div id="synhzb" style="height: 250px;width: 400px;float: left">
-            下2
-        </div>
+<div style="background: #081037;width: 2816px;height: 512px;backgroun">
+    
+    <div style="width: 20px;height: 512px;float: left;"></div>
+    <div style="width: 442px;height: 512px;float: left;">
+        <div style="width: 442px;height:20px;"></div>
+        <div style="width: 442px;height: 231px;" id="cbgc">成本构成</div>
+        <div style="height: 13px;width: 442px;"></div>
+        <div id="ylly" style="height: 231px;width: 442px;">原料来源</div>
     </div>
-    <div style="width: 400px;height: 500px;float:left;">
-        <div style="width: 400px;height: 500px;background:gold;float: contour;">
-            <img src="../img/center.png" style="width: 400px;height: 500px;">
-        </div>
+    <div style="width: 20px;height: 512px;float: left;"></div>
+    <div style="width: 442px;height: 512px;float: left;">
+        <div style="width: 442px;height:20px;"></div>
+        <div style="width: 442px;height: 231px;" id="synhzb">上月能耗指标</div>
+        <div style="height: 13px;width: 442px;"></div>
+        <div id="kc" style="height: 231px;width: 442px;">库存</div>
     </div>
-    <div id="" style="width: 400px;height: 250px;float:right;">
-        <img src="../img/right.png" style="width: 400px;height: 250px">
+    <div style="float: left;width: 977px;height: 511px;">
+        <img src="../image/ERPcenter.png" style="width: 977px;height: 511px">
     </div>
-    <div id="xsqk" style="width: 400px;height: 250px;float:right;">
-        上4
+<div style="height: 512px;width: 899px;float: left">
+    <div style="height: 20px;width: 899px"></div>
+    <div style="width: 899px;height: 231px">
+        <div style="width: 422px;height: 231px;float: left" id="xsqk">销售情况</div>
+        <div style="width: 15px;height: 231px;float: left"></div>
+        <div style="width: 422px;height: 231px;float: left" id="hkzssl">海科装饰收率</div>
     </div>
-    <div id="zxl" style="width: 800px;height: 250px;float:right;">
-        下5
-    </div>
-
+    <div style="width: 899px;height: 20px"></div>
+    <div style="width: 899px;height: 231px" id="jhzxl">计划执行率</div>
+</div>
 </div>
 </body>
-<script type="text/javascript"   th:src="@{/ProjectScripts/it/ERPandBI.js}"></script>
+<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI.js}"></script>
 </html>

@@ -42,6 +42,10 @@ public class TestController {
     }
 
 
+    @RequestMapping("/ERP")
+    public String ERP(){
+        return "ERPandBI";
+    }
     @RequestMapping(value = "/getGjtj", method = RequestMethod. POST)
     @ResponseBody
     //获取ajax参数

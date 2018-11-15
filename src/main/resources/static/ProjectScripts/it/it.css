@@ -7,6 +7,6 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
 
 #charzhe{ height:409px;width: 620px}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
-
-
+/*  视频与上方的边距 和 固定 视频 的div 超出div 的黑框 隐藏掉*/
+#Vide{ height:545px;width: 1033px ;margin-left:53px ;margin-top:135px ;overflow: hidden}
 span{font-size: 25px;text-align: center;line-height: 51px;color: #92F1FF;font-family: 微软雅黑}
