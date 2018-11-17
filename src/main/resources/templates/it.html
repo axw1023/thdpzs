@@ -16,15 +16,16 @@
         .oneBanner{ text-align:center; height: 50px;width: 331px ;background: url("../image/331.png");margin: 0 auto;z-index: 5}
         #man{ height: 793px;width: 1078px;background: url("../image/1078.png");margin-left: 28px;margin-top: 47px}
         #Source{ width:633px;height: 460px;background:url("../image/633.png");}
-       #source1{ width:539px;height: 326px;background:url("../image/APP.png");margin-left: 49px;margin-top: 26px}
+       #source1{ width:539px;height: 326px;background:url("../image/APP.png");margin-left: 49px;margin-top: 26px;}
         #warn{ width: 633px;height:460px;margin-top: 26px;background:url("../image/YY.png");}
        #char{ width: 520px;height: 310px;margin-left: 48px;margin-top: 46px;/*border: 1px solid salmon*/}
 video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑框 扔出div*/}
         #three{ height:1024px;width: 1964px; float: left;background: url("../image/1964.png");}
         #Apple{width:633px;height: 461px; /*border: 1px solid white;*/background:url("../image/633.png");}
         #info{ width:633px;height: 461px;background:url("../image/633.png");
-            margin-top: 25px;}
-        #tbl{ width:481px;height: 330px;background:url("../image/table.png");margin-left: 34px;margin-top: 38px}
+            margin-top: 25px;position: absolute}
+        #tbl{ width:481px;height: 330px;background:url("../image/table.png");margin-left: 34px;margin-top: 38px;position: absolute;top:45px}
+
         #five{height:947px;width: 1137px; float: left;background:url("../image/1135.png");margin-top: 39px;margin-left: 26px}
     </style>
 
@@ -49,8 +50,29 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
             <div class="oneBanner">
                 <span>云计算中心资源池</span>
             </div>
-            <div id="source1"></div>
-        </div>
+            <div id="source1">
+                
+            </div>
+            <!-- 资源文字 排版-->
+            <div id="YY">
+                <div id="GZ">
+                    <div class="left" ><span style="font-size: 24px">613GHz</span></div>
+                    <div class="left" style="margin-left: 111px"><span style="font-size: 24px">613GHz</span></div>
+                    <div class="left" style="margin-left: 111px"><span style="font-size: 24px">613GHz</span></div>
+                </div>
+                <div id="GZ2">
+                    <div class="left"><span style="font-size: 18px">613GHz可用</span></div>
+                    <div class="left" style="margin-left: 100px"><span style="font-size: 18px">613GHz可用</span></div>
+                    <div class="left" style="margin-left: 100px"><span style="font-size: 18px">613GHz可用</span></div>
+                </div>
+                <div id="name">
+                    <div class="left"><span style="font-size: 24px">cpu</span></div>
+                    <div class="left" style="margin-left: 155px"><span style="font-size: 24px">RAM</span></div>
+                    <div class="left" style="margin-left: 155px"><span style="font-size: 24px">存储</span></div>
+                </div>
+            </div>
+            </div>
+
 
         <div id="warn"><!--下部-->
             <div class="oneBanner">
@@ -77,6 +99,52 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
             <div class="oneBanner">
                 <span>资产信息</span>
             </div>
+            <div id="tb2">
+                <table>
+                    <tr>
+                        <td>32</td>
+                        <td>7</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>DeepEdge</td>
+                        <td>交换机</td>
+                        <td>主机</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>16</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td>TDA</td>
+                        <td>路由器</td>
+                        <td>虚拟设备</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+
+                        <td>OfficeScan</td>
+                        <td>防火墙</td>
+                        <td>数据库</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>1</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>DS</td>
+                        <td>IPS</td>
+                        <td>WAF</td>
+                    </tr>
+                </table>
+            </div>
+
             <div id="tbl">
 
             </div>

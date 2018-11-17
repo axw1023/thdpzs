@@ -1,10 +1,19 @@
 *{margin: 0;padding: 0}
 body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软雅黑}
 #body{height: 100%;width: 100%}
-
+#GZ{margin-left:50px ;margin-top: 136px}
+#GZ2{margin-left:45px;margin-top: -125px}
+#YY{position: absolute;top:50px; /*border: solid 1px white;*/width: 633px;height: 461px}
+#name{margin-left:70px ;margin-top:461px ;}
+.left{ float: left;margin-left: 20px}
 #two{ height: 947px;width: 633px ;float: left;margin-top: 39px;margin-left: 26px;/*border: 1px solid white*/}
 
-
+#tb2{ width:530px;height: 330px;margin-left: 100px;margin-top: 38px;position: absolute;top:45px;border: solid 1px seashell;}
+#tb2 table { align-content: center;margin: 0 auto;border: 1px solid white;height: 80%;width: 100%;color: #92F1FF;
+    border-collapse:separate; border-spacing:10px 10px;}
+ /*#TB table td{ border: 1px solid white;width: 40px }*/
+td{border: 1px solid white}
+/*tr{ padding-top: 34px}*/
 #charzhe{ height:409px;width: 620px}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
 /*  视频与上方的边距 和 固定 视频 的div 超出div 的黑框 隐藏掉*/

@@ -1,5 +1,14 @@
+$(function () {
+
+// IT页面
+    getNumByGrade() ;
+
+});
+
 var dom = document.getElementById("char");
 var myChart2 = echarts.init((dom));
+
+var grade=[];
 var currentIndex2 = -1;
 var pieint=null;
 option = {
@@ -65,7 +74,7 @@ option = {
                 }
             },
             data: [
-                {value:335, name:'致命',itemStyle:{ color: {
+                { itemStyle:{ color: {
                             type: 'linear',
                             x: 0,
                             y: 0,
@@ -145,33 +154,21 @@ pieint=setInterval(function () {
 
 }, 3000);
 
+
+
+
 function getNumByGrade() {
     $.ajax({
         type: "get",
+        url: "getNumByGrade",
         async: false,
-        cache: false,
-        data: {"method": "grade"},
-        url: $appRoot + "QytjServlet",
-        dataType: "json",
-        success: function (data) {
-            grade = data.data;
-            for (var i = 0; i < grade.length; i++) {
-                if (grade[i]['name'] == '生产企业') {
-                    $('#dj1').text(grade[i]['value']);
-                }
-                else if (grade[i]['name'] == '经营企业') {
-                    $('#dj2').text(grade[i]['value']);
-                }
-                else if (grade[i]['name'] == '使用企业') {
-                    $('#dj3').text(grade[i]['value']);
-                }
-                else if (grade[i]['name'] == '运输企业') {
 
-                    $('#dj4').text(grade[i]['value']);
-                }
-            }
+        cache:false,
+        success: function (data) {
+            getNumByGrade(data);
 
         },
+
         error: function (data) {
             alert("数据获取失败！")
         }

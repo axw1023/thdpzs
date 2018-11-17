@@ -16,6 +16,13 @@
     from wdth_xt_user
     where userId = #{userid,jdbcType=VARCHAR}
   </select>
+
+  <select id="select" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from wdth_tb_it_gjtj
+--     where userId = #{userid,jdbcType=VARCHAR}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from wdth_xt_user
     where userId = #{userid,jdbcType=VARCHAR}
@@ -67,7 +74,7 @@
         passWord = #{password,jdbcType=VARCHAR},
       </if>
       <if test="usercode != null" >
-        userCode = #{usercode,jdbcType=VARCHAR},
+        userCode = #{userselectByPrimaryKeycode,jdbcType=VARCHAR},
       </if>
     </set>
     where userId = #{userid,jdbcType=VARCHAR}

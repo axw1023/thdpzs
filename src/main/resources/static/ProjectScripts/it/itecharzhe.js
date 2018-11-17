@@ -287,7 +287,7 @@ myChart1.setOption(option);
 
 
 
-function getNumByGrade() {
+function getNumBy() {
     $.ajax({
         type: "get",
         async: false,
@@ -296,7 +296,7 @@ function getNumByGrade() {
         url: $appRoot + "QytjServlet",
         dataType: "json",
         success: function (data) {
-            grade = data.data;
+
             for (var i = 0; i < grade.length; i++) {
                 if (grade[i]['name'] == '生产企业') {
                     $('#dj1').text(grade[i]['value']);
