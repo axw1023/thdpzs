@@ -8,11 +8,34 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
 .left{ float: left;margin-left: 20px}
 #two{ height: 947px;width: 633px ;float: left;margin-top: 39px;margin-left: 26px;/*border: 1px solid white*/}
 
-#tb2{ width:530px;height: 330px;margin-left: 100px;margin-top: 38px;position: absolute;top:45px;border: solid 1px seashell;}
-#tb2 table { align-content: center;margin: 0 auto;border: 1px solid white;height: 80%;width: 100%;color: #92F1FF;
-    border-collapse:separate; border-spacing:10px 10px;}
+#tb2{ width:530px;height: 330px;margin-left: 100px;margin-top: 28.5px;position: absolute;top:45px;}
+ /*table { align-content: center;margin: 0 auto;border: 1px solid white;height: 80%;width: 100%;color: #92F1FF;*/
+    /*border-collapse:separate; border-spacing:10px 10px;}*/
  /*#TB table td{ border: 1px solid white;width: 40px }*/
-td{border: 1px solid white}
+/*td{border: 1px solid white;}*/
+table {
+    width: 630px;
+    height: 350px;
+    position: absolute;
+    left: 47px;
+
+}
+table tr:nth-child(2n+1){
+    height: 20px;
+    font-size: 28px;
+    color: #92F1FF;
+
+}
+table tr:nth-child(2n){
+    height: 20px;
+    font-size: 18px;
+    color: #9FCCFF;
+}
+table tr td {
+    width: 33.3%;
+    text-align: left;
+    text-indent: -35px;
+}
 /*tr{ padding-top: 34px}*/
 #charzhe{ height:409px;width: 620px}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}

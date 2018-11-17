@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_SynhzbMapper" >
+  <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Synhzb" >
+    <result column="Steamconsumption" property="steamconsumption" jdbcType="INTEGER" />
+    <result column="Waterandelectricity" property="waterandelectricity" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Synhzb" >
+    insert into wdth_erp_synhzb (Steamconsumption, Waterandelectricity
+      )
+    values (#{steamconsumption,jdbcType=INTEGER}, #{waterandelectricity,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qdjxd.wdth01.model.wdth_erp_Synhzb" >
+    insert into wdth_erp_synhzb
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="steamconsumption != null" >
+        Steamconsumption,
+      </if>
+      <if test="waterandelectricity != null" >
+        Waterandelectricity,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="steamconsumption != null" >
+        #{steamconsumption,jdbcType=INTEGER},
+      </if>
+      <if test="waterandelectricity != null" >
+        #{waterandelectricity,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

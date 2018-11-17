@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_HkzsslMapper" >
+  <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Hkzssl" >
+    <result column="Atmosphericunit" property="atmosphericunit" jdbcType="INTEGER" />
+    <result column="Gasolinehydrogenation" property="gasolinehydrogenation" jdbcType="INTEGER" />
+    <result column="Dieselhydrogenation" property="dieselhydrogenation" jdbcType="INTEGER" />
+    <result column="Cokingunit" property="cokingunit" jdbcType="INTEGER" />
+    <result column="Dieselconversion" property="dieselconversion" jdbcType="INTEGER" />
+    <result column="Repressingdevice" property="repressingdevice" jdbcType="INTEGER" />
+    <result column="mtbe" property="mtbe" jdbcType="INTEGER" />
+    <result column="remarks" property="remarks" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Hkzssl" >
+    insert into wdth_erp_hkzssl (Atmosphericunit, Gasolinehydrogenation, 
+      Dieselhydrogenation, Cokingunit, Dieselconversion, 
+      Repressingdevice, mtbe, remarks
+      )
+    values (#{atmosphericunit,jdbcType=INTEGER}, #{gasolinehydrogenation,jdbcType=INTEGER}, 
+      #{dieselhydrogenation,jdbcType=INTEGER}, #{cokingunit,jdbcType=INTEGER}, #{dieselconversion,jdbcType=INTEGER}, 
+      #{repressingdevice,jdbcType=INTEGER}, #{mtbe,jdbcType=INTEGER}, #{remarks,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qdjxd.wdth01.model.wdth_erp_Hkzssl" >
+    insert into wdth_erp_hkzssl
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="atmosphericunit != null" >
+        Atmosphericunit,
+      </if>
+      <if test="gasolinehydrogenation != null" >
+        Gasolinehydrogenation,
+      </if>
+      <if test="dieselhydrogenation != null" >
+        Dieselhydrogenation,
+      </if>
+      <if test="cokingunit != null" >
+        Cokingunit,
+      </if>
+      <if test="dieselconversion != null" >
+        Dieselconversion,
+      </if>
+      <if test="repressingdevice != null" >
+        Repressingdevice,
+      </if>
+      <if test="mtbe != null" >
+        mtbe,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="atmosphericunit != null" >
+        #{atmosphericunit,jdbcType=INTEGER},
+      </if>
+      <if test="gasolinehydrogenation != null" >
+        #{gasolinehydrogenation,jdbcType=INTEGER},
+      </if>
+      <if test="dieselhydrogenation != null" >
+        #{dieselhydrogenation,jdbcType=INTEGER},
+      </if>
+      <if test="cokingunit != null" >
+        #{cokingunit,jdbcType=INTEGER},
+      </if>
+      <if test="dieselconversion != null" >
+        #{dieselconversion,jdbcType=INTEGER},
+      </if>
+      <if test="repressingdevice != null" >
+        #{repressingdevice,jdbcType=INTEGER},
+      </if>
+      <if test="mtbe != null" >
+        #{mtbe,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

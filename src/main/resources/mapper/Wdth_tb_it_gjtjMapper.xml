@@ -10,9 +10,7 @@
     sheetid, type, num
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap"  >
-    select
-    <include refid="Base_Column_List" />
-    from wdth_tb_it_gjtj
+    select * from wdth_tb_it_gjtj
 
   </select>
 
