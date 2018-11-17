@@ -76,4 +76,11 @@
       </if>
     </trim>
   </insert>
+
+  <select id="getHkzssl" resultMap="BaseResultMap">
+    select * from wdth_erp_hkzssl where remarks=0
+  </select>
+  <select id="getHkzssl1" resultMap="BaseResultMap">
+    select * from wdth_erp_hkzssl where remarks=1
+  </select>
 </mapper>

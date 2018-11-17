@@ -60,4 +60,7 @@
       </if>
     </trim>
   </insert>
+  <select id="getYlly" resultMap="BaseResultMap">
+    select * from wdth_erp_ylly
+  </select>
 </mapper>
