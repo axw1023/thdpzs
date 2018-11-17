@@ -14,6 +14,7 @@ $(function () {
     setKc();
     //计划执行率
     setJhzxl();
+    
 });
 function getCbgc() {
     setCbgc();
@@ -48,7 +49,7 @@ function setCbgc() {
 
         tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b}: {c} ({d}%)"
+            /*formatter: "{a} <br/>{b}: {c} ({d}%)"*/
         },
 
         legend: {
@@ -78,7 +79,6 @@ function setCbgc() {
             //可设置颜色 字体等等
             style: {
                 fill: '#92F1FF',  //text颜色
-                text: '共380项',
                 font: '20px Microsoft YaHei'
             }
         },
@@ -89,6 +89,7 @@ function setCbgc() {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
+                
                 center:['210','50%'],//圆形居中
                 name:'成本构成',
                 type:'pie',
@@ -99,10 +100,13 @@ function setCbgc() {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        textStyle: {
-                            fontSize: '25',
-                            fontWeight: '#92F1FF'
-                        }
+                        formatter: "共{a|{c}}项",
+                        rich:{
+                            a:{
+                                fontSize: 41
+                            }
+                        },
+                      
                     }
                 },
                 labelLine: {
@@ -159,6 +163,23 @@ function setCbgc() {
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+   /* pieint=setInterval(function () {
+        var dataLen = option.series.length;
+        // 取消之前高亮的图形
+        myChart.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+        currentIndex2 = (currentIndex2 + 1) % dataLen;
+        // 高亮当前图形
+        myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+
+    }, 3000);*/
 }
 function setSynhzb() {
     var myChart = echarts.init(document.getElementById('synhzb'));
@@ -1045,9 +1066,15 @@ function setJhzxl() {
             containLabel: true
         },
         legend: {
+         /*   symbol: 'diamond',     //设定为实心点*/
+            symbol: 'circle',     //设定为实心点
+            symbolSize: 8,   //设定实心点的大小
             x:'right',
             y:'top',
-            data:['实际执行','计划执行']
+            data:['实际执行','计划执行'],
+            textStyle: {
+                color: '#51e5fc'
+            },
             
         },
         calculable : true,
@@ -1055,11 +1082,21 @@ function setJhzxl() {
             {
                 type : 'category',
                 boundaryGap : false,
-                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+
+                axisLabel: {
+
+                    textStyle: {
+                        color: '#51e5fc'
+                    }
+                },
+                
             }
         ],
         yAxis : {
-            type : 'value'
+            show:false,
+            type : 'value',
+            splitLine:{show: false},//去除网格线
         }
         ,
         series : [
@@ -1070,16 +1107,21 @@ function setJhzxl() {
                     normal: {type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(199, 37, 50,0.2)'
+                            color: 'rgba(0,0,255,1)'
                         }, {
                             offset: 1,
-                            color: 'rgba(199, 37, 50,0.2)'
+                            color: 'rgba(0,0,255,0.2)'
                         }], false)
                     }
                 },
-                smooth:true,
+                smooth:false,
                 itemStyle: {
-                    normal: {areaStyle: {type: 'default'}}
+                    normal: {areaStyle: {type: 'default'},
+                        color:'#00FCFF',
+                        lineStyle:{
+                            color:'#00FCFF'
+                        }
+                    }
                 },
                 data:[136,375,380,449,114,267,142,318,357,193,421,391]
             },
@@ -1091,15 +1133,24 @@ function setJhzxl() {
                         type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(19, 37, 250,0.2)'
+                            color: 'rgba(48, 255, 28,0.2)'
                         }, {
                             offset: 1,
                             color: 'rgba(19, 37, 250,0.2)'
                         }], false)
                     }
                 },
-                smooth:true,
-                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                symbol: 'circle',     //设定为实心点
+                symbolSize: 8,   //设定实心点的大小
+                smooth:false,
+                itemStyle: {normal: {areaStyle: {type: 'default'},
+                        color:'#3BFF40',
+                        lineStyle:{
+                            color:'#3BFF40'
+                        }
+                }
+                
+                },
                 data:[610, 312, 221,654, 910, 630, 310, 521, 354, 560, 830, 310]
             }
         ]
