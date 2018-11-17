@@ -14,6 +14,7 @@ $(function () {
     setKc();
     //计划执行率
     setJhzxl();
+    
 });
 function getCbgc() {
     setCbgc();
@@ -24,7 +25,7 @@ function setCbgc() {
 
     // 指定图表的配置项和数据
     var  option = {
-        title : {
+     /*   title : {
             text: '成本构成',
             x:'center',
             textStyle:{
@@ -42,24 +43,27 @@ function setCbgc() {
             subtextStyle:{
                 //与textStyle类似
             },  
-        },
+        },*/
 
         color:['#208198','#2EABCC','#AA625A'],  //饼图颜色
 
         tooltip: {
             trigger: 'item',
-            formatter: "{a} <br/>{b}: {c} ({d}%)"
+            /*formatter: "{a} <br/>{b}: {c} ({d}%)"*/
         },
 
         legend: {
+            /*itemWidth: 6,   // 设置图例图形的宽
+            itemHeight: 20,  // 设置图例图形的高*/
             //边框
-            
+            itemGap: 65,
             orient: 'vertical',
-            x:'right',
-            y:'top',
+            x:'565',
+            y:'116',
             data: ['生产','物流','人工'],
             textStyle:{
-                color:'white'
+                color:'#92F1FF',
+                fontSize:20
             }
         },
         //graphic是原生图形元素组件,可以支持的图形元素包括image, text, circle等等 除了下面的属性之外,还有onclick: function () {...}属性,具体的可参照echarts文档
@@ -69,13 +73,13 @@ function setCbgc() {
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
             // right: 10,
             // bottom: '10%',
-            left: 'center', // 相对父元素居中
+            left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
             style: {
-                fill: 'white',  //text颜色
+                fill: '#92F1FF',  //text颜色
                 text: '共380项',
-                font: '20px Microsoft YaHei'
+                font: '33px Microsoft YaHei'
             }
         },
 
@@ -85,28 +89,72 @@ function setCbgc() {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
+                
+                center:['210','50%'],//圆形居中
                 name:'成本构成',
                 type:'pie',
-                radius: ['50%', '70%'],
-                avoidLabelOverlap: true,
+                radius: ['65%', '91%'],
+                avoidLabelOverlap: false,
                 label: {
                     show: false,
-                    position: 'outside',
-                    emphasis: {
-                        show: false,
-                        textStyle: {
-                            fontSize: '30',
-                            fontWeight: 'bold'
-                        }
-                    }
+                    position: 'center',
+                  /*  emphasis: {
+                        show: true,
+                        formatter: "共{a|{c}}项",
+                        rich:{
+                            a:{
+                                fontSize: 41
+                            }
+                        },
+                      
+                    }*/
                 },
                 labelLine: {
                     show:false
                 },
                 data:[
-                    {value:335, name:'生产'},
-                    {value:310, name:'物流'},
-                    {value:234, name:'人工'},
+                    {value:335, name:'生产',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#4360F1' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#4C31A9' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+
+                    },
+                    {value:310, name:'物流',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#FF5959' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#7F3C70' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+                    },
+                    {value:234, name:'人工',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#91725F' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#DE7665' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}},
                 ]
             }
         ]
@@ -115,13 +163,30 @@ function setCbgc() {
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+   /* pieint=setInterval(function () {
+        var dataLen = option.series.length;
+        // 取消之前高亮的图形
+        myChart.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+        currentIndex2 = (currentIndex2 + 1) % dataLen;
+        // 高亮当前图形
+        myChart.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+
+    }, 3000);*/
 }
 function setSynhzb() {
     var myChart = echarts.init(document.getElementById('synhzb'));
 
     // 指定图表的配置项和数据
     var  option = {
-        title : {
+       /* title : {
             text: '上月能耗指标',
             x:'center',
             textStyle:{
@@ -137,7 +202,7 @@ function setSynhzb() {
                 // fontSize:18
             },
             subtextStyle:{},  //与textStyle类似
-        },
+        },*/
 
         color:['#208198','#2EABCC','#AA625A'],  //饼图颜色
 
@@ -147,12 +212,14 @@ function setSynhzb() {
         },
 
         legend: {
+            itemGap: 65,
             orient: 'vertical',
-            x:'right',
-            y:'top',
+            x:'565',
+            y:'116',
             data: ['蒸汽消耗','水电消耗'],
             textStyle:{
-                color:'white'
+                color:'#92F1FF',
+                fontSize:20
             }
         },
         //graphic是原生图形元素组件,可以支持的图形元素包括image, text, circle等等 除了下面的属性之外,还有onclick: function () {...}属性,具体的可参照echarts文档
@@ -162,13 +229,13 @@ function setSynhzb() {
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
             // right: 10,
             // bottom: '10%',
-            left: 'center', // 相对父元素居中
+            left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
             style: {
-                fill: 'white',  //text颜色
+                fill: '#92F1FF',  //text颜色
                 text: '共380项',
-                font: '20px Microsoft YaHei'
+                font: '33px Microsoft YaHei'
             }
         },
 
@@ -178,18 +245,19 @@ function setSynhzb() {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
+                center:['210','50%'],//圆形居中
                 name:'上月能源消耗',
                 type:'pie',
-                radius: ['50%', '70%'],
-                avoidLabelOverlap: true,
+                radius: ['65%', '91%'],
+                avoidLabelOverlap: false,
                 label: {
                     show: false,
-                    position: 'outside',
+                    position: 'center',
                     emphasis: {
-                        show: false,
+                        show: true,
                         textStyle: {
-                            fontSize: '30',
-                            fontWeight: 'bold'
+                            fontSize: '25',
+                            fontWeight: '#92F1FF'
                         }
                     }
                 },
@@ -197,8 +265,35 @@ function setSynhzb() {
                     show:false
                 },
                 data:[
-                    {value:335, name:'蒸汽消耗'},
-                    {value:234, name:'水电消耗'},
+                    {value:335, name:'蒸汽消耗',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#4360F1' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#4C31A9' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+
+                    },
+                    {value:234, name:'水电消耗',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#FF5959' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#7F3C70' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+                    },
                 ]
             }
         ]
@@ -213,7 +308,7 @@ function setXsqk() {
 
     // 指定图表的配置项和数据
     var  option = {
-        title : {
+     /*   title : {
             text: '销售情况',
             x:'center',
             textStyle:{
@@ -229,7 +324,7 @@ function setXsqk() {
                 // fontSize:18
             },
             subtextStyle:{},  //与textStyle类似
-        },
+        },*/
 
         color:['#208198','#2EABCC','#AA625A','#563688','#603962','#808854'],  //饼图颜色
 
@@ -239,12 +334,14 @@ function setXsqk() {
         },
 
         legend: {
+            itemGap: 28,
             orient: 'vertical',
-            x:'right',
-            y:'top',
+            x:'565',
+            y:'50',
             data: ['汽油','柴油','液化气','丙烷','丙烯','石油焦'],
             textStyle:{
-                color:'white'
+                color:'#92F1FF',
+                fontSize:20
             }
         },
         //graphic是原生图形元素组件,可以支持的图形元素包括image, text, circle等等 除了下面的属性之外,还有onclick: function () {...}属性,具体的可参照echarts文档
@@ -254,13 +351,13 @@ function setXsqk() {
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
             // right: 10,
             // bottom: '10%',
-            left: 'center', // 相对父元素居中
+            left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
             style: {
-                fill: 'white',  //text颜色
-                text: '共383项',
-                font: '20px Microsoft YaHei'
+                fill: '#92F1FF',  //text颜色
+                text: '共380项',
+                font: '33px Microsoft YaHei'
             }
         },
 
@@ -270,18 +367,19 @@ function setXsqk() {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
+                center:['210','50%'],//圆形居中
                 name:'访问来源',
                 type:'pie',
-                radius: ['50%', '70%'],
-                avoidLabelOverlap: true,
+                radius: ['65%', '91%'],
+                avoidLabelOverlap: false,
                 label: {
                     show: false,
-                    position: 'outside',
+                    position: 'center',
                     emphasis: {
-                        show: false,
+                        show: true,
                         textStyle: {
-                            fontSize: '30',
-                            fontWeight: 'bold'
+                            fontSize: '25',
+                            fontWeight: '#92F1FF'
                         }
                     }
                 },
@@ -289,12 +387,87 @@ function setXsqk() {
                     show:false
                 },
                 data:[
-                    {value:2354, name:'汽油'},
-                    {value:3241, name:'柴油'},
-                    {value:1356, name:'液化气'},
-                    {value:2365, name:'丙烷'},
-                    {value:1241, name:'丙烯'},
-                    {value:524, name:'石油焦'},
+                    {value:2354, name:'汽油',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#4360F1' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#4C31A9' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+
+                    },
+                    {value:3241, name:'柴油',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#FF5959' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#7F3C70' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+                    },
+                    {value:1356, name:'液化气',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#91725F' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#DE7665' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}},
+                    {value:2365, name:'丙烷',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#FF6F2D' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#FF36BB' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}},
+                    {value:1241, name:'丙烯',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#77ff1b' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#32FFC7' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}},
+                    {value:524, name:'石油焦',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#D62CFF' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#FF2186' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}},
                 ]
             }
         ]
@@ -310,7 +483,7 @@ function setHkzssl() {
 
     // 指定图表的配置项和数据
     var  option = {
-        title: {
+    /*    title: {
             show: true,
             text:'海科装饰收率',
             x:'center',
@@ -318,13 +491,14 @@ function setHkzssl() {
                 //文字颜色
                 color: '#208198',
             },
-        },
+        },*/
 /*        title : {
             text: '销售情况',
             x:'center',
             textStyle:{
                 //文字颜色
                 color:'#208198',
+                  fontSize:18
                 // //字体风格,'normal','italic','oblique'
                 // fontStyle:'normal',
                 // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
@@ -346,7 +520,7 @@ function setHkzssl() {
             right: '4%',
             bottom: '80%',
             textStyle:{
-                color:'#208198',
+                color:'#92F1FF',
             },
         },
         grid: {
@@ -359,13 +533,24 @@ function setHkzssl() {
             {
                 type : 'category',
                 data : ['常压装置','柴油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
+                splitLine:{show: false},//去除网格
+                axisLine: {
+                    lineStyle: {
+                        // 设置x轴颜色
+                        color: 'rgba(1,1,1,0)'
+                    }
+                },
+
                 axisLabel:{
                     type : 'category',
-                    color:'red',
+                    color:'#92F1FF',
                     interval: '0',
-                    fontSize:10,
+                    fontSize:20,
+                   
+                    
                     // rotate:-30,
                 },
+                
 /*                textStyle: {
                     color: '#208198',
                     align: 'center',
@@ -382,7 +567,18 @@ function setHkzssl() {
         ],
         yAxis : [
             {
-                type : 'value'
+                splitLine:{show: false},//去除网格
+                type : 'value',
+                axisLabel: {
+                    color: '#92F1FF',
+                },
+                axisLine: {
+                    lineStyle: {
+                        // 设置x轴颜色
+                        color: 'rgba(1,1,1,0)'
+                    }
+                },
+
             }
         ],
         series : [
@@ -390,19 +586,61 @@ function setHkzssl() {
                 name:'目标',
                 type:'bar',
                 barWidth : 8,
-                data:[320, 472, 411, 434, 320, 460, 260]
+                data:[320, 472, 411, 434, 320, 460, 260],
+                itemStyle:{ color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: '#4360F1' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgba(122, 127, 255,0)' // 100% 处的颜色
+                        }],
+                        globalCoord: false // 缺省为 false
+                    }}
+
             },
             {
                 name:'日收率',
                 type:'bar',
                 barWidth : 8,
-                data:[200, 442, 285, 314, 230, 300, 400]
+                data:[200, 442, 285, 314, 230, 300, 400],
+                itemStyle:{ color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: 'red' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgba(255, 169, 165,0)' // 100% 处的颜色
+                        }],
+                        globalCoord: false // 缺省为 false
+                    }}
+
             },
             {
                 name:'月收率',
                 type:'bar',
                 barWidth : 8,
-                data:[200, 412, 280, 330, 410, 385, 310]
+                data:[200, 412, 280, 330, 410, 385, 310],
+                itemStyle:{ color: {
+                        type: 'linear',
+                        x: 0,
+                        y: 0,
+                        x2: 0,
+                        y2: 1,
+                        colorStops: [{
+                            offset: 0, color: 'green' // 0% 处的颜色
+                        }, {
+                            offset: 1, color: 'rgba(146, 255, 160,0)' // 100% 处的颜色
+                        }],
+                        globalCoord: false // 缺省为 false
+                    }}
+
             },
         ]
     };
@@ -417,6 +655,14 @@ function setYlly() {
 
     // 指定图表的配置项和数据
     var  option = {
+   /*     title: {
+            text: '原料来源',
+            x:'center',
+            textStyle: {
+                //文字颜色
+                color: '#208198',
+            },
+        },*/
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -440,11 +686,12 @@ function setYlly() {
                 }
             },
             axisLine: {
-
                 lineStyle: {
-                    color: '#EE8F57'
+                    // 设置x轴颜色
+                    color: 'rgba(1,1,1,0)'
                 }
             },
+
             axisTick: {
                 show: false,
             },
@@ -478,11 +725,12 @@ function setYlly() {
             },
             offset: 6,
             axisLine: {
-                show: true,
                 lineStyle: {
-                    color: '#EE8F57'
+                    // 设置x轴颜色
+                    color: 'rgba(1,1,1,0)'
                 }
             },
+
             axisTick: {
                 show: false,
             },
@@ -604,14 +852,14 @@ function setKc() {
 
     // 指定图表的配置项和数据
     var  option = {
-        title: {
-            text: '折线图堆叠',
+    /*    title: {
+            text: '库存',
             x:'center',
             textStyle: {
                 //文字颜色
                 color: '#208198',
             },
-        },
+        },*/
 
         tooltip: {
             trigger: 'axis',
@@ -636,11 +884,12 @@ function setKc() {
                 }
             },
             axisLine: {
-
                 lineStyle: {
-                    color: '#51e5fc'
+                    // 设置x轴颜色
+                    color: 'rgba(1,1,1,0)'
                 }
             },
+
             axisTick: {
                 show: false,
             },
@@ -674,7 +923,7 @@ function setKc() {
             },
             offset: 6,
             axisLine: {
-                show: true,
+                show: false,
                 lineStyle: {
                     color: '#51e5fc'
                 }
@@ -800,70 +1049,108 @@ function setJhzxl() {
 
     // 指定图表的配置项和数据
     var option = {
-        title : {
-            text: '食品生产情况',
-            subtext: '每年企业新办/注销许可证趋势'
-        },
+        /*title : {
+            text: '计划执行率',
+                x:'center',
+                textStyle: {
+                    //文字颜色
+                    color: '#208198',
+            },
+        },*/
         tooltip : {
             trigger: 'axis'
         },
         grid: {
             left: '3%',
-            top:'15%',
+            top:'20%',
             containLabel: true
         },
         legend: {
-            data:['新办数','注销数']
+         /*   symbol: 'diamond',     //设定为实心点*/
+            symbol: 'circle',     //设定为实心点
+            symbolSize: 8,   //设定实心点的大小
+            x:'right',
+            y:'top',
+            data:['实际执行','计划执行'],
+            textStyle: {
+                color: '#51e5fc'
+            },
+            
         },
         calculable : true,
         xAxis : [
             {
                 type : 'category',
                 boundaryGap : false,
-                data : ['一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月']
+                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+
+                axisLabel: {
+
+                    textStyle: {
+                        color: '#51e5fc'
+                    }
+                },
+                
             }
         ],
         yAxis : {
-            type : 'value'
+            show:false,
+            type : 'value',
+            splitLine:{show: false},//去除网格线
         }
         ,
         series : [
             {
-                name:'新办数',
+                name:'实际执行',
                 type:'line',
                 areaStyle: {
                     normal: {type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(199, 37, 50,0.2)'
+                            color: 'rgba(0,0,255,1)'
                         }, {
                             offset: 1,
-                            color: 'rgba(199, 37, 50,0.2)'
+                            color: 'rgba(0,0,255,0.2)'
                         }], false)
                     }
                 },
-                smooth:true,
+                smooth:false,
                 itemStyle: {
-                    normal: {areaStyle: {type: 'default'}}
+                    normal: {areaStyle: {type: 'default'},
+                        color:'#00FCFF',
+                        lineStyle:{
+                            color:'#00FCFF'
+                        }
+                    }
                 },
                 data:[136,375,380,449,114,267,142,318,357,193,421,391]
             },
             {
-                name:'注销数',
+                name:'计划执行',
                 type:'line',
                 areaStyle: {
-                    normal: {type: 'default',
+                    normal: {
+                        type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(19, 37, 250,0.2)'
+                            color: 'rgba(48, 255, 28,0.2)'
                         }, {
                             offset: 1,
                             color: 'rgba(19, 37, 250,0.2)'
                         }], false)
                     }
                 },
-                smooth:true,
-                itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                symbol: 'circle',     //设定为实心点
+                symbolSize: 8,   //设定实心点的大小
+                smooth:false,
+                itemStyle: {normal: {areaStyle: {type: 'default'},
+                        color:'#3BFF40',
+                        lineStyle:{
+                            color:'#3BFF40'
+                        }
+                }
+                
+                },
                 data:[610, 312, 221,654, 910, 630, 310, 521, 354, 560, 830, 310]
             }
         ]

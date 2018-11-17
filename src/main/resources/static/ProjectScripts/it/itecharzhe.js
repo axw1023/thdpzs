@@ -2,7 +2,27 @@
 var dom = document.getElementById("charzhe");
 var myChart1 = echarts.init((dom));
 
+//背景特效
+window.onload = function() {
 
+    var config = {
+        vx: 4,
+        vy: 4,
+        height: 2,
+        width: 2,
+        count: 300,
+        color: "121, 162, 185",
+        stroke: "130,255,255",
+        dist: 6000,
+        e_dist: 20000,
+        max_conn: 10
+    }
+
+    CanvasParticle(config);
+}
+// var grade;warn
+// var currentIndex2 = -1;
+// var pieint=null;
 // getNumByGrade();
 option = {
 color:['#7350F5','#C87E61','#6049D3','#08E3A1'],
