@@ -1,25 +1,118 @@
 $(function () {
-
-// 成本构成
-    setCbgc();
-//上月能耗指标
-    setSynhzb();
+    getCbgc();// 成本构成
+   
+    //上月能耗指标
+    getSynhzb();
     //销售情况
-    setXsqk();
+    getXsqk();
     //海科装饰
-    setHkzssl();
+    getHkzssl();
     //原料来源
-    setYlly();
+    getYlly();
     //库存
-    setKc();
+    getKc();
     //计划执行率
-    setJhzxl();
-    
+    getJhzxl();
+    //erp
+    getErp();
 });
+
 function getCbgc() {
-    setCbgc();
-    //result
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/cbgc",
+        async: false,
+        success: function (result) {
+            //更新数据
+            setCbgc();
+        },
+    });
 }
+
+function getErp() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/erp",
+        async: false,
+        success: function (result) {
+            //更新数据
+          
+        },
+    });
+}
+
+function getHkzssl() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/hkzssl",
+        async: false,
+        success: function () {
+            //更新数据
+            setHkzssl();
+        },
+    });
+}
+
+function getJhzxl() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/jhzxl",
+        async: false,
+        success: function () {
+            //更新数据
+            setJhzxl();
+        },
+    });
+}
+
+function getKc() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/kc",
+        async: false,
+        success: function () {
+            //更新数据
+            setKc();
+        },
+    });
+}
+
+function getSynhzb() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/synhzb",
+        async: false,
+        success: function () {
+            //更新数据
+            setSynhzb();
+        },
+    });
+}
+
+function getXsqk() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/xsqk",
+        async: false,
+        success: function () {
+            //更新数据
+            setXsqk();
+        },
+    });
+}
+
+function getYlly() {
+    $.ajax({
+        type: "post",
+        url: "/ERPandBI/ylly",
+        async: false,
+        success: function () {
+            //更新数据
+            setYlly();
+        },
+    });
+}
+
 function setCbgc() {
     var myChart = echarts.init(document.getElementById('cbgc'));
 
@@ -181,6 +274,7 @@ function setCbgc() {
 
     }, 3000);*/
 }
+
 function setSynhzb() {
     var myChart = echarts.init(document.getElementById('synhzb'));
 
@@ -303,6 +397,7 @@ function setSynhzb() {
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 }
+
 function setXsqk() {
     var myChart = echarts.init(document.getElementById('xsqk'));
 
@@ -478,6 +573,7 @@ function setXsqk() {
     myChart.setOption(option);
 
 }
+
 function setHkzssl() {
     var myChart = echarts.init(document.getElementById('hkzssl'));
 
@@ -532,7 +628,7 @@ function setHkzssl() {
         xAxis : [
             {
                 type : 'category',
-                data : ['常压装置','柴油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
+                data : ['常压装置','汽油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
                 splitLine:{show: false},//去除网格
                 axisLine: {
                     lineStyle: {
@@ -650,6 +746,7 @@ function setHkzssl() {
     myChart.setOption(option);
 
 }
+
 function setYlly() {
     var myChart = echarts.init(document.getElementById('ylly'));
 
@@ -847,6 +944,7 @@ function setYlly() {
     myChart.setOption(option);
 
 }
+
 function setKc() {
     var myChart = echarts.init(document.getElementById('kc'));
 
@@ -1044,6 +1142,7 @@ function setKc() {
     myChart.setOption(option);
 
 }
+
 function setJhzxl() {
     var myChart = echarts.init(document.getElementById('jhzxl'));
 

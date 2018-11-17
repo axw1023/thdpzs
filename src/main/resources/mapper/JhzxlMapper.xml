@@ -111,4 +111,10 @@
       </if>
     </trim>
   </insert>
+  <select id="getJhzxl" resultMap="BaseResultMap">
+    select * from wdth_erp_jhzxl where remarks=0
+  </select>
+  <select id="getJhzxl1" resultMap="BaseResultMap">
+    select * from wdth_erp_jhzxl where remarks=1
+  </select>
 </mapper>

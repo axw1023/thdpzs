@@ -60,4 +60,7 @@
       </if>
     </trim>
   </insert>
+  <select id="getXsqk" resultMap="BaseResultMap">
+    select * from wdth_erp_xsqk
+  </select>
 </mapper>
