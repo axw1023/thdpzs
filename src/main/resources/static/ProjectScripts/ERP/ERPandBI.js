@@ -73,13 +73,13 @@ function setCbgc() {
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
             // right: 10,
             // bottom: '10%',
-            left: '165', // 相对父元素居中
+            left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
-            
             //可设置颜色 字体等等
             style: {
                 fill: '#92F1FF',  //text颜色
-                font: '20px Microsoft YaHei'
+                text: '共380项',
+                font: '33px Microsoft YaHei'
             }
         },
 
@@ -98,7 +98,7 @@ function setCbgc() {
                 label: {
                     show: false,
                     position: 'center',
-                    emphasis: {
+                  /*  emphasis: {
                         show: true,
                         formatter: "共{a|{c}}项",
                         rich:{
@@ -107,7 +107,7 @@ function setCbgc() {
                             }
                         },
                       
-                    }
+                    }*/
                 },
                 labelLine: {
                     show:false
@@ -229,13 +229,13 @@ function setSynhzb() {
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
             // right: 10,
             // bottom: '10%',
-            left: '169', // 相对父元素居中
+            left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
             style: {
                 fill: '#92F1FF',  //text颜色
                 text: '共380项',
-                font: '20px Microsoft YaHei'
+                font: '33px Microsoft YaHei'
             }
         },
 
@@ -351,13 +351,13 @@ function setXsqk() {
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
             // right: 10,
             // bottom: '10%',
-            left: '165', // 相对父元素居中
+            left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
             style: {
                 fill: '#92F1FF',  //text颜色
                 text: '共380项',
-                font: '20px Microsoft YaHei'
+                font: '33px Microsoft YaHei'
             }
         },
 
