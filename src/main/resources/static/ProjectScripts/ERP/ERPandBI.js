@@ -532,7 +532,7 @@ function setHkzssl() {
         xAxis : [
             {
                 type : 'category',
-                data : ['常压装置','柴油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
+                data : ['常压装置','汽油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
                 splitLine:{show: false},//去除网格
                 axisLine: {
                     lineStyle: {
