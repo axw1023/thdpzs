@@ -4,24 +4,17 @@ $(function () {
     getNumByGrade() ;
 
 });
-
-var greate;
-
-var data;
-var scData=[];
-var syData=[];
-var jyData=[];
-var ysData=[];
-
-
+var currentIndex2 = -1;
+var pieint=null;
+function bing(rest) {
     var dom = document.getElementById("char");
     var myChart2 = echarts.init((dom));
 
 
-    var currentIndex2 = -1;
-    var pieint=null;
 
-     option = {
+
+
+    option = {
         color: [
 
             "#6F41FF", "#FC363F",
@@ -59,6 +52,7 @@ var ysData=[];
                 radius: ['65%', '91%'],
                 center: ['30%', '50%'],
                 avoidLabelOverlap: false,
+
                 label: {
                     normal: {
                         show: false,
@@ -83,8 +77,12 @@ var ysData=[];
                         show: false
                     }
                 },
+
+                // data:[{value:rest[0].num,name:rest[0].type}]
+
                 data: [
-                    { value:234, name:'致命',itemStyle:{ color: {
+
+                    { value:rest[0].num,name:rest[0].type,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -99,7 +97,7 @@ var ysData=[];
                             }}
 
                     },
-                    {value:234, name:'严重',itemStyle:{ color: {
+                    {value:rest[1].num,name:rest[1].type,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -113,7 +111,7 @@ var ysData=[];
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:234, name:'警告',itemStyle:{ color: {
+                    {value:rest[2].num,name:rest[2].type,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -126,7 +124,7 @@ var ysData=[];
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:135, name:'主要',itemStyle:{ color: {
+                    {value:rest[3].num,name:rest[3].type,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -147,7 +145,7 @@ var ysData=[];
     myChart2.setOption(option);
 
     pieint=setInterval(function () {
-        var dataLen = option.series.length;
+        var dataLen = option.series[0].data.length;
         // 取消之前高亮的图形
         myChart2.dispatchAction({
             type: 'downplay',
@@ -163,6 +161,10 @@ var ysData=[];
         });
 
     }, 3000);
+}
+
+
+
 
 
 function getNumByGrade() {
@@ -170,19 +172,23 @@ function getNumByGrade() {
         type: "get",
         url: "getNumByGrade",
         async: false,
-        // dataType : "json",
         cache:false,
-        success: function (data) {
-            debugger
-        for(var i = 0;i < data.length;i++){
-                delete data[i].sheetid;
+
+        success: function (rest) {
+
+
+        for(var i = 0;i < rest.length;i++) {
+            delete rest[i].sheetid;
+
         }
-        var datas = data;
+
+
+          bing(rest) ;
 
 
         },
 
-        error: function (data) {
+        error: function (rest) {
             alert("数据获取失败！")
         }
     });
