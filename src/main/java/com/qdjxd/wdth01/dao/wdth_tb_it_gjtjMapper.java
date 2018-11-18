@@ -1,17 +1,24 @@
 package com.qdjxd.wdth01.dao;
 
-import com.qdjxd.wdth01.model.wdth_tb_it_gjtj;
+import com.qdjxd.wdth01.model.Wdth_tb_it_gjtj;
+import org.apache.ibatis.annotations.Mapper;
 
-public interface wdth_tb_it_gjtjMapper {
+import java.util.List;
+
+@Mapper
+public interface Wdth_tb_it_gjtjMapper {
     int deleteByPrimaryKey(Integer sheetid);
 
-    int insert(wdth_tb_it_gjtj record);
+    int insert(Wdth_tb_it_gjtj record);
 
-    int insertSelective(wdth_tb_it_gjtj record);
+    int insertSelective(Wdth_tb_it_gjtj record);
 
-    wdth_tb_it_gjtj selectByPrimaryKey(Integer sheetid);
+    //告警统计数据查询
+    Wdth_tb_it_gjtj selectgjtjData();
+    //告警统计数据查询 带参
+    List<Wdth_tb_it_gjtj> selectByPrimaryKey();
 
-    int updateByPrimaryKeySelective(wdth_tb_it_gjtj record);
+    int updateByPrimaryKeySelective(Wdth_tb_it_gjtj record);
 
-    int updateByPrimaryKey(wdth_tb_it_gjtj record);
+    int updateByPrimaryKey(Wdth_tb_it_gjtj record);
 }

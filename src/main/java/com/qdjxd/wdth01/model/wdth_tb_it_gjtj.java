@@ -1,6 +1,6 @@
 package com.qdjxd.wdth01.model;
 
-public class wdth_tb_it_gjtj {
+public class Wdth_tb_it_gjtj {
     private Integer sheetid;
 
     private String type;
