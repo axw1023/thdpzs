@@ -9,6 +9,9 @@
     <result column="propylene" property="propylene" jdbcType="INTEGER" />
     <result column="Petroleumcoke" property="petroleumcoke" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getKc" resultMap="BaseResultMap">
+    select * from wdth_erp_kc
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Kc" >
     insert into wdth_erp_kc (gasoline, diesel, Liquidgas, 
       propane, propylene, Petroleumcoke

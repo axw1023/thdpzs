@@ -16,6 +16,9 @@
     <result column="dece" property="dece" jdbcType="INTEGER" />
     <result column="remarks" property="remarks" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getJhzxl" resultMap="BaseResultMap">
+    select * from wdth_erp_jhzxl 
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Jhzxl" >
     insert into wdth_erp_jhzxl (jan, feb, mar, 
       apr, may, jun, july, 

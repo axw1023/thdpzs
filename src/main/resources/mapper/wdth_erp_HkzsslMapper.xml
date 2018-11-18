@@ -11,6 +11,9 @@
     <result column="mtbe" property="mtbe" jdbcType="INTEGER" />
     <result column="remarks" property="remarks" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getHkzssl" resultMap="BaseResultMap">
+    select * from wdth_erp_hkzssl
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Hkzssl" >
     insert into wdth_erp_hkzssl (Atmosphericunit, Gasolinehydrogenation, 
       Dieselhydrogenation, Cokingunit, Dieselconversion, 

@@ -1,6 +1,10 @@
+/*var currentIndex2= -1;
+var pieint=null;*/
+
 $(function () {
+    
     getCbgc();// 成本构成
-   
+    
     //上月能耗指标
     getSynhzb();
     //销售情况
@@ -22,11 +26,30 @@ function getCbgc() {
         type: "post",
         url: "/ERPandBI/cbgc",
         async: false,
-        success: function (result) {
-            //更新数据
-            setCbgc();
+        cache:false,
+        success: function (data) {
+            //debugger
+            /*for(i=0;i<data.length;i++){
+                var a=data[i]
+                alert(a);
+            }
+           var jsonData = JSON.parse(data);
+            for (x in jsonData) {  //遍历JSON格式的数组取元素, x代表下标
+
+                for (y in jsonData[x].data) {
+                    alert(jsonData[x].occurTime[y]) ;//依次获取 
+                    alert(jsonData[x].data[y]);
+                }
+            }*/
+            setCbgc(data);
+
+            //setCbgc();
         },
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
+
 }
 
 function getErp() {
@@ -34,10 +57,18 @@ function getErp() {
         type: "post",
         url: "/ERPandBI/erp",
         async: false,
-        success: function (result) {
+        success: function (data) {
             //更新数据
-          
-        },
+            $("#qy2").val(data[0].gasoline);
+            $("#cy2").val(data[0].diesel);
+            $("#yhq2").val(data[0].liquidgas);
+            $("#bw2").val(data[0].propane);
+             $("#bx2").val(data[0].propylene);
+             $("#syj2").val(data[0].petroleumcoke);
+        },   
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
 }
 
@@ -46,10 +77,13 @@ function getHkzssl() {
         type: "post",
         url: "/ERPandBI/hkzssl",
         async: false,
-        success: function () {
+        success: function (data) {
             //更新数据
-            setHkzssl();
+            setHkzssl(data);
         },
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
 }
 
@@ -58,10 +92,13 @@ function getJhzxl() {
         type: "post",
         url: "/ERPandBI/jhzxl",
         async: false,
-        success: function () {
+        success: function (data) {
             //更新数据
-            setJhzxl();
+            setJhzxl(data);
         },
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
 }
 
@@ -70,10 +107,13 @@ function getKc() {
         type: "post",
         url: "/ERPandBI/kc",
         async: false,
-        success: function () {
+        success: function (data) {
             //更新数据
-            setKc();
+            setKc(data);
         },
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
 }
 
@@ -82,10 +122,13 @@ function getSynhzb() {
         type: "post",
         url: "/ERPandBI/synhzb",
         async: false,
-        success: function () {
+        success: function (data) {
             //更新数据
-            setSynhzb();
+            setSynhzb(data);
         },
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
 }
 
@@ -94,10 +137,13 @@ function getXsqk() {
         type: "post",
         url: "/ERPandBI/xsqk",
         async: false,
-        success: function () {
+        success: function (data) {
             //更新数据
-            setXsqk();
+            setXsqk(data);
         },
+        error: function (data) {
+            alert("数据获取失败！")
+        }
     });
 }
 
@@ -106,16 +152,17 @@ function getYlly() {
         type: "post",
         url: "/ERPandBI/ylly",
         async: false,
-        success: function () {
+        success: function (data) {
             //更新数据
-            setYlly();
+            setYlly(data);
         },
     });
 }
 
-function setCbgc() {
-    var myChart = echarts.init(document.getElementById('cbgc'));
-
+function setCbgc(data) {
+    var myChart2 = echarts.init(document.getElementById('cbgc'));
+    var currentIndex2= -1;
+    var pieint=null;
     // 指定图表的配置项和数据
     var  option = {
      /*   title : {
@@ -169,11 +216,11 @@ function setCbgc() {
             left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
-            style: {
+           /* style: {
                 fill: '#92F1FF',  //text颜色
-                text: '共380项',
+                text: '',
                 font: '33px Microsoft YaHei'
-            }
+            }*/
         },
 
 
@@ -201,12 +248,27 @@ function setCbgc() {
                         },
                       
                     }*/
+                    emphasis: {
+                        show: true,
+                        formatter: "共{a|{c}}项",
+                        rich:{
+                            a:{
+                                fontSize: 41
+                            }
+                        },
+                        textStyle: {
+                            fontSize: 25,
+                            color: '#92F1FF'
+                        }
+                    },
                 },
+             
                 labelLine: {
                     show:false
                 },
+               /* data:[{value:data[0].production,name:'生产'}]*/
                 data:[
-                    {value:335, name:'生产',itemStyle:{ color: {
+                    {value:data[0].production, name:'生产',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -221,7 +283,7 @@ function setCbgc() {
                             }}
 
                     },
-                    {value:310, name:'物流',itemStyle:{ color: {
+                    {value:data[0].logistics, name:'物流',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -235,7 +297,7 @@ function setCbgc() {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:234, name:'人工',itemStyle:{ color: {
+                    {value:data[0].artificial, name:'人工',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -255,29 +317,52 @@ function setCbgc() {
 
 
     // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
-   /* pieint=setInterval(function () {
-        var dataLen = option.series.length;
+    myChart2.setOption(option);
+    pieint=setInterval(function () {
+        var dataLen = option.series[0].data.length;
         // 取消之前高亮的图形
-        myChart.dispatchAction({
+        myChart2.dispatchAction({
             type: 'downplay',
             seriesIndex: 0,
             dataIndex: currentIndex2
         });
         currentIndex2 = (currentIndex2 + 1) % dataLen;
         // 高亮当前图形
-        myChart.dispatchAction({
+        myChart2.dispatchAction({
             type: 'highlight',
             seriesIndex: 0,
             dataIndex: currentIndex2
         });
 
-    }, 3000);*/
+    }, 3000);
+
+
+
+
+
+/* pieint=setInterval(function () {
+     var dataLen = option.series.length;
+     // 取消之前高亮的图形
+     myChart.dispatchAction({
+         type: 'downplay',
+         seriesIndex: 0,
+         dataIndex: currentIndex2
+     });
+     currentIndex2 = (currentIndex2 + 1) % dataLen;
+     // 高亮当前图形
+     myChart.dispatchAction({
+         type: 'highlight',
+         seriesIndex: 0,
+         dataIndex: currentIndex2
+     });
+
+ }, 3000);*/
 }
 
-function setSynhzb() {
-    var myChart = echarts.init(document.getElementById('synhzb'));
-
+function setSynhzb(data) {
+    var myChart3 = echarts.init(document.getElementById('synhzb'));
+    var currentIndex2= -1;
+    var pieint=null;
     // 指定图表的配置项和数据
     var  option = {
        /* title : {
@@ -326,11 +411,11 @@ function setSynhzb() {
             left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
-            style: {
+           /* style: {
                 fill: '#92F1FF',  //text颜色
                 text: '共380项',
                 font: '33px Microsoft YaHei'
-            }
+            }*/
         },
 
 
@@ -349,17 +434,24 @@ function setSynhzb() {
                     position: 'center',
                     emphasis: {
                         show: true,
+                        formatter: "共{a|{c}}项",
+                        rich:{
+                            a:{
+                                fontSize: 41
+                            }
+                        },
                         textStyle: {
-                            fontSize: '25',
-                            fontWeight: '#92F1FF'
+                            fontSize: 25,
+                            color: '#92F1FF'
                         }
-                    }
+                    },
+                    
                 },
                 labelLine: {
                     show:false
                 },
                 data:[
-                    {value:335, name:'蒸汽消耗',itemStyle:{ color: {
+                    {value: data[0].steamconsumption, name:'蒸汽消耗',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -374,7 +466,7 @@ function setSynhzb() {
                             }}
 
                     },
-                    {value:234, name:'水电消耗',itemStyle:{ color: {
+                    {value:data[0].waterandelectricity, name:'水电消耗',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -395,12 +487,49 @@ function setSynhzb() {
 
 
     // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
+    myChart3.setOption(option);
+    pieint=setInterval(function () {
+        var dataLen = option.series[0].data.length;
+        // 取消之前高亮的图形
+        myChart3.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+        currentIndex2 = (currentIndex2 + 1) % dataLen;
+        // 高亮当前图形
+        myChart3.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+
+    }, 3000);
+/*
+    pieint1=setInterval(function () {
+        var dataLen = option.series[0].data.length;
+        // 取消之前高亮的图形
+        myChart3.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: currentIndex1
+        });
+        currentIndex1 = (currentIndex2 + 1) % dataLen;
+        // 高亮当前图形
+        myChart3.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: currentIndex1
+        });
+
+    }, 3000);*/
 }
 
-function setXsqk() {
-    var myChart = echarts.init(document.getElementById('xsqk'));
 
+function setXsqk(data) {
+    var myChart4 = echarts.init(document.getElementById('xsqk'));
+    var currentIndex2= -1;
+    var pieint=null;
     // 指定图表的配置项和数据
     var  option = {
      /*   title : {
@@ -449,11 +578,6 @@ function setXsqk() {
             left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
-            style: {
-                fill: '#92F1FF',  //text颜色
-                text: '共380项',
-                font: '33px Microsoft YaHei'
-            }
         },
 
 
@@ -472,17 +596,23 @@ function setXsqk() {
                     position: 'center',
                     emphasis: {
                         show: true,
+                        formatter: "共{a|{c}}项",
+                        rich:{
+                            a:{
+                                fontSize: 41
+                            }
+                        },
                         textStyle: {
-                            fontSize: '25',
-                            fontWeight: '#92F1FF'
+                            fontSize: 25,
+                            color: '#92F1FF'
                         }
-                    }
+                    },
                 },
                 labelLine: {
                     show:false
                 },
                 data:[
-                    {value:2354, name:'汽油',itemStyle:{ color: {
+                    {value: data[0].gasoline, name:'汽油',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -497,7 +627,7 @@ function setXsqk() {
                             }}
 
                     },
-                    {value:3241, name:'柴油',itemStyle:{ color: {
+                    {value:data[0].diesel, name:'柴油',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -511,7 +641,7 @@ function setXsqk() {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:1356, name:'液化气',itemStyle:{ color: {
+                    {value:data[0].liquidgas, name:'液化气',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -524,7 +654,7 @@ function setXsqk() {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:2365, name:'丙烷',itemStyle:{ color: {
+                    {value:data[0].propane, name:'丙烷',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -537,7 +667,7 @@ function setXsqk() {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:1241, name:'丙烯',itemStyle:{ color: {
+                    {value:data[0].propylene, name:'丙烯',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -550,7 +680,7 @@ function setXsqk() {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:524, name:'石油焦',itemStyle:{ color: {
+                    {value:data[0].petroleumcoke, name:'石油焦',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -567,14 +697,31 @@ function setXsqk() {
             }
         ]
     };
-
+  
 
     // 使用刚指定的配置项和数据显示图表。
-    myChart.setOption(option);
+    myChart4.setOption(option);
+    pieint=setInterval(function () {
+        var dataLen = option.series[0].data.length;
+        // 取消之前高亮的图形
+        myChart4.dispatchAction({
+            type: 'downplay',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
+        currentIndex2 = (currentIndex2 + 1) % dataLen;
+        // 高亮当前图形
+        myChart4.dispatchAction({
+            type: 'highlight',
+            seriesIndex: 0,
+            dataIndex: currentIndex2
+        });
 
+    }, 3000);
 }
 
-function setHkzssl() {
+
+function setHkzssl(data) {
     var myChart = echarts.init(document.getElementById('hkzssl'));
 
     // 指定图表的配置项和数据
@@ -682,7 +829,7 @@ function setHkzssl() {
                 name:'目标',
                 type:'bar',
                 barWidth : 8,
-                data:[320, 472, 411, 434, 320, 460, 260],
+                data:[data[0].atmosphericunit,data[0].gasolinehydrogenation, data[0].dieselhydrogenation, data[0].cokingunit, data[0].dieselconversion, data[0].repressingdevice,  data[0].mtbe],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -702,7 +849,7 @@ function setHkzssl() {
                 name:'日收率',
                 type:'bar',
                 barWidth : 8,
-                data:[200, 442, 285, 314, 230, 300, 400],
+                data:[data[1].atmosphericunit, data[1].gasolinehydrogenation, data[1].dieselhydrogenation, data[1].cokingunit, data[1].dieselconversion,  data[1].repressingdevice, data[1].mtbe],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -722,7 +869,7 @@ function setHkzssl() {
                 name:'月收率',
                 type:'bar',
                 barWidth : 8,
-                data:[200, 412, 280, 330, 410, 385, 310],
+                data:[data[2].atmosphericunit, data[2].gasolinehydrogenation, data[2].dieselhydrogenation, data[2].cokingunit, data[2].dieselconversion,  data[2].repressingdevice, data[2].mtbe],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -747,7 +894,7 @@ function setHkzssl() {
 
 }
 
-function setYlly() {
+function setYlly(data) {
     var myChart = echarts.init(document.getElementById('ylly'));
 
     // 指定图表的配置项和数据
@@ -855,7 +1002,7 @@ function setYlly() {
             //                barWidth:27,
             barWidth : 12,
             
-            data: [210, 470, 300, 480, 400, 500],
+            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -889,7 +1036,7 @@ function setYlly() {
                 symbolSize: 8,//拐点大小
                 /*yAxisIndex: 1,
                 xAxisIndex: 1,*/
-                data: [210, 470, 300, 480, 400, 500],
+                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
                 itemStyle: {
                     normal: {
                         color: '#ee992f',
@@ -945,7 +1092,7 @@ function setYlly() {
 
 }
 
-function setKc() {
+function setKc(data) {
     var myChart = echarts.init(document.getElementById('kc'));
 
     // 指定图表的配置项和数据
@@ -969,6 +1116,7 @@ function setKc() {
             }
         },
         xAxis: [{
+            
             type: 'category',
             data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
             axisPointer: {
@@ -978,6 +1126,7 @@ function setKc() {
             axisLabel: {
 
                 textStyle: {
+                    
                     color: '#51e5fc'
                 }
             },
@@ -1053,7 +1202,7 @@ function setKc() {
             //                barWidth:27,
             barWidth : 12,
 
-            data: [210, 470, 300, 480, 400, 500],
+            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -1087,7 +1236,7 @@ function setKc() {
                 symbolSize: 8,//拐点大小
                 /*yAxisIndex: 1,
                 xAxisIndex: 1,*/
-                data: [210, 470, 300, 480, 400, 500],
+                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
                 itemStyle: {
                     normal: {
                         color: '#06bbff',
@@ -1143,7 +1292,7 @@ function setKc() {
 
 }
 
-function setJhzxl() {
+function setJhzxl(data) {
     var myChart = echarts.init(document.getElementById('jhzxl'));
 
     // 指定图表的配置项和数据
@@ -1222,7 +1371,7 @@ function setJhzxl() {
                         }
                     }
                 },
-                data:[136,375,380,449,114,267,142,318,357,193,421,391]
+                data:[data[0].jan,data[0].feb,data[0].mar,data[0].apr,data[0].may,data[0].jun,data[0].july,data[0].aug,data[0].sep,data[0].oct,data[0].nov,data[0].dece]
             },
             {
                 name:'计划执行',
@@ -1250,7 +1399,7 @@ function setJhzxl() {
                 }
                 
                 },
-                data:[610, 312, 221,654, 910, 630, 310, 521, 354, 560, 830, 310]
+                data:[data[1].jan,data[1].feb,data[1].mar,data[1].apr,data[1].may,data[1].jun,data[1].july,data[1].aug,data[1].sep,data[1].oct,data[1].nov,data[1].dece]
             }
         ]
     };

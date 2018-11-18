@@ -9,6 +9,9 @@
     <result column="propylene" property="propylene" jdbcType="INTEGER" />
     <result column="Petroleumcoke" property="petroleumcoke" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getXsqk" resultMap="BaseResultMap">
+    select * from wdth_erp_xsqk
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Xsqk" >
     insert into wdth_erp_xsqk (gasoline, diesel, Liquidgas, 
       propane, propylene, Petroleumcoke

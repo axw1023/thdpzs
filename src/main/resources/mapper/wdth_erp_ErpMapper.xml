@@ -60,4 +60,7 @@
       </if>
     </trim>
   </insert>
+  <select id="getErp" resultMap="BaseResultMap">
+    select * from wdth_erp_erp
+  </select>
 </mapper>
