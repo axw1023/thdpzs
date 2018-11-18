@@ -186,11 +186,9 @@ function getNumByGrade() {
           bing(rest) ;
 
 
-        },
-
-        error: function (rest) {
-            alert("数据获取失败！")
         }
+
+
     });
 
 }
