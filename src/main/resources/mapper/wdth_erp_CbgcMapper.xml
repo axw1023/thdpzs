@@ -37,4 +37,7 @@
       </if>
     </trim>
   </insert>
+  <select id="getCbgc" resultMap="BaseResultMap">
+    select * from wdth_erp_cbgc
+  </select>
 </mapper>

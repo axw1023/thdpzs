@@ -5,6 +5,9 @@
     <result column="Steamconsumption" property="steamconsumption" jdbcType="INTEGER" />
     <result column="Waterandelectricity" property="waterandelectricity" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getSynhzb" resultMap="BaseResultMap">
+    select * from wdth_erp_synhzb
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Synhzb" >
     insert into wdth_erp_synhzb (Steamconsumption, Waterandelectricity
       )
