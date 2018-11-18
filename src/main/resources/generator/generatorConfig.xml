@@ -32,14 +32,9 @@
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
 
-        <table tableName="wdth_erp_cbgc" domainObjectName="wdth_erp_Cbgc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_erp" domainObjectName="wdth_erp_Erp" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_hkzssl" domainObjectName="wdth_erp_Hkzssl" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_jhzxl" domainObjectName="wdth_erp_Jhzxl" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_kc" domainObjectName="wdth_erp_Kc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_synhzb" domainObjectName="wdth_erp_Synhzb" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_xsqk" domainObjectName="wdth_erp_Xsqk" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-        <table tableName="wdth_erp_ylly" domainObjectName="wdth_erp_Ylly" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="wdth_tb_it_yjszxzy" domainObjectName="Wdth_tb_it_yjszxzy" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
 
     </context>
 </generatorConfiguration>
