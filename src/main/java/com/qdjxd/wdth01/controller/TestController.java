@@ -18,13 +18,13 @@ public class TestController {
 
     @RequestMapping("/IT")
     public String index(){
-        return "test";
+        return "test/test";
     }
 
     //视频测试
     @RequestMapping("/vadio")
     public String vadio(){
-        return "vadio";
+        return "test/vadio";
     }
 
 
@@ -38,7 +38,13 @@ public class TestController {
     //图片飞入测试
     @RequestMapping("/img")
     public String imgEffect(){
-        return "imgEffect";
+        return "test/imgEffect";
+    }
+
+    //粒子流光背景测试
+    @RequestMapping("/lzlg")
+    public String lzlg(){
+        return "test/guangyun";
     }
 
 

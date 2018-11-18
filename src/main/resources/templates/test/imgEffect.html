@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/Scripts/imgEffect/coolShow.css}">
+    <!--<script type="text/javascript"   th:src="@{/Scripts/imgEffect/jquery-1.7.2.min.js}"></script>-->
+    <!--<script type="text/javascript" th:href="@{/Scripts/imgEffect/coolShow.js}"></script>-->
+    <script type="text/javascript" src = "../Scripts/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src = "../Scripts/imgEffect/coolShow.js"></script>
+</head>
+<body>
+<p style = "color:#334960">点击图标进行展示</p>
+<div class = "main">
+    <div id = "coolShow"></div>
+    <div id = "handBar"></div>
+    <!--<img id = "img" src="../images/imgEffect/1.png">-->
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+
+
+        $('#coolShow').coolShow({
+            imgSrc:['../images/imgEffect/1.png','../images/imgEffect/2.png','../images/imgEffect/3.png'],
+            speed:40
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>

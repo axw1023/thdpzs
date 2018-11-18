@@ -9,8 +9,16 @@
     <!--外部js-->
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+
+    <script type="text/javascript">
+
+        // 页面跳转
+        function turnTo(){
+            window.location.href="/turnToEquipment"
+        }
+    </script>
 </head>
-<div style="background: #081037;width: 2816px;height: 512px;backgroun">
+<div onclick="turnTo()" style="background: #081037;width: 2816px;height: 512px;backgroun">
     
     <div style="width: 20px;height: 512px;float: left;"></div>
     <div style="width: 442px;height: 512px;float: left;">

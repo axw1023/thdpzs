@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.wdth_tb_it_gjtjMapper" >
+  <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_tb_it_gjtj" >
+    <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    sheetid, type, num
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from wdth_tb_it_gjtj
+    where sheetid = #{sheetid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from wdth_tb_it_gjtj
+    where sheetid = #{sheetid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_tb_it_gjtj" >
+    insert into wdth_tb_it_gjtj (sheetid, type, num
+      )
+    values (#{sheetid,jdbcType=INTEGER}, #{type,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qdjxd.wdth01.model.wdth_tb_it_gjtj" >
+    insert into wdth_tb_it_gjtj
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sheetid != null" >
+        sheetid,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sheetid != null" >
+        #{sheetid,jdbcType=INTEGER},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qdjxd.wdth01.model.wdth_tb_it_gjtj" >
+    update wdth_tb_it_gjtj
+    <set >
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        num = #{num,jdbcType=INTEGER},
+      </if>
+    </set>
+    where sheetid = #{sheetid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qdjxd.wdth01.model.wdth_tb_it_gjtj" >
+    update wdth_tb_it_gjtj
+    set type = #{type,jdbcType=VARCHAR},
+      num = #{num,jdbcType=INTEGER}
+    where sheetid = #{sheetid,jdbcType=INTEGER}
+  </update>
+</mapper>
