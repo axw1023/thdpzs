@@ -17,37 +17,168 @@
             window.location.href="/turnToEquipment"
         }
     </script>
+    <style type="text/css">
+        #qy{position:absolute;height: 26px;width: 51px ;left:2011px;top: 306px;z-index:999}
+        #qy1{position:absolute;height: 27px;width: 82px ;left:1997px;top: 393px;z-index:999}
+        #cy{position:absolute;height: 26px;width: 51px ;left:2208px;top: 408px;z-index:999}
+        #cy1{position:absolute;height: 26px;width: 75px ;left:2200px;top: 498px;z-index:999}
+        #yhq{position:absolute;height: 26px;width: 78px ;left:2376px;top: 274px;z-index:999}
+        #yhq1{position:absolute;height: 26px;width: 51px ;left:2382px;top: 363px;z-index:999}
+        #bw{position:absolute;height: 26px;width: 51px ;left:3163px;top: 274px;z-index:999}
+        #bw1{position:absolute;height: 26px;width: 80px ;left:3151px;top: 364px;z-index:999}
+        #bx{position:absolute;height: 26px;width: 51px ;left:3370px;top: 410px;z-index:999}
+        #bx1{position:absolute;height: 26px;width: 80px ;left:3362px;top: 501px;z-index:999}
+        #syj{position:absolute;height: 26px;width: 77px ;left:3555px;top: 305px;z-index:999}
+        #syj1{position:absolute;height: 26px;width: 80px ;left:3571px;top: 397px;z-index:999}
+        #erp{position:absolute;height: 34px;width: 122px ;left:2758px;top: 383px;z-index:999}
+
+
+        .y {
+            width: 442px;
+            height: 231px;
+            background: url("../image/y.png");
+            margin: 0;
+
+        }
+        .titl{ height: 50px;width: 331px ;text-align:center;background: url("../image/331.png") no-repeat;margin: 0 auto;z-index:999}
+        #q,#q1,#q2{
+            background: url("../images/ERPandBI/left.png");
+        }
+        .by{background: url("../images/ERPandBI/right.png")}
+        .center{background: url("../image/ERPcenter.png");width: 1954px;height: 1022px;
+        }
+        span{size: 25px;
+            color: #92F1FF;}
+        input{text-align:center;height: 27px;width: 82px}
+    </style>
+
 </head>
 <div onclick="turnTo()" style="background: #081037;width: 2816px;height: 512px;backgroun">
-    
-    <div style="width: 20px;height: 512px;float: left;"></div>
-    <div style="width: 442px;height: 512px;float: left;">
-        <div style="width: 442px;height:20px;"></div>
-        <div style="width: 442px;height: 231px;" id="cbgc">成本构成</div>
-        <div style="height: 13px;width: 442px;"></div>
-        <div id="ylly" style="height: 231px;width: 442px;">原料来源</div>
+<!--<input value="${cbgc.production}">-->
+
+
+<div style="/*background: #081037;*/width: 5632px;height: 1024px;" id="all">
+
+    <div style="width: 40px;height: 1024px;float: left;"></div>
+    <div style="width: 884px;height: 1024px;float: left;">
+        <div style="width: 884px;height:40px;"></div>
+        <!--<div></div>-->
+        <div class="y" style="width: 884px;height: 462px" id="q">
+        <div style="height: 50px;width: 884px;margin: 0 auto;" class="title" >
+            <div class="titl"><span style="text-align: center;display:block;">成本构成</span></div>
+        </div>
+        <div style="width: 884px;height: 412px;" id="cbgc" class="yy">
+        </div>
+        </div>
+        <div style="height: 26px;width: 884px;"></div>
+        <div class="y" style="width: 884px;height: 462px" >
+        <div style="height: 50px;width: 884px;margin: 0 auto;z-index:999" class="title">
+            <div class="titl"> <span style="text-align: center;display:block;">原料来源</span></div>
+        </div>
+        <div id="ylly" style="height: 412px;width: 884px;"class="yy">
+            <span >原料来源</span>
+        </div>
+        </div>
     </div>
-    <div style="width: 20px;height: 512px;float: left;"></div>
-    <div style="width: 442px;height: 512px;float: left;">
-        <div style="width: 442px;height:20px;"></div>
-        <div style="width: 442px;height: 231px;" id="synhzb">上月能耗指标</div>
-        <div style="height: 13px;width: 442px;"></div>
-        <div id="kc" style="height: 231px;width: 442px;">库存</div>
+    <div style="width: 30px;height: 1024px;float: left;"></div>
+    <div style="width: 884px;height: 1024px;float: left;">
+        <div style="width: 884px;height:40px;"></div>
+        <div class="y" style="width: 884px;height: 462px" id="q2">
+        <div style="height: 50px;width: 884px;margin: 0 auto;z-index:999" class="title">
+            <div class="titl"> <span style="text-align: center;display:block;">上月能耗指标</span></div>
+        </div>
+        <div style="width: 884px;height: 412px;" id="synhzb" class="yy">
+            <div class="titl">  <span>上月能耗指标</span></div>
+        </div>
+        </div>
+        <div style="height: 26px;width: 884px;"></div>
+        <div class="y" style="width: 884px;height: 462px">
+        <div style="height: 50px;width: 884px;margin: 0 auto;z-index:999" class="title">
+            <div class="titl"><span style="text-align: center;display:block;">库存</span></div>
+        </div>
+        <div id="kc" style="height: 412px;width: 884px;"class="yy">
+            <span>库存</span>
+        </div>
+        </div>
     </div>
-    <div style="float: left;width: 977px;height: 511px;">
-        <img src="../image/ERPcenter.png" style="width: 977px;height: 511px">
+    <div style="float: left;width: 1955px;height: 1022px;" class="center">
+        <!--<input value="{cbgc.production}">-->
+        <div id="erp">
+            <span style="width:122px;height:34px;font-size:38px;font-family:MicrosoftYaHei-Bold;font-weight:bold;color:rgba(146,241,255,1);line-height:34px;">ERP/BI</span>
+        </div>
+        <div id="qy">
+            <span style="color: #00FCFF;size: 26px">汽油</span>
+        </div>
+        <div id="cy">
+            <span style="color: #00FCFF;size: 26px">柴油</span>
+        </div>
+        <div id="yhq">
+            <span style="color: #00FCFF;size: 26px">液化气</span>
+        </div>
+        <div id="bw">
+            <span style="color: #00FCFF;size: 26px">丙烷</span>
+        </div>
+        <div id="bx">
+            <span style="color: #00FCFF;size: 26px">丙烯</span>
+        </div>
+        <div id="syj">
+            <span style="color: #00FCFF;size: 26px">石油焦</span>
+        </div>
+        <div id="qy1">
+           <input id="qy2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
+        </div>
+        <div id="cy1">
+            <input id="cy2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
+        </div>
+        <div id="yhq1">
+            <input id="yhq2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
+        </div>
+        <div id="bw1">
+            <input id="bw2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
+        </div>
+        <div id="bx1">
+            <input id="bx2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
+        </div>
+        <div id="syj1">
+            <input id="syj2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
+        </div>
+       <!-- <img src="../image/ERPcenter.png" style="width: 1954px;height: 1022px">-->
     </div>
-<div style="height: 512px;width: 899px;float: left">
-    <div style="height: 20px;width: 899px"></div>
-    <div style="width: 899px;height: 231px">
-        <div style="width: 422px;height: 231px;float: left" id="xsqk">销售情况</div>
-        <div style="width: 15px;height: 231px;float: left"></div>
-        <div style="width: 422px;height: 231px;float: left" id="hkzssl">海科装饰收率</div>
+<div style="height: 1024px;width: 1798px;float: left">
+    <div style="height: 40px;width: 1798px"></div>
+    <div style="width: 1798px;height: 462px">
+        <div class="y" style="width: 884px;height: 462px;float: left" id="q1">
+        <div style="height: 50px;width: 884px;margin: 0 auto;z-index:999" class="title">
+            <div class="titl"> <span style="text-align: center;display:block;">销售情况</span></div>
+        </div>
+        <div style="width: 844px;height: 412px;float: left" id="xsqk" class="yy">
+        </div>
+        </div>
+        <div style="width: 30px;height: 412px;float: left;"></div>
+    <div class="y" style="width: 884px;height: 462px;float: left">
+        <div style="height: 50px;width: 884px;margin: 0 auto;z-index:999" class="title">
+            <div class="titl"> <span style="text-align: center;display:block;">海科装饰收率</span></div>
+        </div>
+        <div style="width: 844px;height: 412px;float: left" id="hkzssl" class="yy">
+        </div>
+        </div>
     </div>
-    <div style="width: 899px;height: 20px"></div>
-    <div style="width: 899px;height: 231px" id="jhzxl">计划执行率</div>
+    <div style="width: 1798px;height: 40px"></div>
+<div class="by" style="width: 1798px;height: 462px" >
+    <div style="height: 50px;width: 1798px;margin: 0 auto;z-index:999" class="title">
+        <div class="titl">  <span style="text-align: center;display:block;">计划执行率</span></div>
+    </div>
+    <div style="width: 1798px;height: 412px" id="jhzxl">
+
+    </div>
 </div>
 </div>
+</div>
+<!--<div style="background: #1fcf6d">
+    <div style="background: #066197">
+        <div style="background: red;margin: 0 auto;z-index:999"></div>
+    </div>
+</div>-->
 </body>
 <script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI.js}"></script>
 </html>

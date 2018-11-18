@@ -7,7 +7,7 @@ $(function () {
 });
 
 // 告警统计数据查询
-function getGjtj() {
+function getGjtj( ) {
     $.ajax({
         url: "/IT/getGjtj",
         type: "post",
