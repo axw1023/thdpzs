@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #img{
+            height: 958px;
+            width: 5266px;
+            background-image: url("../../images/welcome/welcome.png");
+        }
+    </style>
+    <script type="text/javascript">
+
+        // 页面跳转
+        function turnTo(){
+            $.ajax({
+                url: "/IT/getGjtj",
+                type: "post",
+                async: false,
+                data: {pointType:"0000001"},
+                success: function (result) {
+                    //更新数据
+                    setGjtj(result);
+                },
+            });
+        }
+    </script>
+</head>
+<body>
+<div id = img onclick="turnTo"></div>
+</body>
+</html>
