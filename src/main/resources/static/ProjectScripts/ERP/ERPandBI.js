@@ -1,8 +1,8 @@
-/*var currentIndex2= -1;
-var pieint=null;*/
+
 
 $(function () {
-    
+
+
     getCbgc();// 成本构成
     
     //上月能耗指标
@@ -395,7 +395,7 @@ function setSynhzb(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
-            data: ['蒸汽消耗','水电消耗'],
+            data: ['蒸汽消耗','水消耗','电消耗'],
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -466,7 +466,7 @@ function setSynhzb(data) {
                             }}
 
                     },
-                    {value:data[0].waterandelectricity, name:'水电消耗',itemStyle:{ color: {
+                    {value:data[0].waterconsumption, name:'水消耗',itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -476,6 +476,20 @@ function setSynhzb(data) {
                                     offset: 0, color: '#FF5959' // 0% 处的颜色
                                 }, {
                                     offset: 1, color: '#7F3C70' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}
+                    },
+                    {value:data[0].electricconsumption, name:'电消耗',itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#AA625A' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#91725F' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}
