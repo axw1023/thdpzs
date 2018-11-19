@@ -14,7 +14,7 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" >
     select   *    from wdth_tb_it_yjszxzy
   </select>
-
+  <!-- new查询数据-->
   <select id="getAll" resultMap="BaseResultMap" >
     select *  from wdth_tb_it_yjszxzy
   </select>
