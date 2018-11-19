@@ -1,8 +1,8 @@
-/*var currentIndex2= -1;
-var pieint=null;*/
+
 
 $(function () {
-    
+
+
     getCbgc();// 成本构成
     
     //上月能耗指标
