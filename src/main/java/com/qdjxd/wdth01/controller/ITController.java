@@ -2,11 +2,11 @@ package com.qdjxd.wdth01.controller;
 
 ;
 import com.qdjxd.wdth01.model.Wdth_tb_it_gjtj;
-import com.qdjxd.wdth01.model.Wdth_tb_it_yjszxzy;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
@@ -19,7 +19,7 @@ public class ITController {
 
     @Resource
     com.qdjxd.wdth01.dao.Wdth_tb_it_gjtjMapper it_gjtj;
-    com.qdjxd.wdth01.dao.Wdth_tb_it_yjszxzyMapper it_yjsz;
+
 
     @RequestMapping("/ITchar")
     public String index() {
@@ -34,13 +34,6 @@ public class ITController {
         return getNumByGrade;
     }
 
-    @RequestMapping(value = "/getNumByAll", method = RequestMethod.GET)
-    @ResponseBody
-    //获取ajax参数
-    public List<Wdth_tb_it_yjszxzy> getNumByAll() {
 
-        List<Wdth_tb_it_yjszxzy> getNumByAll = it_yjsz.getAll();
-        return getNumByAll;
-    }
 }
 
