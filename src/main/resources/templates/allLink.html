@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>全产业链</title>
+
+    <!--外部css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/allLink/allLink.css}">
+
+    <!--外部js-->
+    <script type="text/javascript"   th:src="@{/Scripts/jquery-3.3.1.js}"></script>
+    <script type="text/javascript"   th:src="@{/ProjectScripts/allLink/allLink.js}"></script>
+
+    <script type="text/javascript">
+
+        // 页面跳转
+        function turnTo(){
+            window.location.href="/turnToIT"
+        }
+    </script>
+</head>
+<body>
+<div id = "back" onclick="turnTo()">
+<!--管道-->
+<div id = "lineBack"></div>
+
+    <!--光点-->
+    <!--上方由左至右-->
+    <div id = "lightPoint"></div>
+    <div id = "lightPoint2"></div>
+    <div id = "lightPoint3"></div>
+    <div id = "lightPoint4Top"></div>
+    <div id = "lightPoint5Top"></div>
+    <!--下方由左至右-->
+    <div id = "lightPointbottom"></div>
+    <div id = "lightPointbottom1"></div>
+    <div id = "lightPointbottom2"></div>
+    <div id = "lightPointbottom3"></div>
+    <div id = "lightPointbottom4"></div>
+    <div id = "lightPointbottom5"></div>
+    <div id = "lightPointbottom6"></div>
+
+
+<!--背景图-->
+<div id = "imgBack"></div>
+<!--建筑物-->
+<div id = "imgBuliding"></div>
+<!--进厂量-->
+<div id = "factoryVolume"></div>
+    <div id = "factoryVolume_name">进厂量</div>
+    <div id = "factoryVolume_remark">(万吨)</div>
+    <div id = "factoryVolume_value">72</div>
+<!--日产量-->
+<div id = "dailyOutput">
+</div>
+    <div id = "dailyOutput_name">日产量</div>
+    <div id = "dailyOutput_remark">(万吨)</div>
+    <div id = "dailyOutput_value1">汽油<br/>柴油</div>
+    <div id = "dailyOutput_value2">10<br/>10</div>
+    <!--化工产品日产量-->
+<div id = "chemicalDailyOutput"></div>
+    <div id = "chemicalDailyOutput_name">化工产品<br/>&ensp;日产量</div>
+    <div id = "chemicalDailyOutput_remark">(万吨)</div>
+    <div id = "chemicalDailyOutput_value1">合成树脂<br/>原料纤维</div>
+    <div id = "chemicalDailyOutput_value2">10<br/>10</div>
+    <!--月出口-->
+<div id = "monthlyExport">
+</div>
+    <div id = "monthlyExport_name">月出口</div>
+    <div id = "monthlyExport_remark">(万桶)</div>
+    <div id = "monthlyExport_value1">汽油<br/>柴油</div>
+    <div id = "monthlyExport_value2">10<br/>10</div>
+</div>
+
+
+
+</body>
+</html>

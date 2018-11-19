@@ -10,7 +10,7 @@ window.onload = function() {
         vy: 4,
         height: 2,
         width: 2,
-        count: 300,
+        count: 40,
         color: "121, 162, 185",
         stroke: "130,255,255",
         dist: 6000,

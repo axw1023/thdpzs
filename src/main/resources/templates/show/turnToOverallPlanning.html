@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>智能制造总体规划</title>
+
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <style type="text/css">
+        #img{
+            height: 958px;
+            width: 5266px;
+            background-image: url("../../images/show/首页.png");
+        }
+    </style>
+    <script type="text/javascript">
+
+        // 页面跳转
+        function turnTo(){
+            window.location.href="/turnToAllLink"
+        }
+    </script>
+</head>
+<body>
+<div id = img onclick="turnTo()"></div>
+</body>
+</html>

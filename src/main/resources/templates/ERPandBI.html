@@ -9,6 +9,14 @@
     <!--外部js-->
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+
+    <script type="text/javascript">
+
+        // 页面跳转
+        function turnTo(){
+            window.location.href="/turnToEquipment"
+        }
+    </script>
     <style type="text/css">
         #qy{position:absolute;height: 26px;width: 51px ;left:2011px;top: 306px;z-index:999}
         #qy1{position:absolute;height: 27px;width: 82px ;left:1997px;top: 393px;z-index:999}
@@ -19,37 +27,38 @@
         #bw{position:absolute;height: 26px;width: 51px ;left:3163px;top: 274px;z-index:999}
         #bw1{position:absolute;height: 26px;width: 80px ;left:3151px;top: 364px;z-index:999}
         #bx{position:absolute;height: 26px;width: 51px ;left:3370px;top: 410px;z-index:999}
-        #bx1{position:absolute;height: 26px;width: 80px ;left:3362px;top: 501px;z-index:999}
+        #bx1{position:absolute;height: 26px;width: 80px ;left:3347px;top: 501px;z-index:999}
         #syj{position:absolute;height: 26px;width: 77px ;left:3555px;top: 305px;z-index:999}
-        #syj1{position:absolute;height: 26px;width: 80px ;left:3571px;top: 397px;z-index:999}
+        #syj1{position:absolute;height: 26px;width: 80px ;left:3551px;top: 397px;z-index:999}
         #erp{position:absolute;height: 34px;width: 122px ;left:2758px;top: 383px;z-index:999}
-        
-        
+
+
         .y {
             width: 442px;
             height: 231px;
             background: url("../image/y.png");
             margin: 0;
- 
+
         }
         .titl{ height: 50px;width: 331px ;text-align:center;background: url("../image/331.png") no-repeat;margin: 0 auto;z-index:999}
         #q,#q1,#q2{
             background: url("../images/ERPandBI/left.png");
         }
         .by{background: url("../images/ERPandBI/right.png")}
-        .center{background: url("../image/ERPcenter.png");width: 1954px;height: 1022px;
+        .center{background: url("../images/ERPandBI/ERPcenter.png");width: 1954px;height: 1022px;
         }
         span{size: 25px;
             color: #92F1FF;}
         input{text-align:center;height: 27px;width: 82px}
     </style>
-    
+
 </head>
+<div onclick="turnTo()" style="background: #081037;width: 2816px;height: 512px;backgroun">
 <!--<input value="${cbgc.production}">-->
 
 
 <div style="/*background: #081037;*/width: 5632px;height: 1024px;" id="all">
-    
+
     <div style="width: 40px;height: 1024px;float: left;"></div>
     <div style="width: 884px;height: 1024px;float: left;">
         <div style="width: 884px;height:40px;"></div>
@@ -95,7 +104,7 @@
     <div style="float: left;width: 1955px;height: 1022px;" class="center">
         <!--<input value="{cbgc.production}">-->
         <div id="erp">
-            <span style="width:122px;height:34px;font-size:38px;font-family:MicrosoftYaHei-Bold;font-weight:bold;color:rgba(146,241,255,1);line-height:34px;">ERP/BI</span>
+           <!-- <span style="width:122px;height:34px;font-size:38px;font-family:MicrosoftYaHei-Bold;font-weight:bold;color:rgba(146,241,255,1);line-height:34px;">ERP/BI</span>-->
         </div>
         <div id="qy">
             <span style="color: #00FCFF;size: 26px">汽油</span>
@@ -133,7 +142,7 @@
         <div id="syj1">
             <input id="syj2" style="BACKGROUND-COLOR: transparent;border: transparent;color: #00FCFF;font-size: 26px" readonly >
         </div>
-       <!-- <img src="../image/ERPcenter.png" style="width: 1954px;height: 1022px">-->
+       
     </div>
 <div style="height: 1024px;width: 1798px;float: left">
     <div style="height: 40px;width: 1798px"></div>
@@ -160,7 +169,7 @@
         <div class="titl">  <span style="text-align: center;display:block;">计划执行率</span></div>
     </div>
     <div style="width: 1798px;height: 412px" id="jhzxl">
-        
+
     </div>
 </div>
 </div>

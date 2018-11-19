@@ -1,0 +1,468 @@
+/*全局字间距*/
+*{letter-spacing:5px}
+
+/*背景*/
+#back{
+    position: absolute;
+    width: 5632px;
+    height: 1024px;
+}
+
+
+/*管线背景*/
+#lineBack{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 5632px;
+    height: 1024px;
+    background-image: url("../../images/allLink/线段.png");
+}
+
+/*!*亮点*!*/
+/*#lightPoint{*/
+    /*position:relative;*/
+    /*width: 104px;*/
+    /*height: 104px;*/
+    /*!*top: 640px;*!*/
+    /*!*right: 5349px;*!*/
+    /*!*background-image: url("../../images/allLink/椭圆.png");*!*/
+    /*background:red;*/
+    /*animation:mymove 5s infinite;*/
+    /*z-index:999;*/
+/*}*/
+
+
+#lightPoint
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_move 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_move
+{
+    from  {top:640px;left: 190px}
+    50% {top:640px;left:486px}
+100%{ top:460px;left:740px}
+}
+
+#lightPoint2
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_move2 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_move2
+{
+    from  {top:188px;left:780px}
+    40% {top:110px;left:940px}
+    100%{ top:110px;left:1250px}
+}
+#lightPoint3
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_move3 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_move3
+{
+    from  {top:80px;left:1360px}
+    60% {top:344px;left:1590px}
+    100%{ top:344px;left:1820px}
+}
+#lightPoint4Top
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_move4Top 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_move4Top
+{
+    from  {top:-30px;left:2230px}
+    15% {top:-90px;left:2360px}
+    70%{ top:-90px;left:3250px}
+    100%{ top:-5px;left:3335px}
+}
+
+
+#lightPoint5Top
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_move5Top 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_move5Top
+{
+    from  {top:20px;left:3430px}
+    60% {top:20px;left:3960px}
+    100%{ top:-100px;left:4100px}
+}
+
+#lightPointbottom
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom
+{
+    from  {top:-180px;left:1330px}
+    100% {top:450px;left:1890px}
+}
+
+#lightPointbottom1
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom1 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom1
+{
+    from  {top:20px;left:2420px}
+    30% {top:160px;left:2540px}
+    60% {top:160px;left:2840px}
+    100% {top:350px;left:2980px}
+}
+
+#lightPointbottom2
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom2 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom2
+{
+    from  {top:-90px;left:2490px}
+    20% {top:-15px;left:2570px}
+    100% {top:-15px;left:3850px}
+}
+
+#lightPointbottom3
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom3 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom3
+{
+    from  {top:-70px;left:3890px}
+    50% {top:-70px;left:3640px}
+    100% {top:165px;left:3430px}
+}
+
+#lightPointbottom4
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom4 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom4
+{
+    from  {top:-300px;left:3890px}
+    100% {top:-605px;left:4200px}
+}
+
+#lightPointbottom5
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom5 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom5
+{
+    from  {top:-319px;left:4020px}
+    70% {top:-319px;left:4560px}
+    100% {top:-405px;left:4680px}
+}
+
+#lightPointbottom6
+{
+    width: 104px;
+    height: 104px;
+    position:relative;
+    animation:lightPoint_moveBottom6 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_moveBottom6
+{
+    from  {top:-519px;left:4930px}
+    100% {top:-375px;left:5140px}
+}
+
+/*背景图*/
+#imgBack{
+    position: absolute;
+    width: 5632px;
+    height: 1024px;
+    top: 0px;
+    right: 0px;
+    background-image: url("../../images/allLink/背景.png");
+}
+
+/*建筑物*/
+#imgBuliding {
+    position: absolute;
+    width: 5632px;
+    height: 1024px;
+    top: 0px;
+    right: 0px;
+    background-image: url("../../images/allLink/建筑.png");
+}
+
+/*进场量*/
+#factoryVolume{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 345px;
+    right: 3885px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*进场量_name*/
+#factoryVolume_name{
+    position: absolute;
+    top: 380px;
+    right: 3991px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+    /*不要设置行间距，这样会在撑起行距大小的padding，导致top=margin+padding*/
+    /*line-height:70px;*/
+
+}
+
+/*进场量_remark*/
+#factoryVolume_remark{
+    position: absolute;
+    top: 387px;
+    right: 3919px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,215,0,1);
+}
+
+
+/*进场量_value*/
+#factoryVolume_value{
+    position: absolute;
+    top: 437px;
+    right: 3968px;
+    font-size:50px;
+    font-family:HYk1gj;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    /*设置行间距缩小默认行高？*/
+    line-height:30px;
+}
+
+/*日产量*/
+#dailyOutput{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 470px;
+    right: 2670px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*日产量_name*/
+#dailyOutput_name{
+    position: absolute;
+    top: 504px;
+    right: 2774px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+
+}
+
+/*日产量_remark*/
+#dailyOutput_remark{
+    position: absolute;
+    top: 511px;
+    right: 2701px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,215,0,1);
+}
+
+
+/*日产量_value1*/
+#dailyOutput_value1{
+    position: absolute;
+    top: 559px;
+    right: 2797px;
+    font-size:17px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*日产量_value2*/
+#dailyOutput_value2{
+    position: absolute;
+    top: 558px;
+    right: 2721px;
+    font-size:17px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*化工产品日产量*/
+#chemicalDailyOutput{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 282px;
+    right: 2427px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*化工产品日产量_name*/
+#chemicalDailyOutput_name{
+    position: absolute;
+    top: 296px;
+    right: 2516px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+
+}
+
+/*化工产品日产量_remark*/
+#chemicalDailyOutput_remark{
+    position: absolute;
+    top: 318px;
+    right: 2445px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,215,0,1);
+}
+
+
+/*化工产品日产量_value1*/
+#chemicalDailyOutput_value1{
+    position: absolute;
+    top: 371px;
+    right: 2533px;
+    font-size:20px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*化工产品日产量_value2*/
+#chemicalDailyOutput_value2{
+    position: absolute;
+    top: 370px;
+    right: 2468px;
+    font-size:17px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*月出口*/
+#monthlyExport{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 789px;
+    right: 2399px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*月出口_name*/
+#monthlyExport_name{
+    position: absolute;
+    top: 823px;
+    right: 2508px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+
+}
+
+/*月出口_remark*/
+#monthlyExport_remark{
+    position: absolute;
+    top: 830px;
+    right: 2433px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,215,0,1);
+}
+
+
+/*月出口_value1*/
+#monthlyExport_value1{
+    position: absolute;
+    top: 878px;
+    right: 2529px;
+    font-size:20px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*月出口_value2*/
+#monthlyExport_value2{
+    position: absolute;
+    top: 877px;
+    right: 2449px;
+    font-size:17px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
