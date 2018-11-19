@@ -1050,7 +1050,7 @@ function setYlly(data) {
                 symbolSize: 8,//拐点大小
                 /*yAxisIndex: 1,
                 xAxisIndex: 1,*/
-                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+                data: [data[1].gasoline, data[1].diesel, data[1].liquidgas, data[1].propane, data[1].propylene, data[1].petroleumcoke],
                 itemStyle: {
                     normal: {
                         color: '#ee992f',
@@ -1067,10 +1067,10 @@ function setYlly(data) {
                             y2: 1,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(255, 165,0,1)' // 0% 处的颜色
+                                color: 'rgba(255, 165,0,0.6)' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(255, 165,0,0.2)' // 100% 处的颜色
+                                color: 'rgba(255, 165,0,0)' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }
@@ -1216,7 +1216,7 @@ function setKc(data) {
             //                barWidth:27,
             barWidth : 12,
 
-            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+            data: [data[1].gasoline, data[1].diesel, data[1].liquidgas, data[1].propane, data[1].propylene, data[1].petroleumcoke],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -1267,10 +1267,10 @@ function setKc(data) {
                             y2: 1,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(0,0,255,1)' // 0% 处的颜色
+                                color: 'rgba(0,0,255,0.6)' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(0,0,255,0.2)' // 100% 处的颜色
+                                color: 'rgba(0,0,255,0)' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }

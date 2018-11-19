@@ -8,6 +8,7 @@
     <result column="propane" property="propane" jdbcType="INTEGER" />
     <result column="propylene" property="propylene" jdbcType="INTEGER" />
     <result column="Petroleumcoke" property="petroleumcoke" jdbcType="INTEGER" />
+    <result column="remarks" property="remarks" jdbcType="INTEGER" />
   </resultMap>
   <select id="getKc" resultMap="BaseResultMap">
     select * from wdth_erp_kc

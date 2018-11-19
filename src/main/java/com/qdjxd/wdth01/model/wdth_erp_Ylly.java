@@ -13,6 +13,16 @@ public class wdth_erp_Ylly {
 
     private Integer petroleumcoke;
 
+    private Integer remarks;
+
+    public Integer getRemarks() {
+        return remarks;
+    }
+
+    public void setRemarks(Integer remarks) {
+        this.remarks = remarks;
+    }
+
     public Integer getGasoline() {
         return gasoline;
     }
