@@ -1,0 +1,53 @@
+
+#backImg{
+    width: 5632px;
+    height: 1024px;
+    background-image: url("../../images/home/背景2.png");
+}
+
+#left1{
+    position: absolute;
+    top:166px;
+    left:296px;
+    width: 440px;
+    height: 574px;
+    background-image: url("../../images/home/默认.png");
+}
+
+
+#left2{
+    position: absolute;
+    top:350px;
+    left:892px;
+    width: 440px;
+    height: 574px;
+    background-image: url("../../images/home/默认.png");
+}
+
+
+#right1{
+    position: absolute;
+    top:347px;
+    left:4295px;
+    width: 440px;
+    height: 574px;
+    background-image: url("../../images/home/默认.png");
+}
+
+#right2{
+    position: absolute;
+    top:166px;
+    left:4971px;
+    width: 440px;
+    height: 574px;
+    background-image: url("../../images/home/默认.png");
+}
+
+#main{
+    position: absolute;
+    top:204px;
+    left:2041px;
+    width: 1554px;
+    height: 500px;
+    background-image: url("../../images/home/文字.png");
+}
