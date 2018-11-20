@@ -1,18 +1,25 @@
 *{margin: 0;padding: 0}
 body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软雅黑}
 #body{height: 100%;width: 100%}
-#GZ{}
-#GZ2{}
-#YY{position: absolute;top:50px; border: solid 1px white;width: 633px;height: 461px}
-#name{}
+
 .left{ float: left;}
 #two{ height: 947px;width: 633px ;float: left;margin-top: 39px;margin-left: 26px;/*border: 1px solid white*/}
 
+#wdt{ width: 140px;height:30px;background: black;opacity: 0.5}
+
+#wtt{}
+#wd2{ border: 1px solid black;height: 100px;width: 178px;position: absolute;top:110px;left:310px;}
+
+#ups1{
+    height: 30px;width: 250px;background: black;opacity: 0.5}
+/* 下部大的*/
+#ups2{height: 110px;width: 250px;}  #ups3{height: 110px;width :150px  ;float: left;background: honeydew;}
+#ups4{ float: right;height:110px;width:90px ;background: white; }
+#a2,#a3,#a4{ margin-top: 5px;height: 25px;width: 150px;background: black;opacity: 0.4}
+#a1{height: 25px;width: 150px;background: black;opacity: 0.5}
+
 #tb2{ width:530px;height: 330px;margin-left: 100px;margin-top: 28.5px;position: absolute;top:45px;}
- /*table { align-content: center;margin: 0 auto;border: 1px solid white;height: 80%;width: 100%;color: #92F1FF;*/
-    /*border-collapse:separate; border-spacing:10px 10px;}*/
- /*#TB table td{ border: 1px solid white;width: 40px }*/
-/*td{border: 1px solid white;}*/
+
 table {
     width: 630px;
     height: 350px;
@@ -36,9 +43,17 @@ table tr td {
     text-align: left;
     text-indent: -35px;
 }
-/*tr{ padding-top: 34px}*/
+
 #charzhe{ height:409px;width: 620px}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
 /*  视频与上方的边距 和 固定 视频 的div 超出div 的黑框 隐藏掉*/
-
+.ttt{ font-size: 20px;color: #68F1FC;font-weight:bold;}
+/*UPS neirong*/
+.biaoti{ text-align: left;margin-left: 27px;margin-top: 24px}
+#nr{margin-left: 27px;/*margin-top: 18px*/}
+.D3{font-size: 18px;color: #9FCCFF;margin-top: 11px }
+/* 温度的*/
+#nrwd{ margin-left: 65px; }
+#nrwd1{ margin-left: 65px; }
+#nr1{margin-left: 27px;/*margin-top: 18px*/}
 span{font-size: 25px;text-align: center;line-height: 51px;color: #92F1FF;font-family: 微软雅黑}

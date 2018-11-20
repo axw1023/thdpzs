@@ -25,8 +25,23 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
         #info{ width:633px;height: 461px;background:url("../image/633.png");
             margin-top: 25px;position: absolute}
         #tbl{ width:481px;height: 330px;background:url("../image/table.png");margin-left: 34px;margin-top: 38px;position: absolute;top:45px}
-        #Vide{ height:545px;width: 1033px ;margin-left:53px ;margin-top:135px ;overflow: hidden}
-        #five{height:947px;width: 1137px; float: left;background:url("../image/1135.png");margin-top: 39px;margin-left: 26px}
+        #Vide{ height:816px;width: 1133px ;/*margin-left:53px ;*/margin-top:28px ;background:url("../image/3dd.png") no-repeat;  background-size:1140px 816px; -moz-background-size:1140px 816px;position:relative;right: 30px;
+        }
+        #five{height:947px;width: 1137px; float: left;background:url("../image/1135.png");margin-top: 39px;margin-left: 26px;position: relative;z-index: 6}
+        #wd{height: 154px;width: 183px;position: absolute;top:483px;left:125px;background:url("../image/wd.png");z-index: 2}
+        #wd1{height: 154px;width: 183px;position: absolute;top:218px;left:415px;background:url("../image/wd.png");z-index: 2}
+        #UPS{height: 208px;width: 300px;position: absolute;top:545px;left:314px;background:url("../image/UPS.png");z-index: 1}
+        #bj{height: 170px;width: 237px;position: absolute;top:508px;left:627px;background:url("../image/bj.png");z-index: 1}
+        .lud{height: 36px;width: 36px;position: absolute;top:20px;left:117px;background:url("../image/lud.png");z-index: 1}
+        .lud1{height: 36px;width: 36px;position: absolute;top:20px;left:188px;background:url("../image/lud.png");z-index: 1}
+        .lud2{height: 36px;width: 36px;position: absolute;top:56px;left:188px;background:url("../image/lud.png");z-index: 1}
+        .lud3{height: 36px;width: 36px;position: absolute;top:92px;left:188px;background:url("../image/lud.png");z-index: 1}
+        .lud4{height: 36px;width: 36px;position: absolute;top:125px;left:188px;background:url("../image/lud.png");z-index: 1}
+        #wenduji{height: 25px;width: 25px;position: absolute;top:62px;left:27px;background:url("../image/wendu.png");z-index: 1 }
+        #shuidi{height: 25px;width: 25px;position: absolute;top:98px;left:27px;background:url("../image/shui.png");z-index: 1}
+        #wenduji1{height: 25px;width: 25px;position: absolute;top:62px;left:27px;background:url("../image/wendu.png");z-index: 1 }
+        #shuidi1{height: 25px;width: 25px;position: absolute;top:98px;left:27px;background:url("../image/shui.png");z-index: 1}
+
     </style>
 
     <script type="text/javascript">
@@ -116,16 +131,71 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
         <div class="oneBanner">
             <span>3D可视化机房</span>
         </div>
+        <!--ups-->
+        <div id="UPS">
+            <div class="biaoti">
+                <p class="ttt"> UPS </p>
+            </div>
+            <div id="nr">
+                <p class="D3">A相输出电流：&nbsp;18.4A</p>
+                <p class="D3">B相输出电流：&nbsp;7.0A</p>
+                <p class="D3">C相输出电流：&nbsp;5.2A</p>
+                <p class="D3">电池后备时间：&nbsp;119.0Min</p>
 
+            </div>
+        </div>
+        <div id="bj">
+            <div class="biaoti">
+                <p class="ttt">市电停电报警</p><div class="lud1"></div>
+            </div>
+            <div id="nr1">
+                <p class="D3">A相电压断相报警</p><div class="lud2"></div>
+                <p class="D3">B相电压断相报警</p><div class="lud3"></div>
+                <p class="D3">C相电压断相报警</p><div class="lud4"></div>
+
+
+            </div>
+
+
+        </div>
+        <div id="wd">
+            <div class="biaoti">
+                <p class="ttt">空调状态 </p><div class="lud"></div>
+            </div>
+            <div id="nrwd">
+                <div id="wenduji">
+
+                </div>
+                <div id="shuidi"></div>
+                <p class="D3">24.3℃</p>
+                <p class="D3">15.3%</p>
+
+
+            </div>
+
+        </div>
+        <div id="wd1">
+            <div class="biaoti">
+                <p class="ttt">空调状态 </p><div class="lud"></div>
+            </div>
+            <div id="nrwd1">
+                <div id="wenduji1">
+
+                </div>
+                <div id="shuidi1"></div>
+                <p class="D3">24.3℃</p>
+                <p class="D3">15.3%</p>
+
+
+            </div>
+        </div>
         <div id="Vide">
 
-            <img src="../image/3dd.png"/></div>
-            <!--<video id="ob" autoplay="autoplay"   loop="loop"    height="805" width="1033">-->
-                <!--<source src="../Video/video.MP4" >-->
-        <!--</div>-->
 
 
 
+        </div>
+        </div>
 </body>
 <!--<script type="text/javascript"   th:src="@{/ProjectScripts/it/it.js}"></script>-->
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itecharts.js}"></script>
