@@ -1,33 +1,33 @@
 package com.qdjxd.wdth01.model;
 
 public class wdth_erp_Synhzb {
-    private Integer steamconsumption;
+    private Integer sheetid;
 
-    private Integer waterconsumption;
+    private Integer num;
 
-    private Integer electricconsumption;
+    private String name;
 
-    public Integer getSteamconsumption() {
-        return steamconsumption;
+    public Integer getSheetid() {
+        return sheetid;
     }
 
-    public void setSteamconsumption(Integer steamconsumption) {
-        this.steamconsumption = steamconsumption;
+    public void setSheetid(Integer sheetid) {
+        this.sheetid = sheetid;
     }
 
-    public Integer getWaterconsumption() {
-        return waterconsumption;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setWaterconsumption(Integer waterconsumption) {
-        this.waterconsumption = waterconsumption;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public Integer getElectricconsumption() {
-        return electricconsumption;
+    public String getName() {
+        return name;
     }
 
-    public void setElectricconsumption(Integer electricconsumption) {
-        this.electricconsumption = electricconsumption;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

@@ -1,83 +1,53 @@
 package com.qdjxd.wdth01.model;
 
 public class wdth_erp_Hkzssl {
-    private Integer atmosphericunit;
+    private Integer sheetid;
 
-    private Integer gasolinehydrogenation;
+    private Integer num;
 
-    private Integer dieselhydrogenation;
+    private Integer day;
 
-    private Integer cokingunit;
+    private Integer mou;
 
-    private Integer dieselconversion;
-
-    private Integer repressingdevice;
-
-    private Integer mtbe;
-
-    private Integer remarks;
-
-    public Integer getAtmosphericunit() {
-        return atmosphericunit;
+    public Integer getDay() {
+        return day;
     }
 
-    public void setAtmosphericunit(Integer atmosphericunit) {
-        this.atmosphericunit = atmosphericunit;
+    public void setDay(Integer day) {
+        this.day = day;
     }
 
-    public Integer getGasolinehydrogenation() {
-        return gasolinehydrogenation;
+    public Integer getMou() {
+        return mou;
     }
 
-    public void setGasolinehydrogenation(Integer gasolinehydrogenation) {
-        this.gasolinehydrogenation = gasolinehydrogenation;
+    public void setMou(Integer mou) {
+        this.mou = mou;
     }
 
-    public Integer getDieselhydrogenation() {
-        return dieselhydrogenation;
+    private String name;
+
+    public Integer getSheetid() {
+        return sheetid;
     }
 
-    public void setDieselhydrogenation(Integer dieselhydrogenation) {
-        this.dieselhydrogenation = dieselhydrogenation;
+    public void setSheetid(Integer sheetid) {
+        this.sheetid = sheetid;
     }
 
-    public Integer getCokingunit() {
-        return cokingunit;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setCokingunit(Integer cokingunit) {
-        this.cokingunit = cokingunit;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public Integer getDieselconversion() {
-        return dieselconversion;
+    public String getName() {
+        return name;
     }
 
-    public void setDieselconversion(Integer dieselconversion) {
-        this.dieselconversion = dieselconversion;
-    }
-
-    public Integer getRepressingdevice() {
-        return repressingdevice;
-    }
-
-    public void setRepressingdevice(Integer repressingdevice) {
-        this.repressingdevice = repressingdevice;
-    }
-
-    public Integer getMtbe() {
-        return mtbe;
-    }
-
-    public void setMtbe(Integer mtbe) {
-        this.mtbe = mtbe;
-    }
-
-    public Integer getRemarks() {
-        return remarks;
-    }
-
-    public void setRemarks(Integer remarks) {
-        this.remarks = remarks;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }
