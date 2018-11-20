@@ -1,68 +1,293 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>首页</title>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Nifty Modal Window Effects</title>
+		<meta name="description" content="Nifty Modal Window Effects with CSS Transitions and Animations" />
+		<meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../ProjectScripts/home/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="../ProjectScripts/home/css/component.css" />
+		<script src="../ProjectScripts/home/js/modernizr.custom.js"></script>
+		<script type="text/javascript"   src="../../Scripts/jquery.min.js"></script>
+		<!--旋转需要引用的js-->
+		<script type="text/javascript" src = "../../Scripts/jquery.rotate.min.js"></script>
+		<script type="text/javascript" src = "../../Scripts/jquery.easing.min.js"></script>
 
-    <!--外部css-->
-    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/home/home.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/home/css/component.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/home/css/default.css}">
 
 
-    <!--外部js-->
-    <script type="text/javascript"   th:src="@{/Scripts/jquery-3.3.1.js}"></script>
-    <script type="text/javascript"   th:src="@{/ProjectScripts/home/home.js}"></script>
-    <script type="text/javascript"   th:src="@{/ProjectScripts/home/js/modalEffects.js}"></script>
-    <script type="text/javascript"   th:src="@{/ProjectScripts/home/js/classie.js}"></script>
+
+		<style type="text/css">
+
+			/*背景图*/
+			#body{
+				position: absolute;
+				width: 5632px;
+				height: 1024px;
+				background-image: url("../../images/home/背景2.png");
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+
+			}
+
+			#imgLeft1{
+				position: absolute;
+				top:166px;
+				left:296px;
+				width: 440px;
+				height: 574px;
+				background-image: url("../../images/home/默认.png");
+			}
 
 
-</head>
-<body>
-<!--<div id = "backImg"></div>-->
-<!--<div id = "left1"></div>-->
-<!--<div id = "left2" ></div>-->
-<!--<div id = "right1"></div>-->
-<!--<div id = "right2"></div>-->
-<!--模态框-->
-<div class="md-modal md-effect-1" id="modal-1">
-    <div class="md-content">
-        <h3>Modal Dialog</h3>
-        <div>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-            <button class="md-close">Close me!</button>
-        </div>
-    </div>
-</div>
-<div class="md-modal md-effect-2" id="modal-2">
-    <div class="md-content">
-        <h3>Modal Dialog</h3>
-        <div>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-                <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-            <button class="md-close">Close me!</button>
-        </div>
-    </div>
-</div>
+			#imgLeft2{
+				position: absolute;
+				top:350px;
+				left:892px;
+				width: 440px;
+				height: 574px;
+				background-image: url("../../images/home/默认.png");
+			}
 
-<div class="container">
 
-    <div class="main clearfix">
-        <div class="column">
-            <button class="md-trigger" data-modal="modal-1">Fade in &amp; Scale</button>
-            <button class="md-trigger" data-modal="modal-2">Slide in (right)</button>
+			#imgRight1{
+				position: absolute;
+				top:347px;
+				left:4295px;
+				width: 440px;
+				height: 574px;
+				background-image: url("../../images/home/默认.png");
+			}
 
-        </div>
-    </div>
-</div><!-- /container -->
-</body>
+			#imgRight2{
+				position: absolute;
+				top:166px;
+				left:4971px;
+				width: 440px;
+				height: 574px;
+				background-image: url("../../images/home/默认.png");
+			}
+
+			#imgPlay1{
+				position: absolute;
+				width: 2344px;
+				height: 906px;
+				background-image: url("../../images/home/文字.png");
+				background-repeat: no-repeat;
+			}
+
+			/*旋转光晕*/
+			#groate_L1
+			{
+				position: absolute;
+				top: 448px;
+				left: 334px;
+				/*倾斜角度*/
+				transform:rotateX(71deg);
+			}
+
+			#groate_L2
+			{
+				position: absolute;
+				top: 633px;
+				left: 928px;
+				/*倾斜角度*/
+				transform:rotateX(71deg);
+			}
+
+			#groate_R1
+			{
+				position: absolute;
+				top: 630px;
+				left: 4332px;
+				/*倾斜角度*/
+				transform:rotateX(71deg);
+			}
+
+			#groate_R2
+			{
+				position: absolute;
+				top: 448px;
+				left: 5006px;
+				/*倾斜角度*/
+				transform:rotateX(71deg);
+			}
+
+
+			.rotating{
+				width: 378px;
+				height: 378px;
+			}
+
+
+			/*文字*/
+			#word_mbyj{
+				position: absolute;
+				top:151px;
+				left: 400px;
+				width: 239px;
+				height: 51px;
+				font-size: 56px;
+				color:#82EEFF;
+				]
+			}
+			#word_jsjz{
+				position: absolute;
+				top:360px;
+				left: 991px;
+				width: 239px;
+				height: 51px;
+				font-size: 56px;
+				color:#82EEFF;
+			]
+			}
+			#word_cjcg{
+				position: absolute;
+				top:360px;
+				left: 4405px;
+				width: 239px;
+				height: 51px;
+				font-size: 56px;
+				color:#82EEFF;
+			]
+			}
+			#word_mbzw{
+				position: absolute;
+				top:151px;
+				left: 5056px;
+				width: 239px;
+				height: 51px;
+				font-size: 56px;
+				color:#82EEFF;
+			]
+			}
+		</style>
+
+		<script type="text/javascript">
+
+            $(document).ready(function(){
+                // 旋转
+                var angle = 0;
+                setInterval(function () {
+                    angle += 3;
+                    $(".rotating").rotate(angle);
+                }, 70);
+
+
+                // 自动切换图片
+                var i = 1;
+                //循环执行，每隔1秒钟执行一次 1000
+                var t1=window.setInterval(refreshCount, 5000);
+
+                function refreshCount() {
+
+
+                    // 定时触发点击事件(0123：左一、左二、右一、右二)
+                    if(1 == (i%4)){
+                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/目标愿景.png\")";
+                        document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                        document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+                    }else if(2 == (i%4)){
+                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/建设进展.png\")";
+                        document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                        document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+
+
+                    }else if(3 == (i%4)){
+                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/成绩成果.png\")";
+                        document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                        document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+                    }else if(0 == (i%4)){
+                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/计划展望.png\")";
+                        document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                        document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+
+                    }
+
+                    i++;
+
+                    $("#imgLeft1").click();
+
+                    setTimeout(function(){ $(".md-overlay").click(); },3000);
+
+
+                }
+                //去掉定时器的方法
+                //window.clearInterval(t1);
+            });
+
+
+            // 页面跳转
+            function turnTo(){
+                window.location.href="/turnToAllLink"
+            }
+		</script>
+	</head>
+	<body>
+	<div id = "body" onclick="turnTo()">
+		<div class="md-modal md-effect-2" id="modal-2">
+			<div class="md-content">
+				<div id = "imgPlay1">
+					<button id ="close" class="md-close"style="display: none">Close me!</button>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!--钻石图片-->
+		<div id = "imgLeft1" class="md-trigger" data-modal="modal-2"></div>
+		<div id = "imgLeft2" class="md-trigger" data-modal="modal-2"></div>
+		<div id = "imgRight1" class="md-trigger" data-modal="modal-2"></div>
+		<div id = "imgRight2" class="md-trigger" data-modal="modal-2"></div>
+
+
+
+
+
+		<!--关闭方法-->
+		<div class="md-overlay"></div><!-- the overlay element -->
+
+
+		<!--图片旋转光晕-->
+		<div id = "groate_L1">
+			<img class="rotating" src="../../images/imgRotate/rotate.png"/>
+		</div>
+		<div id = "groate_L2">
+			<img class="rotating" src="../../images/imgRotate/rotate.png"/>
+		</div>
+		<div id = "groate_R1">
+			<img class="rotating" src="../../images/imgRotate/rotate.png"/>
+		</div>
+		<div id = "groate_R2">
+			<img class="rotating" src="../../images/imgRotate/rotate.png"/>
+		</div>
+
+
+
+
+		<!--文字-->
+		<div id = "word_mbyj">目标愿景</div>
+		<div id = "word_jsjz">建设进展</div>
+		<div id = "word_cjcg">成绩成果</div>
+		<div id = "word_mbzw">计划展望</div>
+	</div>
+
+		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
+		<script src="../ProjectScripts/home/js/classie.js"></script>
+		<script src="../ProjectScripts/home/js/modalEffects.js"></script>
+
+		<!-- for the blur effect -->
+		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
+		<script>
+			// this is important for IEs
+			var polyfilter_scriptpath = '/js/';
+		</script>
+		<script src="../ProjectScripts/home/js/cssParser.js"></script>
+		<script src="../ProjectScripts/home/js/css-filters-polyfill.js"></script>
+	</body>
 </html>

@@ -9,7 +9,7 @@ public class HomeController {
     //  首页
     @RequestMapping("/home")
     public String index() {
-        return "home1";
+        return "home";
     }
 
 

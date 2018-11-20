@@ -27,23 +27,25 @@ perspective effects (not including the modals and the overlay).
 	position: absolute;
 	/*top: 50%;*/
 	/*left: 50%;*/
-	top:204px;
-	right:2037px;
+	top:63px;
+	right:1643px;
 	/*width: 50%;*/
 	/*max-width: 630px;*/
 	/*min-width: 320px;*/
 	/*height: auto;*/
-	width:1554px;
-	height: 500px;
+	width:2344px;
+	height: 906px;
 	z-index: 2000;
 	visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
-	-webkit-transform: translateX(-50%) translateY(-50%);
-	-moz-transform: translateX(-50%) translateY(-50%);
-	-ms-transform: translateX(-50%) translateY(-50%);
-	transform: translateX(-50%) translateY(-50%);
+
+	/*移动自身百分比位置*/
+	/*-webkit-transform: translateX(-50%) translateY(-50%);*/
+	/*-moz-transform: translateX(-50%) translateY(-50%);*/
+	/*-ms-transform: translateX(-50%) translateY(-50%);*/
+	/*transform: translateX(-50%) translateY(-50%);*/
 }
 
 .md-show {
