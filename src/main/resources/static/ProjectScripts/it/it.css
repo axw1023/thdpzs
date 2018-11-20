@@ -47,9 +47,13 @@ table tr td {
 #charzhe{ height:409px;width: 620px}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
 /*  视频与上方的边距 和 固定 视频 的div 超出div 的黑框 隐藏掉*/
-.ttt{ font-size: 20px;color: #68F1FC}
+.ttt{ font-size: 20px;color: #68F1FC;font-weight:bold;}
 /*UPS neirong*/
-#biaoti{ text-align: left;margin-left: 27px;margin-top: 24px}
+.biaoti{ text-align: left;margin-left: 27px;margin-top: 24px}
 #nr{margin-left: 27px;/*margin-top: 18px*/}
 .D3{font-size: 18px;color: #9FCCFF;margin-top: 11px }
+/* 温度的*/
+#nrwd{ margin-left: 65px; }
+#nrwd1{ margin-left: 65px; }
+#nr1{margin-left: 27px;/*margin-top: 18px*/}
 span{font-size: 25px;text-align: center;line-height: 51px;color: #92F1FF;font-family: 微软雅黑}
