@@ -2,14 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_HkzsslMapper" >
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Hkzssl" >
-    <result column="Atmosphericunit" property="atmosphericunit" jdbcType="INTEGER" />
-    <result column="Gasolinehydrogenation" property="gasolinehydrogenation" jdbcType="INTEGER" />
-    <result column="Dieselhydrogenation" property="dieselhydrogenation" jdbcType="INTEGER" />
-    <result column="Cokingunit" property="cokingunit" jdbcType="INTEGER" />
-    <result column="Dieselconversion" property="dieselconversion" jdbcType="INTEGER" />
-    <result column="Repressingdevice" property="repressingdevice" jdbcType="INTEGER" />
-    <result column="mtbe" property="mtbe" jdbcType="INTEGER" />
-    <result column="remarks" property="remarks" jdbcType="INTEGER" />
+    <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="day" property="day" jdbcType="INTEGER" />
+    <result column="mou" property="mou" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getHkzssl" resultMap="BaseResultMap">
     select * from wdth_erp_hkzssl
