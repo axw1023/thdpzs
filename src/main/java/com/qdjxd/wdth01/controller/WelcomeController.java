@@ -15,7 +15,7 @@ public class WelcomeController {
     //    智能制造总体规划
     @RequestMapping("/turnToOverallPlanning")
     public String turnToOverallPlanning() {
-        return "show/turnToOverallPlanning";
+        return "home";
     }
 
     //    全产业链√

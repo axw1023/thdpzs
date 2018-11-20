@@ -1,33 +1,33 @@
 package com.qdjxd.wdth01.model;
 
 public class wdth_erp_Cbgc {
-    private String production;
+    private Integer sheetid;
 
-    private String logistics;
+    private Integer num;
 
-    private String artificial;
+    private String name;
 
-    public String getProduction() {
-        return production;
+    public Integer getSheetid() {
+        return sheetid;
     }
 
-    public void setProduction(String production) {
-        this.production = production == null ? null : production.trim();
+    public void setSheetid(Integer sheetid) {
+        this.sheetid = sheetid;
     }
 
-    public String getLogistics() {
-        return logistics;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setLogistics(String logistics) {
-        this.logistics = logistics == null ? null : logistics.trim();
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public String getArtificial() {
-        return artificial;
+    public String getName() {
+        return name;
     }
 
-    public void setArtificial(String artificial) {
-        this.artificial = artificial == null ? null : artificial.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

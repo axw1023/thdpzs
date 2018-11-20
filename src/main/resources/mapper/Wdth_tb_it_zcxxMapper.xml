@@ -10,7 +10,7 @@
     sheetid, num, name
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from wdth_tb_it_zcxx
     where sheetid = #{sheetid,jdbcType=INTEGER}

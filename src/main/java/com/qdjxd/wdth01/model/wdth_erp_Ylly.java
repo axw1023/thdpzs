@@ -1,63 +1,43 @@
 package com.qdjxd.wdth01.model;
 
 public class wdth_erp_Ylly {
-    private Integer gasoline;
+    private Integer sheetid;
 
-    private Integer diesel;
+    private Integer num;
 
-    private Integer liquidgas;
-
-    private Integer propane;
-
-    private Integer propylene;
-
-    private Integer petroleumcoke;
-
-    public Integer getGasoline() {
-        return gasoline;
+    public Integer getNum1() {
+        return num1;
     }
 
-    public void setGasoline(Integer gasoline) {
-        this.gasoline = gasoline;
+    public void setNum1(Integer num1) {
+        this.num1 = num1;
     }
 
-    public Integer getDiesel() {
-        return diesel;
+    private Integer num1;
+    
+    private String name;
+
+    public Integer getSheetid() {
+        return sheetid;
     }
 
-    public void setDiesel(Integer diesel) {
-        this.diesel = diesel;
+    public void setSheetid(Integer sheetid) {
+        this.sheetid = sheetid;
     }
 
-    public Integer getLiquidgas() {
-        return liquidgas;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setLiquidgas(Integer liquidgas) {
-        this.liquidgas = liquidgas;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public Integer getPropane() {
-        return propane;
+    public String getName() {
+        return name;
     }
 
-    public void setPropane(Integer propane) {
-        this.propane = propane;
-    }
-
-    public Integer getPropylene() {
-        return propylene;
-    }
-
-    public void setPropylene(Integer propylene) {
-        this.propylene = propylene;
-    }
-
-    public Integer getPetroleumcoke() {
-        return petroleumcoke;
-    }
-
-    public void setPetroleumcoke(Integer petroleumcoke) {
-        this.petroleumcoke = petroleumcoke;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

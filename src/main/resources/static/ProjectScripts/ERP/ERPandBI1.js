@@ -19,6 +19,8 @@ $ (function () {
         CanvasParticle(config);
     }
 
-  
+    document.getElementById("3d1").playbackRate=0.6;
+    document.getElementById("3d2").playbackRate=0.6;
+    document.getElementById("3d3").playbackRate=0.6;
 });
 
