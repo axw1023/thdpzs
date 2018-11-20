@@ -59,12 +59,19 @@ function getErp() {
         async: false,
         success: function (data) {
             //更新数据
-            $("#qy2").val(data[0].gasoline);
-            $("#cy2").val(data[0].diesel);
-            $("#yhq2").val(data[0].liquidgas);
-            $("#bw2").val(data[0].propane);
-             $("#bx2").val(data[0].propylene);
-             $("#syj2").val(data[0].petroleumcoke);
+            $("#qy2").val(data[0].num);
+            $("#qy3").val(data[0].name);
+            $("#cy2").val(data[1].num);
+            $("#cy3").val(data[1].name);
+            $("#yhq2").val(data[2].num);
+            $("#yhq3").val(data[2].name);
+            $("#bw2").val(data[3].num);
+            $("#bw3").val(data[3].name);
+             $("#bx2").val(data[4].num);
+             $("#bx3").val(data[4].name);
+             $("#syj2").val(data[5].num);
+             $("#syj3").val(data[5].name);
+             
         },   
         error: function (data) {
             alert("数据获取失败！")
@@ -200,7 +207,7 @@ function setCbgc(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
-            data: ['生产','物流','人工'],
+            data: data.name,
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -268,7 +275,7 @@ function setCbgc(data) {
                 },
                /* data:[{value:data[0].production,name:'生产'}]*/
                 data:[
-                    {value:data[0].production, name:'生产',itemStyle:{ color: {
+                    {value:data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -283,7 +290,7 @@ function setCbgc(data) {
                             }}
 
                     },
-                    {value:data[0].logistics, name:'物流',itemStyle:{ color: {
+                    {value:data[1].num, name:data[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -297,7 +304,7 @@ function setCbgc(data) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:data[0].artificial, name:'人工',itemStyle:{ color: {
+                    {value:data[2].num, name:data[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -395,7 +402,7 @@ function setSynhzb(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
-            data: ['蒸汽消耗','水消耗','电消耗'],
+            data: data.name,
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -451,7 +458,7 @@ function setSynhzb(data) {
                     show:false
                 },
                 data:[
-                    {value: data[0].steamconsumption, name:'蒸汽消耗',itemStyle:{ color: {
+                    {value: data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -466,7 +473,7 @@ function setSynhzb(data) {
                             }}
 
                     },
-                    {value:data[0].waterconsumption, name:'水消耗',itemStyle:{ color: {
+                    {value:data[1].num, name:data[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -480,7 +487,7 @@ function setSynhzb(data) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:data[0].electricconsumption, name:'电消耗',itemStyle:{ color: {
+                    {value:data[2].num, name:data[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -576,7 +583,7 @@ function setXsqk(data) {
             orient: 'vertical',
             x:'565',
             y:'50',
-            data: ['汽油','柴油','液化气','丙烷','丙烯','石油焦'],
+            data:data.name,
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -626,7 +633,7 @@ function setXsqk(data) {
                     show:false
                 },
                 data:[
-                    {value: data[0].gasoline, name:'汽油',itemStyle:{ color: {
+                    {value: data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -641,7 +648,7 @@ function setXsqk(data) {
                             }}
 
                     },
-                    {value:data[0].diesel, name:'柴油',itemStyle:{ color: {
+                    {value:data[1].num, name:data[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -655,7 +662,7 @@ function setXsqk(data) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:data[0].liquidgas, name:'液化气',itemStyle:{ color: {
+                    {value:data[2].num, name:data[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -668,7 +675,7 @@ function setXsqk(data) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:data[0].propane, name:'丙烷',itemStyle:{ color: {
+                    {value:data[3].num, name:data[3].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -681,7 +688,7 @@ function setXsqk(data) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:data[0].propylene, name:'丙烯',itemStyle:{ color: {
+                    {value:data[4].num, name:data[4].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -694,7 +701,7 @@ function setXsqk(data) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:data[0].petroleumcoke, name:'石油焦',itemStyle:{ color: {
+                    {value:data[5].num, name:data[5].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -789,7 +796,7 @@ function setHkzssl(data) {
         xAxis : [
             {
                 type : 'category',
-                data : ['常压装置','汽油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
+                data : [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name,data[6].name],
                 splitLine:{show: false},//去除网格
                 axisLine: {
                     lineStyle: {
@@ -843,7 +850,7 @@ function setHkzssl(data) {
                 name:'目标',
                 type:'bar',
                 barWidth : 8,
-                data:[data[0].atmosphericunit,data[0].gasolinehydrogenation, data[0].dieselhydrogenation, data[0].cokingunit, data[0].dieselconversion, data[0].repressingdevice,  data[0].mtbe],
+                data:[data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num,data[6].num],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -863,7 +870,7 @@ function setHkzssl(data) {
                 name:'日收率',
                 type:'bar',
                 barWidth : 8,
-                data:[data[1].atmosphericunit, data[1].gasolinehydrogenation, data[1].dieselhydrogenation, data[1].cokingunit, data[1].dieselconversion,  data[1].repressingdevice, data[1].mtbe],
+                data:[data[0].day,data[1].day,data[2].day,data[3].day,data[4].day,data[5].day,data[6].day],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -883,7 +890,7 @@ function setHkzssl(data) {
                 name:'月收率',
                 type:'bar',
                 barWidth : 8,
-                data:[data[2].atmosphericunit, data[2].gasolinehydrogenation, data[2].dieselhydrogenation, data[2].cokingunit, data[2].dieselconversion,  data[2].repressingdevice, data[2].mtbe],
+                data:[data[0].mou,data[1].mou,data[2].mou,data[3].mou,data[4].mou,data[5].mou,data[6].mou],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -932,7 +939,7 @@ function setYlly(data) {
         },
         xAxis: [{
             type: 'category',
-            data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+            data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
             axisPointer: {
                 type: 'none'
             },
@@ -958,7 +965,7 @@ function setYlly(data) {
                 type: 'category',
                 show: false,
                 position: '',
-                data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
                 offset:20,
                 axisPointer: {
                     type: 'none',
@@ -1016,7 +1023,7 @@ function setYlly(data) {
             //                barWidth:27,
             barWidth : 12,
             
-            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+            data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -1050,7 +1057,7 @@ function setYlly(data) {
                 symbolSize: 8,//拐点大小
                 /*yAxisIndex: 1,
                 xAxisIndex: 1,*/
-                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+                data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
                 itemStyle: {
                     normal: {
                         color: '#ee992f',
@@ -1067,10 +1074,10 @@ function setYlly(data) {
                             y2: 1,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(255, 165,0,1)' // 0% 处的颜色
+                                color: 'rgba(255, 165,0,0.6)' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(255, 165,0,0.2)' // 100% 处的颜色
+                                color: 'rgba(255, 165,0,0)' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }
@@ -1132,7 +1139,7 @@ function setKc(data) {
         xAxis: [{
             
             type: 'category',
-            data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+            data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
             axisPointer: {
                 type: 'none'
             },
@@ -1159,7 +1166,7 @@ function setKc(data) {
                 type: 'category',
                 show: false,
                 position: '',
-                data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
                 offset:20,
                 axisPointer: {
                     type: 'none',
@@ -1216,7 +1223,7 @@ function setKc(data) {
             //                barWidth:27,
             barWidth : 12,
 
-            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+            data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -1250,7 +1257,7 @@ function setKc(data) {
                 symbolSize: 8,//拐点大小
                 /*yAxisIndex: 1,
                 xAxisIndex: 1,*/
-                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+                data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
                 itemStyle: {
                     normal: {
                         color: '#06bbff',
@@ -1267,10 +1274,10 @@ function setKc(data) {
                             y2: 1,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(0,0,255,1)' // 0% 处的颜色
+                                color: 'rgba(0,0,255,0.6)' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(0,0,255,0.2)' // 100% 处的颜色
+                                color: 'rgba(0,0,255,0)' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }
