@@ -56,4 +56,6 @@ table tr td {
 #nrwd{ margin-left: 65px; }
 #nrwd1{ margin-left: 65px; }
 #nr1{margin-left: 27px;/*margin-top: 18px*/}
+/*s摄像头*/
+#shexiangtou{ /*background: grey;opacity: 0.4;*/height: 100%;width: 100%;position: absolute;top:0; }
 span{font-size: 25px;text-align: center;line-height: 51px;color: #92F1FF;font-family: 微软雅黑}
