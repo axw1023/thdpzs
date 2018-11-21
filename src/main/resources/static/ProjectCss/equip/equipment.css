@@ -1,7 +1,7 @@
 body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软雅黑}
 
 .content-all{
-    width: 5642px;
+    width: 5632px;
     height: 1024px;
 }
 
@@ -142,7 +142,9 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
 .right-video{
     background: url("../../image/equip/rigth.png");
     height: 1024px;
-    width: 1869px;
+    width: 1859px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .left-content-1-title{
@@ -230,7 +232,7 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
 }
 
 .poll-table tbody tr{
-    height: 33px;
+    height: 30px;
     color: RGBA(159, 204, 255, 1);
     font-size: 20px;
     font-family:MicrosoftYaHei;
@@ -353,7 +355,7 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
     font-size: 20px;
     font-family: MicrosoftYaHei;
     font-weight: 400;
-    color: #d3dee0;
+    color: RGB(176, 250, 254);
     overflow: hidden;
     border-color: #fff;
 }
@@ -369,6 +371,11 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
 .c2-table tbody tr{
 
 }
-.c2-table th{width: 114px;
-    border: 1px solid;}
-.c2-table td{text-align: center; border: 1px solid;}
+.c2-table th{
+    width: 114px;
+    /*border: 1px solid;*/
+}
+.c2-table td{
+    text-align: center;
+    /*border: 1px solid;*/
+}
