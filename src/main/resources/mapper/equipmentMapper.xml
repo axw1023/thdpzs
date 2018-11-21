@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.EquipmentMapper">
+    <resultMap id="EquipComResultMap" type="com.qdjxd.wdth01.model.EquipmentComposition">
+        <id column="equip_com_id" property="equipComId" jdbcType="VARCHAR" />
+        <result column="equip_type_name" property="equipTypeName" jdbcType="VARCHAR" />
+        <result column="equip_num" property="equipNum" jdbcType="INTEGER" />
+        <result column="sort" property="sort" jdbcType="INTEGER" />
+        <result column="enable" property="enable" jdbcType="BIT" />
+    </resultMap>
+    <sql id="EquipComCloumn">
+        equip_com_id, equip_type_name, equip_num, sort, enable
+    </sql>
+    <resultMap id="UnitAreaResultMap" type="com.qdjxd.wdth01.model.UnitArea" >
+        <id column="unit_area_id" property="unitAreaId" jdbcType="VARCHAR" />
+        <result column="unit_area_name" property="unitAreaName" jdbcType="VARCHAR" />
+        <result column="unit_num" property="unitNum" jdbcType="INTEGER" />
+        <result column="unit_sort" property="unitSort" jdbcType="INTEGER" />
+        <result column="unit_enable" property="unitEnable" jdbcType="BIT" />
+    </resultMap>
+    <sql id="UnitAreaColumn" >
+        unit_area_id, unit_area_name, unit_num, unit_sort, unit_enable
+    </sql>
+
+    <resultMap id="InspectStaResultMap" type="com.qdjxd.wdth01.model.InspectStatistics" >
+        <id column="inspect_sta_id" property="inspectStaId" jdbcType="VARCHAR" />
+        <result column="inspect_area_name" property="inspectAreaName" jdbcType="VARCHAR" />
+        <result column="area_type" property="areaType" jdbcType="VARCHAR" />
+        <result column="inspect_num" property="inspectNum" jdbcType="INTEGER" />
+        <result column="inspect_percent" property="inspectPercent" jdbcType="INTEGER" />
+        <result column="inspect_sort" property="inspectSort" jdbcType="INTEGER" />
+        <result column="inspect_enable" property="inspectEnable" jdbcType="BIT" />
+    </resultMap>
+
+    <sql id="InspectStaColumn" >
+        inspect_sta_id, inspect_area_name, area_type, inspect_num, inspect_percent, inspect_sort,
+        inspect_enable
+    </sql>
+
+    <select id="getEquipNumList" resultMap="EquipComResultMap">
+        SELECT 
+          <include refid="EquipComCloumn"/>
+        FROM
+          wdth_sbyah_equipment_composition WHERE enable = 1 ORDER BY sort
+
+    </select>
+
+    <select id="getAreaNumList" resultMap="UnitAreaResultMap">
+        SELECT
+          <include refid="UnitAreaColumn"/>
+        FROM
+          wdth_sbyah_unit_area WHERE unit_enable = 1 ORDER BY unit_sort
+    </select>
+
+    <select id="getInspectStaList" resultMap="InspectStaResultMap">
+        SELECT 
+          <include refid="InspectStaColumn"/>
+        FROM
+         wdth_sbyah_inspect_statistics  WHERE inspect_enable = 1 ORDER BY inspect_sort
+    </select>
+    <resultMap id="WarningResultMap" type="com.qdjxd.wdth01.model.Warning" >
+        <id column="warning_id" property="warningId" jdbcType="VARCHAR" />
+        <result column="warning_name" property="warningName" jdbcType="VARCHAR" />
+        <result column="warning_num" property="warningNum" jdbcType="INTEGER" />
+        <result column="warning_enable" property="warningEnable" jdbcType="BIT" />
+    </resultMap>
+    <sql id="WarningColumn" >
+        warning_id, warning_name, warning_num, warning_enable
+    </sql>
+    <select id="getWarningPieInfo" resultMap="WarningResultMap">
+      SELECT
+        <include refid="WarningColumn"/>
+      FROM
+        wdth_sbyah_warning  WHERE warning_enable=1 ORDER  BY warning_sort
+    </select>
+
+    <resultMap id="DefectResultMap" type="com.qdjxd.wdth01.model.DefectLevel" >
+        <id column="defect_id" property="defectId" jdbcType="VARCHAR" />
+        <result column="defect_name" property="defectName" jdbcType="VARCHAR" />
+        <result column="defect_num" property="defectNum" jdbcType="INTEGER" />
+        <result column="defect_sort" property="defectSort" jdbcType="INTEGER" />
+        <result column="defect_enable" property="defectEnable" jdbcType="BIT" />
+    </resultMap>
+    <sql id="DefectColumn" >
+        defect_id, defect_name, defect_num, defect_sort, defect_enable
+    </sql>
+
+    <select id="getDefectLevelInfo" resultMap="DefectResultMap">
+      SELECT 
+        <include refid="DefectColumn"/>
+      FROM
+        wdth_sbyah_defect_level  WHERE defect_enable = 1 ORDER BY defect_sort
+    </select>
+
+    <resultMap id="JobRecordResultMap" type="com.qdjxd.wdth01.model.JobRecord" >
+        <id column="job_record_id" property="jobRecordId" jdbcType="VARCHAR" />
+        <result column="job_record_name" property="jobRecordName" jdbcType="VARCHAR" />
+        <result column="job_record_num" property="jobRecordNum" jdbcType="INTEGER" />
+        <result column="job_record_sort" property="jobRecordSort" jdbcType="INTEGER" />
+        <result column="job_enable" property="jobEnable" jdbcType="BIT" />
+    </resultMap>
+    <sql id="JobRecordColumn" >
+        job_record_id, job_record_name, job_record_num, job_record_sort, job_enable
+    </sql>
+    
+    <select id="getJobRecordList" resultMap="JobRecordResultMap">
+        SELECT
+          <include refid="JobRecordColumn"/>
+        FROM
+          wdth_sbyah_job_record  WHERE job_enable = 1 ORDER BY job_record_sort
+    </select>
+
+    <resultMap id="WasteResultMap" type="com.qdjxd.wdth01.model.Waste" >
+        <id column="waste_id" property="wasteId" jdbcType="VARCHAR" />
+        <result column="waste_name" property="wasteName" jdbcType="VARCHAR" />
+        <result column="waste_type_id" property="wasteTypeId" jdbcType="VARCHAR" />
+        <result column="waste_type_name" property="wasteTypeName" jdbcType="VARCHAR" />
+        <result column="rt_concentration" property="rtConcentration" jdbcType="REAL" />
+        <result column="standard_value" property="standardValue" jdbcType="REAL" />
+        <result column="discharge_num" property="dischargeNum" jdbcType="REAL" />
+        <result column="control_rates" property="controlRates" jdbcType="INTEGER" />
+        <result column="waste_sort" property="wasteSort" jdbcType="INTEGER" />
+        <result column="waste_enable" property="wasteEnable" jdbcType="BIT" />
+    </resultMap>
+
+    <sql id="WasteColumn" >
+        waste_id, waste_name, waste_type_id, waste_type_name, rt_concentration, standard_value,
+        discharge_num, control_rates, waste_sort, waste_enable
+    </sql>
+
+    <select id="getWasteList" resultMap="WasteResultMap">
+        SELECT
+          <include refid="WasteColumn"/>
+        FROM
+        wdth_sbyah_waste  WHERE waste_enable = 1 ORDER BY waste_sort
+    </select>
+</mapper>

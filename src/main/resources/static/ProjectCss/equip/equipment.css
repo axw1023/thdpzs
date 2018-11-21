@@ -1,0 +1,381 @@
+body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软雅黑}
+
+.content-all{
+    width: 5632px;
+    height: 1024px;
+}
+
+.e-left{
+    float: left;
+}
+
+.left-1{
+    width: 586px;
+    height: 461px;
+    background: url("../../image/equip/left-sub-title-border.png");
+    display: inline-block;
+    display: inline-grid;
+}
+
+.left-1-1{
+    margin: 39px 0px 0 40px;
+}
+
+
+.left-1-2{
+    margin: 39px 0 0 21px;
+}
+
+.left-title-1{
+
+}
+
+.left-title-img{
+    background: url("../../image/equip/left-sub-title-img.png");
+    height: 50px;
+    width: 331px;
+    margin: auto;
+}
+
+.left-title-text{
+    width: 100%;
+    height: 25px;
+    font-size: 25px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(146,241,255,1);
+    line-height: 55px;
+    text-align: center;
+    display: inline-block;
+}
+
+.left-content-1{
+    background: url("../../image/equip/left4.png");
+    height: 345px;
+    width: 504px;
+    margin: 28px auto auto auto;
+}
+
+
+.left-2-1{
+    background: url("../../image/equip/left-2-1.png");
+    width: 1197px;
+    height: 461px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 20px 0 0 40px;
+}
+
+.dev-left-little{
+    float: left;
+}
+
+.dev-left{
+    background: url("../../image/equip/dev-pie.png");
+    height: 461px;
+    width: 596px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.dev-left-1{
+    margin: 39px 0 0 10px;
+}
+
+.dev-left-2{
+    margin: 20px 0 0 10px;
+}
+
+.center{
+    float: left;
+}
+
+.center-title{
+    background: url("../../image/equip/title.png");
+    width:1919px;
+    height: 230px;
+}
+
+.center-content{
+    margin: -126px 0 0 0;
+}
+
+.center-video2{
+    background: url("../../image/equip/v-border-2.png");
+    width: 725px;
+    height: 920px;
+    float: left;
+}
+
+.center-table2{
+    float: left;
+}
+
+.center-table{
+    background: url("../../image/equip/left-2-1.png");
+    width: 1190px;
+    height: 421px;
+}
+
+.center-table-1{
+    margin-top: 15px;
+}
+
+.center-table-2{
+    margin-top: 20px;
+}
+
+.table1-content{
+    background: url("../../image/equip/center8.png");
+    width: 1104px;
+    height: 324px;
+    position: absolute;
+    margin: 55px 0 0 45px;
+}
+
+
+
+.right{
+    float: left;
+}
+
+.right-video{
+    background: url("../../image/equip/rigth.png");
+    height: 1024px;
+    width: 1859px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.left-content-1-title{
+    display: inline-block;
+    position: absolute;
+}
+
+.left-content-1-title label{
+    width: 112px;
+    height: 26px;
+    font-size: 25px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    line-height: 35px;
+}
+
+.left-content-1-title div{
+    height: 41px;
+    font-size: 61px;
+    font-family: HYk1gj;
+    font-weight: 400;
+    color: rgba(1,242,255,1);
+    line-height: 140px;
+    width: 100%;
+    text-align: center;
+}
+
+.lc1{
+    margin: -17px 0 0 63px;
+}
+
+.lc2{
+    margin: -17px 0 0 345px;
+}
+
+.lc3{
+    margin: 182px 0 0 63px;
+}
+
+.lc4{
+    margin: 182px 0 0 345px;
+}
+
+.equip-bar{
+    width: 584px;
+    height: 420px;
+
+}
+
+.left-2-title{
+    width: 100%;
+    height: 25px;
+    font-size: 25px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(146,241,255,1);
+    line-height: 56px;
+    text-align: center;
+}
+.left-2-content{
+    height: auto;
+    width: 100%;
+}
+
+.poll-table{
+    width: 1170px;
+    margin: 44px auto auto auto;
+    /*height: 400px;*/
+}
+
+.poll-table thead tr {
+    width: 100%;
+    height: 40px;
+    background-color: RGBA(53, 127, 183, 1);
+}
+
+.poll-table thead tr th{
+    height: 40px;
+    font-size:20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:13px;
+}
+
+.poll-table tbody tr{
+    height: 30px;
+    color: RGBA(159, 204, 255, 1);
+    font-size: 20px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    line-height:13px;
+}
+.td1{
+    text-align: right;
+}
+.td2{
+    text-align: center;
+}
+.td3{
+    text-align: center;
+}
+.td4{
+    text-align: left;
+}
+
+.low{
+    display: inline-block;
+    height: 11px;
+    border-radius: 0px 6px 6px 0px;
+}
+
+.yello-low{
+    background: linear-gradient(90deg,rgba(249,155,95,0.2),rgba(249,155,95,1));
+    width: 293px;
+}
+
+.green-low{
+    background: linear-gradient(90deg,rgba(6,123,255,0.2),rgba(107,191,255,1));
+    width: 400px;
+}
+
+.pie{
+    height: 410px;
+    width: 100%;
+}
+
+.center-sub-title{
+    width: 100%;
+    text-align: center;
+    height: 25px;
+    font-size: 25px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(146,241,255,1);
+    line-height: 50px;
+}
+
+.center8-list{
+    margin-top: -15px;
+}
+
+.center8{
+    width: 130px;
+    display: inline-block;
+    position: absolute;
+}
+
+.center8 label{
+    width: 100%;
+    height: 25px;
+    font-size: 25px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: rgba(255,255,255,1);
+    line-height: 35px;
+    text-align: center;
+    display: inline-block;
+}
+
+.center8 div{
+    width: 100%;
+    height: 41px;
+    font-size: 61px;
+    font-family: HYk1gj;
+    font-weight: 400;
+    color: rgba(1,242,255,1);
+    line-height: 130px;
+    text-align: left;
+    padding: 0 0 0 85px;
+}
+
+.c8-1{
+    margin: 0 0 0 48px;
+}
+.c8-2{
+    margin: 0 0 0 344px;
+}
+.c8-3{
+    margin: 0 0 0 635px;
+}
+.c8-4{
+    margin: 0 0 0 927px;
+}
+.c8-5{
+    margin: 180px 0 0 48px;
+}
+.c8-6{
+    margin: 180px 0 0 344px;
+}
+.c8-7{
+    margin: 180px 0 0 635px;
+}
+.c8-8{
+    margin: 180px 0 0 927px;
+}
+
+.table2-content{
+    margin-top: 47px;
+}
+
+.c2-table{
+    display: inline-block;
+    width: 570px;
+    height: 330px;
+    margin-left: 15px;
+    font-size: 20px;
+    font-family: MicrosoftYaHei;
+    font-weight: 400;
+    color: RGB(176, 250, 254);
+    overflow: hidden;
+    border-color: #fff;
+}
+
+.c2-table thead tr{
+    background-color: RGBA(53, 127, 183, 1);
+
+}
+
+.c2-table tbody {
+    height: 273px;
+}
+.c2-table tbody tr{
+
+}
+.c2-table th{
+    width: 114px;
+    /*border: 1px solid;*/
+}
+.c2-table td{
+    text-align: center;
+    /*border: 1px solid;*/
+}
