@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>3Dfactory</title>
     <!--外部css-->
-<!--    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">-->
-
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
     <!--外部js-->
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
@@ -25,6 +25,11 @@
             position:absolute;top: 150px;width: 1154px;height: 857px;z-index:99}
         #vide3{left: 3590px;
             position:absolute; top: 150px;width: 1154px;height: 857px}
+        #change1{ position:absolute;height: 208px;width: 300px;top:230px;left:354px;background:url("../image/UPS.png");}
+        #change2{ position:absolute;height: 208px;width: 300px;top:230px;left:454px;background:url("../image/UPS.png");}
+        #change3{ position:absolute;height: 208px;width: 300px;top:230px;left:454px;background:url("../image/UPS.png");}
+        #change4{ position:absolute;height: 208px;width: 300px;top:230px;left:454px;background:url("../image/UPS.png");}
+        
     </style>
 
 </head>
@@ -37,11 +42,47 @@
         </div>
         <div id="vide2" >
             <video id="3d2" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D1.MP4" ></video>
+                <source src="../Video/3D/3D2.MP4" ></video>
         </div>
         <div id="vide3">
+            <div id="change1"  hidden>
+                <div class="biaoti">
+                    <p class="ttt"> UPS </p>
+                </div>
+                <div id="nr">
+                    <p class="D3">A相输出电流：&nbsp;18.4A</p>
+                    <p class="D3">B相输出电流：&nbsp;7.0A</p>
+                    <p class="D3">C相输出电流：&nbsp;5.2A</p>
+                    <p class="D3">电池后备时间：&nbsp;119.0Min</p>
+                </div>
+            </div>
+             <div id="change2"  hidden>
+                 <div id="nrwd">
+                     <p class="D3">空调状态 </p><div class="lud"></div>
+                     <div id="wenduji">
+                     </div>
+                     <div id="shuidi"></div>
+                     <p class="D3">温度：24.3℃</p>
+                     <p class="D3">湿度：15.3%</p>
+                 </div>
+            </div>
+             <div id="change3"  hidden>
+                 <div id="nrwd1">
+                     <p class="D3">消防报警</p><div class="lud" style="margin-top: 20px"></div>
+                     <p class="D3">漏水报警</p><div class="lud" style="margin-top: 55px"></div>
+                 </div>
+            </div>
+             <div id="change4" hidden>
+                 <div id="nr1">
+                     <p class="D3">市电停电报警</p><div class="lud1"></div>
+                     <p class="D3">A相电压断相报警</p><div class="lud2"></div>
+                     <p class="D3">B相电压断相报警</p><div class="lud3"></div>
+                     <p class="D3">C相电压断相报警</p><div class="lud4"></div>
+                 </div>
+            </div>
+            
             <video id="3d3" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D1.MP4" ></video>
+                <source src="../Video/3D/3D3.MP4" ></video>
         </div>
     </div>
 </div>
