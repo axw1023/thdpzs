@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>智能工程</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectCss/ai/ai-factory.css}">
+
+
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+
+    <script type="text/javascript" th:src="@{/ProjectScripts/ai/three.js}"></script>
+
+
+</head>
+<body>
+    <div class="content-all">
+    </div>
+
+    <script type="text/javascript">
+        var SEPARATION = 200, AMOUNTX = 50, AMOUNTY = 50;
+
+        var container;
+        var camera, scene, renderer;
+
+        var particles, particle, count = 0;
+
+
+
+        var windowHalfX = 500;
+        var windowHalfY = 500;
+
+        var mouseX = -windowHalfX, mouseY = -windowHalfY;
+
+        init();
+       animate();
+
+        function init() {
+
+            container = document.createElement( 'div' );
+            container.style.marginTop = '-1024px';
+            container.style.zIndex= '200';
+            document.body.appendChild( container );
+
+            camera = new THREE.PerspectiveCamera( 75, 5632/1024, 1, 10000 );
+            camera.position.z = 1000;
+
+            scene = new THREE.Scene();
+
+            particles = new Array();
+
+            var PI2 = Math.PI * 2;
+            var material = new THREE.ParticleCanvasMaterial( {
+
+                color: '#156fed',
+                program: function ( context ) {
+
+                    context.beginPath();
+                    context.arc( 0, 0, 3, 0, PI2, true );
+                    context.fill();
+
+                }
+            } );
+
+            var i = 0;
+
+            for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+                for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+                    particle = particles[ i ++ ] = new THREE.Particle( material );
+                    particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+                    particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+                    scene.add( particle );
+
+                }
+
+            }
+
+            renderer = new THREE.CanvasRenderer();
+            renderer.setSize( 5632, 1024 );
+            container.appendChild( renderer.domElement );
+        }
+
+
+
+
+        function animate() {
+
+            requestAnimationFrame( animate );
+
+            render();
+
+        }
+
+        function render() {
+
+            camera.position.x += ( mouseX - camera.position.x ) * .05;
+            camera.position.y += ( - mouseY - camera.position.y ) * .05;
+            camera.lookAt( scene.position );
+
+            var i = 0;
+
+            for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+                for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+                    particle = particles[ i++ ];
+                    particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+                    particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+
+                }
+
+            }
+
+            renderer.render( scene, camera );
+
+            count += 0.1;
+
+        }
+    </script>
+    <div class="factory">
+        <div class="ai-factroy-1">
+            制定规划，顶层设计，基础先行，从业务、数据和技术三个层面实现整合和集成共享<br/>
+            建立实验室信息管理、生产执行、设备管理、安全环保、能源管控等生产层核心应用，有效支撑企业生产业务<br/>
+            按照“平台+应用”架构，建立智能制造平台及相关标准化体系
+
+        </div>
+        <div class="ai-factroy-2-1">
+            在数据资源整合的基础上，实现企业计划、生产执行和监控的一体化管理和优化，结合企业实际需求定制个性化应用服务
+        </div>
+        <div class="ai-factroy-2-2">
+            完善提升已有信息系统，实现产供销的整体经营、生产业务协同和全流程的一体化优化
+        </div>
+        <div class="ai-factroy-3-1">
+            <ul>
+                <li>
+                    <span class="cricle"></span>
+                    实现企业生产经营管理和信息化的深度融合
+                </li>
+                <li>
+                    <span class="cricle"></span>
+                    完善模型库、规则库、知识库、数据库，深化局部智能应用
+                </li>
+                <li>
+                    <span class="cricle"></span>
+                    充分应用大数据，提高生产及经营层面的分析决策水平
+                </li>
+                <li>
+                    <span class="cricle"></span>
+                    建全控制优化等应用，实现智能工厂目标
+                </li>
+            </ul>
+       </div>
+    </div>
+
+</body>
+<script type="text/javascript"   th:src="@{/ProjectScripts/ai/ai-factory.js}"></script>
+</html>
