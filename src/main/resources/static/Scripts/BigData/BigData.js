@@ -730,6 +730,7 @@ function setThreeData(_d){
                 {name:name[2],icon:'roundRect'}]
         },
         tooltip: {
+            show:false
         },
         xAxis:{
             type: 'category',

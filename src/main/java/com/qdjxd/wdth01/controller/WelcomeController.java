@@ -63,7 +63,7 @@ public class WelcomeController {
     //    大数据
     @RequestMapping("/turnToBigData")
     public String turnToBigData() {
-        return "show/turnToBigData";
+        return "BigData";
     }
 
     //    三维数字工厂
