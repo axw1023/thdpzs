@@ -14,7 +14,7 @@ function  getNumzc() {
         async: false,
         cache:false,
         success: function (data) {
-            debugger
+
             var html = "";
 
             html +='<tr>'

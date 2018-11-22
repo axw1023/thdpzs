@@ -17,6 +17,19 @@
     from wdth_tb_it_netdata_ge1
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+  <!--查询全部-->
+  <select id="ByAll" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from wdth_tb_it_netdata_ge1
+  order by time
+  </select>
+
+
+
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from wdth_tb_it_netdata_ge1
     where id = #{id,jdbcType=VARCHAR}

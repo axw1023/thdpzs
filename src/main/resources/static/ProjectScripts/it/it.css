@@ -18,7 +18,7 @@ body{background-color: #081C36;height: 1024px;width: 5632px;font-family: 微软�
 #a2,#a3,#a4{ margin-top: 5px;height: 25px;width: 150px;background: black;opacity: 0.4}
 #a1{height: 25px;width: 150px;background: black;opacity: 0.5}
 
-#tb2{ width:530px;height: 330px;margin-left: 100px;margin-top: 28.5px;position: absolute;top:45px;}
+#tb2{ width:530px;height: 330px;margin-left: 100px;margin-top: 22px;position: absolute;top:45px;}
 
 table {
     width: 630px;
@@ -44,7 +44,8 @@ table tr td {
     text-indent: -35px;
 }
 
-#charzhe{ height:409px;width: 620px}
+#charzhe{ height:198px;width: 620px;border: grey 1px solid}
+#charzhe1{ width: 620px;height: 198px; margin-top:9px;border: grey 1px solid}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
 /*  视频与上方的边距 和 固定 视频 的div 超出div 的黑框 隐藏掉*/
 .ttt{ font-size: 20px;color: #68F1FC;font-weight:bold;}

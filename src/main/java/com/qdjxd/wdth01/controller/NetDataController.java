@@ -28,7 +28,7 @@ public class NetDataController {
     Wdth_tb_it_netdata_allMapper all_dao;
 
     @RequestMapping("/data")
-    public void main(String[] args) throws Exception {
+    public void main() throws Exception {
 
             //查询GE1输入输出量
             Wdth_tb_it_netdata_ge1 ge1 = new Wdth_tb_it_netdata_ge1();
