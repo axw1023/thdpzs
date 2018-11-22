@@ -1,0 +1,587 @@
+html{
+    width:5632px;
+    height:1024px;
+
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("../../images/BigData/bg_unit.png");
+    background-repeat: no-repeat;
+    font-family: "PingFang SC", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Source Han Sans", "Noto Sans CJK Sc", "Microsoft YaHei", "Microsoft Jhenghei", sans-serif;
+}
+#BigData{
+    width: 100%;
+    height: 100%;
+    position:relative;
+}
+#first{
+    position: absolute;
+    top: 119px;
+    bottom: 38px;
+    left: 40px;
+    width: 424px;
+}
+.unit{
+    position:absolute;
+    display: inline-block;
+    height:15px;
+    font-size:16px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(159,204,255,1);
+    line-height:43px;
+}
+#unit_1{
+    top: 153px;
+    left: 356px;
+}
+#unit_2{
+    top: 511px;
+    left: 356px;
+}
+#unit_3{
+    top: 635px;
+    left: 356px;
+}
+#unit_4{
+    top: 753px;
+    left: 356px;
+}
+#unit_5{
+    top: 162px;
+    left: 115px;
+}
+#unit_6{
+    top: 311px;
+    left: 115px;
+}
+#unit_7{
+    top: 462px;
+    left: 115px;
+}
+#unit_8{
+    top: 602px;
+    left: 115px;
+}
+#unit_9{
+    top: 746px;
+    left: 115px;
+}
+.first{
+    position: absolute;
+    left: 278px;
+    width: 74px;
+    height: 44px;
+    color:#68F1FC;
+    font-size: 22px;
+    line-height: 44px;
+    text-align: center;
+}
+.f_label{
+    position: absolute;
+    right: 38px;
+    color:#68F1FC;
+    font-size: 18px;
+    width:300px;
+    height:24px;
+    line-height:24px;
+    text-align: right;
+    font-weight:400;
+}
+#f_label1{
+    top: 115px;
+}
+#f_label2{
+    top:468px;
+ }
+#f_label3{
+    top:592px;
+}
+#f_label4{
+    top:710px;
+}
+#first_1{
+    top: 142px;
+}
+#first_2{
+    top: 496px
+}
+#first_3{
+    top: 620px;
+}
+#first_4{
+    top: 738px;
+}
+#second{
+    position: absolute;
+    top: 119px;
+    bottom: 38px;
+    left: 494px;
+    width: 1744px;
+}
+.second{
+    position: absolute;
+    width:70px;
+    height:30px;
+    text-align: center;
+    line-height: 30px;
+    border:1px solid rgba(33,118,132,1);
+    background-color: rgba(1,4,9,1);
+    color:#08DB8B;
+
+}
+.prop{
+    color:#f60;
+}
+#second_1{
+    top: 124px;
+    left: 55px;
+}
+#prop_1{
+    top: 159px;
+    left: 55px;
+}
+#second_2{
+    top: 98px;
+    left: 270px;
+}
+#prop_2{
+    top: 133px;
+    left: 270px;
+}
+#second_3{
+    top: 198px;
+    left: 575px;
+}
+#prop_3{
+    top: 233px;
+    left: 575px;
+}
+#second_4{
+    top: 160px;
+    left: 769px;
+}
+#prop_4{
+    top: 195px;
+    left: 769px;
+}
+#second_5{
+    top: 120px;
+    left: 968px;
+}
+#prop_5{
+    top: 155px;
+    left: 968px;
+}
+#second_6{
+    top: 138px;
+    left: 1144px;
+}
+#prop_6{
+    top: 177px;
+    left: 1144px;
+}
+#second_7{
+    top: 272px;
+    left: 1214px;
+}
+#prop_7{
+    top: 307px;
+    left: 1214px;
+}
+#second_8{
+    top: 120px;
+    left: 1593px;
+}
+#prop_8{
+    top: 155px;
+    left: 1593px;
+}
+#second_9{
+    top: 517px;
+    left: 61px;
+}
+#prop_9{
+    top: 552px;
+    left: 61px;
+}
+#second_10{
+    top: 645px;
+    left: 8px;
+}
+#prop_10{
+    top: 680px;
+    left: 8px;
+}
+#second_11{
+    top: 621px;
+    left: 241px;
+}
+#second_12{
+    top: 723px;
+    left: 383px;
+}
+#second_13{
+    top: 483px;
+    left: 473px;
+}
+#second_14{
+    top: 483px;
+    left: 609px;
+}
+#prop_14{
+    top: 518px;
+    left: 609px;
+}
+#second_15{
+    top: 550px;
+    left: 885px;
+}
+#prop_15{
+    top: 585px;
+    left: 885px;
+}
+#second_16{
+    top: 500px;
+    left: 1000px;
+}
+#prop_16{
+    top: 535px;
+    left: 1000px;
+}
+#second_17{
+    top: 762px;
+    left: 1056px;
+}
+#prop_17{
+    top: 797px;
+    left: 1056px;
+}
+#second_18{
+    top: 485px;
+    left: 1215px;
+}
+#prop_18{
+    top: 520px;
+    left: 1215px;
+}
+#second_19{
+    top: 610px;
+    left: 1442px;
+}
+#prop_19{
+    top: 645px;
+    left: 1442px;
+}
+#second_20{
+    top: 455px;
+    left: 1615px;
+}
+#prop_20{
+    top: 490px;
+    left: 1615px;
+}
+#three{
+    position: absolute;
+    top: 119px;
+    bottom: 38px;
+    left: 2267px;
+    width: 424px;
+}
+.three{
+    position: absolute;
+    left: 37px;
+    width: 74px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-size: 22px;
+    color:#68F1FC;
+}
+.t_label{
+    position: absolute;
+    left: 35px;
+    color:#68F1FC;
+    font-size: 18px;
+    width:300px;
+    height:24px;
+    line-height:24px;
+    text-align: left;
+    font-weight:400;
+}
+#t_label1{
+    top: 120px;
+}
+#t_label2{
+    top: 270px;
+}
+#t_label3{
+    top: 420px;
+}
+#t_label4{
+    top: 560px;
+}
+#t_label5{
+    top: 700px;
+}
+#three_1{
+    top: 147px;
+}
+#three_2{
+    top: 296px;
+}
+#three_3{
+    top: 447px;
+}
+#three_4{
+    top: 588px;
+}
+#three_5{
+    top: 731px;
+}
+.point{
+    position:absolute;
+    left: 285px;
+    padding:0;
+    margin:0;
+    list-style: none;
+    font-size: 0;
+}
+#point_1{
+    top: 160px;
+}
+#point_2{
+    top: 310px;
+}
+#point_3{
+    top: 460px;
+}
+#point_4{
+    top: 600px;
+}
+#point_5{
+    top: 740px;
+}
+.point li{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin:0 2px;
+}
+.point_red{
+    background-color:#FD5957
+}
+.point_green{
+    background-color:#26DAB3
+}
+#four{
+    position: absolute;
+    top: 119px;
+    bottom: 38px;
+    left: 2719px;
+    width: 1728px;
+}
+#four_1{
+    position: absolute;
+    left:30px;
+    width:766px;
+    height:281px;
+    top:102px;
+    background-image:url("../../images/BigData/大数据分析-font-bg.png");
+
+}
+#four_1 ul{
+    padding:0;
+    margin:40px 0 0 0 ;
+    list-style: none;
+    width:100%;
+    height:100%;
+}
+#four_1 ul li{
+    width:50%;
+    height:38px;
+    float:left;
+    margin-top:11px;
+}
+.title{
+    position: absolute;
+    top:-5px;
+    left:20px;
+    font-size: 25px;
+    color:#9FCCFF;
+}
+#four_1 ul li span:nth-child(1){
+    display: inline-block;
+    width:140px;
+    height:100%;
+    color:#9FCCFF;
+    line-height: 38px;
+    text-align: right;
+    font-size: 20px;
+}
+#four_1 ul li span:nth-child(2){
+    margin-left:15px;
+    display: inline-block;
+    width:140px;
+    height:100%;
+    color:#64E7F2;
+    line-height: 38px;
+    text-align:left ;
+    font-size: 20px;
+}
+#four_2{
+    position: absolute;
+    right:30px;
+    width:868px;
+    height:281px;
+    top:102px;
+    background-image:url("../../images/BigData/大数据分析-折线图-bg.png");
+
+}
+#four_2 .title{
+    left:25px;
+    top:-4px
+}
+#charts1{
+    width:100%;
+    height:250px;
+}
+#four_3{
+    position: absolute;
+    left:18px;
+    width:766px;
+    height:384px;
+    bottom:51px;
+    background-image:url("../../images/BigData/大数据分析-表格-bg.png");
+
+}
+#four_3 .title{
+    left:30px;
+    top:-4px
+}
+#four_3 ul{
+    position: absolute;
+    top: 75px;
+    left: 69px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 655px;
+    height: 258px;
+}
+#four_3 ul span{
+    display:inline-block;
+    height:100%;
+    color:#68F1FC;
+    font-size: 22px;
+}
+#four_3 ul li:nth-child(n+2) .result{
+    text-align: right;
+    padding-right:10px;
+}
+#four_3 ul li:nth-child(n+2) .standard{
+    text-align: left;
+    padding-left:10px;
+}
+#four_3 ul li{
+    width:100%;
+}
+#four_3 ul li:nth-child(1){
+    height:39px;
+    line-height: 39px;
+}
+#four_3 ul li:nth-child(2){
+    height:53px;
+    line-height: 53px;
+}
+#four_3 ul li:nth-child(3){
+    height:53px;
+    line-height: 53px;
+}
+#four_3 ul li:nth-child(4){
+    height:53px;
+    line-height: 53px;
+}
+#four_3 ul li:nth-child(5){
+    height:60px;
+    line-height: 60px;
+}
+.label{
+    padding-left:50px;
+    width: 185px;
+    vertical-align: top;
+}
+.result{
+    text-align: center;
+    width: 159px;
+
+}
+.standard{
+    text-align: center;
+    width: 240px;
+}
+#four_4{
+    position: absolute;
+    right:32px;
+    width:874px;
+    height:384px;
+    bottom:51px;
+    background-image:url("../../images/BigData/大数据分析-柱形图-bg.png");
+}
+#four_4 .title{
+    left:23px;
+    top:-4px
+}
+#point_char{
+    margin-top:50px;
+    width:100%;
+    height:350px;
+}
+#five{
+    position: absolute;
+    top: 119px;
+    bottom: 38px;
+    left: 4479px;
+    width: 1112px;
+}
+.four{
+    position:absolute;
+}
+#five_1{
+    top:102px;
+    width:508px;
+    left:30px;
+    height:282px;
+    background-image:url("../../images/BigData/工艺优化部分-比例-bg.png");
+}
+#threePie{
+    width:100%;
+    height:300px;
+}
+#five_2{
+    top:102px;
+    right:30px;
+    width:528px;
+    height:282px;
+    background-image:url("../../images/BigData/工艺优化部分-TIC101-提升管出口温度_℃-bg.png");
+}
+#five_3 {
+    bottom: 52px;
+    left: 30px;
+    width: 1056px;
+    height: 419px;
+    background-image: url("../../images/BigData/工艺优化部分-折线图-bg.png");
+}
+#temChar{
+    margin-top:50px;
+    width:100%;
+    height:230px;
+}
+#three_line{
+    width:100%;
+    margin-top:50px;
+    height:350px;
+}
+

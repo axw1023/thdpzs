@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qdjxd.wdth01.dao.wdth_bd_Mapper">
+
+    <!--获取坐标点信息-->
+    <select id="getFirstData" resultType="com.qdjxd.wdth01.model.BigDataCoord">
+        select * from wdtd_bd_coord where type=1
+    </select>
+    <select id="getSecondData" resultType="com.qdjxd.wdth01.model.BigDataCoord">
+        select * from wdtd_bd_coord where type=2
+    </select>
+    <select id="getThreeData" resultType="com.qdjxd.wdth01.model.BigDataCoord">
+        select * from wdtd_bd_coord where type=3
+    </select>
+    <select id="getLayerData" resultType="com.qdjxd.wdth01.model.BigDataCoord">
+        select * from wdtd_bd_coord where layer_show=1 ORDER  BY layer_order
+    </select>
+    <select id="getPointData" resultType="com.qdjxd.wdth01.model.BigDataCommon">
+        select * from wdth_bd_common where type=1 ORDER  BY  id
+    </select>
+
+    <select id="getFeedData" resultType="com.qdjxd.wdth01.model.BigDataFeed">
+        select * from wdth_bd_feed ORDER  BY  id
+    </select>
+
+    <select id="getCharData" resultType="com.qdjxd.wdth01.model.BigDataCommon">
+        select * from wdth_bd_common where type=2 ORDER  BY  id
+    </select>
+
+    <select id="getThreePie" resultType="com.qdjxd.wdth01.model.BigDataCommon">
+        select * from wdth_bd_common where type=3 ORDER  BY  id
+    </select>
+    <select id="getTemData" resultType="com.qdjxd.wdth01.model.BigDataCommon">
+        select * from wdth_bd_common where type=4 ORDER  BY  id
+    </select>
+    <select id="getThreeLine" resultType="com.qdjxd.wdth01.model.BigDataCommon">
+        select * from wdth_bd_common where type=5 ORDER  BY  id
+    </select>
+    <select id="getDoubleBar" resultType="com.qdjxd.wdth01.model.BigDataCommon">
+        select * from wdth_bd_common where type=6 ORDER  BY  id
+    </select>
+
+
+</mapper>
