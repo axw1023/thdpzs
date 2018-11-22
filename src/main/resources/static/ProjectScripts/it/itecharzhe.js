@@ -1,4 +1,6 @@
 
+
+function zhe(Liu) {
 var dom = document.getElementById("charzhe");
 var myChart1 = echarts.init((dom));
 
@@ -20,10 +22,9 @@ window.onload = function() {
 
     CanvasParticle(config);
 }
-// var grade;warn
-// var currentIndex2 = -1;
-// var pieint=null;
-// getNumByGrade();
+
+
+
 option = {
 color:['#7350F5','#C87E61','#6049D3','#08E3A1'],
     tooltip : {
@@ -302,40 +303,23 @@ color:['#7350F5','#C87E61','#6049D3','#08E3A1'],
 
 myChart1.setOption(option);
 
+}
 
 
 
 
-
-function getNumBy() {
+function getNumByLiu() {
     $.ajax({
         type: "get",
         async: false,
         cache: false,
-        data: {"method": "grade"},
-        url: $appRoot + "QytjServlet",
-        dataType: "json",
-        success: function (data) {
 
-            for (var i = 0; i < grade.length; i++) {
-                if (grade[i]['name'] == '生产企业') {
-                    $('#dj1').text(grade[i]['value']);
-                }
-                else if (grade[i]['name'] == '经营企业') {
-                    $('#dj2').text(grade[i]['value']);
-                }
-                else if (grade[i]['name'] == '使用企业') {
-                    $('#dj3').text(grade[i]['value']);
-                }
-                else if (grade[i]['name'] == '运输企业') {
+        url: "getNumByLiu",
 
-                    $('#dj4').text(grade[i]['value']);
-                }
-            }
+        success: function (Liu) {
 
-        },
-        error: function (data) {
-            alert("数据获取失败！")
+
+
         }
     });
 
