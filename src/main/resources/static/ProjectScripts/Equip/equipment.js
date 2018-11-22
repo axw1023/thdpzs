@@ -37,7 +37,6 @@ var dataFormat = {
                     clazz = 'low green-low'
                 }
                 contentStr += '<tr><td class="td1">'+n.inspectAreaName+'</td>';
-                contentStr += '<td class="td2">'+n.areaType+'</td>';
                 contentStr += '<td class="td3">'+n.inspectNum+'</td>';
                 contentStr += '<td class="td4"> <span style="width: '+4*n.inspectPercent+'px;" class="'+clazz+'"></span> '+n.inspectPercent+'%</td></tr>';
             });
@@ -221,7 +220,7 @@ var equpEcharts = {
                 color:['#1EAC94','#A37F66','#2DA4C9','#5437BA'],
                 series: [
                     {
-                        name:'预警情况分析',
+                        name:'设备年限分析',
                         type:'pie',
                         radius: ['45%', '60%'],
                         center: ['30%','50%'],
