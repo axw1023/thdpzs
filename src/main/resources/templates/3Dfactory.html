@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>3Dfactory</title>
     <!--外部css-->
-<!--    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">-->
-
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
     <!--外部js-->
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
@@ -25,6 +25,13 @@
             position:absolute;top: 150px;width: 1154px;height: 857px;z-index:99}
         #vide3{left: 3590px;
             position:absolute; top: 150px;width: 1154px;height: 857px}
+        #change1{ position:absolute;height: 208px;width: 300px;top:230px;left:474px;background:url("../image/UPS.png");}
+        #change2{ position:absolute;height: 208px;width: 300px;top:230px;left:454px;background:url("../image/UPS.png");}
+        #hh1{ position:absolute;height: 154px;width: 183px;top:370px;left:304px;background:url("../image/wd.png") no-repeat;}
+        #hh2{ position:absolute;height: 154px;width: 183px;top:230px;left:484px;background:url("../image/wd.png") no-repeat;}
+        #hh3{ position:absolute;height: 300px;width: 200px;top:330px;left:800px;background:url("../image/wd1.png");}
+        #change4{ position:absolute;height: 208px;width: 300px;top:330px;left:604px;background:url("../image/wd.png" ) no-repeat;}
+        
     </style>
 
 </head>
@@ -37,11 +44,57 @@
         </div>
         <div id="vide2" >
             <video id="3d2" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D1.MP4" ></video>
+                <source src="../Video/3D/3D2.MP4" ></video>
         </div>
         <div id="vide3">
+            <div id="change1" class="kaku" hidden>
+                <div class="biaoti">
+                    <p class="ttt"> 原料预热器 </p>
+                </div>
+                <div id="nr">
+                    <p class="D3"><img src="../image/chu.png"> 温度 ：40.5℃</p>
+                    <p class="D3"><img src="../image/jin.png"> 温度： 27.2℃</p>
+                    <p class="D3">流量 ：175.580t/h</p>
+                    <p class="D3">累计流量： 4240956.7t</p>
+                </div>
+            </div>
+             <div id="change2" class="kaku" hidden>
+                 <div id="nrwd">
+                     <p class="ttt">低压分离器 </p><div class="lud"></div>
+                     <div id="wenduji">
+                     </div>
+                     <div id="shuidi"></div>
+                     <p class="D3"><img src="../image/chu.png"> 温度：36.4℃</p>
+                     <p class="D3">   压力：1.403mpa</p>
+                     <p class="D3">   液位：37.6%</p>
+                 </div>
+            </div>
+                 <div id="hh1" class="kaku" hidden>
+                     <p class="ttt" style="margin-left: 20px;margin-top: 20px">混合进料II换热器</p><div class="lud" ></div>
+                     <p class="D3" style="margin-left: 20px;margin-top: 20px"> <img src="../image/jin.png"> 温度276.3℃</p>
+                 </div>
+                 <div id="hh2" class="kaku" hidden>
+                     <p class="ttt" style="margin-left: 20px;margin-top: 20px">分馏塔换热器</p><div class="lud" style="margin-top: 20px"></div>
+                     <p class="D3" style="margin-left: 20px;margin-top: 20px"><img src="../image/jin.png"> 温度218.3℃</p>
+                 </div>
+                 <div id="hh3" class="kaku" hidden>
+                     <p class="ttt" style="margin-left: 10px;margin-top: 10px">混合进料I换热器</p><div class="lud" style="margin-top: 20px"></div>
+                     <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/zi.png"> 温度：145.5℃</p>
+                     <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/jin.png"> 温度49.6℃</p>
+                     <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/chu.png"> 温度115.8℃</p>
+                     <p class="D3"style="margin-left: 10px;margin-top: 10px">流量： 180.23t/h</p>
+                     <p class="D3"style="margin-left: 10px;margin-top: 10px">累计： 4099211t</p>
+                 </div>
+            
+             <div id="change4" class="kaku" hidden>
+                 <div id="nr1">
+                     <p class="ttt">放空罐</p><div class="lud"></div>
+                     <p class="D3">液位:   0.0%</p>
+                 </div>
+            </div>
+            
             <video id="3d3" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D1.MP4" ></video>
+                <source src="../Video/3D/3D3.MP4" ></video>
         </div>
     </div>
 </div>

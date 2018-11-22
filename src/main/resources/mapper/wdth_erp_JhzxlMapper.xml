@@ -2,19 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_JhzxlMapper" >
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Jhzxl" >
-    <result column="jan" property="jan" jdbcType="INTEGER" />
-    <result column="feb" property="feb" jdbcType="INTEGER" />
-    <result column="mar" property="mar" jdbcType="INTEGER" />
-    <result column="apr" property="apr" jdbcType="INTEGER" />
-    <result column="may" property="may" jdbcType="INTEGER" />
-    <result column="jun" property="jun" jdbcType="INTEGER" />
-    <result column="july" property="july" jdbcType="INTEGER" />
-    <result column="aug" property="aug" jdbcType="INTEGER" />
-    <result column="sep" property="sep" jdbcType="INTEGER" />
-    <result column="oct" property="oct" jdbcType="INTEGER" />
-    <result column="nov" property="nov" jdbcType="INTEGER" />
-    <result column="dece" property="dece" jdbcType="INTEGER" />
-    <result column="remarks" property="remarks" jdbcType="INTEGER" />
+    <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="num1" property="num1" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getJhzxl" resultMap="BaseResultMap">
     select * from wdth_erp_jhzxl 

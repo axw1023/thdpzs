@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper" >
+  <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="TIMESTAMP" />
+    <result column="all_inTraffic" property="allIntraffic" jdbcType="DOUBLE" />
+    <result column="all_outTraffic" property="allOuttraffic" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, time, all_inTraffic, all_outTraffic
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from wdth_tb_it_netdata_all
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from wdth_tb_it_netdata_all
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all" >
+    insert into wdth_tb_it_netdata_all (id, time, all_inTraffic, 
+      all_outTraffic)
+    values (#{id,jdbcType=VARCHAR}, #{time,jdbcType=TIMESTAMP}, #{allIntraffic,jdbcType=DOUBLE}, 
+      #{allOuttraffic,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all" >
+    insert into wdth_tb_it_netdata_all
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="allIntraffic != null" >
+        all_inTraffic,
+      </if>
+      <if test="allOuttraffic != null" >
+        all_outTraffic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="allIntraffic != null" >
+        #{allIntraffic,jdbcType=DOUBLE},
+      </if>
+      <if test="allOuttraffic != null" >
+        #{allOuttraffic,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all" >
+    update wdth_tb_it_netdata_all
+    <set >
+      <if test="time != null" >
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="allIntraffic != null" >
+        all_inTraffic = #{allIntraffic,jdbcType=DOUBLE},
+      </if>
+      <if test="allOuttraffic != null" >
+        all_outTraffic = #{allOuttraffic,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all" >
+    update wdth_tb_it_netdata_all
+    set time = #{time,jdbcType=TIMESTAMP},
+      all_inTraffic = #{allIntraffic,jdbcType=DOUBLE},
+      all_outTraffic = #{allOuttraffic,jdbcType=DOUBLE}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
