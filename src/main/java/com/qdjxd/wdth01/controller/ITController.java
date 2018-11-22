@@ -32,7 +32,8 @@ public class ITController {
     @Resource
 
     com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_ge1Mapper itNetdataGe1;
-
+@Resource
+com.qdjxd.wdth01.controller.NetDataController itda;
 
 
     @RequestMapping("/ITchar")
@@ -69,7 +70,8 @@ public class ITController {
     @RequestMapping(value = "/getNumByLiu", method = RequestMethod.GET)
     @ResponseBody
     //获取ajax参数中全部流量
-    public List<Wdth_tb_it_netdata_ge1> getNumByLiu() {
+    public List<Wdth_tb_it_netdata_ge1> getNumByLiu() throws Exception {
+//        itda.main();
       List<Wdth_tb_it_netdata_ge1> getNumByLiu = itNetdataGe1.ByAll();
         return getNumByLiu;
     }

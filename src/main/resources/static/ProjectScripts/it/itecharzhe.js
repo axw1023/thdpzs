@@ -82,9 +82,9 @@ function cross (shijian,shuchu,shuru) {
                 boundaryGap: false,
 
                 data:  shijian
-                /*.map(function (str) {
+                .map(function (str) {
                     return str.replace(' ', '\n')
-                })*/
+                })
             }
         ],
 
@@ -115,7 +115,7 @@ function cross (shijian,shuchu,shuru) {
                 type: 'line',
                 showSymbol: false,
                 hoverAnimation: false,
-                stack: '总量',
+
                 itemStyle: {
                     normal: {
                         color: '#0ABD8E',
@@ -148,10 +148,10 @@ function cross (shijian,shuchu,shuru) {
             },
             {
                 symbol: 'circle',     //设定为实心点
-                symbolSize: 8,   //设定实心点的大小
+                symbolSize: 1,   //设定实心点的大小
                 name: '发送',
                 type: 'line',
-                stack: '总量',
+
                 itemStyle: {
                     normal: {
                         color: '#2BA1E7',
@@ -188,14 +188,14 @@ function cross (shijian,shuchu,shuru) {
 }
 
 
-// var t=setInterval(getNumByLiu,3000);
+
 
 function getNumByLiu() {
     $.ajax({
         type: "get",
         async: false,
         cache: false,
-        dataType:'json',
+
         url: "getNumByLiu",
 
         success: function (LIU) {
@@ -203,13 +203,14 @@ function getNumByLiu() {
            var shuchu=[];
            var shijian=[];
 
-      debugger
+
             for(var i=0;i<LIU.length;i++){    //遍历data数组
                  shuru.push(LIU[i].intraffic);
                 shuchu.push(LIU[i].outtraffic);
                 shijian.push(LIU[i].time);
             }
 
+        var ss=shijian.toString()
 
 
             cross(shijian,shuchu,shuru);

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.wdth_3d_hhjl2Mapper" >
+  <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_3d_hhjl2" >
+    <result column="sheetid" property="sheetid" jdbcType="INTEGER" />
+    <result column="diesel" property="diesel" jdbcType="VARCHAR" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+  </resultMap>
+  <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_3d_hhjl2" >
+    insert into wdth_3d_hhjl2 (sheetid, diesel, num
+      )
+    values (#{sheetid,jdbcType=INTEGER}, #{diesel,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.qdjxd.wdth01.model.wdth_3d_hhjl2" >
+    insert into wdth_3d_hhjl2
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="sheetid != null" >
+        sheetid,
+      </if>
+      <if test="diesel != null" >
+        diesel,
+      </if>
+      <if test="num != null" >
+        num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="sheetid != null" >
+        #{sheetid,jdbcType=INTEGER},
+      </if>
+      <if test="diesel != null" >
+        #{diesel,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null" >
+        #{num,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
