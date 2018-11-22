@@ -125,9 +125,9 @@
         <script id="tpl4" type="text/html">
             <p class="l_label">{{item.name}}</p>
             <p><span class="circle"></span><span class="l_value">{{item.value}} {{item.unit}}</span>
-                {{if layer_status==1}}
+                {{if item.layer_status==1}}
                 <i class="icon up"></i>
-                {{else }}
+                {{else}}
                 <i class="icon down"></i>
                 {{/if}}</p>
         </script>
@@ -142,6 +142,13 @@
     var layerNum=-1;
     $(function(){
         init();
+       $("#BigData").on("click",function(){
+            turnTo();
+        });
+        $("#BigData").on("dblclick",function(){
+            history.go(-1);
+        });
+
     });
     //初始化
     function init(){
@@ -161,7 +168,10 @@
         three_line=echarts.init(document.getElementById('three_line'));
 
     }
-
+    // 页面跳转
+    function turnTo(){
+        window.location.href="/turnToFutureProspect"
+    }
 </script>
 <script type="text/javascript"   th:src="@{/Scripts/BigData/BigData.js}"></script>
 </html>
