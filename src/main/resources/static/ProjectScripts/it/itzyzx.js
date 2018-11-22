@@ -22,7 +22,7 @@ $.ajax({
             var ls = data[i];
             html +="<span style='font-size: 24px;padding-right: 111px' >"+ls.allnum+"GHz</span>";
             GZ2 +="<span style='font-size: 18px;padding-right: 100px'>"+ls.usenum+"Ghz可用</span>"
-            name +="<span style='font-size: 24px;padding-right: 152px'>"+ls.type+"</span>"
+            name +="<span style='font-size: 15px;padding-right: 144px'>"+ls.type+"</span>"
          }
         $("#GZ").html(html); //在html页面id=test的标签里显示html内容
         $("#GZ2").html(GZ2);

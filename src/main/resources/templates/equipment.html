@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>设备与安全环境管理</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectCss/equip/equipment.css}">
+
+
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+
+
+</head>
+<body>
+    <div class="content-all">
+        <div class="e-left">
+            <div class="left-1 left-1-1">
+                <div class="left-title-1">
+                    <div class="left-title-img">
+                        <label class="left-title-text">设备构成</label>
+                    </div>
+                </div>
+                <div class="left-content-1">
+                   <!-- <div class="left-content-1-title lc1">
+                        <label>M 类设备</label>
+                        <div>0</div>
+                    </div>
+                    <div class="left-content-1-title lc2">
+                        <label>S 类设备</label>
+                        <div>0</div>
+                    </div>
+                    <div class="left-content-1-title lc3">
+                        <label>E 类设备</label>
+                        <div>0</div>
+                    </div>
+                    <div class="left-content-1-title lc4">
+                        <label>I 类设备</label>
+                        <div>0</div>
+                    </div>-->
+                </div>
+            </div>
+            <div class="left-1 left-1-2">
+                <div class="left-title-1">
+                    <div class="left-title-img">
+                        <label class="left-title-text">装置区域数量</label>
+                    </div>
+                    <div id="equipNum" class="equip-bar"></div>
+                </div>
+            </div>
+            <div class="left-2 left-2-1">
+                <div class="left-2-title">巡查统计</div>
+                <div class="left-2-content">
+                    <table class="poll-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%">区域名称</th>
+                                <th style="width: 13%">区域类型</th>
+                                <th style="width: 10%">数量</th>
+                                <th style="width: 47%">巡检覆盖率</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pollContent">
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span> 90%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span> 90%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span> 90%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low green-low"></span> 100%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span> 90%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span> 90%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span> 90%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="td1">MCC装置</td>
+                                <td class="td2">****类型</td>
+                                <td class="td3">20</td>
+                                <td class="td4">
+                                    <span class="low yello-low"></span>  90%
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="dev-left-little">
+            <div class="dev-left dev-left-1">
+                <div class="left-title-img">
+                    <label class="left-title-text">预警情况分析</label>
+                </div>
+                <div id="warning" class="pie"></div>
+            </div>
+            <div class="dev-left dev-left-2">
+                <div class="left-title-img">
+                    <label class="left-title-text">缺陷级别分析</label>
+                </div>
+                <div id="defectLevel" class="pie"></div>
+            </div>
+        </div>
+        <div class="center">
+            <div class="center-title"></div>
+            <div class="center-content">
+                <div class="center-video2"></div>
+                <div class="center-table2">
+                    <div class="center-table center-table-1">
+                        <div class="center-sub-title">作业备案</div>
+                        <div class="table1-content">
+                            <div class="center8-list">
+                                <div class="center8 c8-1">
+                                    <label>用火</label>
+                                    <div>0</div>
+                                </div>
+                                <!--<div class="center8 c8-2">
+                                    <label>受限空间</label>
+                                    <div>0</div>
+                                </div>
+                                <div class="center8 c8-3">
+                                    <label>高度作业</label>
+                                    <div>0</div>
+                                </div>
+                                <div class="center8 c8-4">
+                                    <label>临时用电</label>
+                                    <div>0</div>
+                                </div>
+                                <div class="center8 c8-5">
+                                    <label>射线作业</label>
+                                    <div>0</div>
+                                </div>
+                                <div class="center8 c8-6">
+                                    <label>起重作业</label>
+                                    <div>0</div>
+                                </div>
+                                <div class="center8 c8-7">
+                                    <label>破土作业</label>
+                                    <div>0</div>
+                                </div>
+                                <div class="center8 c8-8">
+                                    <label>设备检修</label>
+                                    <div>0</div>
+                                </div>-->
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="center-table center-table-2">
+                        <div class="center-sub-title">外排口监控</div>
+                        <div class="table2-content">
+                            <table class="c2-table"  border="0"  cellspacing="0" cellpadding="0">
+                                <thead>
+                                    <tr>
+                                        <th>废水</th>
+                                        <th>实时浓度<br/>(mg/l)</th>
+                                        <th>标准值<br/>(mg/l)</th>
+                                        <th>排放量<br/>(kg/h)</th>
+                                        <th>达标率</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="wasteContent1">
+                                    <tr style="height: 137.5px;">
+                                        <td>COD</td>
+                                        <td>24.92</td>
+                                        <td>106</td>
+                                        <td>8.37</td>
+                                        <td>100%</td>
+                                    </tr>
+                                    <tr  style="height: 137.5px;">
+                                        <td>COD</td>
+                                        <td>24.92</td>
+                                        <td>106</td>
+                                        <td>8.37</td>
+                                        <td>100%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="c2-table"  border="0"  cellspacing="0" cellpadding="0">
+                                <thead>
+                                <tr>
+                                    <th>废气</th>
+                                    <th>实时浓度<br/>(mg/l)</th>
+                                    <th>标准值<br/>(mg/l)</th>
+                                    <th>排放量<br/>(kg/h)</th>
+                                    <th>达标率</th>
+                                </tr>
+                                </thead>
+                                <tbody id="wasteContent2">
+                                <tr  style="height: 91.3px;">
+                                    <td>COD</td>
+                                    <td>24.92</td>
+                                    <td>106</td>
+                                    <td>8.37</td>
+                                    <td>100%</td>
+                                </tr>
+                                <tr style="height: 91.3px;">
+                                    <td>COD</td>
+                                    <td>24.92</td>
+                                    <td>106</td>
+                                    <td>8.37</td>
+                                    <td>100%</td>
+                                </tr>
+                                <tr style="height: 91.3px;">
+                                    <td>COD</td>
+                                    <td>24.92</td>
+                                    <td>106</td>
+                                    <td>8.37</td>
+                                    <td>100%</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="right-video"></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript"   th:src="@{/ProjectScripts/Equip/equipment.js}"></script>
+</html>

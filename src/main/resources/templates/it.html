@@ -25,8 +25,23 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
         #info{ width:633px;height: 461px;background:url("../image/633.png");
             margin-top: 25px;position: absolute}
         #tbl{ width:481px;height: 330px;background:url("../image/table.png");margin-left: 34px;margin-top: 38px;position: absolute;top:45px}
-        #Vide{ height:545px;width: 1033px ;margin-left:53px ;margin-top:135px ;overflow: hidden}
-        #five{height:947px;width: 1137px; float: left;background:url("../image/1135.png");margin-top: 39px;margin-left: 26px}
+        #Vide{ height:816px;width: 1133px ;/*margin-left:53px ;*/margin-top:28px ;background:url("../image/3dd.png") no-repeat;  background-size:1140px 816px; -moz-background-size:1140px 816px;position:relative;right: 30px;
+        }
+        #five{height:947px;width: 1137px; float: left;background:url("../image/1135.png");margin-top: 39px;margin-left: 26px;position: relative;z-index: 6}
+        #wd{height: 154px;width: 183px;position: absolute;top:222px;left:125px;background:url("../image/wd.png");z-index: 2;display: none}
+        #wd1{height: 154px;width: 183px;position: absolute;top:222px;left:415px;background:url("../image/wd.png");z-index: 2;display: none}
+        #UPS{height: 208px;width: 300px;position: absolute;top:508px;left:314px;background:url("../image/UPS.png");z-index: 1;display: none}
+        #bj{height: 170px;width: 237px;position: absolute;top:508px;left:627px;background:url("../image/bj.png");z-index: 1;display: none}
+        .lud{height: 36px;width: 36px;position: absolute;top:20px;left:117px;background:url("../image/lud.png");z-index: 1}
+        .lud1{height: 36px;width: 36px;position: absolute;top:20px;left:188px;background:url("../image/lud.png");z-index: 1}
+        .lud2{height: 36px;width: 36px;position: absolute;top:56px;left:188px;background:url("../image/lud.png");z-index: 1}
+        .lud3{height: 36px;width: 36px;position: absolute;top:92px;left:188px;background:url("../image/lud.png");z-index: 1}
+        .lud4{height: 36px;width: 36px;position: absolute;top:125px;left:188px;background:url("../image/lud.png");z-index: 1}
+        #wenduji{height: 25px;width: 25px;position: absolute;top:62px;left:20px;background:url("../image/wendu.png");z-index: 1 }
+        #shuidi{height: 25px;width: 25px;position: absolute;top:98px;left:20px;background:url("../image/shui.png");z-index: 1}
+
+    .she{background:url("../image/sxt.png") ;height: 100px;width: 100px; background-size:100px 100px; -moz-background-size:100px 100px;z-index: 1;float: left}
+
     </style>
 
     <script type="text/javascript">
@@ -66,7 +81,7 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
                 <div id="GZ2" style="margin-left: 18px;position: absolute;top: 108px;/*left: 18px*/">
 
                 </div>
-                <div id="name" style="position: absolute;bottom: 2px;left: 42px;">
+                <div id="name" style="position: absolute;bottom: 2px;left: 27px;">
 
                 </div>
             </div>
@@ -115,22 +130,84 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
     <div id="five">
         <div class="oneBanner">
             <span>3D可视化机房</span>
+
+        </div>
+
+
+        <!--ups-->
+        <div id="UPS" class="kaku">
+            <div class="biaoti">
+                <p class="ttt"> UPS </p>
+            </div>
+            <div id="nr">
+                <p class="D3">A相输出电流：&nbsp;18.4A</p>
+                <p class="D3">B相输出电流：&nbsp;7.0A</p>
+                <p class="D3">C相输出电流：&nbsp;5.2A</p>
+                <p class="D3">电池后备时间：&nbsp;119.0Min</p>
+
+            </div>
+        </div>
+        <div id="bj" class="kaku1">
+
+            <div id="nr1">
+                <p class="D3">市电停电报警</p><div class="lud1"></div>
+                <p class="D3">A相电压断相报警</p><div class="lud2"></div>
+                <p class="D3">B相电压断相报警</p><div class="lud3"></div>
+                <p class="D3">C相电压断相报警</p><div class="lud4"></div>
+
+
+            </div>
+
+
+        </div>
+        <div id="wd" class="kaku2">
+
+                <div id="nrwd">
+                <p class="D3">空调状态 </p><div class="lud"></div>
+
+
+                <div id="wenduji">
+
+                </div>
+                <div id="shuidi"></div>
+                <p class="D3">温度：24.3℃</p>
+                <p class="D3">湿度：15.3%</p>
+
+
+            </div>
+
+        </div>
+        <div id="wd1" class="kaku3">
+
+            <div id="nrwd1">
+                <p class="D3">消防报警</p><div class="lud" style="margin-top: 20px"></div>
+                <p class="D3">漏水报警</p><div class="lud" style="margin-top: 55px"></div>
+
+
+            </div>
         </div>
 
         <div id="Vide">
 
-            <img src="../image/3dd.png"/></div>
-            <!--<video id="ob" autoplay="autoplay"   loop="loop"    height="805" width="1033">-->
-                <!--<source src="../Video/video.MP4" >-->
-        <!--</div>-->
+        </div>
+        <!--tou-->
+        <div id="shexiangtou">
 
-
-
+            <div  class="she" style="position: absolute;top:120px;right:200px;display: none"></div>
+            <div class="she" style="position: absolute;top:120px;right:500px;display: none"></div>
+            <div class="she" style="position: absolute;top:120px;right:800px;display: none"></div>
+            <div  class="she" style="position: absolute;top:350px;right:170px;display: none"></div>
+            <div  class="she" style="position: absolute;top:730px;right:400px;display: none"></div>
+            <div class="she" style="position: absolute;top:700px;right:890px;display: none"></div>
+        </div>
+        </div>
 </body>
 <!--<script type="text/javascript"   th:src="@{/ProjectScripts/it/it.js}"></script>-->
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itecharts.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itecharzhe.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itzyzx.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itzcxx.js}"></script>
+<script type="text/javascript"   th:src="@{/ProjectScripts/it/sxt.js}"></script>
+<script type="text/javascript"   th:src="@{/ProjectScripts/it/animateWait.js}"></script>
 <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
 </html>

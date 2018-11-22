@@ -59,12 +59,19 @@ function getErp() {
         async: false,
         success: function (data) {
             //更新数据
-            $("#qy2").val(data[0].gasoline);
-            $("#cy2").val(data[0].diesel);
-            $("#yhq2").val(data[0].liquidgas);
-            $("#bw2").val(data[0].propane);
-             $("#bx2").val(data[0].propylene);
-             $("#syj2").val(data[0].petroleumcoke);
+            $("#qy2").val(data[0].num);
+            $("#qy3").val(data[0].name);
+            $("#cy2").val(data[1].num);
+            $("#cy3").val(data[1].name);
+            $("#yhq2").val(data[2].num);
+            $("#yhq3").val(data[2].name);
+            $("#bw2").val(data[3].num);
+            $("#bw3").val(data[3].name);
+             $("#bx2").val(data[4].num);
+             $("#bx3").val(data[4].name);
+             $("#syj2").val(data[5].num);
+             $("#syj3").val(data[5].name);
+             
         },   
         error: function (data) {
             alert("数据获取失败！")
@@ -78,8 +85,17 @@ function getHkzssl() {
         url: "/ERPandBI/hkzssl",
         async: false,
         success: function (data) {
+            var name=[];
+            var num=[];
+            var num1=[];
+            for(i=0;i<data.length;i++){
+                name.push(data[i].name)
+                num.push(data[i].num)
+                num1.push(data[i].mou)
+            }
+          
             //更新数据
-            setHkzssl(data);
+            setHkzssl(name,num,num1);
         },
         error: function (data) {
             alert("数据获取失败！")
@@ -93,8 +109,17 @@ function getJhzxl() {
         url: "/ERPandBI/jhzxl",
         async: false,
         success: function (data) {
+            var name=[];
+            var num=[];
+            var num1=[];
+            for(i=0;i<data.length;i++){
+                name.push(data[i].name)
+                num.push(data[i].num)
+                num1.push(data[i].num1)
+            }
+            
             //更新数据
-            setJhzxl(data);
+            setJhzxl(num1,num,name);
         },
         error: function (data) {
             alert("数据获取失败！")
@@ -108,8 +133,16 @@ function getKc() {
         url: "/ERPandBI/kc",
         async: false,
         success: function (data) {
+            var name=[];
+            var num=[];
+            var num1=[];
+            for(i=0;i<data.length;i++){
+                name.push(data[i].name)
+                num.push(data[i].num)
+                num1.push(data[i].num1)
+            }
             //更新数据
-            setKc(data);
+            setKc(num1,num,name);
         },
         error: function (data) {
             alert("数据获取失败！")
@@ -153,8 +186,16 @@ function getYlly() {
         url: "/ERPandBI/ylly",
         async: false,
         success: function (data) {
+            var name=[];
+            var num=[];
+            var num1=[];
+            for(i=0;i<data.length;i++){
+                name.push(data[i].name)
+                num.push(data[i].num)
+                num1.push(data[i].num1)
+            }
             //更新数据
-            setYlly(data);
+            setYlly(num1,num,name)
         },
     });
 }
@@ -200,7 +241,7 @@ function setCbgc(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
-            data: ['生产','物流','人工'],
+            data: data.name,
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -268,7 +309,7 @@ function setCbgc(data) {
                 },
                /* data:[{value:data[0].production,name:'生产'}]*/
                 data:[
-                    {value:data[0].production, name:'生产',itemStyle:{ color: {
+                    {value:data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -283,7 +324,7 @@ function setCbgc(data) {
                             }}
 
                     },
-                    {value:data[0].logistics, name:'物流',itemStyle:{ color: {
+                    {value:data[1].num, name:data[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -297,7 +338,7 @@ function setCbgc(data) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:data[0].artificial, name:'人工',itemStyle:{ color: {
+                    {value:data[2].num, name:data[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -395,7 +436,7 @@ function setSynhzb(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
-            data: ['蒸汽消耗','水消耗','电消耗'],
+            data: data.name,
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -451,7 +492,7 @@ function setSynhzb(data) {
                     show:false
                 },
                 data:[
-                    {value: data[0].steamconsumption, name:'蒸汽消耗',itemStyle:{ color: {
+                    {value: data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -466,7 +507,7 @@ function setSynhzb(data) {
                             }}
 
                     },
-                    {value:data[0].waterconsumption, name:'水消耗',itemStyle:{ color: {
+                    {value:data[1].num, name:data[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -480,7 +521,7 @@ function setSynhzb(data) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:data[0].electricconsumption, name:'电消耗',itemStyle:{ color: {
+                    {value:data[2].num, name:data[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -539,7 +580,6 @@ function setSynhzb(data) {
     }, 3000);*/
 }
 
-
 function setXsqk(data) {
     var myChart4 = echarts.init(document.getElementById('xsqk'));
     var currentIndex2= -1;
@@ -576,7 +616,7 @@ function setXsqk(data) {
             orient: 'vertical',
             x:'565',
             y:'50',
-            data: ['汽油','柴油','液化气','丙烷','丙烯','石油焦'],
+            data:data.name,
             textStyle:{
                 color:'#92F1FF',
                 fontSize:20
@@ -626,7 +666,7 @@ function setXsqk(data) {
                     show:false
                 },
                 data:[
-                    {value: data[0].gasoline, name:'汽油',itemStyle:{ color: {
+                    {value: data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -641,7 +681,7 @@ function setXsqk(data) {
                             }}
 
                     },
-                    {value:data[0].diesel, name:'柴油',itemStyle:{ color: {
+                    {value:data[1].num, name:data[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -655,7 +695,7 @@ function setXsqk(data) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:data[0].liquidgas, name:'液化气',itemStyle:{ color: {
+                    {value:data[2].num, name:data[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -668,7 +708,7 @@ function setXsqk(data) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:data[0].propane, name:'丙烷',itemStyle:{ color: {
+                    {value:data[3].num, name:data[3].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -681,7 +721,7 @@ function setXsqk(data) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:data[0].propylene, name:'丙烯',itemStyle:{ color: {
+                    {value:data[4].num, name:data[4].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -694,7 +734,7 @@ function setXsqk(data) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:data[0].petroleumcoke, name:'石油焦',itemStyle:{ color: {
+                    {value:data[5].num, name:data[5].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -734,8 +774,7 @@ function setXsqk(data) {
     }, 3000);
 }
 
-
-function setHkzssl(data) {
+function setHkzssl(name,num,num1) {
     var myChart = echarts.init(document.getElementById('hkzssl'));
 
     // 指定图表的配置项和数据
@@ -772,7 +811,7 @@ function setHkzssl(data) {
             }
         },
         legend: {
-            data:['目标','日收率','月收率'],
+            data:['计划收率','实际收率'],
             /*left:,*/
             right: '4%',
             bottom: '80%',
@@ -789,7 +828,8 @@ function setHkzssl(data) {
         xAxis : [
             {
                 type : 'category',
-                data : ['常压装置','汽油加氢','柴油加氢','焦化装置','柴油改制','重催装置','气分/MTBE'],
+                data:name,
+               // data : [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name,data[6].name],
                 splitLine:{show: false},//去除网格
                 axisLine: {
                     lineStyle: {
@@ -839,11 +879,11 @@ function setHkzssl(data) {
             }
         ],
         series : [
-            {
+           /* {
                 name:'目标',
                 type:'bar',
                 barWidth : 8,
-                data:[data[0].atmosphericunit,data[0].gasolinehydrogenation, data[0].dieselhydrogenation, data[0].cokingunit, data[0].dieselconversion, data[0].repressingdevice,  data[0].mtbe],
+                data:[data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num,data[6].num],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -858,12 +898,13 @@ function setHkzssl(data) {
                         globalCoord: false // 缺省为 false
                     }}
 
-            },
+            },*/
             {
-                name:'日收率',
+                name:'计划收率',
                 type:'bar',
                 barWidth : 8,
-                data:[data[1].atmosphericunit, data[1].gasolinehydrogenation, data[1].dieselhydrogenation, data[1].cokingunit, data[1].dieselconversion,  data[1].repressingdevice, data[1].mtbe],
+                data:num,
+                //data:[data[0].day,data[1].day,data[2].day,data[3].day,data[4].day,data[5].day,data[6].day],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -880,10 +921,11 @@ function setHkzssl(data) {
 
             },
             {
-                name:'月收率',
+                name:'实际收率',
                 type:'bar',
                 barWidth : 8,
-                data:[data[2].atmosphericunit, data[2].gasolinehydrogenation, data[2].dieselhydrogenation, data[2].cokingunit, data[2].dieselconversion,  data[2].repressingdevice, data[2].mtbe],
+                data:num1,
+                //  data:[data[0].mou,data[1].mou,data[2].mou,data[3].mou,data[4].mou,data[5].mou,data[6].mou],
                 itemStyle:{ color: {
                         type: 'linear',
                         x: 0,
@@ -908,19 +950,19 @@ function setHkzssl(data) {
 
 }
 
-function setYlly(data) {
+function setYlly(num1,num,name) {
     var myChart = echarts.init(document.getElementById('ylly'));
 
     // 指定图表的配置项和数据
-    var  option = {
-   /*     title: {
+ /*   var  option = {
+   /!*     title: {
             text: '原料来源',
             x:'center',
             textStyle: {
                 //文字颜色
                 color: '#208198',
             },
-        },*/
+        },*!/
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -932,7 +974,7 @@ function setYlly(data) {
         },
         xAxis: [{
             type: 'category',
-            data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+            data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
             axisPointer: {
                 type: 'none'
             },
@@ -958,7 +1000,7 @@ function setYlly(data) {
                 type: 'category',
                 show: false,
                 position: '',
-                data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
                 offset:20,
                 axisPointer: {
                     type: 'none',
@@ -1016,7 +1058,7 @@ function setYlly(data) {
             //                barWidth:27,
             barWidth : 12,
             
-            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+            data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -1044,13 +1086,13 @@ function setYlly(data) {
         },
 
             {
-               /* name: '所占比例',*/
+               /!* name: '所占比例',*!/
                 type:'line',
                 symbol:'star',//拐点样式
                 symbolSize: 8,//拐点大小
-                /*yAxisIndex: 1,
-                xAxisIndex: 1,*/
-                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+                /!*yAxisIndex: 1,
+                xAxisIndex: 1,*!/
+                data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
                 itemStyle: {
                     normal: {
                         color: '#ee992f',
@@ -1067,10 +1109,10 @@ function setYlly(data) {
                             y2: 1,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(255, 165,0,1)' // 0% 处的颜色
+                                color: 'rgba(255, 165,0,0.6)' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(255, 165,0,0.2)' // 100% 处的颜色
+                                color: 'rgba(255, 165,0,0)' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }
@@ -1100,25 +1142,143 @@ function setYlly(data) {
                 smooth: false
             }
         ]
+    };*/
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['本月','上月'],
+            align: 'left',
+            right: 10,
+            textStyle: {
+                color: "#9FCCFF",
+                fontSize:20,
+                padding:[0,0,0,8]
+            },
+            itemWidth: 20,
+            itemHeight: 20,
+            itemGap: 35
+        },
+        grid: {
+            left: '5%',
+            right: '5%',
+            bottom: '13%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'category',
+            data: name,
+            //data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
+
+            axisLine: {
+                show: false,
+                lineStyle: {
+                    color: "#063374",
+                    width: 1,
+                    type: "solid"
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: "#9FCCFF",
+                    fontSize:22
+                },
+                margin:15
+            },
+        }],
+        yAxis: [{
+            type: 'value',
+            axisLabel: {
+                textStyle: {
+                    color: "#9FCCFF",
+                    fontSize:22
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLine: {
+                show: false,
+                lineStyle: {
+                    color: "#00c7ff",
+                    width: 1,
+                    type: "solid"
+                },
+            },
+            splitLine: {
+                show:false,
+                lineStyle: {
+                    color: "#063374",
+                }
+            }
+        }],
+        series: [
+            {
+                name: '本月',
+                type: 'bar',
+                data:num,
+                // data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
+                barWidth: 10, //柱子宽度
+                barGap: 1, //柱子之间间距
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'RGBA(42, 156, 252, 1)'
+                        }, {
+                            offset: 1,
+                            color: 'RGBA(42, 156, 252, 0.1)'
+                        }]),
+                    }
+                }
+            },
+            {
+                name: '上月',
+                type: 'bar',
+                data:num1,
+                //data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
+                barWidth: 10,
+                barGap: 1,
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'RGBA(40, 225, 184, 1)'
+                        }, {
+                            offset: 1,
+                            color: 'RGBA(2, 172, 162, 0.1)'
+                        }]),
+                    }
+                }
+            }
+        ]
     };
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 
 }
 
-function setKc(data) {
+function setKc(num1,num,name) {
     var myChart = echarts.init(document.getElementById('kc'));
 
     // 指定图表的配置项和数据
-    var  option = {
-    /*    title: {
+/*    var  option = {
+    /!*    title: {
             text: '库存',
             x:'center',
             textStyle: {
                 //文字颜色
                 color: '#208198',
             },
-        },*/
+        },*!/
 
         tooltip: {
             trigger: 'axis',
@@ -1132,7 +1292,7 @@ function setKc(data) {
         xAxis: [{
             
             type: 'category',
-            data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+            data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
             axisPointer: {
                 type: 'none'
             },
@@ -1159,7 +1319,7 @@ function setKc(data) {
                 type: 'category',
                 show: false,
                 position: '',
-                data: ['汽油', '柴油', '液化气', '丙烷', '丙烯', '石油焦'],
+                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
                 offset:20,
                 axisPointer: {
                     type: 'none',
@@ -1216,7 +1376,7 @@ function setKc(data) {
             //                barWidth:27,
             barWidth : 12,
 
-            data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+            data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
             itemStyle: {
                 normal: {
                     barBorderRadius: 7,
@@ -1244,13 +1404,13 @@ function setKc(data) {
         },
 
             {
-                /* name: '所占比例',*/
+                /!* name: '所占比例',*!/
                 type:'line',
                 symbol:'star',//拐点样式
                 symbolSize: 8,//拐点大小
-                /*yAxisIndex: 1,
-                xAxisIndex: 1,*/
-                data: [data[0].gasoline, data[0].diesel, data[0].liquidgas, data[0].propane, data[0].propylene, data[0].petroleumcoke],
+                /!*yAxisIndex: 1,
+                xAxisIndex: 1,*!/
+                data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
                 itemStyle: {
                     normal: {
                         color: '#06bbff',
@@ -1267,10 +1427,10 @@ function setKc(data) {
                             y2: 1,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(0,0,255,1)' // 0% 处的颜色
+                                color: 'rgba(0,0,255,0.6)' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(0,0,255,0.2)' // 100% 处的颜色
+                                color: 'rgba(0,0,255,0)' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }
@@ -1300,13 +1460,132 @@ function setKc(data) {
                 smooth: false
             }
         ]
+    };*/
+    var option = {
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['本月','上月'],
+            align: 'left',
+            right: 10,
+            textStyle: {
+                color: "#9FCCFF",
+                fontSize:20,
+                padding:[0,0,0,8]
+            },
+            itemWidth: 20,
+            itemHeight: 20,
+            itemGap: 35
+        },
+        grid: {
+            left: '5%',
+            right: '5%',
+            bottom: '13%',
+            containLabel: true
+        },
+        xAxis: [{
+            type: 'category',
+            data: name,
+            //data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
+
+            axisLine: {
+                show: false,
+                lineStyle: {
+                    color: "#063374",
+                    width: 1,
+                    type: "solid"
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLabel: {
+                show: true,
+                textStyle: {
+                    color: "#9FCCFF",
+                    fontSize:22
+                },
+                margin:15
+            },
+        }],
+        yAxis: [{
+            type: 'value',
+            axisLabel: {
+                textStyle: {
+                    color: "#9FCCFF",
+                    fontSize:22
+                }
+            },
+            axisTick: {
+                show: false,
+            },
+            axisLine: {
+                show: false,
+                lineStyle: {
+                    color: "#00c7ff",
+                    width: 1,
+                    type: "solid"
+                },
+            },
+            splitLine: {
+                show:false,
+                lineStyle: {
+                    color: "#063374",
+                }
+            }
+        }],
+        series: [
+            {
+                name: '本月',
+                type: 'bar',
+                data:num,
+                // data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
+                barWidth: 10, //柱子宽度
+                barGap: 1, //柱子之间间距
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'RGBA(42, 156, 252, 1)'
+                        }, {
+                            offset: 1,
+                            color: 'RGBA(42, 156, 252, 0.1)'
+                        }]),
+                    }
+                }
+            },
+            {
+                name: '上月',
+                type: 'bar',
+                data:num1,
+                //data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
+                barWidth: 10,
+                barGap: 1,
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'RGBA(40, 225, 184, 1)'
+                        }, {
+                            offset: 1,
+                            color: 'RGBA(2, 172, 162, 0.1)'
+                        }]),
+                    }
+                }
+            }
+        ]
     };
+
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
 
 }
 
-function setJhzxl(data) {
+function setJhzxl(num1,num,name) {
     var myChart = echarts.init(document.getElementById('jhzxl'));
 
     // 指定图表的配置项和数据
@@ -1344,7 +1623,7 @@ function setJhzxl(data) {
             {
                 type : 'category',
                 boundaryGap : false,
-                data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
+                data : name,
 
                 axisLabel: {
 
@@ -1385,7 +1664,7 @@ function setJhzxl(data) {
                         }
                     }
                 },
-                data:[data[0].jan,data[0].feb,data[0].mar,data[0].apr,data[0].may,data[0].jun,data[0].july,data[0].aug,data[0].sep,data[0].oct,data[0].nov,data[0].dece]
+                data:num,
             },
             {
                 name:'计划执行',
@@ -1413,7 +1692,7 @@ function setJhzxl(data) {
                 }
                 
                 },
-                data:[data[1].jan,data[1].feb,data[1].mar,data[1].apr,data[1].may,data[1].jun,data[1].july,data[1].aug,data[1].sep,data[1].oct,data[1].nov,data[1].dece]
+                data:num1,
             }
         ]
     };

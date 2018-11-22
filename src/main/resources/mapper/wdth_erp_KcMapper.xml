@@ -2,12 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_KcMapper" >
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Kc" >
-    <result column="gasoline" property="gasoline" jdbcType="INTEGER" />
-    <result column="diesel" property="diesel" jdbcType="INTEGER" />
-    <result column="Liquidgas" property="liquidgas" jdbcType="INTEGER" />
-    <result column="propane" property="propane" jdbcType="INTEGER" />
-    <result column="propylene" property="propylene" jdbcType="INTEGER" />
-    <result column="Petroleumcoke" property="petroleumcoke" jdbcType="INTEGER" />
+    <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="num1" property="num1" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getKc" resultMap="BaseResultMap">
     select * from wdth_erp_kc
