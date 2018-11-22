@@ -6,6 +6,9 @@
     <result column="diesel" property="diesel" jdbcType="VARCHAR" />
     <result column="num" property="num" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getYlyr" resultMap="BaseResultMap">
+    select * from wdth_3d_ylyr 
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_3d_ylyr" >
     insert into wdth_3d_ylyr (sheetid, diesel, num
       )
