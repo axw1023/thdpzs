@@ -1,133 +1,43 @@
 package com.qdjxd.wdth01.model;
 
 public class wdth_erp_Jhzxl {
-    private Integer jan;
+    private Integer sheetid;
 
-    private Integer feb;
+    private Integer num;
 
-    private Integer mar;
-
-    private Integer apr;
-
-    private Integer may;
-
-    private Integer jun;
-
-    private Integer july;
-
-    private Integer aug;
-
-    private Integer sep;
-
-    private Integer oct;
-
-    private Integer nov;
-
-    private Integer dece;
-
-    private Integer remarks;
-
-    public Integer getJan() {
-        return jan;
+    public Integer getNum1() {
+        return num1;
     }
 
-    public void setJan(Integer jan) {
-        this.jan = jan;
+    public void setNum1(Integer num1) {
+        this.num1 = num1;
     }
 
-    public Integer getFeb() {
-        return feb;
+    private Integer num1;
+
+    private String name;
+
+    public Integer getSheetid() {
+        return sheetid;
     }
 
-    public void setFeb(Integer feb) {
-        this.feb = feb;
+    public void setSheetid(Integer sheetid) {
+        this.sheetid = sheetid;
     }
 
-    public Integer getMar() {
-        return mar;
+    public Integer getNum() {
+        return num;
     }
 
-    public void setMar(Integer mar) {
-        this.mar = mar;
+    public void setNum(Integer num) {
+        this.num = num;
     }
 
-    public Integer getApr() {
-        return apr;
+    public String getName() {
+        return name;
     }
 
-    public void setApr(Integer apr) {
-        this.apr = apr;
-    }
-
-    public Integer getMay() {
-        return may;
-    }
-
-    public void setMay(Integer may) {
-        this.may = may;
-    }
-
-    public Integer getJun() {
-        return jun;
-    }
-
-    public void setJun(Integer jun) {
-        this.jun = jun;
-    }
-
-    public Integer getJuly() {
-        return july;
-    }
-
-    public void setJuly(Integer july) {
-        this.july = july;
-    }
-
-    public Integer getAug() {
-        return aug;
-    }
-
-    public void setAug(Integer aug) {
-        this.aug = aug;
-    }
-
-    public Integer getSep() {
-        return sep;
-    }
-
-    public void setSep(Integer sep) {
-        this.sep = sep;
-    }
-
-    public Integer getOct() {
-        return oct;
-    }
-
-    public void setOct(Integer oct) {
-        this.oct = oct;
-    }
-
-    public Integer getNov() {
-        return nov;
-    }
-
-    public void setNov(Integer nov) {
-        this.nov = nov;
-    }
-
-    public Integer getDece() {
-        return dece;
-    }
-
-    public void setDece(Integer dece) {
-        this.dece = dece;
-    }
-
-    public Integer getRemarks() {
-        return remarks;
-    }
-
-    public void setRemarks(Integer remarks) {
-        this.remarks = remarks;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 }

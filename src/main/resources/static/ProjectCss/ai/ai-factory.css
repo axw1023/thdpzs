@@ -1,0 +1,86 @@
+body{
+    background-color: #081C36;
+    height: 1024px;
+    width: 5632px;
+    font-family: 微软雅黑;
+}
+
+.content-all{
+    height: 1024px;
+    width: 5632px;
+    background: url("../../image/ai-factory/backgroud.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.factory{
+    height: 942px;
+    width: 100%;
+    background: url("../../image/ai-factory/backgroud-font.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    margin-top: -961px;
+    position: relative;
+}
+
+.factory{
+    font-size: 31px;
+    color: #00fcff;
+}
+.ai-factroy-1{
+    display: inline-block;
+    height: 302.4px;
+    width: 1559px;
+    position: absolute;
+    margin: 448px 0 0 183px;
+    text-align: center;
+    line-height: 96px;
+}
+
+.ai-factroy-2-1{
+    line-height: 60px;
+    width: 807px;
+    height: 177px;
+    display: inline-block;
+    position: absolute;
+    margin: 208px 0 0 2834px;
+}
+
+.ai-factroy-2-2{
+    line-height: 60px;
+    width: 807px;
+    height: 120px;
+    display: inline-block;
+    position: absolute;
+    margin: 515px 0 0 2834px;
+}
+
+.ai-factroy-3-1{
+    width: 1624px;
+    height: 290px;
+    display: inline-block;
+    position: absolute;
+    margin: 460px 0 0 3953px;
+    line-height: 70px;
+}
+
+.ai-factroy-3-1 ul{
+    width:98%;
+}
+
+.ai-factroy-3-1 ul li{
+    width: 50%;
+    list-style: disc;
+    display: inline-block;
+    float: left;
+}
+
+.cricle{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #00e9d0;
+    border-radius: 15px;
+    margin-right: 15px;
+}
