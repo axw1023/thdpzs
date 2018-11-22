@@ -83,7 +83,13 @@ function cross (shijian,shuchu,shuru) {
 
                 data:  shijian
                 .map(function (str) {
-                    return str.replace(' ', '\n')
+                    return str.replace('T', '\n')
+                        .replace('.000+0000','')
+                        .replace('-','/')
+                        .replace('-','/')
+                        .substring(0,16)
+
+
                 })
             }
         ],

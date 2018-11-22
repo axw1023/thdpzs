@@ -44,8 +44,8 @@ table tr td {
     text-indent: -35px;
 }
 
-#charzhe{ height:198px;width: 620px;border: grey 1px solid}
-#charzhe1{ width: 620px;height: 198px; margin-top:9px;border: grey 1px solid}
+#charzhe{ height:198px;width: 620px;/*border: grey 1px solid*/}
+#charzhe1{ width: 620px;height: 198px; margin-top:9px;/*border: grey 1px solid*/}
 #four{height:947px;width: 633px ;float: left ;margin-top: 39px;}
 /*  视频与上方的边距 和 固定 视频 的div 超出div 的黑框 隐藏掉*/
 .ttt{ font-size: 20px;color: #68F1FC;font-weight:bold;}
