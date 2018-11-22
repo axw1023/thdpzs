@@ -6,6 +6,9 @@
     <result column="diesel" property="diesel" jdbcType="VARCHAR" />
     <result column="num" property="num" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getHhjl2" resultMap="BaseResultMap">
+    select * from wdth_3d_hhjl2 
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_3d_hhjl2" >
     insert into wdth_3d_hhjl2 (sheetid, diesel, num
       )

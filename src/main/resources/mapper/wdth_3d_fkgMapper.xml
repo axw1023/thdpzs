@@ -6,6 +6,9 @@
     <result column="diesel" property="diesel" jdbcType="VARCHAR" />
     <result column="num" property="num" jdbcType="INTEGER" />
   </resultMap>
+  <select id="getFkg" resultMap="BaseResultMap">
+    select * from wdth_3d_fkg 
+  </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_3d_fkg" >
     insert into wdth_3d_fkg (sheetid, diesel, num
       )
