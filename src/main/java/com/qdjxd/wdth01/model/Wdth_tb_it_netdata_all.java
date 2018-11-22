@@ -7,9 +7,9 @@ public class Wdth_tb_it_netdata_all {
 
     private Date time;
 
-    private String allIntraffic;
+    private Double allIntraffic;
 
-    private String allOuttraffic;
+    private Double allOuttraffic;
 
     public String getId() {
         return id;
@@ -27,19 +27,19 @@ public class Wdth_tb_it_netdata_all {
         this.time = time;
     }
 
-    public String getAllIntraffic() {
+    public Double getAllIntraffic() {
         return allIntraffic;
     }
 
-    public void setAllIntraffic(String allIntraffic) {
-        this.allIntraffic = allIntraffic == null ? null : allIntraffic.trim();
+    public void setAllIntraffic(Double allIntraffic) {
+        this.allIntraffic = allIntraffic;
     }
 
-    public String getAllOuttraffic() {
+    public Double getAllOuttraffic() {
         return allOuttraffic;
     }
 
-    public void setAllOuttraffic(String allOuttraffic) {
-        this.allOuttraffic = allOuttraffic == null ? null : allOuttraffic.trim();
+    public void setAllOuttraffic(Double allOuttraffic) {
+        this.allOuttraffic = allOuttraffic;
     }
 }

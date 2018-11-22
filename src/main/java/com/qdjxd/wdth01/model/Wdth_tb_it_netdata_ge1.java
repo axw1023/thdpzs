@@ -7,9 +7,9 @@ public class Wdth_tb_it_netdata_ge1 {
 
     private String trimmeddispname;
 
-    private String intraffic;
+    private Double intraffic;
 
-    private String outtraffic;
+    private Double outtraffic;
 
     private Date time;
 
@@ -29,20 +29,20 @@ public class Wdth_tb_it_netdata_ge1 {
         this.trimmeddispname = trimmeddispname == null ? null : trimmeddispname.trim();
     }
 
-    public String getIntraffic() {
+    public Double getIntraffic() {
         return intraffic;
     }
 
-    public void setIntraffic(String intraffic) {
-        this.intraffic = intraffic == null ? null : intraffic.trim();
+    public void setIntraffic(Double intraffic) {
+        this.intraffic = intraffic;
     }
 
-    public String getOuttraffic() {
+    public Double getOuttraffic() {
         return outtraffic;
     }
 
-    public void setOuttraffic(String outtraffic) {
-        this.outtraffic = outtraffic == null ? null : outtraffic.trim();
+    public void setOuttraffic(Double outtraffic) {
+        this.outtraffic = outtraffic;
     }
 
     public Date getTime() {
