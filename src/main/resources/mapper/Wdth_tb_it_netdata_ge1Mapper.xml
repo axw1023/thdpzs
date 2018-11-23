@@ -107,6 +107,6 @@
 
   <delete id="deleteExpired" parameterType="java.util.Date" >
     delete from wdth_tb_it_netdata_ge1
-    where TIME < #{id,jdbcType=DATETIME}
+    where TIME &lt; #{id,jdbcType=DATETIME}
   </delete>
 </mapper>
