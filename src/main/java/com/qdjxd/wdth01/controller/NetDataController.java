@@ -6,6 +6,7 @@ import com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper;
 import com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_ge1Mapper;
 import com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all;
 import com.qdjxd.wdth01.model.Wdth_tb_it_netdata_ge1;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,7 +30,8 @@ public class NetDataController {
     Wdth_tb_it_netdata_allMapper all_dao;
 
 
-    //循环获取网络流量进出入情况
+    //循环获取网络流量进出入情况(每隔一个小时)
+    @Scheduled(fixedRate = 86400000)
     public void deleteExpired() throws Exception {
 
         //删除一天之前的数据
@@ -37,12 +39,14 @@ public class NetDataController {
         c.setTime(new Date());
         c.add(Calendar.DATE, -1);
         Date date = c.getTime();
-        int result = ge1_dao.deleteExpired(date);
+        int result_ge1 = ge1_dao.deleteExpired(date);
+        int result_all = all_dao.deleteExpired(date);
 
     }
 
-    //获取网路流量进出入情况
+    //获取网路流量进出入情况（每分钟）
     @RequestMapping("/data")
+    @Scheduled(fixedRate = 60000)
     public void netData() throws Exception {
 
         //查询GE1输入输出量
@@ -135,17 +139,25 @@ public class NetDataController {
 //        String s=sendGet("http://localhost:6144/Home/RequestString", "key=123&v=456");
 //        System.out.println(s);
 
-        //发送 POST 请求
+        //发送 POST 请求(机柜、漏水、市电、ups)
+        Map<String, Object> map = new HashMap<String, Object>();
+        String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
+        String ls = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
+        String sd = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
+        String ups = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"UPS01_\"]}");
 
-        String kt = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
-        String kt1 = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
-        String kt2 = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"UPS01_\"]}");
+        System.out.println(jg);
+        System.out.println(ls);
+        System.out.println(sd);
+        System.out.println(ups);
 
-        System.out.println(kt);
-        System.out.println(kt1);
-        System.out.println(kt2);
 
-//        JSONArray array_bj = JSONArray.parseArray(bj);
+
+
+
+
+
+
 
     }
 
