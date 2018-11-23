@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_3d_hhjl1" >
     <result column="sheetid" property="sheetid" jdbcType="INTEGER" />
     <result column="diesel" property="diesel" jdbcType="VARCHAR" />
-    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="DOUBLE" />
   </resultMap>
   <select id="getHhjl1" resultMap="BaseResultMap">
     select * from wdth_3d_hhjl1 

@@ -5,7 +5,7 @@ public class wdth_3d_fkg {
 
     private String diesel;
 
-    private Integer num;
+    private double num;
 
     public Integer getSheetid() {
         return sheetid;
@@ -23,11 +23,11 @@ public class wdth_3d_fkg {
         this.diesel = diesel == null ? null : diesel.trim();
     }
 
-    public Integer getNum() {
+    public double getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(double num) {
         this.num = num;
     }
 }

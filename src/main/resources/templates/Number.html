@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--外部css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
+    <!--外部js-->
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+    <style type="text/css">
+        #all{background: url("../ProjectScripts/Number/all.png");
+            width: 5632px;height: 1024px;
+        }
+        #vide{width: 2484px;height: 857px;
+        top: 108px;left: 1575px;
+            position:absolute;
+        }
+        #number{width: 2444px;height: 800px;
+            position:absolute;
+                top: 20px;left: 20px;
+            }
+    </style>
+</head>
+<body>
+<div id="all">
+    <div id="vide">
+        <video id="number" autoplay="autoplay"   loop="loop" >
+            <source src="../Video/video.MP4" ></video>
+    </div>
+</div>
+</body>
+<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI.js}"></script>
+<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI1.js}"></script>
+
+<script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
+</html>
