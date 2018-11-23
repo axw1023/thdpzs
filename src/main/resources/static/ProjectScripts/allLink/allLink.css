@@ -243,7 +243,40 @@
     background-image: url("../../images/allLink/建筑.png");
 }
 
-/*进场量*/
+
+
+/*在途船只*/
+#sheep_transit{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 105px;
+    right: 5105px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*在途船只_nam3*/
+#sheep_transit_name{
+    position: absolute;
+    top: 139px;
+    right: 5199px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+}
+
+/*到港船只*/
+#sheep_reach{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 675px;
+    right: 4755px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*原油*/
 #factoryVolume{
     position: absolute;
     width: 235px;
@@ -253,7 +286,8 @@
     background-image: url("../../images/allLink/组.png");
 }
 
-/*进场量_name*/
+
+/*原油_name*/
 #factoryVolume_name{
     position: absolute;
     top: 380px;
@@ -267,7 +301,7 @@
 
 }
 
-/*进场量_remark*/
+/*原油_remark*/
 #factoryVolume_remark{
     position: absolute;
     top: 387px;
@@ -279,7 +313,7 @@
 }
 
 
-/*进场量_value*/
+/*原油_value*/
 #factoryVolume_value{
     position: absolute;
     top: 437px;
@@ -408,21 +442,21 @@
     line-height:30px;
 }
 
-/*月出口*/
+/*成品油*/
 #monthlyExport{
     position: absolute;
     width: 235px;
     height: 163px;
-    top: 789px;
-    right: 2399px;
+    top: 589px;
+    right: 1299px;
     background-image: url("../../images/allLink/组.png");
 }
 
-/*月出口_name*/
+/*成品油_name*/
 #monthlyExport_name{
     position: absolute;
-    top: 823px;
-    right: 2508px;
+    top: 623px;
+    right: 1408px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -430,11 +464,11 @@
 
 }
 
-/*月出口_remark*/
+/*成品油_remark*/
 #monthlyExport_remark{
     position: absolute;
-    top: 830px;
-    right: 2433px;
+    top: 630px;
+    right: 1333px;
     font-size:17px;
     font-family:MicrosoftYaHei;
     font-weight:400;
@@ -442,11 +476,11 @@
 }
 
 
-/*月出口_value1*/
+/*成品油_value1*/
 #monthlyExport_value1{
     position: absolute;
-    top: 878px;
-    right: 2529px;
+    top: 678px;
+    right: 1429px;
     font-size:20px;
     font-family:HYk1gj;
     font-weight:900;
@@ -454,15 +488,35 @@
     line-height:30px;
 }
 
-/*月出口_value2*/
+/*成品油_value2*/
 #monthlyExport_value2{
     position: absolute;
-    top: 877px;
-    right: 2449px;
+    top: 677px;
+    right: 1349px;
     font-size:17px;
     font-family:HYk1gj;
     font-weight:900;
     color:rgba(255,255,255,1);
     line-height:30px;
+}
+
+/*销售_汽运*/
+#sell_car{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 169px;
+    right: 999px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*销售_海运*/
+#sell_ship{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 209px;
+    right: -659px;
+    background-image: url("../../images/allLink/组.png");
 }
 

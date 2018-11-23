@@ -68,13 +68,13 @@ public class ITController {
         return getNumByAll;
     }
 
-    @RequestMapping(value = "/getNumByLiu", method = RequestMethod.GET)
-    @ResponseBody
-    //获取ajax参数中全部流量
-    public List<Wdth_tb_it_netdata_ge1> getNumByLiu() {
-        List<Wdth_tb_it_netdata_ge1> getNumByLiu = itNetdataGe1.selectLiu();
-        return getNumByLiu;
-    }
+//    @RequestMapping(value = "/getNumByLiu", method = RequestMethod.GET)
+//    @ResponseBody
+//    //获取ajax参数中全部流量
+//    public List<Wdth_tb_it_netdata_ge1> getNumByLiu() {
+//        List<Wdth_tb_it_netdata_ge1> getNumByLiu = itNetdataGe1.selectLiu();
+//        return getNumByLiu;
+//    }
 
 }
 

@@ -39,7 +39,7 @@ public class WelcomeController {
     //    MES及能源
     @RequestMapping("/turnToMes")
     public String turnToMes() {
-        return "show/turnToMes";
+        return "Mes";
     }
 
     //    设备和安环
