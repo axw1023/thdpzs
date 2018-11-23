@@ -255,12 +255,23 @@
     background-image: url("../../images/allLink/组.png");
 }
 
-/*在途船只_nam3*/
+/*在途船只_name*/
 #sheep_transit_name{
     position: absolute;
     top: 139px;
     right: 5199px;
     font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+}
+
+/*在途船只_remark*/
+#sheep_transit_remark{
+    position: absolute;
+    top: 146px;
+    right: 5119px;
+    font-size:17px;
     font-family:MicrosoftYaHei;
     font-weight:900;
     color:rgba(255,215,0,1);
