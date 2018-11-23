@@ -3,6 +3,7 @@ package com.qdjxd.wdth01.dao;
 import com.qdjxd.wdth01.model.Wdth_tb_it_netdata_ge1;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.Date;
 import java.util.List;
 
 @Mapper
@@ -16,6 +17,8 @@ public interface Wdth_tb_it_netdata_ge1Mapper {
     Wdth_tb_it_netdata_ge1 selectByPrimaryKey(String id);
     /*查询全部*/
     List<Wdth_tb_it_netdata_ge1> ByAll();
+
+    int deleteExpired(Date date);
 
 
     int updateByPrimaryKeySelective(Wdth_tb_it_netdata_ge1 record);

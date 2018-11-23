@@ -103,4 +103,10 @@
       time = #{time,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+
+  <delete id="deleteExpired" parameterType="java.util.Date" >
+    delete from wdth_tb_it_netdata_ge1
+    where TIME < #{id,jdbcType=DATETIME}
+  </delete>
 </mapper>
