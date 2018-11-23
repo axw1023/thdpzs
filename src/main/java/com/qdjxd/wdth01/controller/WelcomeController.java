@@ -45,7 +45,7 @@ public class WelcomeController {
     //    设备和安环
     @RequestMapping("/turnToEquipment")
     public String turnToEquipment() {
-        return "show/turnToEquipment";
+        return "equipment";
     }
 
     //    实验室
@@ -63,7 +63,7 @@ public class WelcomeController {
     //    大数据
     @RequestMapping("/turnToBigData")
     public String turnToBigData() {
-        return "show/turnToBigData";
+        return "BigData";
     }
 
     //    三维数字工厂
@@ -81,6 +81,6 @@ public class WelcomeController {
     //    未来展望
     @RequestMapping("/turnToFutureProspect")
     public String turnToFutureProspect() {
-        return "show/turnToFutureProspect";
+        return "ai-factory";
     }
 }
