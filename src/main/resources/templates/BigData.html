@@ -8,10 +8,11 @@
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/ecStat.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/template.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
     <link th:href="@{/ProjectCss/BigData/first.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/ProjectCss/BigData/layer.css}" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body id="body">
     <div id="BigData">
         <div id="first">
 
@@ -141,15 +142,27 @@
     var temChar;
     var three_line;
     var layerNum=-1;
-    $(function(){
+    $(function() {
         init();
-       $("#BigData").on("click",function(){
+        $("#BigData").on("click", function () {
             turnTo();
         });
-        $("#BigData").on("dblclick",function(){
+        $("#BigData").on("dblclick", function () {
             history.go(-1);
         });
-
+        var config = {
+            vx: 4,
+            vy: 4,
+            height: 2,
+            width: 2,
+            count: 40,
+            color: "121, 162, 185",
+            stroke: "130,255,255",
+            dist: 6000,
+            e_dist: 20000,
+            max_conn: 10
+        }
+        CanvasParticle(config);
     });
     //初始化
     function init(){
