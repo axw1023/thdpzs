@@ -23,7 +23,7 @@ import java.net.URLConnection;
 import java.util.*;
 
 @Controller
-@RequestMapping("/IT")
+@RequestMapping("/ITData")
 public class NetDataController {
 
     @Resource
@@ -47,7 +47,7 @@ public class NetDataController {
     }
 
     //获取网路流量进出入情况（每分钟）
-    @RequestMapping("/data")
+
     @Scheduled(fixedRate = 60000)
     public void netData() throws Exception {
 
@@ -140,23 +140,17 @@ public class NetDataController {
 //        //发送 GET 请求
 //        String s=sendGet("http://localhost:6144/Home/RequestString", "key=123&v=456");
 //        System.out.println(s);
-
         //发送 POST 请求(机柜、漏水、市电、ups)
         Map<String,Object> map=new HashMap<>(3);
-       /* String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
+       String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
         String ls = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
         String sd = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
         String ups = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"UPS01_\"]}");
-*/
-       String status=sendGet("http://10.1.11.114/api/json/businessview/getBusinessDetailsView","apiKey=1152d6804e60e481629e6f2acb678e5f&viewLength=250&startPoint=1&bvName=tianhong");
 
-        System.out.println(status);
-
-      /* System.out.println(jg);
+       System.out.println(jg);
         System.out.println(ls);
         System.out.println(sd);
-        System.out.println(ups);*/
-
+        System.out.println(ups);
     }
 
 
