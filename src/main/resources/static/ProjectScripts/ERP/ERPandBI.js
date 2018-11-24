@@ -241,8 +241,10 @@ function setCbgc(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
+            formatter :'    {name}',
             data: data.name,
             textStyle:{
+                
                 color:'#92F1FF',
                 fontSize:20
             }
@@ -252,10 +254,10 @@ function setCbgc(data) {
         graphic:{
             type: 'text',
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
-            // right: 10,
+            
             // bottom: '10%',
-            left: '160', // 相对父元素居中
-            top: 'middle',  // 相对父元素居中
+            left: '660', // 相对父元素居中
+            top: '150',  // 相对父元素居中
             //可设置颜色 字体等等
            /* style: {
                 fill: '#92F1FF',  //text颜色
@@ -271,10 +273,9 @@ function setCbgc(data) {
         series: [
             {
                 
-                center:['210','50%'],//圆形居中
-                name:'成本构成',
+                center:['310','46.5%'],//圆形居中
                 type:'pie',
-                radius: ['65%', '91%'],
+                radius: ['50%', '65%'],
                 avoidLabelOverlap: false,
                 label: {
                     show: false,
@@ -303,7 +304,6 @@ function setCbgc(data) {
                         }
                     },
                 },
-             
                 labelLine: {
                     show:false
                 },
@@ -436,6 +436,7 @@ function setSynhzb(data) {
             orient: 'vertical',
             x:'565',
             y:'116',
+            formatter :'    {name}',
             data: data.name,
             textStyle:{
                 color:'#92F1FF',
@@ -465,10 +466,9 @@ function setSynhzb(data) {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
-                center:['210','50%'],//圆形居中
-                name:'上月能源消耗',
+                center:['310','46.5%'],//圆形居中
                 type:'pie',
-                radius: ['65%', '91%'],
+                radius: ['50%', '65%'],
                 avoidLabelOverlap: false,
                 label: {
                     show: false,
@@ -616,8 +616,10 @@ function setXsqk(data) {
             orient: 'vertical',
             x:'565',
             y:'50',
+            formatter :'    {name}',
             data:data.name,
             textStyle:{
+                
                 color:'#92F1FF',
                 fontSize:20
             }
@@ -640,10 +642,9 @@ function setXsqk(data) {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
-                center:['210','50%'],//圆形居中
-                name:'访问来源',
+                center:['310','46.5%'],//圆形居中
                 type:'pie',
-                radius: ['65%', '91%'],
+                radius: ['50%', '65%'],
                 avoidLabelOverlap: false,
                 label: {
                     show: false,
@@ -902,7 +903,8 @@ function setHkzssl(name,num,num1) {
             {
                 name:'计划收率',
                 type:'bar',
-                barWidth : 8,
+                barWidth: 12, //柱子宽度
+                barGap: 1, //柱子之间间距
                 data:num,
                 //data:[data[0].day,data[1].day,data[2].day,data[3].day,data[4].day,data[5].day,data[6].day],
                 itemStyle:{ color: {
@@ -923,7 +925,8 @@ function setHkzssl(name,num,num1) {
             {
                 name:'实际收率',
                 type:'bar',
-                barWidth : 8,
+                barWidth: 12, //柱子宽度
+                barGap: 1, //柱子之间间距
                 data:num1,
                 //  data:[data[0].mou,data[1].mou,data[2].mou,data[3].mou,data[4].mou,data[5].mou,data[6].mou],
                 itemStyle:{ color: {
@@ -1151,7 +1154,7 @@ function setYlly(num1,num,name) {
             }
         },
         legend: {
-            data: ['本月','上月'],
+            data: ['上月','本月'],
             align: 'left',
             right: 10,
             textStyle: {
@@ -1222,11 +1225,11 @@ function setYlly(num1,num,name) {
         }],
         series: [
             {
-                name: '本月',
+                name: '上月',
                 type: 'bar',
                 data:num,
                 // data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
-                barWidth: 10, //柱子宽度
+                barWidth: 25, //柱子宽度
                 barGap: 1, //柱子之间间距
                 itemStyle: {
                     normal: {
@@ -1241,11 +1244,11 @@ function setYlly(num1,num,name) {
                 }
             },
             {
-                name: '上月',
+                name: '本月',
                 type: 'bar',
                 data:num1,
                 //data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
-                barWidth: 10,
+                barWidth: 25,
                 barGap: 1,
                 itemStyle: {
                     normal: {
@@ -1469,7 +1472,7 @@ function setKc(num1,num,name) {
             }
         },
         legend: {
-            data: ['本月','上月'],
+            data: ['上月','本月'],
             align: 'left',
             right: 10,
             textStyle: {
@@ -1540,11 +1543,11 @@ function setKc(num1,num,name) {
         }],
         series: [
             {
-                name: '本月',
+                name: '上月',
                 type: 'bar',
                 data:num,
                 // data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
-                barWidth: 10, //柱子宽度
+                barWidth: 25, //柱子宽度
                 barGap: 1, //柱子之间间距
                 itemStyle: {
                     normal: {
@@ -1559,11 +1562,11 @@ function setKc(num1,num,name) {
                 }
             },
             {
-                name: '上月',
+                name: '本月',
                 type: 'bar',
                 data:num1,
                 //data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
-                barWidth: 10,
+                barWidth: 25,
                 barGap: 1,
                 itemStyle: {
                     normal: {
@@ -1612,7 +1615,7 @@ function setJhzxl(num1,num,name) {
             symbolSize: 8,   //设定实心点的大小
             x:'right',
             y:'top',
-            data:['实际执行','计划执行'],
+            data:['计划执行','实际执行'],
             textStyle: {
                 color: '#51e5fc'
             },
@@ -1642,13 +1645,13 @@ function setJhzxl(num1,num,name) {
         ,
         series : [
             {
-                name:'实际执行',
+                name:'计划执行',
                 type:'line',
                 areaStyle: {
                     normal: {type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(0,0,255,1)'
+                            color: 'rgba(256,169,46,0.5)'
                         }, {
                             offset: 1,
                             color: 'rgba(0,0,255,0.2)'
@@ -1658,23 +1661,23 @@ function setJhzxl(num1,num,name) {
                 smooth:false,
                 itemStyle: {
                     normal: {areaStyle: {type: 'default'},
-                        color:'#00FCFF',
+                        color:'#FFA92E',
                         lineStyle:{
-                            color:'#00FCFF'
+                            color:'#FFA92E'
                         }
                     }
                 },
                 data:num,
             },
             {
-                name:'计划执行',
+                name:'实际执行',
                 type:'line',
                 areaStyle: {
                     normal: {
                         type: 'default',
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                             offset: 0,
-                            color: 'rgba(48, 255, 28,0.2)'
+                            color: 'rgba(48, 255, 28,0.5)'
                         }, {
                             offset: 1,
                             color: 'rgba(19, 37, 250,0.2)'

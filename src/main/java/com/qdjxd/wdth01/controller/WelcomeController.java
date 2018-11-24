@@ -39,7 +39,7 @@ public class WelcomeController {
     //    MES及能源
     @RequestMapping("/turnToMes")
     public String turnToMes() {
-        return "show/turnToMes";
+        return "Mes";
     }
 
     //    设备和安环
@@ -63,7 +63,7 @@ public class WelcomeController {
     //    大数据
     @RequestMapping("/turnToBigData")
     public String turnToBigData() {
-        return "show/turnToBigData";
+        return "BigData";
     }
 
     //    三维数字工厂

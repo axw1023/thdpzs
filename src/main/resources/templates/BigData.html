@@ -2,15 +2,17 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chorme=1" />
+    <meta name="renderer" content="webkit">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/ecStat.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/template.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
     <link th:href="@{/ProjectCss/BigData/first.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/ProjectCss/BigData/layer.css}" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body id="body">
     <div id="BigData">
         <div id="first">
 
@@ -125,9 +127,9 @@
         <script id="tpl4" type="text/html">
             <p class="l_label">{{item.name}}</p>
             <p><span class="circle"></span><span class="l_value">{{item.value}} {{item.unit}}</span>
-                {{if layer_status==1}}
+                {{if item.layer_status==1}}
                 <i class="icon up"></i>
-                {{else }}
+                {{else}}
                 <i class="icon down"></i>
                 {{/if}}</p>
         </script>
@@ -140,8 +142,27 @@
     var temChar;
     var three_line;
     var layerNum=-1;
-    $(function(){
+    $(function() {
         init();
+        $("#BigData").on("click", function () {
+            turnTo();
+        });
+        $("#BigData").on("dblclick", function () {
+            history.go(-1);
+        });
+        var config = {
+            vx: 4,
+            vy: 4,
+            height: 2,
+            width: 2,
+            count: 40,
+            color: "121, 162, 185",
+            stroke: "130,255,255",
+            dist: 6000,
+            e_dist: 20000,
+            max_conn: 10
+        }
+        CanvasParticle(config);
     });
     //初始化
     function init(){
@@ -161,7 +182,10 @@
         three_line=echarts.init(document.getElementById('three_line'));
 
     }
-
+    // 页面跳转
+    function turnTo(){
+        window.location.href="/turnToFutureProspect"
+    }
 </script>
 <script type="text/javascript"   th:src="@{/Scripts/BigData/BigData.js}"></script>
 </html>

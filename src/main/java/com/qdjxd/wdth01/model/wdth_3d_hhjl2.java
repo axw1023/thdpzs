@@ -5,7 +5,7 @@ public class wdth_3d_hhjl2 {
 
     private String diesel;
 
-    private Integer num;
+    private double num;
 
     public Integer getSheetid() {
         return sheetid;
@@ -23,7 +23,7 @@ public class wdth_3d_hhjl2 {
         this.diesel = diesel == null ? null : diesel.trim();
     }
 
-    public Integer getNum() {
+    public double getNum() {
         return num;
     }
 

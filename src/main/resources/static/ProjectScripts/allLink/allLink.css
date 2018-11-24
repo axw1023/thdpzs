@@ -19,18 +19,6 @@
     background-image: url("../../images/allLink/线段.png");
 }
 
-/*!*亮点*!*/
-/*#lightPoint{*/
-    /*position:relative;*/
-    /*width: 104px;*/
-    /*height: 104px;*/
-    /*!*top: 640px;*!*/
-    /*!*right: 5349px;*!*/
-    /*!*background-image: url("../../images/allLink/椭圆.png");*!*/
-    /*background:red;*/
-    /*animation:mymove 5s infinite;*/
-    /*z-index:999;*/
-/*}*/
 
 
 #lightPoint
@@ -243,21 +231,114 @@
     background-image: url("../../images/allLink/建筑.png");
 }
 
-/*进场量*/
-#factoryVolume{
+
+
+/*到港船只*/
+#sheep_transit{
     position: absolute;
     width: 235px;
     height: 163px;
-    top: 345px;
-    right: 3885px;
+    top: 105px;
+    right: 5105px;
     background-image: url("../../images/allLink/组.png");
 }
 
-/*进场量_name*/
+/*到港船只_name*/
+#sheep_transit_name{
+    position: absolute;
+    top: 139px;
+    right: 5199px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+}
+
+/*到港船只_remark*/
+#sheep_transit_remark{
+    position: absolute;
+    top: 146px;
+    right: 5119px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+}
+
+/*到港船只_value*/
+#sheep_transit_value{
+    position: absolute;
+    top: 196px;
+    right: 5179px;
+    font-size:50px;
+    font-family:HYk1gj;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*在途船只*/
+#sheep_reach{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 675px;
+    right: 4755px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*在途船只_name*/
+#sheep_reach_name{
+    position: absolute;
+    top: 709px;
+    right: 4840px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+}
+
+/*在途船只_remark*/
+#sheep_reach_remark{
+    position: absolute;
+    top: 716px;
+    right: 4769px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+}
+
+/*在途船只_value*/
+#sheep_reach_value{
+    position: absolute;
+    top: 766px;
+    right: 4819px;
+    font-size:50px;
+    font-family:HYk1gj;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+
+
+/*原油*/
+#factoryVolume{
+    position: absolute;
+    width: 188px;
+    height: 204px;
+    top: 345px;
+    right: 3885px;
+    background-image: url("../../images/allLink/组_长.png");
+}
+
+
+/*原油_name*/
 #factoryVolume_name{
     position: absolute;
     top: 380px;
-    right: 3991px;
+    right: 3981px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -267,26 +348,39 @@
 
 }
 
-/*进场量_remark*/
+/*原油_remark*/
 #factoryVolume_remark{
     position: absolute;
     top: 387px;
-    right: 3919px;
+    right: 3909px;
     font-size:17px;
     font-family:MicrosoftYaHei;
     font-weight:400;
     color:rgba(255,215,0,1);
 }
 
+/*原油_value*/
+#factoryVolume_value_name{
+    position: absolute;
+    top: 427px;
+    right: 3968px;
+    font-size:20px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    /*设置行间距缩小默认行高？*/
+    line-height:30px;
+}
 
-/*进场量_value*/
+
+/*原油_value*/
 #factoryVolume_value{
     position: absolute;
-    top: 437px;
-    right: 3968px;
-    font-size:50px;
+    top: 427px;
+    right: 3912px;
+    font-size:20px;
     font-family:HYk1gj;
-    font-weight:400;
+    font-weight:900;
     color:rgba(255,255,255,1);
     /*设置行间距缩小默认行高？*/
     line-height:30px;
@@ -353,18 +447,18 @@
 /*化工产品日产量*/
 #chemicalDailyOutput{
     position: absolute;
-    width: 235px;
-    height: 163px;
-    top: 282px;
-    right: 2427px;
-    background-image: url("../../images/allLink/组.png");
+    width: 188px;
+    height: 204px;
+    top: 632px;
+    right: 2077px;
+    background-image: url("../../images/allLink/组_长.png");
 }
 
 /*化工产品日产量_name*/
 #chemicalDailyOutput_name{
     position: absolute;
-    top: 296px;
-    right: 2516px;
+    top: 659px;
+    right: 2156px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -375,8 +469,8 @@
 /*化工产品日产量_remark*/
 #chemicalDailyOutput_remark{
     position: absolute;
-    top: 318px;
-    right: 2445px;
+    top: 667px;
+    right: 2079px;
     font-size:17px;
     font-family:MicrosoftYaHei;
     font-weight:400;
@@ -387,8 +481,8 @@
 /*化工产品日产量_value1*/
 #chemicalDailyOutput_value1{
     position: absolute;
-    top: 371px;
-    right: 2533px;
+    top: 699px;
+    right: 2165px;
     font-size:20px;
     font-family:HYk1gj;
     font-weight:900;
@@ -399,8 +493,8 @@
 /*化工产品日产量_value2*/
 #chemicalDailyOutput_value2{
     position: absolute;
-    top: 370px;
-    right: 2468px;
+    top: 699px;
+    right: 2108px;
     font-size:17px;
     font-family:HYk1gj;
     font-weight:900;
@@ -408,21 +502,21 @@
     line-height:30px;
 }
 
-/*月出口*/
+/*成品油*/
 #monthlyExport{
     position: absolute;
     width: 235px;
     height: 163px;
-    top: 789px;
-    right: 2399px;
+    top: 589px;
+    right: 1299px;
     background-image: url("../../images/allLink/组.png");
 }
 
-/*月出口_name*/
+/*成品油_name*/
 #monthlyExport_name{
     position: absolute;
-    top: 823px;
-    right: 2508px;
+    top: 623px;
+    right: 1408px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -430,11 +524,11 @@
 
 }
 
-/*月出口_remark*/
+/*成品油_remark*/
 #monthlyExport_remark{
     position: absolute;
-    top: 830px;
-    right: 2433px;
+    top: 630px;
+    right: 1333px;
     font-size:17px;
     font-family:MicrosoftYaHei;
     font-weight:400;
@@ -442,11 +536,11 @@
 }
 
 
-/*月出口_value1*/
+/*成品油_value1*/
 #monthlyExport_value1{
     position: absolute;
-    top: 878px;
-    right: 2529px;
+    top: 678px;
+    right: 1417px;
     font-size:20px;
     font-family:HYk1gj;
     font-weight:900;
@@ -454,11 +548,127 @@
     line-height:30px;
 }
 
-/*月出口_value2*/
+/*成品油_value2*/
 #monthlyExport_value2{
     position: absolute;
-    top: 877px;
-    right: 2449px;
+    top: 677px;
+    right: 1349px;
+    font-size:17px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*销售_汽运*/
+#sell_car{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 169px;
+    right: 999px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*销售_汽运_name*/
+#sell_car_name{
+    position: absolute;
+    top: 33px;
+    right: 105px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+
+}
+
+/*销售_汽运_remark*/
+#sell_car_remark{
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,215,0,1);
+}
+
+
+/*销售_汽运_value1*/
+#sell_car_value1{
+    position: absolute;
+    top: 89px;
+    right: 128px;
+    font-size:20px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*销售_汽运_value2*/
+#sell_car_value2{
+    position: absolute;
+    top: 89px;
+    right: 58px;
+    font-size:17px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*销售_海运*/
+#sell_ship{
+    position: absolute;
+    width: 235px;
+    height: 163px;
+    top: 209px;
+    right: -659px;
+    background-image: url("../../images/allLink/组.png");
+}
+
+/*销售_海运_name*/
+#sell_ship_name{
+    position: absolute;
+    top: 33px;
+    right: 105px;
+    font-size:25px;
+    font-family:MicrosoftYaHei;
+    font-weight:900;
+    color:rgba(255,215,0,1);
+
+}
+
+/*销售_海运_remark*/
+#sell_ship_remark{
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    font-size:17px;
+    font-family:MicrosoftYaHei;
+    font-weight:400;
+    color:rgba(255,215,0,1);
+}
+
+
+/*销售_海运_value1*/
+#sell_ship_value1{
+    position: absolute;
+    top: 89px;
+    right: 128px;
+    font-size:20px;
+    font-family:HYk1gj;
+    font-weight:900;
+    color:rgba(255,255,255,1);
+    line-height:30px;
+}
+
+/*销售_海运_value2*/
+#sell_ship_value2{
+    position: absolute;
+    top: 89px;
+    right: 58px;
     font-size:17px;
     font-family:HYk1gj;
     font-weight:900;

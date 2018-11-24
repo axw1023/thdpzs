@@ -5,13 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Nifty Modal Window Effects</title>
-		<meta name="description" content="Nifty Modal Window Effects with CSS Transitions and Animations" />
 		<meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="../ProjectScripts/home/css/default.css" />
-		<link rel="stylesheet" type="text/css" href="../ProjectScripts/home/css/component.css" />
-		<script src="../ProjectScripts/home/js/modernizr.custom.js"></script>
+		<link href="../../ProjectScripts/home/css/style.css" rel="stylesheet" type="text/css" />
+		<script src="../../Scripts/babel-browser.js" ></script>
+		<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>
 		<script type="text/javascript"   src="../../Scripts/jquery.min.js"></script>
 		<!--旋转需要引用的js-->
 		<script type="text/javascript" src = "../../Scripts/jquery.rotate.min.js"></script>
@@ -19,12 +18,20 @@
 
 
 
-
 		<style type="text/css">
-
+			canvas{
+				position:absolute;
+				top:0;
+				left:0;
+				z-index:9999;
+				width: 5632px;
+				height: 1024px;
+			}
 			/*背景图*/
 			#body{
 				position: absolute;
+				top:0;
+				left:0;
 				width: 5632px;
 				height: 1024px;
 				background-image: url("../../images/home/背景2.png");
@@ -73,8 +80,12 @@
 
 			#imgPlay1{
 				position: absolute;
+				top:250px;
+				left:2000px;
+
 				width: 1554px;
 				height: 500px;
+				opacity: 1;
 				background-image: url("../../images/home/文字.png");
 				background-repeat: no-repeat;
 			}
@@ -142,7 +153,7 @@
 				height: 51px;
 				font-size: 56px;
 				color:#82EEFF;
-			]
+
 			}
 			#word_cjcg{
 				position: absolute;
@@ -152,7 +163,7 @@
 				height: 51px;
 				font-size: 56px;
 				color:#82EEFF;
-			]
+
 			}
 			#word_mbzw{
 				position: absolute;
@@ -162,106 +173,13 @@
 				height: 51px;
 				font-size: 56px;
 				color:#82EEFF;
-			]
 			}
 		</style>
 
-		<script type="text/javascript">
 
-            $(document).ready(function(){
-                // 旋转
-                var angle = 0;
-                setInterval(function () {
-                    angle += 3;
-                    $(".rotating").rotate(angle);
-                }, 70);
-
-                getShowConfiger();
-
-                // 整体展示时间、图片展示时间
-                var timeShow;
-                var timeTotal;
-
-                //ajax获取图片展示配置参数
-                function getShowConfiger( ) {
-                    $.ajax({
-                        url: "/home/getTime",
-                        type: "get",
-                        async: false,
-                        success: function (result) {
-                            timeShow = result[0].timeShow;
-                            timeTotal = result[0].timeTotal;
-                        },
-                    });
-                }
-
-
-                // 显示首张模态框
-                document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/文字.png\")";
-                document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/文字.png\")";
-
-                $("#imgLeft1").click();
-
-                // 自动切换图片
-                var i = 1;
-                //循环执行，每隔1秒钟执行一次 1000
-                var t1=window.setInterval(refreshCount, timeTotal);
-
-                function refreshCount() {
-
-
-
-                    // 定时触发点击事件(0123：左一、左二、右一、右二)
-                    if(1 == (i%4)){
-                        document.getElementsByClassName("md-modal")[0].style.top = "63px";
-                        document.getElementsByClassName("md-modal")[0].style.right = "1643px";
-                        document.getElementById("imgPlay1").style.width = "2344px";
-                        document.getElementById("imgPlay1").style.height = "906px";
-
-                        // document.getElementsByClassName("md-effect-2")[0].style.webkitTransform  = "translateX(10%)";
-
-                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/目标愿景.png\")";
-                        document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
-                        document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
-                    }else if(2 == (i%4)){
-                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/建设进展.png\")";
-                        document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
-                        document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
-
-
-                    }else if(3 == (i%4)){
-                        document.getElementsByClassName("md-effect-2").className = "md-modal md-effect-2-1";
-                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/成绩成果.png\")";
-                        document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
-                        document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
-                    }else if(0 == (i%4)){
-                        document.getElementById("imgPlay1").style.backgroundImage = "url(\"../../images/home/计划展望.png\")";
-                        document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
-                        document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
-
-                    }
-
-                    i++;
-
-                    $("#imgLeft1").click();
-
-                    setTimeout(function(){ $(".md-overlay").click(); },timeShow);
-
-
-                }
-                //去掉定时器的方法
-                //window.clearInterval(t1);
-            });
-
-
-            // 页面跳转
-            function turnTo(){
-                window.location.href="/turnToAllLink"
-            }
-		</script>
 	</head>
 	<body>
-	<div id = "body" dbl="turnTo()">
+	<div id = "body" db="turnTo()">
 		<div class="md-modal md-effect-2" id="modal-2">
 			<div class="md-content">
 				<div id = "imgPlay1">
@@ -270,22 +188,14 @@
 			</div>
 		</div>
 
-
-
-
 		<!--钻石图片-->
 		<div id = "imgLeft1" class="md-trigger" data-modal="modal-2"></div>
 		<div id = "imgLeft2" class="md-trigger" data-modal="modal-2"></div>
 		<div id = "imgRight1" class="md-trigger" data-modal="modal-2"></div>
 		<div id = "imgRight2" class="md-trigger" data-modal="modal-2"></div>
 
-
-
-
-
 		<!--关闭方法-->
 		<div class="md-overlay"></div><!-- the overlay element -->
-
 
 		<!--图片旋转光晕-->
 		<div id = "groate_L1">
@@ -301,9 +211,6 @@
 			<img class="rotating" src="../../images/imgRotate/rotate.png"/>
 		</div>
 
-
-
-
 		<!--文字-->
 		<div id = "word_mbyj">目标愿景</div>
 		<div id = "word_jsjz">建设进展</div>
@@ -311,17 +218,159 @@
 		<div id = "word_mbzw">计划展望</div>
 	</div>
 
-		<!-- classie.js by @desandro: https://github.com/desandro/classie -->
-		<script src="../ProjectScripts/home/js/classie.js"></script>
-		<script src="../ProjectScripts/home/js/modalEffects.js"></script>
-
-		<!-- for the blur effect -->
-		<!-- by @derSchepp https://github.com/Schepp/CSS-Filters-Polyfill -->
-		<script>
-			// this is important for IEs
-			var polyfilter_scriptpath = '/js/';
-		</script>
-		<script src="../ProjectScripts/home/js/cssParser.js"></script>
-		<script src="../ProjectScripts/home/js/css-filters-polyfill.js"></script>
 	</body>
+	<script>
+
+
+		var i=0;
+        // 旋转
+        var angle = 0;
+        setInterval(function () {
+            angle += 3;
+            $(".rotating").rotate(angle);
+        }, 70);
+
+        $(document).keydown(function(event) {
+            var e = event || window.event;
+            var k = e.keyCode || e.which;
+            if(k==13){
+                console.log(i);
+				if(i==0||i==5){
+				    i=0;
+                    $("#imgPlay1").animate({"opacity":0},300);
+                    setTimeout(function(){
+                        $("#imgPlay1").css({
+                            "left":'200px',
+                            "top":'100px',
+                            "width":0,
+                            "height":0,
+                            "background-image":"url('../../images/home/目标愿景.png')",
+                            "opacity":1
+                        });
+						$("#imgPlay1").animate({
+							'width':'2344px',
+                            "top":'80px',
+							'height':'906px',
+							"left":'1600px',
+							"opacity":1,
+
+						},300);
+					},300);
+                    document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+				}else if(i==1){
+                    $("#imgPlay1").animate({
+                        "left":'200px',
+                        "top":'100px',
+                        "width":0,
+                        "height":0,
+
+                    },300);
+                    setTimeout(function() {
+                        $("#imgPlay1").css({
+                            "left": '500px',
+                            "top": '200px',
+                            "width": 0,
+                            "height": 0,
+                            "background-image": "url('../../images/home/建设进展.png')",
+                            "opacity": 1
+                        });
+
+                        $("#imgPlay1").animate({
+                            'width': '2344px',
+                            'height': '906px',
+                            "left": '1600px',
+                      		"top":'80px',
+                            "opacity": 1,
+                        }, 300);
+                    },300);
+                    document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                    document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+				}else if(i==2){
+                    $("#imgPlay1").animate({
+                        "left":'500px',
+                        "top":'200px',
+                        "width":0,
+                        "height":0,
+
+                    },300);
+                   setTimeout(function(){
+                       $("#imgPlay1").css({
+                           "left":'4200px',
+                           "top":'500px',
+                           'width':'0',
+                           'height':'0',
+                           "background-image":"url('../../images/home/成绩成果.png')",
+                           "opacity":1
+                       });
+                       $("#imgPlay1").animate({
+                           'width':'2344px',
+                           'height':'906px',
+                           "top":'80px',
+                           'left':'1600px',
+                           "opacity":1,
+                       },300);
+				   },300)
+                    document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                    document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+				}else if(i==3){
+                    $("#imgPlay1").animate({
+                        "left":'4200px',
+                        "top":'500px',
+                        "right":'auto',
+                        "width":0,
+                        "height":0,
+
+                    },300);
+                    setTimeout(function() {
+                        $("#imgPlay1").css({
+                            "left": '5000px',
+                            "top": '200px',
+                            'width': '0',
+                            'height': '0',
+                            "background-image": "url('../../images/home/计划展望.png')",
+                            "opacity": 1
+                        });
+                       $("#imgPlay1").animate({
+                            'width': '2344px',
+                            'height': '906px',
+                             "top":'80px',
+                            'left': '1600px',
+                            "opacity": 1,
+                        }, 300);
+                    },300);
+                    document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
+                    document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+				}else if(i==4){
+                    $("#imgPlay1").animate({
+                        "left":'5000px',
+                        "top":'200px',
+                        "right":'auto',
+                        "width":0,
+                        "height":0,
+
+                    },300);
+                    setTimeout(function() {
+                        $("#imgPlay1").css({
+                            "left": '2000px',
+                            "top": '250px',
+                            'width': '1554px',
+                            'height': '500px',
+                            "background-image": "url('../../images/home/文字.png')",
+                            "opacity": 0
+                        });
+                        $("#imgPlay1").animate({
+                            'width': '1554px',
+                            'height': '500px',
+                            "left": '2000px',
+                            "top": '250px',
+                            "opacity": 1,
+                        }, 300);
+                    },300);
+                    document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
+				}
+				i++;
+			}
+        });
+	</script>
+
 </html>
