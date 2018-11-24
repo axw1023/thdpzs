@@ -141,7 +141,7 @@ public class NetDataController {
 //        String s=sendGet("http://localhost:6144/Home/RequestString", "key=123&v=456");
 //        System.out.println(s);
         //发送 POST 请求(机柜、漏水、市电、ups)
-        Map<String,Object> map=new HashMap<>(3);
+        Map<String,Object> map=new HashMap<>(4);
        String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
         String ls = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
         String sd = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
@@ -271,8 +271,7 @@ public class NetDataController {
     @ResponseBody
     Map<String,Object> BusinessDetailsView(){
         String status=sendGet("http://10.1.11.114/api/json/businessview/getBusinessDetailsView","apiKey=1152d6804e60e481629e6f2acb678e5f&viewLength=250&startPoint=1&bvName=tianhong");
-        JSONObject detile=new JSONObject();
-        Map<String,Object> business=detile.getJSONObject(status);
+        JSONObject business=JSONObject.parseObject(status);
         return business;
     }
 
