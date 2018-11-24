@@ -6,7 +6,7 @@ $(function () {
 });
 var currentIndex2 = -1;
 var pieint=null;
-function bing(rest) {
+function bing(arr) {
     var dom = document.getElementById("char");
     var myChart2 = echarts.init((dom));
 
@@ -28,14 +28,14 @@ function bing(rest) {
 
             itemWidth: 6,   // 设置图例图形的宽
             itemHeight: 20,  // 设置图例图形的高
-            itemGap: 65,
+            itemGap: 47,
             formatter :'    {name}',
             orient: 'vertical',
             top: 'middle',
-            data: ['致命', '严重', '警告', '主要'],
-            show: true,
+            data: ['正常', '服务停止', '关键', '严重','轻微'],
+    show: true,
             y:'right',
-            right:'75px',
+            right:'47px',
 
             textStyle: {
                 color: '#92F1FF',
@@ -82,7 +82,7 @@ function bing(rest) {
 
                 data: [
 
-                    { value:rest[0].num,name:rest[0].type,itemStyle:{ color: {
+                    { value:arr[4].value,name:arr[4].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -97,7 +97,7 @@ function bing(rest) {
                             }}
 
                     },
-                    {value:rest[1].num,name:rest[1].type,itemStyle:{ color: {
+                    {value:arr[3].value,name:arr[3].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -111,7 +111,7 @@ function bing(rest) {
                                 globalCoord: false // 缺省为 false
                             }}
                     },
-                    {value:rest[2].num,name:rest[2].type,itemStyle:{ color: {
+                    {value:arr[2].value,name:arr[2].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -124,7 +124,7 @@ function bing(rest) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }}},
-                    {value:rest[3].num,name:rest[3].type,itemStyle:{ color: {
+                    {value:arr[1].value,name:arr[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -136,7 +136,19 @@ function bing(rest) {
                                     offset: 1, color: '#28E1B8' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }}}
+                            }}}, {value:arr[0].value,name:arr[0].name,itemStyle:{ color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0, color: '#91725F' // 0% 处的颜色
+                                }, {
+                                    offset: 1, color: '#DE7665' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }}},
 
                 ]
             }
@@ -170,20 +182,36 @@ function bing(rest) {
 function getNumByGrade() {
     $.ajax({
         type: "get",
-        url: "getNumByGrade",
+        url: "/ITData/BusinessDetailsView",
         async: false,
         cache:false,
 
         success: function (rest) {
+            var arr=[{name:'轻微',value:0},{name:'严重',value:0},{name:'关键',value:0},{name:'服务停止',value:0},{name:'正常',value:0}]
+        for(var i = 0;i < rest.BusinessDetailsView.Details.length;i++) {
+            switch (parseInt(rest.BusinessDetailsView.Details[i].severity,10)){
+                case 1:
+                arr[0].value++;
+                break;
+                case 2:
+                    arr[1].value++;
+                    break;
+                case 3:
+                    arr[2].value++;
+                    break;
+                case 4:
+                    arr[3].value++;
+                    break;
+                case 5:
+                    arr[4].value++;
+                    break;
+            }
 
-
-        for(var i = 0;i < rest.length;i++) {
-            delete rest[i].sheetid;
 
         }
 
 
-          bing(rest) ;
+          bing(arr) ;
 
 
         }
