@@ -37,8 +37,9 @@ var dataFormat = {
                     clazz = 'low green-low'
                 }
                 contentStr += '<tr><td class="td1">'+n.inspectAreaName+'</td>';
+                if(!n.inspectNum||n.inspectNum==0)contentStr += '<td></td>'
                 contentStr += '<td class="td3">'+n.inspectNum+'</td>';
-                contentStr += '<td class="td4"> <span style="width: '+4*n.inspectPercent+'px;" class="'+clazz+'"></span> '+n.inspectPercent+'%</td></tr>';
+                contentStr += '<td class="td4"> <span style="width: '+7*n.inspectPercent+'px;" class="'+clazz+'"></span> '+n.inspectPercent+'%</td></tr>';
             });
             $('#pollContent').html(contentStr);
         });
@@ -78,28 +79,36 @@ var dataFormat = {
                 }
             });
 
-            var h1 = 278/(wasteArr1.length);
-            var h2 = 278/(wasteArr2.length);
+            var h1 = 246/(wasteArr1.length);
+            var h2 = 246/(wasteArr2.length);
 
             $.each(wasteArr1,function(i,n){
                 waste1 += '<tr style="height: '+h1+'px;">';
                 waste1 += '<td>'+n.wasteName+'</td>';
-                waste1 += '<td>'+n.rtConcentration+'</td>';
-                waste1 += '<td>'+n.standardValue+'</td>';
-                waste1 += '<td>'+n.dischargeNum+'</td>';
-                waste1 += '<td>'+n.controlRates+'%</td></tr>';
+                if(!n.rtConcentration||n.rtConcentration==0)waste1 += '<td></td>'
+                else  waste1 += '<td>'+n.rtConcentration+'</td>';
+                waste1 += '<td> ≤ '+n.controlRates+'</td>';
+                waste1 += '</tr>';
             });
             $("#wasteContent1").html(waste1);
 
             $.each(wasteArr2,function(i,n){
                 waste2 += '<tr  style="height: '+h2+'px;">';
                 waste2 += '<td>'+n.wasteName+'</td>';
-                waste2 += '<td>'+n.rtConcentration+'</td>';
-                waste2 += '<td>'+n.standardValue+'</td>';
-                waste2 += '<td>'+n.dischargeNum+'</td>';
-                waste2 += '<td>'+n.controlRates+'%</td></tr>';
+                if(!n.so2Concentration||n.so2Concentration==0)waste2 += '<td></td>'
+                else  waste2 += '<td>'+n.so2Concentration+'</td>';
+                if(!n.so2Standard||n.so2Standard==0)waste2 += '<td></td>'
+                else  waste2 += '<td>'+n.so2Standard+'</td>';
+                if(!n.noConcentration||n.noConcentration==0)waste2 += '<td></td>'
+                else  waste2 += '<td>'+n.noConcentration+'</td>';
+                if(!n.noStandard||n.noStandard==0) waste2 += '<td></td>'
+                else  waste2 += '<td>'+n.noStandard+'</td>';
+                if(!n.ycConcentration||n.ycConcentration==0)waste2 += '<td></td>'
+                else  waste2 += '<td>'+n.ycConcentration+'</td>';
+                if(!n.ycStandard||n.ycStandard==0)waste2 += '<td></td>'
+                else  waste2 += '<td>'+n.ycStandard+'</td>';
+                waste2+= '</tr>'
             });
-
             $("#wasteContent2").html(waste2);
         });
     },
