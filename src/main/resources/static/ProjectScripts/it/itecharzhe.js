@@ -29,8 +29,19 @@ function cross (shijian,shuchu,shuru) {
 
         CanvasParticle(config);
     }
-
+  var timeData=getSevenDate(360,-1,shuchu);
+    var timeData1=getSevenDate(360,-1,shuru);
+    console.log(timeData);
     option = {
+        title: {
+            text: '出口流速趋势(MB/s)',
+            textStyle: {
+                color: "#92F1FF"
+
+            },
+            left:'3%'
+
+        },
         color: [ '#6049D3', '#08E3A1'],
         tooltip: {
             trigger: 'axis',
@@ -63,7 +74,8 @@ function cross (shijian,shuchu,shuru) {
         },
         xAxis: [
             {
-                type: 'category',
+                type: 'time',
+               splitNumber: 7,
                 axisLine: {
                     onZero: false,
                     lineStyle: {
@@ -71,6 +83,7 @@ function cross (shijian,shuchu,shuru) {
                         color: 'rgba(1,1,1,0)'
                     }
                 },
+
                 splitLine: {
                     show: false
                 },
@@ -80,17 +93,6 @@ function cross (shijian,shuchu,shuru) {
 
 
                 boundaryGap: false,
-
-                data:  shijian
-                .map(function (str) {
-                    return str.replace('T', '\n')
-                        .replace('.000+0000','')
-                        .replace('-','/')
-                        .replace('-','/')
-                        .substring(0,16)
-
-
-                })
             }
         ],
 
@@ -148,7 +150,7 @@ function cross (shijian,shuchu,shuru) {
                     }
 
                 },
-                data: shuru
+                data: timeData1
 
 
             },
@@ -183,7 +185,7 @@ function cross (shijian,shuchu,shuru) {
                             }])
                     }
                 },
-                data: shuchu
+                data: timeData
 
             }
         ]
@@ -193,7 +195,7 @@ function cross (shijian,shuchu,shuru) {
 
 }
 
-
+// var t=setInterval(getNumByLiu,1000);
 
 
 function getNumByLiu() {
@@ -213,10 +215,26 @@ function getNumByLiu() {
             for(var i=0;i<LIU.length;i++){    //遍历data数组
                  shuru.push(LIU[i].intraffic);
                 shuchu.push(LIU[i].outtraffic);
-                shijian.push(LIU[i].time);
+
+                // shijian.push(LIU[i].time);
             }
 
-        var ss=shijian.toString()
+            /*for(var i = 0; i < 361 ; i ++) {
+                id = Math.random()*10+200;
+
+                shuru.push(id);
+
+            }
+            for(var j = 0; j < 361 ; j ++) {
+                 cc = Math.random()*10+70;
+
+                shuchu.push(cc);
+
+            }
+*/
+
+
+
 
 
             cross(shijian,shuchu,shuru);
@@ -225,4 +243,46 @@ function getNumByLiu() {
 
     });
 
+}
+
+//获取当前是天
+function getSevenDate(num,step,data){
+    var myDate=new Date()
+    var year =myDate.getFullYear()
+    var month=myDate.getMonth()
+    var myDay=myDate.getDate();
+    var myHours =myDate.getHours();
+    var getMinutes =myDate.getMinutes()
+    var arr=[];
+    for(var i=0;i<num;i++){
+        var Date1=new Date(year,month,myDay,myHours,getMinutes+(i*step))
+        var year1 =Date1.getFullYear()
+        var month1=Date1.getMonth()+1
+        var day1=Date1.getDate();
+        var myHours1 =Date1.getHours();
+        var getMinutes1 =Date1.getMinutes()
+        month1=parseInt(month1)<10?"0"+month1:month1
+        day1=parseInt(day1)<10?"0"+day1:day1
+        myHours1 =parseInt(myHours1)<10?"0"+myHours1:myHours1;
+        getMinutes1 =parseInt(getMinutes1)<10?"0"+getMinutes1:getMinutes1;
+        arr.push([year1+'-'+month1+'-'+day1+' '+myHours1+':'+getMinutes1+":00",data[i]]);
+    }
+
+    var date2=new Date(year,month,myDay,myHours+1,getMinutes);
+    var year2 =date2.getFullYear()
+    var month2=date2.getMonth()+1
+    var day2=date2.getDate();
+    var myHours2 =date2.getHours();
+    var getMinutes2 =date2.getMinutes()
+    var date3=new Date(year,month,myDay,myHours+2,getMinutes);
+    var year3 =date3.getFullYear()
+    var month3=date3.getMonth()+1
+    var day3=date3.getDate();
+    var myHours3 =date3.getHours();
+    var getMinutes3 =date3.getMinutes()
+     arr=arr.reverse();
+    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'-']);
+
+    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'-']);
+    return arr;
 }
