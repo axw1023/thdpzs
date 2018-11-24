@@ -6,6 +6,10 @@ $(function () {
 
 });
 
+$(document).ready(function () {
+    setInterval("getNumByLiu()", 60000);//6s一次
+});
+
 function cross (shijian,shuchu,shuru) {
 
     var dom = document.getElementById("charzhe");
@@ -75,7 +79,7 @@ function cross (shijian,shuchu,shuru) {
         xAxis: [
             {
                 type: 'time',
-               splitNumber: 7,
+               splitNumber: 8,
                 axisLine: {
                     onZero: false,
                     lineStyle: {
@@ -195,7 +199,7 @@ function cross (shijian,shuchu,shuru) {
 
 }
 
-// var t=setInterval(getNumByLiu,1000);
+/*var t=setInterval(getNumByLiu,60000);*/
 
 
 function getNumByLiu() {
@@ -281,8 +285,8 @@ function getSevenDate(num,step,data){
     var myHours3 =date3.getHours();
     var getMinutes3 =date3.getMinutes()
      arr=arr.reverse();
-    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'-']);
+    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'0']);
 
-    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'-']);
+    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'0']);
     return arr;
 }

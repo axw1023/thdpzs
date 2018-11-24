@@ -2,7 +2,7 @@
 $(function () {
 
 // IT页面
-    getNumByLiu() ;
+    selectSu() ;
 
 });
 
@@ -17,7 +17,7 @@ function cross (shijian,shuchu,shuru) {
     console.log(timeData);
     option = {
         title: {
-            text: '出口流速趋势(MB/s)',
+            text: '总体应用流速趋势(MB/s)',
             textStyle: {
                 color: "#92F1FF"
 
@@ -180,13 +180,13 @@ function cross (shijian,shuchu,shuru) {
 
 
 
-function getNumByLiu() {
+function selectSu() {
     $.ajax({
         type: "get",
         async: false,
         cache: false,
 
-        url: "getNumByLiu",
+        url: "selectSu",
 
         success: function (LIU) {
             var shuru=[];
@@ -201,18 +201,6 @@ function getNumByLiu() {
             //     shijian.push(LIU[i].time);
             // }
 
-            for(var i = 0; i < 361 ; i ++) {
-                id = Math.random()*10+200;
-
-                shuru.push(id);
-
-            }
-            for(var j = 0; j < 361 ; j ++) {
-                cc = Math.random()*10+70;
-
-                shuchu.push(cc);
-
-            }
 
 
 
