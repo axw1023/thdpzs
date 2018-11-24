@@ -9,6 +9,8 @@ import com.qdjxd.wdth01.model.Wdth_tb_it_netdata_ge1;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.io.BufferedReader;
@@ -140,24 +142,20 @@ public class NetDataController {
 //        System.out.println(s);
 
         //发送 POST 请求(机柜、漏水、市电、ups)
-        Map<String, Object> map = new HashMap<String, Object>();
-        String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
+        Map<String,Object> map=new HashMap<>(3);
+       /* String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
         String ls = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
         String sd = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
         String ups = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"UPS01_\"]}");
+*/
+       String status=sendGet("http://10.1.11.114/api/json/businessview/getBusinessDetailsView","apiKey=1152d6804e60e481629e6f2acb678e5f&viewLength=250&startPoint=1&bvName=tianhong");
 
-        System.out.println(jg);
+        System.out.println(status);
+
+      /* System.out.println(jg);
         System.out.println(ls);
         System.out.println(sd);
-        System.out.println(ups);
-
-
-
-
-
-
-
-
+        System.out.println(ups);*/
 
     }
 
@@ -214,6 +212,10 @@ public class NetDataController {
         return result;
     }
 
+
+    @RequestMapping("/data")
+
+
     /**
      * 向指定 URL 发送POST方法的请求
      *
@@ -269,5 +271,16 @@ public class NetDataController {
         }
         return result;
     }
+
+
+    @RequestMapping(value = "/BusinessDetailsView", method = RequestMethod.GET)
+    @ResponseBody
+    Map<String,Object> BusinessDetailsView(){
+        String status=sendGet("http://10.1.11.114/api/json/businessview/getBusinessDetailsView","apiKey=1152d6804e60e481629e6f2acb678e5f&viewLength=250&startPoint=1&bvName=tianhong");
+        JSONObject detile=new JSONObject();
+        Map<String,Object> business=detile.getJSONObject(status);
+        return business;
+    }
+
 
 }
