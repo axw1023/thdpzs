@@ -35,6 +35,9 @@ public class ITController {
 @Resource
 com.qdjxd.wdth01.controller.NetDataController itda;
 
+/* 总体应用流速*/
+@Resource
+com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper it_netdata_all;
 
     @RequestMapping("/ITchar")
     public String index() {
@@ -77,6 +80,14 @@ com.qdjxd.wdth01.controller.NetDataController itda;
     }
 
 
+    @RequestMapping(value = "/getZ", method = RequestMethod.GET)
+    @ResponseBody
+    //获取ajax参数中总体
+    public List<Wdth_tb_it_netdata_all> getZ() throws Exception {
+//
+        List<Wdth_tb_it_netdata_all> getZ =  it_netdata_all.selectSu();
+        return getZ;
+    }
 
 }
 

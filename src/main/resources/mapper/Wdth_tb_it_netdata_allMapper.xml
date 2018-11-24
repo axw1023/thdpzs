@@ -16,6 +16,17 @@
     from wdth_tb_it_netdata_all
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
+
+  <!--zongti-->
+  <select id="selectSu" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from wdth_tb_it_netdata_all
+
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from wdth_tb_it_netdata_all
     where id = #{id,jdbcType=VARCHAR}
@@ -79,4 +90,9 @@
       all_outTraffic = #{allOuttraffic,jdbcType=DOUBLE}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+
+  <delete id="deleteExpired" parameterType="java.util.Date" >
+    delete from wdth_tb_it_netdata_all
+    where TIME &lt; #{id,jdbcType=TIMESTAMP}
+  </delete>
 </mapper>
