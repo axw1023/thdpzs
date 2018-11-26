@@ -61,7 +61,7 @@ function zcross (zshuchu,zshuru) {
             // itemHeight: 20,  // 设置图例图形的高
             textStyle: {
                 color: '#92F1FF',
-                fontSize: 20
+                fontSize: 15
 
 
             },
@@ -278,8 +278,8 @@ function qgetSevenDate(num,step,data){
     var qmyHours3 =qdate3.getHours();
     var qgetMinutes3 =qdate3.getMinutes();
     qarr=qarr.reverse();
-    qarr.push([qyear2+'-'+qmonth2+'-'+qday2+' '+qmyHours2+':'+qgetMinutes2+":00",'0']);
+    qarr.push([qyear2+'-'+qmonth2+'-'+qday2+' '+qmyHours2+':'+qgetMinutes2+":00",'-']);
 
-    qarr.push([qyear3+'-'+qmonth3+'-'+qday3+' '+qmyHours3+':'+qgetMinutes3+":00",'0']);
+    qarr.push([qyear3+'-'+qmonth3+'-'+qday3+' '+qmyHours3+':'+qgetMinutes3+":00",'-']);
     return qarr;
 }

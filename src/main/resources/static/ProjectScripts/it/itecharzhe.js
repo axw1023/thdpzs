@@ -62,7 +62,7 @@ function cross (shijian,shuchu,shuru) {
             // itemHeight: 20,  // 设置图例图形的高
             textStyle: {
                 color: '#92F1FF',
-                fontSize: 20
+                fontSize: 15
 
 
             },
@@ -280,8 +280,8 @@ function getSevenDate(num,step,data){
     var myHours3 =date3.getHours();
     var getMinutes3 =date3.getMinutes()
      arr=arr.reverse();
-    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'0']);
+    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'-']);
 
-    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'0']);
+    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'-']);
     return arr;
 }
