@@ -16,7 +16,7 @@ var CanvasParticle = (function(){
 		// body是你想要将其作为背景的div的ID
 		var body = document.getElementById("body");
 		var canvasObj = document.createElement("canvas");
-
+		canvasObj.style.marginTop = '-1024px';
 		var canvas = {
 			element: canvasObj,
 			points : [],
