@@ -6,14 +6,14 @@ spring:
 #        name: test
 
 #        开发库
-        url: jdbc:mysql://10.1.12.130:3306/thdpzs
-        driver-class-name: com.mysql.jdbc.Driver
-        username: root
-        password: Asdzx_123
-#        url: jdbc:mysql://10.0.30.201:3306/thdpzs?useUnicode=true&characterEncoding=UTF-8
+#        url: jdbc:mysql://10.1.12.130:3306/thdpzs
 #        driver-class-name: com.mysql.jdbc.Driver
-#        username: wdth
-#        password: wdth@2
+#        username: root
+#        password: Asdzx_123
+        url: jdbc:mysql://10.0.30.201:3306/thdpzs?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT&useSSL=false
+        driver-class-name: com.mysql.jdbc.Driver
+        username: wdth
+        password: Asdzx_123
 #
 #        wdth
 #        wdth@2
