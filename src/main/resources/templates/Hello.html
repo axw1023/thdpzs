@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+
+    <!--外部css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/Hello/hello.css}">
+    <!--外部js-->
+    <script type="text/javascript"   th:src="@{/Scripts/jquery-3.3.1.js}"></script>
+    <style type="text/css">
+        #hello{position:absolute;height: 260px;width: 510px ;left:1000px;top: 306px;z-index:99}
+    </style>
+</head>
+<body>
+<div class="content">
+    <div class="login-wrap">
+        <form id="user_login" action="">
+           
+            <input class="name" name="" id="accountName" type="text" placeholder="请输入用户名">
+            <input class="code" name="password" id="password" type="password" placeholder="请输入密码">
+            <div class="btn">
+                <input type="button" id="submit" class="submit" value="登录" onclick="return check(this.form);">
+                <input type="reset" id="reset"  class="reset" value="重置" >
+            </div>
+        </form>
+        <text id="CheckMsg"></text>
+    </div>
+</div>
+</body>
+<script type="text/javascript"   th:src="@{/ProjectScripts/Hello/Hello.js}"></script>
+<script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
+</html>
