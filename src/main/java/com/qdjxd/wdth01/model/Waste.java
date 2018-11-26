@@ -21,6 +21,18 @@ public class Waste {
 
     private Boolean wasteEnable;
 
+    private Float so2Concentration;
+
+    private Float so2Standard;
+
+    private Float noConcentration;
+
+    private Float noStandard;
+
+    private Float ycConcentration;
+
+    private Float ycStandard;
+
     public String getWasteId() {
         return wasteId;
     }
@@ -99,5 +111,53 @@ public class Waste {
 
     public void setWasteEnable(Boolean wasteEnable) {
         this.wasteEnable = wasteEnable;
+    }
+
+    public Float getSo2Concentration() {
+        return so2Concentration;
+    }
+
+    public void setSo2Concentration(Float so2Concentration) {
+        this.so2Concentration = so2Concentration;
+    }
+
+    public Float getSo2Standard() {
+        return so2Standard;
+    }
+
+    public void setSo2Standard(Float so2Standard) {
+        this.so2Standard = so2Standard;
+    }
+
+    public Float getNoConcentration() {
+        return noConcentration;
+    }
+
+    public void setNoConcentration(Float noConcentration) {
+        this.noConcentration = noConcentration;
+    }
+
+    public Float getNoStandard() {
+        return noStandard;
+    }
+
+    public void setNoStandard(Float noStandard) {
+        this.noStandard = noStandard;
+    }
+
+    public Float getYcConcentration() {
+        return ycConcentration;
+    }
+
+    public void setYcConcentration(Float ycConcentration) {
+        this.ycConcentration = ycConcentration;
+    }
+
+    public Float getYcStandard() {
+        return ycStandard;
+    }
+
+    public void setYcStandard(Float ycStandard) {
+        this.ycStandard = ycStandard;
     }
 }
