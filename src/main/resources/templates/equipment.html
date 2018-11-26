@@ -23,7 +23,7 @@
     </script>
 
 </head>
-<body onload="init()" onunload="logout()">
+<body id="body" onload="init()" onunload="logout()">
     <div class="content-all" ondblclick="window.location.href='/turnToLab'">
         <div class="e-left">
             <div class="left-1 left-1-1">
@@ -258,5 +258,6 @@
     </div>
 </body>
 <script type="text/javascript"   th:src="@{/ProjectScripts/Equip/equipment.js}"></script>
+<script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
 
 </html>

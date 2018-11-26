@@ -2,6 +2,22 @@
 $(function(){
     equpEcharts.init();
     dataFormat.init();
+
+
+    var config = {
+        vx: 4,
+        vy: 4,
+        height: 2,
+        width: 2,
+        count: 40,
+        color: "121, 162, 185",
+        stroke: "130,255,255",
+        dist: 6000,
+        e_dist: 20000,
+        max_conn: 10
+    }
+
+    CanvasParticle(config);
 });
 var numBar = echarts.init(document.getElementById('equipNum'));
 var warningPie = echarts.init(document.getElementById('warning'));
