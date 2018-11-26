@@ -45,7 +45,7 @@ function zcross (zshuchu,zshuru) {
             left:'3%'
 
         },
-        color: [ '#6049D3', '#08E3A1'],
+        color: [ '#92F1FF', '#FFE21A'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -136,10 +136,10 @@ function zcross (zshuchu,zshuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#0ABD8E',
+                        color: '#FFE21A',
                         lineStyle: {
 
-                            color: '#0ABD8E'
+                            color: '#FFE21A'
                         }
                     }
                 },
@@ -172,10 +172,10 @@ function zcross (zshuchu,zshuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#2BA1E7',
+                        color: '#92F1FF',
                         lineStyle: {
 
-                            color: '#2BA1E7'
+                            color: '#92F1FF'
                         }
                     }
                 },

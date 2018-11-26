@@ -46,7 +46,7 @@ function cross (shijian,shuchu,shuru) {
             left:'3%'
 
         },
-        color: [ '#6049D3', '#08E3A1'],
+        color: [ '#92F1FF', '#FFE21A'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -137,10 +137,10 @@ function cross (shijian,shuchu,shuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#0ABD8E',
+                        color: '#FFE21A',
                         lineStyle: {
 
-                            color: '#0ABD8E'
+                            color: '#FFE21A'
                         }
                     }
                 },
@@ -173,10 +173,10 @@ function cross (shijian,shuchu,shuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#2BA1E7',
+                        color: '#92F1FF',
                         lineStyle: {
 
-                            color: '#2BA1E7'
+                            color: '#92F1FF'
                         }
                     }
                 },
