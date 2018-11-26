@@ -37,7 +37,7 @@ function zcross (zshuchu,zshuru) {
 
     option = {
         title: {
-            text: '出口流速趋势(MB/s)',
+            text: '总体应用流速趋势(MB/s)',
             textStyle: {
                 color: "#92F1FF"
 
