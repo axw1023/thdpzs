@@ -16,7 +16,11 @@ var CanvasParticle = (function(){
 		// body是你想要将其作为背景的div的ID
 		var body = document.getElementById("body");
 		var canvasObj = document.createElement("canvas");
-		canvasObj.style.marginTop = '-1024px';
+		canvasObj.style.position = 'fixed';
+		canvasObj.style.top = '0px';
+		canvasObj.style.left = '0px';
+		canvasObj.style.zIndex = '-1';
+
 		var canvas = {
 			element: canvasObj,
 			points : [],
@@ -47,7 +51,7 @@ var CanvasParticle = (function(){
 		// body.replaceChild(canvas.element, canvasDiv);
 		body.appendChild(canvas.element);
 
-		canvas.element.style = "position: fixed; top: 0; left: 0; z-index: -1;";
+		// canvas.element.style = "position: fixed; top: 0; left: 0; z-index: -1;";
 		canvasSize(canvas.element);
 		window.onresize = function(){
 			canvasSize(canvas.element);
