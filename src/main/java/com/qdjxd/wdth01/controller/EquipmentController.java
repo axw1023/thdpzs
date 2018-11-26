@@ -39,6 +39,7 @@ public class EquipmentController {
      */
     @RequestMapping("area/list")
     public ResponseEntity getAreaNumList(){
+
         ResponseEntity result = equipmentService.getAreaNumList();
         return result;
     }
