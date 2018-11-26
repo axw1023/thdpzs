@@ -25,4 +25,35 @@ $(function(){
         $('.she').show();
 
     },600);
+
+
+    getSD() ;
 });
+
+function getSD() {
+    $.ajax({
+        type: "get",
+        async: false,
+        cache: false,
+
+        url: "",
+        success: function (SD) {
+            var wd="";
+            var sd="";
+
+            for (var i = 0; i <SD.length ; i++) {
+
+
+            }
+
+
+            $("").html(wd); //在html页面id=test的标签里显示html内容
+            $("").html(sd);
+            $("").html(name);
+
+        }
+
+
+    });
+
+}
