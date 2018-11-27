@@ -30,6 +30,10 @@ $(function(){
     getSD() ;
 });
 
+$(document).ready(function () {
+    setInterval("getSD()", 180000);//3min一次
+});
+
 function getSD() {
     $.ajax({
         type: "get",

@@ -19,10 +19,10 @@ function bing(arr) {
 
             "#6F41FF", "#FC363F",
             "#FF824E", "#25CDAA"],
-        tooltip: {
-            trigger: 'item',
-            formatter: "{a} <br/>{b}: {c} ({d}%)"
-        },
+        // tooltip: {
+        //     trigger: 'item',
+        //     formatter: "{a} <br/>{b}: {c} ({d}%)"
+        // },
 
         legend: {
 
@@ -33,9 +33,10 @@ function bing(arr) {
             orient: 'vertical',
             top: 'middle',
             data: ['正常', '服务停止', '关键', '严重','轻微'],
-    show: true,
+              show: true,
             y:'right',
             right:'47px',
+
 
             textStyle: {
                 color: '#92F1FF',
@@ -60,7 +61,7 @@ function bing(arr) {
                     },
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}项",
+                        formatter: "共{a|{c}}台",
                         rich:{
                             a:{
                                 fontSize: 41
@@ -156,23 +157,23 @@ function bing(arr) {
     };
     myChart2.setOption(option);
 
-    pieint=setInterval(function () {
-        var dataLen = option.series[0].data.length;
-        // 取消之前高亮的图形
-        myChart2.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0,
-            dataIndex: currentIndex2
-        });
-        currentIndex2 = (currentIndex2 + 1) % dataLen;
-        // 高亮当前图形
-        myChart2.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: currentIndex2
-        });
-
-    }, 3000);
+    // pieint=setInterval(function () {
+    //     var dataLen = option.series[0].data.length;
+    //     // 取消之前高亮的图形
+    //     myChart2.dispatchAction({
+    //         type: 'downplay',
+    //         seriesIndex: 0,
+    //         dataIndex: currentIndex2
+    //     });
+    //     currentIndex2 = (currentIndex2 + 1) % dataLen;
+    //     // 高亮当前图形
+    //     myChart2.dispatchAction({
+    //         type: 'highlight',
+    //         seriesIndex: 0,
+    //         dataIndex: currentIndex2
+    //     });
+    //
+    // }, 3000);
 }
 
 
