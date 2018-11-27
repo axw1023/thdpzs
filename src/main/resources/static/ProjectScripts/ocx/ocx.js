@@ -31,10 +31,10 @@ function init_v1(){
 
     ButtonCreateWnd_onclick_v1();
     obj.DPSDK_SetLog(2, "D:\\video1_log", false, false); //初始化后设置日志路径
-    ShowCallRetInfo_v1(obj.DPSDK_Login("10.0.22.245", 9000, "大屏展示2", "admin123"), "登录");
+    ShowCallRetInfo_v1(obj.DPSDK_Login("10.0.22.245", 9000, "大屏展示", "admin123"), "登录");
     ShowCallRetInfo_v1(obj.DPSDK_AsyncLoadDGroupInfo(), "异步加载组织结构");
     var nWndNo = obj.DPSDK_GetSelWnd(gWndId);
-    ShowCallRetInfo_v1(obj.DPSDK_DirectRealplayByWndNo(gWndId, nWndNo, "1000008$1$0$3", 1, 1, 1), "直接实时播放");
+    ShowCallRetInfo_v1(obj.DPSDK_DirectRealplayByWndNo(gWndId, nWndNo, "1000234$1$0$0", 1, 1, 1), "直接实时播放");
     bLogin=1;
 }
 

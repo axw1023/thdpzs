@@ -19,4 +19,5 @@ public interface UserMapper {
 
     User select(String userid);
 
+    int getInto(User user);
 }
