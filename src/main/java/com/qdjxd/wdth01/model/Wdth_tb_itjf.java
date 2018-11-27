@@ -3,9 +3,9 @@ package com.qdjxd.wdth01.model;
 public class Wdth_tb_itjf {
     private Integer sheetid;
 
-    private Integer num;
+    private String name;
 
-    private String types;
+    private Double value;
 
     public Integer getSheetid() {
         return sheetid;
@@ -15,19 +15,19 @@ public class Wdth_tb_itjf {
         this.sheetid = sheetid;
     }
 
-    public Integer getNum() {
-        return num;
+    public String getName() {
+        return name;
     }
 
-    public void setNum(Integer num) {
-        this.num = num;
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getTypes() {
-        return types;
+    public Double getValue() {
+        return value;
     }
 
-    public void setTypes(String types) {
-        this.types = types == null ? null : types.trim();
+    public void setValue(Double value) {
+        this.value = value;
     }
 }

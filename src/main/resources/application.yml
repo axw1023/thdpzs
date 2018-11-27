@@ -6,7 +6,7 @@ spring:
         name: test
 
 #        开发库
-        url: jdbc:mysql://10.1.12.130/thdpzs
+        url: jdbc:mysql://10.0.30.201/thdpzs?useUnicode=true&amp;characterEncoding=utf8
         username: root
         password: mysql
 #       本地库
