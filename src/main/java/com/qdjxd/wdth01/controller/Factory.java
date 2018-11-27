@@ -16,7 +16,7 @@ public class Factory {
 
     @Resource
     wdth_3d_dyflqMapper wdth_3d_dyflqMapper;
-    
+
     @Resource
     wdth_3d_fkgMapper wdth_3d_fkgMapper;
      @Resource
