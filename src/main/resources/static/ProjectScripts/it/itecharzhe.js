@@ -7,7 +7,7 @@ $(function () {
 });
 
 $(document).ready(function () {
-    setInterval("getNumByLiu()", 60000);//6s一次
+    setInterval("getNumByLiu()", 60000);//1min一次
 });
 
 function cross (shijian,shuchu,shuru) {
