@@ -883,7 +883,8 @@ dataFlag=null;
 function setCoordData(_d){
     fstData=_d;
     var data={};
-    data=$.extend(fstData,data);
+
+    data=JSON.parse(JSON.stringify(fstData));
     var data1={
         first: data.first
     }
@@ -903,6 +904,7 @@ function setCoordData(_d){
         clearInterval(dataFlag);
     }
     dataFlag=setInterval(function(){
+        console.log(fstData);
         var bh=Math.random()*0.02-0.01;
         for(var i=0;i<fstData.first.length;i++){
             data.first[i].value=(fstData.first[i].value/1+fstData.first[i].value*bh/1).toFixed(1);
@@ -931,7 +933,7 @@ function setCoordData(_d){
         }
         var html3 = template('tpl3',data3);
         document.getElementById('three').innerHTML = html3;
-    },3000)
+    },data.layer[0].time)
 
     layerData=data.layer;
     beginLayerShow();
