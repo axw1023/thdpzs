@@ -40,8 +40,9 @@ public class ITController {
 @Resource
 com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper it_netdata_all;
 
+/*jf*/
 @Resource
-Wdth_tb_itjfMapper itjfMapper;
+com.qdjxd.wdth01.dao.Wdth_tb_itjfMapper itjf;
 
 
 
@@ -97,15 +98,15 @@ Wdth_tb_itjfMapper itjfMapper;
 
 
 
-//    /* 机房1*/
-//    @RequestMapping(value = "/jf", method = RequestMethod.GET)
-//    @ResponseBody
-    //获取ajax参数中总体
-//    public List<Wdth_tb_itjf> jf()  {
-////
-//        List<Wdth_tb_itjf> jf = itjfMapper.jf();
-//        return jf;
-//    }
+    /* 机房1*/
+    @RequestMapping(value = "/SD", method = RequestMethod.GET)
+    @ResponseBody
+
+    public List<Wdth_tb_itjf> jf()  {
+//
+        List<Wdth_tb_itjf> jf =itjf.jf();
+        return jf;
+    }
 
 }
 

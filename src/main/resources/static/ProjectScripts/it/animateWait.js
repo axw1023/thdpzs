@@ -37,21 +37,21 @@ $(document).ready(function () {
 function getSD() {
     $.ajax({
         type: "get",
-        async: false,
+
         cache: false,
 
-        url: "jf",
-        success: function (SD) {
+        url: "/ITchar/SD",
+        success: function (DA) {
             var wd="";
             var shuidi="";
 
-            wd+="<p class='D3'>"+SD[9].types+':&nbsp;'+SD[9].num+"A</p>";
-            wd+="<p class='D3'>"+SD[10].types+':&nbsp;'+SD[10].num+"A</p>";
-            wd+="<p class='D3'>"+SD[11].types+':&nbsp;'+SD[11].num+"A</p>";
-            wd+="<p class='D3'>"+SD[12].types+':&nbsp;'+SD[12].num+"Min</p>";
+            wd+="<p class='D3'>"+DA[7].name+'&nbsp;:&nbsp;'+DA[7].value+"A</p>";
+            wd+="<p class='D3'>"+DA[8].name+'&nbsp;:&nbsp;'+DA[8].value+"A</p>";
+            wd+="<p class='D3'>"+DA[9].name+'&nbsp;:&nbsp;'+DA[9].value+"A</p>";
+            wd+="<p class='D3'>"+DA[10].name+'&nbsp;:&nbsp;'+DA[10].value+"Min</p>";
 
-            shuidi+="<p class='D3'>"+SD[2].types+':'+SD[2].num+"℃</p>";
-            shuidi+="<p class='D3'>"+SD[3].types+':'+SD[3].num+"%</p>";
+            shuidi+="<p class='D3'>"+DA[11].name+'&nbsp;:&nbsp;'+DA[11].value+"℃</p>";
+            shuidi+="<p class='D3'>"+DA[0].name+'&nbsp;:&nbsp;'+DA[0].value+"%</p>";
 
             $("#nr").html(wd); //在html页面id=test的标签里显示html内容
             $("#dading").html(shuidi);

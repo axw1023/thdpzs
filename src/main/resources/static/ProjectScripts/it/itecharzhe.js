@@ -67,7 +67,7 @@ function cross (shijian,shuchu,shuru) {
 
             },
             right: '1%',
-            data: [ '接受', '发送']
+            data: [ '接收', '发送']
         },
 
         grid: {
@@ -130,7 +130,7 @@ function cross (shijian,shuchu,shuru) {
             {
                 symbol: 'circle',     //设定为实心点
                 symbolSize: 8,   //设定实心点的大小
-                name: '接受',
+                name: '接收',
                 type: 'line',
                 showSymbol: false,
                 hoverAnimation: false,
@@ -212,7 +212,7 @@ function cross (shijian,shuchu,shuru) {
 function getNumByLiu() {
     $.ajax({
         type: "get",
-        async: false,
+
         cache: false,
 
         url: "getNumByLiu",

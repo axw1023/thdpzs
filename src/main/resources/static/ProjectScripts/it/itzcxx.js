@@ -11,7 +11,7 @@ function  getNumzc() {
     $.ajax({
         type: "get",
         url: "getNumzc",
-        async: false,
+
         cache:false,
         success: function (data) {
 

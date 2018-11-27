@@ -66,7 +66,7 @@ function zcross (zshuchu,zshuru) {
 
             },
             right: '1%',
-            data: [ '总接受', '总发送']
+            data: [ '总接收', '总发送']
         },
 
         grid: {
@@ -129,7 +129,7 @@ function zcross (zshuchu,zshuru) {
             {
                 symbol: 'circle',     //设定为实心点
                 symbolSize: 8,   //设定实心点的大小
-                name: '总接受',
+                name: '总接收',
                 type: 'line',
                 showSymbol: false,
                 hoverAnimation: false,
@@ -211,7 +211,7 @@ function zcross (zshuchu,zshuru) {
 function getZ() {
     $.ajax({
         type: "get",
-        async: false,
+
         cache: false,
 
         url: "getZ",
