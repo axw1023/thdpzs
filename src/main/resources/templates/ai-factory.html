@@ -10,7 +10,17 @@
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
 
     <script type="text/javascript" th:src="@{/ProjectScripts/ai/three.js}"></script>
+    <script type="text/javascript">
 
+        // 页面跳转
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnTo3DFactory"
+            }
+        });
+    </script>
 
 </head>
 <body>

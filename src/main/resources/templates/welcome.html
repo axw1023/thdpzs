@@ -9,20 +9,24 @@
 
     <style type="text/css">
         #img{
-            height: 958px;
-            width: 5266px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 1024px;
+            width: 5632px;
             background-image: url("../../images/welcome/welcome.png");
         }
     </style>
     <script type="text/javascript">
 
         // 页面跳转
-        function turnTo(){
-            window.location.href="/turnToOverallPlanning"
-        }
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+            window.location.href="/turnToAllLink"
+            }
+        });
     </script>
 </head>
-<body>
-<div id = img onclick="turnTo()"></div>
+<body style="margin: 0;padding: 0">
+<div id = img ></div>
 </body>
 </html>

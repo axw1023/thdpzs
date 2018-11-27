@@ -6,9 +6,9 @@ const Z_VELOCITY = -0.0025; // How fast
 const STARS_COUNT = 2000; // How many
 
 const setSizes = () => {
-  screenWidth =window.innerWidth;
-  screenHeight = window.innerHeight;
-  smallerSize = 400 ;                       //screenWidth > screenHeight ? screenHeight : screenWidth;
+  screenWidth =window.innerWidth;                     //window.innerWidth;5632
+  screenHeight =window.innerHeight             //window.innerHeight;1024
+  smallerSize = 600 ;                       //screenWidth > screenHeight ? screenHeight : screenWidth;
 }
 setSizes();
 

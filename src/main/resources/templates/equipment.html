@@ -20,6 +20,15 @@
             ButtonLogout_onclick_v1();
             ButtonLogout_onclick_v2();
         }
+
+        // 页面跳转
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToIT"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnToLab"
+            }
+        });
     </script>
 
 </head>
