@@ -1,3 +1,4 @@
+var fstData={};
 //变化趋势图
 function setCharData(_d){
     var data=_d.map(function(item){
@@ -874,33 +875,73 @@ function getCoordData(){
         url: '/BigData/getCoordData',
         dataType: 'json'
     });
-    return _d;
-}
 
+    return _d;
+
+}
+dataFlag=null;
 function setCoordData(_d){
+    fstData=_d;
+    var data={};
+    data=$.extend(fstData,data);
     var data1={
-        first: _d.first
+        first: data.first
     }
     var html1 = template('tpl1',data1);
     document.getElementById('first').innerHTML = html1;
-  var data2={
-        second: _d.second
+    var data2={
+        second: data.second
     }
     var html2 = template('tpl2',data2);
     document.getElementById('second').innerHTML = html2;
-     var data3={
-         three: _d.three
+    var data3={
+        three: data.three
     }
     var html3 = template('tpl3',data3);
     document.getElementById('three').innerHTML = html3;
-    beginLayerShow(_d.layer);
+    if(dataFlag){
+        clearInterval(dataFlag);
+    }
+    dataFlag=setInterval(function(){
+        var bh=Math.random()*0.02-0.01;
+        for(var i=0;i<fstData.first.length;i++){
+            data.first[i].value=(fstData.first[i].value/1+fstData.first[i].value*bh/1).toFixed(1);
+        }
+        for(var i=0;i<_d.second.length;i++){
+            data.second[i].value=(fstData.second[i].value/1+fstData.second[i].value*bh/1).toFixed(1);
+        }
+        for(var i=0;i<_d.three.length;i++){
+            data.three[i].value=(fstData.three[i].value/1+fstData.three[i].value*bh/1).toFixed(1);
+        }
+        for(var i=0;i<_d.layer.length;i++){
+            data.layer[i].value=(fstData.layer[i].value/1+fstData.layer[i].value*bh/1).toFixed(1);
+        }
+        var data1={
+            first: data.first
+        }
+        var html1 = template('tpl1',data1);
+        document.getElementById('first').innerHTML = html1;
+        var data2={
+            second: data.second
+        }
+        var html2 = template('tpl2',data2);
+        document.getElementById('second').innerHTML = html2;
+        var data3={
+            three: data.three
+        }
+        var html3 = template('tpl3',data3);
+        document.getElementById('three').innerHTML = html3;
+    },3000)
+
+    layerData=data.layer;
+    beginLayerShow();
 }
 var layerFlag=null;
 var layerData=[];
 
 //显示气泡
-function beginLayerShow(data){
-    layerData=data;
+function beginLayerShow(){
+
     if(layerFlag){
         clearInterval(layerFlag)
         layerFlag=null;
