@@ -13,9 +13,13 @@
     <script type="text/javascript">
 
         // 页面跳转
-        function turnTo(){
-            window.location.href="/turnToEquipment"
-        }
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToMes"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnToOverallPlanning"
+            }
+        });
     </script>
     <style type="text/css">
         #qy{position:absolute;height: 26px;width: 51px ;left:2001px;top: 306px;z-index:99}

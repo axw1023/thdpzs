@@ -23,6 +23,18 @@
             }
         #body{color: transparent;z-index:99}
     </style>
+
+    <script type="text/javascript">
+
+        // 页面跳转
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToBigData"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnToIT"
+            }
+        });
+    </script>
 </head>
 <body>
 <div id="body">

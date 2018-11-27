@@ -47,13 +47,17 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
 
     </style>
 
-    <!--<script type="text/javascript">-->
+    <script type="text/javascript">
 
-        <!--// 页面跳转-->
-        <!--function turnTo(){-->
-            <!--window.location.href="/turnToERPandBI"-->
-        <!--}-->
-    <!--</script>-->
+        // 页面跳转
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToDigitalFactory"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnToEquipment"
+            }
+        });
+    </script>
 
 
 </head>

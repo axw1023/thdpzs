@@ -13,9 +13,13 @@
     <script type="text/javascript">
 
         // 页面跳转
-       /* function turnTo(){
-            window.location.href="/turnToEquipment"
-        }*/
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToFutureProspect"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnToBigData"
+            }
+        });
     </script>
     <style type="text/css">
         #all{background: url("../ProjectScripts/3D/all.png")}

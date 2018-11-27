@@ -17,12 +17,14 @@
     <script type="text/javascript">
 
         // 页面跳转
-        function turnTo(){
-            window.location.href="/turnToOverallPlanning"
-        }
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+            window.location.href="/turnToAllLink"
+            }
+        });
     </script>
 </head>
 <body>
-<div id = img onclick="turnTo()"></div>
+<div id = img ></div>
 </body>
 </html>

@@ -147,8 +147,7 @@ public class NetDataController {
 //        String s=sendGet("http://localhost:6144/Home/RequestString", "key=123&v=456");
 //        System.out.println(s);
 
-//        删除历史记录
-        itjf_dao.deleteAll();
+
 
         //发送 POST 请求(机柜、漏水、市电、ups)
         List<String> name = new ArrayList<String>();
@@ -169,59 +168,69 @@ public class NetDataController {
         JSONObject sdob = JSONObject.parseObject(sd);
         JSONObject upsob = JSONObject.parseObject(ups);
 
+        try {
+
 //        温度
-        String wdst = jObj.getJSONArray("result").getJSONObject(1).getString("RtValue");
-        String wdstname = jObj.getJSONArray("result").getJSONObject(1).getString("Name");
-        value.add(wdst);
-        name.add(wdstname);
+            String wdst = jObj.getJSONArray("result").getJSONObject(1).getString("RtValue");
+            String wdstname = jObj.getJSONArray("result").getJSONObject(1).getString("Name");
+            value.add(wdst);
+            name.add(wdstname);
 
 //        湿度
-        String sdst = jObj.getJSONArray("result").getJSONObject(2).getString("RtValue");
-        String sdstname = jObj.getJSONArray("result").getJSONObject(2).getString("Name");
-        value.add(sdst);
-        name.add(sdstname);
+            String sdst = jObj.getJSONArray("result").getJSONObject(2).getString("RtValue");
+            String sdstname = jObj.getJSONArray("result").getJSONObject(2).getString("Name");
+            value.add(sdst);
+            name.add(sdstname);
 //        空调漏水
-        String ktlsst = lsob.getJSONArray("result").getJSONObject(1).getString("AlarmType");
-        String ktlsstname = lsob.getJSONArray("result").getJSONObject(1).getString("Name");
-        value.add(ktlsst);
-        name.add(ktlsstname);//        消防报警
-        String xfbjst = lsob.getJSONArray("result").getJSONObject(2).getString("AlarmType");
-        String xfbjstname = lsob.getJSONArray("result").getJSONObject(2).getString("Name");
-        value.add(xfbjst);
-        name.add(xfbjstname);//        市电停电报警
-        String sdtdbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
-        String sdtdbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
-        value.add(sdtdbj);
-        name.add(sdtdbjname);//        A相电压断相报警
-        String axddbj = sdob.getJSONArray("result").getJSONObject(15).getString("AlarmType");
-        String axddbjname = sdob.getJSONArray("result").getJSONObject(15).getString("Name");
-        value.add(axddbj);
-        name.add(axddbjname);
+            String ktlsst = lsob.getJSONArray("result").getJSONObject(1).getString("AlarmType");
+            String ktlsstname = lsob.getJSONArray("result").getJSONObject(1).getString("Name");
+            value.add(ktlsst);
+            name.add(ktlsstname);//        消防报警
+            String xfbjst = lsob.getJSONArray("result").getJSONObject(2).getString("AlarmType");
+            String xfbjstname = lsob.getJSONArray("result").getJSONObject(2).getString("Name");
+            value.add(xfbjst);
+            name.add(xfbjstname);//        市电停电报警
+            String sdtdbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
+            String sdtdbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
+            value.add(sdtdbj);
+            name.add(sdtdbjname);//        A相电压断相报警
+            String axddbj = sdob.getJSONArray("result").getJSONObject(15).getString("AlarmType");
+            String axddbjname = sdob.getJSONArray("result").getJSONObject(15).getString("Name");
+            value.add(axddbj);
+            name.add(axddbjname);
 //        B相电压断相报警
-        String bxddbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
-        String bxddbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
-        value.add(bxddbj);
-        name.add(bxddbjname);//        C相电压断相报警
-        String cxddbj = sdob.getJSONArray("result").getJSONObject(17).getString("AlarmType");
-        String cxddbjname = sdob.getJSONArray("result").getJSONObject(17).getString("Name");
-        value.add(cxddbj);
-        name.add(cxddbjname);//        A相输出电流
-        String axscdl = upsob.getJSONArray("result").getJSONObject(7).getString("RtValue");
-        String axscdlname = upsob.getJSONArray("result").getJSONObject(7).getString("Name");
-        value.add(axscdl);
-        name.add(axscdlname);//        B相输出电流
-        String bxscdl = upsob.getJSONArray("result").getJSONObject(8).getString("RtValue");
-        String bxscdlname = upsob.getJSONArray("result").getJSONObject(8).getString("Name");
-        value.add(bxscdl);
-        name.add(bxscdlname);//        C相输出电流
-        String cxscdl = upsob.getJSONArray("result").getJSONObject(9).getString("RtValue");
-        String cxscdlname = upsob.getJSONArray("result").getJSONObject(9).getString("Name");
-        value.add(cxscdl);
-        name.add(cxscdlname);//        电池后备时间
-        String dchbsj = upsob.getJSONArray("result").getJSONObject(37).getString("RtValue");
-        String dchbsjname = upsob.getJSONArray("result").getJSONObject(37).getString("Name");
-        value.add(dchbsj);
-        name.add(dchbsjname);
+            String bxddbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
+            String bxddbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
+            value.add(bxddbj);
+            name.add(bxddbjname);//        C相电压断相报警
+            String cxddbj = sdob.getJSONArray("result").getJSONObject(17).getString("AlarmType");
+            String cxddbjname = sdob.getJSONArray("result").getJSONObject(17).getString("Name");
+            value.add(cxddbj);
+            name.add(cxddbjname);//        A相输出电流
+            String axscdl = upsob.getJSONArray("result").getJSONObject(7).getString("RtValue");
+            String axscdlname = upsob.getJSONArray("result").getJSONObject(7).getString("Name");
+            value.add(axscdl);
+            name.add(axscdlname);//        B相输出电流
+            String bxscdl = upsob.getJSONArray("result").getJSONObject(8).getString("RtValue");
+            String bxscdlname = upsob.getJSONArray("result").getJSONObject(8).getString("Name");
+            value.add(bxscdl);
+            name.add(bxscdlname);//        C相输出电流
+            String cxscdl = upsob.getJSONArray("result").getJSONObject(9).getString("RtValue");
+            String cxscdlname = upsob.getJSONArray("result").getJSONObject(9).getString("Name");
+            value.add(cxscdl);
+            name.add(cxscdlname);//        电池后备时间
+            String dchbsj = upsob.getJSONArray("result").getJSONObject(37).getString("RtValue");
+            String dchbsjname = upsob.getJSONArray("result").getJSONObject(37).getString("Name");
+            value.add(dchbsj);
+            name.add(dchbsjname);
+
+        }catch (Exception e){
+            return;
+        }
+
+        //        删除历史记录
+        itjf_dao.deleteAll();
+
         for(int i = 0;i < name.size();i++){
             Wdth_tb_itjf itjf = new Wdth_tb_itjf();
             itjf.setSheetid(i);

@@ -16,7 +16,17 @@
 		<script type="text/javascript" src = "../../Scripts/jquery.rotate.min.js"></script>
 		<script type="text/javascript" src = "../../Scripts/jquery.easing.min.js"></script>
 
+		<script type="text/javascript">
 
+            // 页面跳转
+            $(document).keydown(function(event){
+                if(event.keyCode == 39){
+                    window.location.href="/turnToERPandBI"
+                }else if(event.keyCode == 37){
+                    window.location.href="/turnToAllLink"
+                }
+            });
+		</script>
 
 		<style type="text/css">
 			canvas{
