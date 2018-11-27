@@ -46,7 +46,7 @@ function cross (shijian,shuchu,shuru) {
             left:'3%'
 
         },
-        color: [ '#6049D3', '#08E3A1'],
+        color: [ '#92F1FF', '#FFE21A'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -62,7 +62,7 @@ function cross (shijian,shuchu,shuru) {
             // itemHeight: 20,  // 设置图例图形的高
             textStyle: {
                 color: '#92F1FF',
-                fontSize: 20
+                fontSize: 15
 
 
             },
@@ -137,10 +137,10 @@ function cross (shijian,shuchu,shuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#0ABD8E',
+                        color: '#FFE21A',
                         lineStyle: {
 
-                            color: '#0ABD8E'
+                            color: '#FFE21A'
                         }
                     }
                 },
@@ -173,10 +173,10 @@ function cross (shijian,shuchu,shuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#2BA1E7',
+                        color: '#92F1FF',
                         lineStyle: {
 
-                            color: '#2BA1E7'
+                            color: '#92F1FF'
                         }
                     }
                 },
@@ -280,8 +280,8 @@ function getSevenDate(num,step,data){
     var myHours3 =date3.getHours();
     var getMinutes3 =date3.getMinutes()
      arr=arr.reverse();
-    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'0']);
+    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'-']);
 
-    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'0']);
+    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'-']);
     return arr;
 }

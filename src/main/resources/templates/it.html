@@ -47,20 +47,20 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
 
     </style>
 
-    <script type="text/javascript">
+    <!--<script type="text/javascript">-->
 
-        // 页面跳转
-        function turnTo(){
-            window.location.href="/turnToERPandBI"
-        }
-    </script>
+        <!--// 页面跳转-->
+        <!--function turnTo(){-->
+            <!--window.location.href="/turnToERPandBI"-->
+        <!--}-->
+    <!--</script>-->
 
 
 </head>
 
 <body>
 <!--整体div-->
-<div id="body" onclick="turnTo()">
+<div id="body" >
 
 
     <!--左侧第一-->
@@ -149,10 +149,10 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
                 <p class="ttt"> UPS </p>
             </div>
             <div id="nr">
-                <p class="D3">A相输出电流：&nbsp;18.4A</p>
-                <p class="D3">B相输出电流：&nbsp;7.0A</p>
-                <p class="D3">C相输出电流：&nbsp;5.2A</p>
-                <p class="D3">电池后备时间：&nbsp;119.0Min</p>
+                <!--<p class="D3">A相输出电流：&nbsp;18.4A</p>-->
+                <!--<p class="D3">B相输出电流：&nbsp;7.0A</p>-->
+                <!--<p class="D3">C相输出电流：&nbsp;5.2A</p>-->
+                <!--<p class="D3">电池后备时间：&nbsp;119.0Min</p>-->
 
             </div>
         </div>
@@ -179,8 +179,10 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
 
                 </div>
                 <div id="shuidi"></div>
-                <p class="D3">温度：24.3℃</p>
-                <p class="D3">湿度：15.3%</p>
+                    <div id="dading">
+                        <!--温度数据-->
+                        </div>
+
 
 
             </div>
@@ -216,7 +218,7 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itecharzhe.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itzyzx.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/itzcxx.js}"></script>
-<script type="text/javascript"   th:src="@{/ProjectScripts/it/sxt.js}"></script>
+
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/zliu.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/it/animateWait.js}"></script>
 <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>

@@ -1,6 +1,7 @@
 package com.qdjxd.wdth01.controller;
 
 
+import com.qdjxd.wdth01.dao.Wdth_tb_itjfMapper;
 import com.qdjxd.wdth01.model.*;
 
 import org.springframework.stereotype.Controller;
@@ -32,12 +33,17 @@ public class ITController {
     @Resource
 
     com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_ge1Mapper itNetdataGe1;
-@Resource
-com.qdjxd.wdth01.controller.NetDataController itda;
+
+
 
 /* 总体应用流速*/
 @Resource
 com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper it_netdata_all;
+
+@Resource
+Wdth_tb_itjfMapper itjfMapper;
+
+
 
     @RequestMapping("/ITchar")
     public String index() {
@@ -87,6 +93,18 @@ com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper it_netdata_all;
 //
         List<Wdth_tb_it_netdata_all> getZ =  it_netdata_all.selectSu();
         return getZ;
+    }
+
+
+
+    /* 机房1*/
+    @RequestMapping(value = "/jf", method = RequestMethod.GET)
+    @ResponseBody
+    //获取ajax参数中总体
+    public List<Wdth_tb_itjf> jf()  {
+//
+        List<Wdth_tb_itjf> jf = itjfMapper.jf();
+        return jf;
     }
 
 }
