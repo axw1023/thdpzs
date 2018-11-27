@@ -46,7 +46,7 @@ function cross (shijian,shuchu,shuru) {
             left:'3%'
 
         },
-        color: [ '#6049D3', '#08E3A1'],
+        color: [ '#92F1FF', '#FFE21A'],
         tooltip: {
             trigger: 'axis',
             axisPointer: {
@@ -62,7 +62,7 @@ function cross (shijian,shuchu,shuru) {
             // itemHeight: 20,  // 设置图例图形的高
             textStyle: {
                 color: '#92F1FF',
-                fontSize: 20
+                fontSize: 15
 
 
             },
@@ -88,12 +88,19 @@ function cross (shijian,shuchu,shuru) {
                     }
                 },
 
+                axisLabel: {
+                    color: "#92F1FF", //刻度线标签颜色,
+                    formatter: function(param){ //2018-11-11 11:11:11
+
+                        var min = new Date(param).format("hh:")+'00';
+                        return min;
+                    }
+                },
+
                 splitLine: {
                     show: false
                 },
-                axisLabel: {
-                    color: "#92F1FF" //刻度线标签颜色
-                },
+
 
 
                 boundaryGap: false,
@@ -130,10 +137,10 @@ function cross (shijian,shuchu,shuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#0ABD8E',
+                        color: '#FFE21A',
                         lineStyle: {
 
-                            color: '#0ABD8E'
+                            color: '#FFE21A'
                         }
                     }
                 },
@@ -166,10 +173,10 @@ function cross (shijian,shuchu,shuru) {
 
                 itemStyle: {
                     normal: {
-                        color: '#2BA1E7',
+                        color: '#92F1FF',
                         lineStyle: {
 
-                            color: '#2BA1E7'
+                            color: '#92F1FF'
                         }
                     }
                 },
@@ -199,7 +206,7 @@ function cross (shijian,shuchu,shuru) {
 
 }
 
-/*var t=setInterval(getNumByLiu,60000);*/
+
 
 
 function getNumByLiu() {
@@ -220,22 +227,10 @@ function getNumByLiu() {
                  shuru.push(LIU[i].intraffic);
                 shuchu.push(LIU[i].outtraffic);
 
-                // shijian.push(LIU[i].time);
-            }
-
-            /*for(var i = 0; i < 361 ; i ++) {
-                id = Math.random()*10+200;
-
-                shuru.push(id);
 
             }
-            for(var j = 0; j < 361 ; j ++) {
-                 cc = Math.random()*10+70;
 
-                shuchu.push(cc);
 
-            }
-*/
 
 
 
@@ -285,8 +280,8 @@ function getSevenDate(num,step,data){
     var myHours3 =date3.getHours();
     var getMinutes3 =date3.getMinutes()
      arr=arr.reverse();
-    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'0']);
+    arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'-']);
 
-    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'0']);
+    arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'-']);
     return arr;
 }

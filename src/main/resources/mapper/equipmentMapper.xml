@@ -121,11 +121,18 @@
         <result column="control_rates" property="controlRates" jdbcType="INTEGER" />
         <result column="waste_sort" property="wasteSort" jdbcType="INTEGER" />
         <result column="waste_enable" property="wasteEnable" jdbcType="BIT" />
+        <result column="so2_concentration" property="so2Concentration" jdbcType="REAL" />
+        <result column="so2_standard" property="so2Standard" jdbcType="REAL" />
+        <result column="no_concentration" property="noConcentration" jdbcType="REAL" />
+        <result column="no_standard" property="noStandard" jdbcType="REAL" />
+        <result column="yc_concentration" property="ycConcentration" jdbcType="REAL" />
+        <result column="yc_standard" property="ycStandard" jdbcType="REAL" />
     </resultMap>
 
     <sql id="WasteColumn" >
-        waste_id, waste_name, waste_type_id, waste_type_name, rt_concentration, standard_value,
-        discharge_num, control_rates, waste_sort, waste_enable
+         waste_id, waste_name, waste_type_id, waste_type_name, rt_concentration, standard_value,
+        discharge_num, control_rates, waste_sort, waste_enable, so2_concentration, so2_standard,
+        no_concentration, no_standard, yc_concentration, yc_standard
     </sql>
 
     <select id="getWasteList" resultMap="WasteResultMap">
