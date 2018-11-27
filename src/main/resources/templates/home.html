@@ -8,15 +8,28 @@
 		<meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link href="../../ProjectScripts/home/css/style.css" rel="stylesheet" type="text/css" />
+		<!--<link href="../../ProjectScripts/home/css/style.css" rel="stylesheet" type="text/css" />-->
+		<link href="../../ProjectCss/xx.css" rel="stylesheet" type="text/css" />
 		<script src="../../Scripts/babel-browser.js" ></script>
-		<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>
 		<script type="text/javascript"   src="../../Scripts/jquery.min.js"></script>
+		<!--<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>-->
+
+
 		<!--旋转需要引用的js-->
 		<script type="text/javascript" src = "../../Scripts/jquery.rotate.min.js"></script>
 		<script type="text/javascript" src = "../../Scripts/jquery.easing.min.js"></script>
 
+		<script type="text/javascript">
 
+            // 页面跳转
+            $(document).keydown(function(event){
+                if(event.keyCode == 39){
+                    window.location.href="/turnToERPandBI"
+                }else if(event.keyCode == 37){
+                    window.location.href="/turnToAllLink"
+                }
+            });
+		</script>
 
 		<style type="text/css">
 			canvas{
@@ -36,7 +49,7 @@
 				height: 1024px;
 				background-image: url("../../images/home/背景2.png");
 				background-repeat: no-repeat;
-				background-size: 100% 100%;
+				/*background-size: 100% 100%;*/
 
 			}
 
@@ -80,7 +93,7 @@
 
 			#imgPlay1{
 				position: absolute;
-				top:250px;
+				top:150px;
 				left:2000px;
 
 				width: 1554px;
@@ -174,12 +187,15 @@
 				font-size: 56px;
 				color:#82EEFF;
 			}
+			.big_title{
+				font-family: '黑体';
+			}
 		</style>
 
 
 	</head>
-	<body>
-	<div id = "body" db="turnTo()">
+	<body id="body">
+	<div   db="turnTo()">
 		<div class="md-modal md-effect-2" id="modal-2">
 			<div class="md-content">
 				<div id = "imgPlay1">
@@ -212,13 +228,14 @@
 		</div>
 
 		<!--文字-->
-		<div id = "word_mbyj">目标愿景</div>
-		<div id = "word_jsjz">建设进展</div>
-		<div id = "word_cjcg">成绩成果</div>
-		<div id = "word_mbzw">计划展望</div>
+		<div id = "word_mbyj" class="big_title">目标愿景</div>
+		<div id = "word_jsjz" class="big_title">建设进展</div>
+		<div id = "word_cjcg" class="big_title">成绩成果</div>
+		<div id = "word_mbzw" class="big_title">计划展望</div>
 	</div>
-
+	<canvas id="canvas"></canvas>
 	</body>
+	<script type="text/javascript" src="../../Scripts/xx.js" ></script>
 	<script>
 
 
@@ -235,13 +252,13 @@
             var k = e.keyCode || e.which;
             if(k==13){
                 console.log(i);
-				if(i==0||i==5){
+				if(i==0){
 				    i=0;
                     $("#imgPlay1").animate({"opacity":0},300);
                     setTimeout(function(){
                         $("#imgPlay1").css({
                             "left":'200px',
-                            "top":'100px',
+                            "top":'50px',
                             "width":0,
                             "height":0,
                             "background-image":"url('../../images/home/目标愿景.png')",
@@ -251,7 +268,7 @@
 							'width':'2344px',
                             "top":'80px',
 							'height':'906px',
-							"left":'1600px',
+							"left":'1644px',
 							"opacity":1,
 
 						},300);
@@ -278,7 +295,7 @@
                         $("#imgPlay1").animate({
                             'width': '2344px',
                             'height': '906px',
-                            "left": '1600px',
+                            "left": '1644px',
                       		"top":'80px',
                             "opacity": 1,
                         }, 300);
@@ -306,10 +323,10 @@
                            'width':'2344px',
                            'height':'906px',
                            "top":'80px',
-                           'left':'1600px',
+                           'left':'1644px',
                            "opacity":1,
                        },300);
-				   },300)
+				   },500)
                     document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
                     document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}else if(i==3){
@@ -334,7 +351,7 @@
                             'width': '2344px',
                             'height': '906px',
                              "top":'80px',
-                            'left': '1600px',
+                            'left': '1644px',
                             "opacity": 1,
                         }, 400);
                     },300);
@@ -351,8 +368,8 @@
                     },300);
                     setTimeout(function() {
                         $("#imgPlay1").css({
-                            "left": '2000px',
-                            "top": '250px',
+                            "left": '2039px',
+                            "top": '150px',
                             'width': '1554px',
                             'height': '500px',
                             "background-image": "url('../../images/home/文字.png')",

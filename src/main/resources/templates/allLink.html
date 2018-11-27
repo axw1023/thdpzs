@@ -14,13 +14,17 @@
     <script type="text/javascript">
 
         // 页面跳转
-        function turnTo(){
-            window.location.href="/turnToIT"
-        }
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToOverallPlanning"
+            }else if(event.keyCode == 37){
+                window.location.href="/"
+            }
+        });
     </script>
 </head>
 <body>
-<div id = "back" onclick="turnTo()">
+<div id = "back">
 <!--管道-->
 <div id = "lineBack"></div>
 

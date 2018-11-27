@@ -97,15 +97,15 @@ Wdth_tb_itjfMapper itjfMapper;
 
 
 
-    /* 机房1*/
-    @RequestMapping(value = "/jf", method = RequestMethod.GET)
-    @ResponseBody
+//    /* 机房1*/
+//    @RequestMapping(value = "/jf", method = RequestMethod.GET)
+//    @ResponseBody
     //获取ajax参数中总体
-    public List<Wdth_tb_itjf> jf()  {
-//
-        List<Wdth_tb_itjf> jf = itjfMapper.jf();
-        return jf;
-    }
+//    public List<Wdth_tb_itjf> jf()  {
+////
+//        List<Wdth_tb_itjf> jf = itjfMapper.jf();
+//        return jf;
+//    }
 
 }
 

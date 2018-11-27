@@ -4,8 +4,10 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_allMapper;
 import com.qdjxd.wdth01.dao.Wdth_tb_it_netdata_ge1Mapper;
+import com.qdjxd.wdth01.dao.Wdth_tb_itjfMapper;
 import com.qdjxd.wdth01.model.Wdth_tb_it_netdata_all;
 import com.qdjxd.wdth01.model.Wdth_tb_it_netdata_ge1;
+import com.qdjxd.wdth01.model.Wdth_tb_itjf;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +32,8 @@ public class NetDataController {
     Wdth_tb_it_netdata_ge1Mapper ge1_dao;
     @Resource
     Wdth_tb_it_netdata_allMapper all_dao;
+    @Resource
+    Wdth_tb_itjfMapper itjf_dao;
 
 
     //循环获取网络流量进出入情况(每隔一个小时)
@@ -136,13 +140,20 @@ public class NetDataController {
     }
 
 
-    public static void main(String[] args) {
+//    IT机房
+    @Scheduled(fixedRate = 3600000)
+    public void Itjf() {
 //        //发送 GET 请求
 //        String s=sendGet("http://localhost:6144/Home/RequestString", "key=123&v=456");
 //        System.out.println(s);
+
+
+
         //发送 POST 请求(机柜、漏水、市电、ups)
-        Map<String,Object> map=new HashMap<>(4);
-       String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
+        List<String> name = new ArrayList<String>();
+        List<String> value = new ArrayList<String>();
+
+        String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
         String ls = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
         String sd = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
         String ups = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"UPS01_\"]}");
@@ -151,6 +162,89 @@ public class NetDataController {
         System.out.println(ls);
         System.out.println(sd);
         System.out.println(ups);
+
+        JSONObject jObj = JSONObject.parseObject(jg);
+        JSONObject lsob = JSONObject.parseObject(ls);
+        JSONObject sdob = JSONObject.parseObject(sd);
+        JSONObject upsob = JSONObject.parseObject(ups);
+
+        try {
+
+//        温度
+            String wdst = jObj.getJSONArray("result").getJSONObject(1).getString("RtValue");
+            String wdstname = jObj.getJSONArray("result").getJSONObject(1).getString("Name");
+            value.add(wdst);
+            name.add(wdstname);
+
+//        湿度
+            String sdst = jObj.getJSONArray("result").getJSONObject(2).getString("RtValue");
+            String sdstname = jObj.getJSONArray("result").getJSONObject(2).getString("Name");
+            value.add(sdst);
+            name.add(sdstname);
+//        空调漏水
+            String ktlsst = lsob.getJSONArray("result").getJSONObject(1).getString("AlarmType");
+            String ktlsstname = lsob.getJSONArray("result").getJSONObject(1).getString("Name");
+            value.add(ktlsst);
+            name.add(ktlsstname);//        消防报警
+            String xfbjst = lsob.getJSONArray("result").getJSONObject(2).getString("AlarmType");
+            String xfbjstname = lsob.getJSONArray("result").getJSONObject(2).getString("Name");
+            value.add(xfbjst);
+            name.add(xfbjstname);//        市电停电报警
+            String sdtdbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
+            String sdtdbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
+            value.add(sdtdbj);
+            name.add(sdtdbjname);//        A相电压断相报警
+            String axddbj = sdob.getJSONArray("result").getJSONObject(15).getString("AlarmType");
+            String axddbjname = sdob.getJSONArray("result").getJSONObject(15).getString("Name");
+            value.add(axddbj);
+            name.add(axddbjname);
+//        B相电压断相报警
+            String bxddbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
+            String bxddbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
+            value.add(bxddbj);
+            name.add(bxddbjname);//        C相电压断相报警
+            String cxddbj = sdob.getJSONArray("result").getJSONObject(17).getString("AlarmType");
+            String cxddbjname = sdob.getJSONArray("result").getJSONObject(17).getString("Name");
+            value.add(cxddbj);
+            name.add(cxddbjname);//        A相输出电流
+            String axscdl = upsob.getJSONArray("result").getJSONObject(7).getString("RtValue");
+            String axscdlname = upsob.getJSONArray("result").getJSONObject(7).getString("Name");
+            value.add(axscdl);
+            name.add(axscdlname);//        B相输出电流
+            String bxscdl = upsob.getJSONArray("result").getJSONObject(8).getString("RtValue");
+            String bxscdlname = upsob.getJSONArray("result").getJSONObject(8).getString("Name");
+            value.add(bxscdl);
+            name.add(bxscdlname);//        C相输出电流
+            String cxscdl = upsob.getJSONArray("result").getJSONObject(9).getString("RtValue");
+            String cxscdlname = upsob.getJSONArray("result").getJSONObject(9).getString("Name");
+            value.add(cxscdl);
+            name.add(cxscdlname);//        电池后备时间
+            String dchbsj = upsob.getJSONArray("result").getJSONObject(37).getString("RtValue");
+            String dchbsjname = upsob.getJSONArray("result").getJSONObject(37).getString("Name");
+            value.add(dchbsj);
+            name.add(dchbsjname);
+
+        }catch (Exception e){
+            return;
+        }
+
+        for(int i = 0;i < name.size();i++){
+            Wdth_tb_itjf itjf = new Wdth_tb_itjf();
+            itjf.setSheetid(i);
+            itjf.setName(name.get(i));
+            itjf.setValue(Double.parseDouble(value.get(i)));
+            itjf_dao.updateByPrimaryKey(itjf);
+        }
+
+
+
+
+
+
+
+
+
+
     }
 
 
