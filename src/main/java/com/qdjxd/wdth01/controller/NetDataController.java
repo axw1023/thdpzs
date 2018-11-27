@@ -228,15 +228,12 @@ public class NetDataController {
             return;
         }
 
-        //        删除历史记录
-        itjf_dao.deleteAll();
-
         for(int i = 0;i < name.size();i++){
             Wdth_tb_itjf itjf = new Wdth_tb_itjf();
             itjf.setSheetid(i);
             itjf.setName(name.get(i));
             itjf.setValue(Double.parseDouble(value.get(i)));
-            itjf_dao.insert(itjf);
+            itjf_dao.updateByPrimaryKey(itjf);
         }
 
 
