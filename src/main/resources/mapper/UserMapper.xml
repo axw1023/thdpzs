@@ -10,6 +10,9 @@
   <sql id="Base_Column_List" >
     userId, userName, passWord, userCode
   </sql>
+  <select id="getInto" resultType="int" >
+    select  COUNT(*) from wdth_xt_user where userName= #{username} and passWord= #{password}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />

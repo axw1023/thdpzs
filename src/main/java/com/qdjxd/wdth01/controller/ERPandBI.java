@@ -46,12 +46,6 @@ public class ERPandBI {
         return "ERPandBI";
     }
     
-    @RequestMapping(value = "/hello")
-    public  String hello(){
-        System.out.println("123");
-        return "Hello";
-    }
-    
     @RequestMapping(value = "/cbgc", method = RequestMethod. POST)
     @ResponseBody
     //获取ajax参数

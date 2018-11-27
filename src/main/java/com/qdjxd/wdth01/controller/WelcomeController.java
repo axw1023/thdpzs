@@ -1,15 +1,35 @@
 package com.qdjxd.wdth01.controller;
 
+import com.qdjxd.wdth01.dao.UserMapper;
+import com.qdjxd.wdth01.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
 
 @Controller
 public class WelcomeController {
-
+    @Resource
+    UserMapper userMapper;
+//登录
+    @RequestMapping(value = "/hello")
+    public  String hello(User user){
+            return "Hello";
+    }
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    public  String login(User user){
+        if (userMapper.getInto(user )==1){
+            return "/welcome";
+        }else {
+            return "/Hello";
+        }
+    }
     //    欢迎页√
-    @RequestMapping("/")
-    public String index() {
-        return "welcome";
+    @RequestMapping("/welcome")
+        public String index() {
+            return "welcome";
     }
 
     //    智能制造总体规划

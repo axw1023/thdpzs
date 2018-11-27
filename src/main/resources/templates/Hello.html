@@ -6,18 +6,18 @@
 
     <!--外部css-->
     <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/Hello/hello.css}">
-    <!--外部js-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
+    <!--外部js--> 
     <script type="text/javascript"   th:src="@{/Scripts/jquery-3.3.1.js}"></script>
     <style type="text/css">
-        #hello{position:absolute;height: 260px;width: 510px ;left:1000px;top: 306px;z-index:99}
+        .login-wrap{position:absolute;z-index:99;}
     </style>
 </head>
 <body>
-<div class="content">
-    <div class="login-wrap">
-        <form id="user_login" action="">
-           
-            <input class="name" name="" id="accountName" type="text" placeholder="请输入用户名">
+<div class="content" >
+    <div class="login-wrap" >
+        <form id="user_login" action="" style="">
+            <input class="name" name="" id="accountName" type="text" placeholder="请输入用户名" style="color: #9FCCFF;background: transparent">
             <input class="code" name="password" id="password" type="password" placeholder="请输入密码">
             <div class="btn">
                 <input type="button" id="submit" class="submit" value="登录" onclick="return check(this.form);">
