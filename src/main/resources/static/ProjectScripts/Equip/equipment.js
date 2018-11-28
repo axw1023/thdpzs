@@ -170,7 +170,44 @@ var equpEcharts = {
                         return  text;
                     }
                 },
-                color:['#1EAC94','#2DA4C9','#A37F66','#5437BA'],
+                color: [{
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#4360F1' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#4C31A9' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                },{
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#FF5959' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#7F3C70' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                },{
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#91725F' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#DE7665' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                }
+                ],
                 series: [
                     {
                         name:'缺陷级别分析',
@@ -183,7 +220,7 @@ var equpEcharts = {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|项}'].join(''),
+                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|台}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,
@@ -242,7 +279,44 @@ var equpEcharts = {
                         return  text;
                     }
                 },
-                color:['#1EAC94','#A37F66','#2DA4C9','#5437BA'],
+                color: [{
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#4360F1' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#4C31A9' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                },{
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#FF5959' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#7F3C70' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                },{
+                    type: 'linear',
+                    x: 0,
+                    y: 0,
+                    x2: 0,
+                    y2: 1,
+                    colorStops: [{
+                        offset: 0, color: '#91725F' // 0% 处的颜色
+                    }, {
+                        offset: 1, color: '#DE7665' // 100% 处的颜色
+                    }],
+                    globalCoord: false // 缺省为 false
+                }
+                ],
                 series: [
                     {
                         name:'设备年限分析',
@@ -255,7 +329,7 @@ var equpEcharts = {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|项}'].join(''),
+                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|台}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,
