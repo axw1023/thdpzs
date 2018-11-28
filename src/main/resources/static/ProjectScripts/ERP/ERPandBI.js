@@ -1639,9 +1639,18 @@ function setJhzxl(num1,num,name) {
             }
         ],
         yAxis : {
-            show:false,
+            show:true,
             type : 'value',
             splitLine:{show: false},//去除网格线
+            axisLabel: {
+                color: '#92F1FF',
+            },
+            axisLine: {
+                lineStyle: {
+                    // 设置轴颜色
+                    color: 'rgba(1,1,1,0)'
+                }
+            },
         }
         ,
         series : [
@@ -1687,7 +1696,8 @@ function setJhzxl(num1,num,name) {
                 },
                 symbol: 'circle',     //设定为实心点
                 symbolSize: 8,   //设定实心点的大小
-                smooth:false,
+                smooth:true,
+
                 itemStyle: {normal: {areaStyle: {type: 'default'},
                         color:'#3BFF40',
                         lineStyle:{
