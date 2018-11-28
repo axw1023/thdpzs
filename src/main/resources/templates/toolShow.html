@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>工具展示</title>
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+
+    <style type="text/css">
+        #body{
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 1024px;
+            width: 5632px;
+            background-image: url("../../images/toolShow/总背景.png");
+        }
+
+
+        #title{
+            position: absolute;
+            top: 0px;
+            left: 1784px;
+        }
+
+        #leftImg{
+            position: absolute;
+            top: 113px;
+            left: 257px;
+        }
+
+        #centerImg{
+            position: absolute;
+            top: 113px;
+            left: 2042px;
+        }
+
+        #rightImg{
+            position: absolute;
+            top: 113px;
+            left: 3837px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        // 页面跳转
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToFutureProspect"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnTo3DFactory"
+            }
+        });
+    </script>
+</head>
+<body style="margin: 0px;padding: 0px">
+<div id = "body">
+    <img id = "title" src="../../images/toolShow/工具展示标题.png">
+    <img id = "leftImg" src="../../images/toolShow/工具展示框.png">
+    <img id = "centerImg" src="../../images/toolShow/工具展示框.png">
+    <img id = "rightImg" src="../../images/toolShow/工具展示框.png">
+
+</div>
+</body>
+</html>
