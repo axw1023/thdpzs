@@ -3,8 +3,8 @@
 <mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_YllyMapper" >
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Ylly" >
     <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
-    <result column="num" property="num" jdbcType="INTEGER" />
-    <result column="num1" property="num1" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="DOUBLE" />
+    <result column="num1" property="num1" jdbcType="DOUBLE" />
     <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getYlly" resultMap="BaseResultMap">

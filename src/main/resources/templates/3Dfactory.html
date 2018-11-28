@@ -13,13 +13,9 @@
     <script type="text/javascript">
 
         // 页面跳转
-        $(document).keydown(function(event){
-            if(event.keyCode == 39){
-                window.location.href="/turnToFutureProspect"
-            }else if(event.keyCode == 37){
-                window.location.href="/turnToBigData"
-            }
-        });
+       /* function turnTo(){
+            window.location.href="/turnToEquipment"
+        }*/
     </script>
     <style type="text/css">
         #all{background: url("../ProjectScripts/3D/all.png")}
@@ -44,11 +40,11 @@
     <div style="width: 5632px;height: 1024px;">
         <div id="vide1" style="overflow: hidden">
             <video id="3d1" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D1.MP4" ></video>
+                <source src="http://10.0.30.200:8080/3D/3D1.mp4" ></video>
         </div>
         <div id="vide2" >
             <video id="3d2" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D2.MP4" ></video>
+                <source src="http://10.0.30.200:8080/3D/3D2.mp4" ></video>
         </div>
         <div id="vide3">
             <div id="change1" class="kaku" hidden>
@@ -98,7 +94,7 @@
             </div>
             
             <video id="3d3" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
-                <source src="../Video/3D/3D3.MP4" ></video>
+                <source src="http://10.0.30.200:8080/3D/3D3.mp4" ></video>
         </div>
     </div>
 </div>
