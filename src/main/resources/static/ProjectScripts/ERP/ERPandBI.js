@@ -814,6 +814,7 @@ function setHkzssl(name,num,num1) {
             data:['计划收率','实际收率'],
             /*left:,*/
             right: '4%',
+            top:'5%',
             bottom: '80%',
             textStyle:{
                 color:'#92F1FF',
@@ -823,6 +824,7 @@ function setHkzssl(name,num,num1) {
             left: '3%',
             right: '4%',
             bottom: '3%',
+            top:'15%',
             containLabel: true
         },
         xAxis : [
