@@ -261,7 +261,7 @@
             var k = e.keyCode || e.which;
             if(k==13){
                 console.log(i);
-				if(i==0||i==5){
+				if(i==0){
 				    i=0;
                     $("#imgPlay1").animate({"opacity":0},300);
                     setTimeout(function(){
@@ -335,7 +335,7 @@
                            'left':'1600px',
                            "opacity":1,
                        },300);
-				   },300)
+				   },400)
                     document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
                     document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}else if(i==3){
@@ -362,7 +362,7 @@
                              "top":'80px',
                             'left': '1600px',
                             "opacity": 1,
-                        }, 400);
+                        }, 300);
                     },300);
                     document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
                     document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
