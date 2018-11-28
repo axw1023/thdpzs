@@ -211,10 +211,10 @@ function zcross (zshuchu,zshuru) {
 function getZ() {
     $.ajax({
         type: "get",
-        async: false,
+
         cache: false,
 
-        url: "getZ",
+        url: "/ITchar/getZ",
 
         success: function (z) {
             var zshuru=[];

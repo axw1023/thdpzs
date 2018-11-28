@@ -12,7 +12,7 @@ function  getNumByAll() {
 
 $.ajax({
     type: "get",
-    url: "getNumByAll",
+    url: "/ITchar/getNumByAll",
 
     cache:false,
     success: function (data) {

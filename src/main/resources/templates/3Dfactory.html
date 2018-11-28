@@ -19,12 +19,20 @@
     </script>
     <style type="text/css">
         #all{background: url("../image/DDAll.png")}
+#body{ position:absolute;top:3px;left:90px; }
         #vide1{left: 346px;
-            position:absolute;top: 150px;width: 2000px;height: 857px;z-index:99}
+            position:absolute;top: 150px;width: 1544px;height: 902px;z-index:99}
+
+        .beijing{left: 312px;background: url("../image/7777.png");
+            position:absolute;top: 120px;width: 1544px;height: 902px;z-index:5}
+        .beijing1{left: 1938px;background: url("../image/7777.png");
+            position:absolute;top: 120px;width: 1544px;height: 902px;z-index:5}
+        .beijing2{left: 3558px;background: url("../image/7777.png");
+            position:absolute;top: 120px;width: 1544px;height: 902px;z-index:0}
         #vide2{left: 1968px;
             position:absolute;top: 150px;width: 1154px;height: 857px;z-index:99}
         #vide3{left: 3590px;
-            position:absolute; top: 150px;width: 1154px;height: 857px}
+            position:absolute; top: 150px;width: 1154px;height: 857px;z-index:9}
         #change1{ position:absolute;height: 208px;width: 300px;top:230px;left:474px;background:url("../image/UPS.png");}
         #change2{ position:absolute;height: 208px;width: 300px;top:230px;left:454px;background:url("../image/UPS.png");}
         #hh1{ position:absolute;height: 154px;width: 183px;top:370px;left:304px;background:url("../image/wd.png") no-repeat;}
@@ -37,14 +45,27 @@
 </head>
 <body>
 <div id="all" style="width: 5632px;height: 1024px;">
-    <div style="width: 5632px;height: 1024px;">
+    <div style="width: 5632px;height: 1024px;" >
+
+
+    </div>
+
+    <div id="body">
         <div id="vide1" style="overflow: hidden">
             <video id="3d1" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
                 <source src="http://10.0.30.200:8080/3D/3D1.mp4" ></video>
         </div>
+        <!--BEIJING1-->
+        <div class="beijing">
+
+        </div>
         <div id="vide2" >
             <video id="3d2" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
                 <source src="http://10.0.30.200:8080/3D/3D2.mp4" ></video>
+        </div>
+        <!--BEIJING1-->
+        <div class="beijing1">
+
         </div>
         <div id="vide3">
             <div id="change1" class="kaku" hidden>
@@ -58,43 +79,47 @@
                     <p class="D3"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="lj1">： <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 100px;height: 18px" id="ljs1">t</p>
                 </div>
             </div>
-             <div id="change2" class="kaku" hidden>
-                 <div id="nrwd">
-                     <p class="ttt">低压分离器 </p><div class="lud"></div>
-                     <div id="wenduji">
-                     </div>
-                     <div id="shuidi"></div>
-                     <p class="D3"><img src="../image/chu.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdc2">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsc2">℃</p>
-                     <p class="D3">   <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="yl1">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="yls1">mpa</p>
-                     <p class="D3">   <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="yw1">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="yws1">%</p>
-                 </div>
+            <div id="change2" class="kaku" hidden>
+                <div id="nrwd">
+                    <p class="ttt">低压分离器 </p><div class="lud"></div>
+                    <div id="wenduji">
+                    </div>
+                    <div id="shuidi"></div>
+                    <p class="D3"><img src="../image/chu.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdc2">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsc2">℃</p>
+                    <p class="D3">   <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="yl1">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="yls1">mpa</p>
+                    <p class="D3">   <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="yw1">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="yws1">%</p>
+                </div>
             </div>
-                 <div id="hh1" class="kaku" hidden>
-                     <p class="ttt" style="margin-left: 20px;margin-top: 20px">混合进料II换热器</p><div class="lud" ></div>
-                     <p class="D3" style="margin-left: 20px;margin-top: 20px"> <img src="../image/jin.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdj2">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsj2"></p>
-                 </div>
-                 <div id="hh2" class="kaku" hidden>
-                     <p class="ttt" style="margin-left: 20px;margin-top: 20px">分馏塔换热器</p><div class="lud" style="margin-top: 20px"></div>
-                     <p class="D3" style="margin-left: 20px;margin-top: 20px"><img src="../image/jin.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdj3">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsj3">℃</p>
-                 </div>
-                 <div id="hh3" class="kaku" hidden>
-                     <p class="ttt" style="margin-left: 10px;margin-top: 10px">混合进料I换热器</p><div class="lud" style="margin-top: 20px"></div>
-                     <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/zi.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdz">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdzs">℃</p>
-                     <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/jin.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdj4">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsj4">℃</p>
-                     <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/chu.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdc3">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsc3">℃</p>
-                     <p class="D3"style="margin-left: 10px;margin-top: 10px"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="ll2"> ：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="lls2">t/h</p>
-                     <p class="D3"style="margin-left: 10px;margin-top: 10px"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="lj2">： <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 100px;height: 18px" id="ljs2">t</p>
-                 </div>
-            
-             <div id="change4" class="kaku" hidden>
-                 <div id="nr1">
-                     <p class="ttt">放空罐</p><div class="lud"></div>
-                     <p class="D3"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="yw2">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="yws2"></p>
-                 </div>
+            <div id="hh1" class="kaku" hidden>
+                <p class="ttt" style="margin-left: 20px;margin-top: 20px">混合进料II换热器</p><div class="lud" ></div>
+                <p class="D3" style="margin-left: 20px;margin-top: 20px"> <img src="../image/jin.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdj2">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsj2"></p>
             </div>
-            
+            <div id="hh2" class="kaku" hidden>
+                <p class="ttt" style="margin-left: 20px;margin-top: 20px">分馏塔换热器</p><div class="lud" style="margin-top: 20px"></div>
+                <p class="D3" style="margin-left: 20px;margin-top: 20px"><img src="../image/jin.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdj3">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsj3">℃</p>
+            </div>
+            <div id="hh3" class="kaku" hidden>
+                <p class="ttt" style="margin-left: 10px;margin-top: 10px">混合进料I换热器</p><div class="lud" style="margin-top: 20px"></div>
+                <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/zi.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdz">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdzs">℃</p>
+                <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/jin.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdj4">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsj4">℃</p>
+                <p class="D3" style="margin-left: 10px;margin-top: 10px"><img src="../image/chu.png"> <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="wdc3">:<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="wdsc3">℃</p>
+                <p class="D3"style="margin-left: 10px;margin-top: 10px"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="ll2"> ：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="lls2">t/h</p>
+                <p class="D3"style="margin-left: 10px;margin-top: 10px"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="lj2">： <input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 100px;height: 18px" id="ljs2">t</p>
+            </div>
+
+            <div id="change4" class="kaku" hidden>
+                <div id="nr1">
+                    <p class="ttt">放空罐</p><div class="lud"></div>
+                    <p class="D3"><input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 40px;height: 18px" id="yw2">：<input style="font-size: 18px;color: #9FCCFF;background: transparent;border: transparent;width: 45px;height: 18px" id="yws2"></p>
+                </div>
+            </div>
+
             <video id="3d3" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
                 <source src="http://10.0.30.200:8080/3D/3D3.mp4" ></video>
+        </div>
+        <!--BEIJING1-->
+        <div class="beijing2">
+
         </div>
     </div>
 </div>
