@@ -263,7 +263,7 @@
 /*到港船只_remark*/
 #sheep_transit_remark{
     position: absolute;
-    top: 144px;
+    top: 142px;
     right: 5119px;
     font-size:20px;
     font-family:MicrosoftYaHei;
@@ -275,7 +275,7 @@
 #sheep_transit_value_name{
     position: absolute;
     top: 196px;
-    right: 5219px;
+    right: 5210px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -301,7 +301,7 @@
     width: 235px;
     height: 163px;
     top: 675px;
-    right: 4755px;
+    right: 4795px;
     background-image: url("../../images/allLink/组.png");
 }
 
@@ -309,7 +309,7 @@
 #sheep_reach_name{
     position: absolute;
     top: 709px;
-    right: 4840px;
+    right: 4880px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -319,8 +319,8 @@
 /*在途船只_remark*/
 #sheep_reach_remark{
     position: absolute;
-    top: 714px;
-    right: 4760px;
+    top: 712px;
+    right: 4800px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -332,7 +332,7 @@
 #sheep_reach_value_name{
     position: absolute;
     top: 766px;
-    right: 4869px;
+    right: 4909px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -345,7 +345,7 @@
 #sheep_reach_value{
     position: absolute;
     top: 766px;
-    right: 4794px;
+    right: 4834px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -360,8 +360,8 @@
     position: absolute;
     width: 188px;
     height: 204px;
-    top: 315px;
-    right: 3855px;
+    top: 275px;
+    right: 3895px;
     background-image: url("../../images/allLink/组_长.png");
 }
 
@@ -369,8 +369,8 @@
 /*原油_name*/
 #factoryVolume_name{
     position: absolute;
-    top: 350px;
-    right: 3951px;
+    top: 310px;
+    right: 3991px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -383,8 +383,8 @@
 /*原油_remark*/
 #factoryVolume_remark{
     position: absolute;
-    top: 355px;
-    right: 3869px;
+    top: 313px;
+    right: 3909px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -394,8 +394,8 @@
 /*原油_value*/
 #factoryVolume_value_name{
     position: absolute;
-    top: 397px;
-    right: 3938px;
+    top: 357px;
+    right: 3978px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -408,8 +408,8 @@
 /*原油_value*/
 #factoryVolume_value{
     position: absolute;
-    top: 397px;
-    right: 3872px;
+    top: 357px;
+    right: 3912px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -444,7 +444,7 @@
 /*日产量_remark*/
 #dailyOutput_remark{
     position: absolute;
-    top: 509px;
+    top: 507px;
     right: 2691px;
     font-size:20px;
     font-family:MicrosoftYaHei;
@@ -483,7 +483,7 @@
     width: 188px;
     height: 204px;
     top:232px;
-    right: 1777px;
+    right: 1877px;
     background-image: url("../../images/allLink/组_长.png");
 }
 
@@ -491,7 +491,7 @@
 #chemicalDailyOutput_name{
     position: absolute;
     top: 259px;
-    right: 1856px;
+    right: 1956px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -502,8 +502,8 @@
 /*化工产品日产量_remark*/
 #chemicalDailyOutput_remark{
     position: absolute;
-    top: 264px;
-    right: 1774px;
+    top: 262px;
+    right: 1874px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -515,7 +515,7 @@
 #chemicalDailyOutput_value1{
     position: absolute;
     top: 299px;
-    right: 1865px;
+    right: 1965px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -527,7 +527,7 @@
 #chemicalDailyOutput_value2{
     position: absolute;
     top: 299px;
-    right: 1790px;
+    right: 1890px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -541,7 +541,7 @@
     width: 235px;
     height: 163px;
     top: 589px;
-    right: 1299px;
+    right: 1339px;
     background-image: url("../../images/allLink/组.png");
 }
 
@@ -549,7 +549,7 @@
 #monthlyExport_name{
     position: absolute;
     top: 623px;
-    right: 1408px;
+    right: 1448px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -560,8 +560,8 @@
 /*成品油_remark*/
 #monthlyExport_remark{
     position: absolute;
-    top: 628px;
-    right: 1323px;
+    top: 626px;
+    right: 1363px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -573,7 +573,7 @@
 #monthlyExport_value1{
     position: absolute;
     top: 678px;
-    right: 1421px;
+    right: 1461px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -585,7 +585,7 @@
 #monthlyExport_value2{
     position: absolute;
     top: 680px;
-    right: 1335px;
+    right: 1375px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -599,7 +599,7 @@
     width: 235px;
     height: 163px;
     top: 169px;
-    right: 999px;
+    right: 1059px;
     background-image: url("../../images/allLink/组.png");
 }
 
@@ -607,7 +607,7 @@
 #sell_car_name{
     position: absolute;
     top: 33px;
-    right: 105px;
+    right: 110px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -618,8 +618,8 @@
 /*销售_汽运_remark*/
 #sell_car_remark{
     position: absolute;
-    top: 38px;
-    right: 20px;
+    top: 36px;
+    right: 25px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -631,7 +631,7 @@
 #sell_car_value1{
     position: absolute;
     top: 89px;
-    right: 135px;
+    right: 145px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -643,7 +643,7 @@
 #sell_car_value2{
     position: absolute;
     top: 90px;
-    right: 30px;
+    right: 40px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -657,7 +657,7 @@
     width: 235px;
     height: 163px;
     top: 209px;
-    right: -659px;
+    right: -590px;
     background-image: url("../../images/allLink/组.png");
 }
 
@@ -665,7 +665,7 @@
 #sell_ship_name{
     position: absolute;
     top: 33px;
-    right: 105px;
+    right: 110px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -676,8 +676,8 @@
 /*销售_海运_remark*/
 #sell_ship_remark{
     position: absolute;
-    top: 38px;
-    right: 20px;
+    top: 36px;
+    right: 25px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -689,7 +689,7 @@
 #sell_ship_value1{
     position: absolute;
     top: 89px;
-    right: 130px;
+    right: 135px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -701,7 +701,7 @@
 #sell_ship_value2{
     position: absolute;
     top: 89px;
-    right: 40px;
+    right: 45px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;

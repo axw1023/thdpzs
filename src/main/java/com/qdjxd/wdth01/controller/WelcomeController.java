@@ -80,6 +80,12 @@ public class WelcomeController {
 //        return "3Dfactory1";
 //    }
 
+//    工具展示
+    @RequestMapping("/turnToToolShow")
+    public String turnToToolShow() {
+    return "toolShow";
+}
+
     //    未来展望13
     @RequestMapping("/turnToFutureProspect")
     public String turnToFutureProspect() {
