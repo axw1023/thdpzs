@@ -10,7 +10,7 @@ function  getNumzc() {
 
     $.ajax({
         type: "get",
-        url: "getNumzc",
+        url: "/ITchar/getNumzc",
 
         cache:false,
         success: function (data) {
