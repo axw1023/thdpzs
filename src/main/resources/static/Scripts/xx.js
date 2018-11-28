@@ -72,7 +72,8 @@ function draw(){
 function loop(){
   bg();
   draw();
-  window.requestAnimationFrame(loop);
+  //window.requestAnimationFrame(loop);
+    window.setTimeout(loop,150);
 }
 loop();
 
