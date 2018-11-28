@@ -212,10 +212,10 @@ function cross (shijian,shuchu,shuru) {
 function getNumByLiu() {
     $.ajax({
         type: "get",
-        async: false,
+
         cache: false,
 
-        url: "getNumByLiu",
+        url: "/ITchar/getNumByLiu",
 
         success: function (LIU) {
            var shuru=[];

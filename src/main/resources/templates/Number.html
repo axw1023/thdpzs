@@ -10,20 +10,30 @@
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
    <!-- <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>-->
     <style type="text/css">
-      /*  #all{background: url("../ProjectScripts/Number/all.png");
-            width: 5632px;height: 1024px;
-        }*/
-        #vide{width: 444px;height: 800px;
-        top: 108px;left: 1575px;
-            background: black;
-            position:absolute;
+        body{
+            background-image: url('../../images/Number/Number.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin:0;
+            padding:0;
+            width:5632px;
+            height:1024px;
         }
-        #number{width: 1444px;height: 800px;
-            position:absolute;
-            
-                top: 20px;left: 20px;
-            }
-        #body{color: transparent;z-index:99}
+        #dy{
+            margin-top:100px;
+            display: inline-block;
+            margin-left: 50%;
+            transform: translate(-50%,0);
+            height:calc(100% - 150px);
+            margin-top:150px;
+            background-image: url('../../images/Number/test.png');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+        video{
+            height:calc(100% - 40px);
+            margin:10px;
+        }
     </style>
 
     <script type="text/javascript">
@@ -39,18 +49,15 @@
     </script>
 </head>
 <body>
-<div id="body">
-<div id="all">
-    <div id="vide">
-
 <!--
         <iframe id="number" src="mda-D:\number\number.MP4" frameborder=0 allowfullscreen></iframe>
 -->
-        <video id="number" autoplay="autoplay"   loop="loop" >
-            <source src="../number/number.MP4" controls="controls"></video>
+    <div id="dy">
+        <video id="number" autoplay="autoplay"   loop="1" >
+            <source src="http://10.0.30.200:8080/number/number.mp4" controls="controls">
+        </video>
     </div>
-</div>
-</div>
+
 </body>
 <!--<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI1.js}"></script>-->
