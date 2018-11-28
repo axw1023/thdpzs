@@ -67,7 +67,7 @@ function cross (shijian,shuchu,shuru) {
 
             },
             right: '1%',
-            data: [ '接受', '发送']
+            data: [ '接收', '发送']
         },
 
         grid: {
@@ -130,7 +130,7 @@ function cross (shijian,shuchu,shuru) {
             {
                 symbol: 'circle',     //设定为实心点
                 symbolSize: 8,   //设定实心点的大小
-                name: '接受',
+                name: '接收',
                 type: 'line',
                 showSymbol: false,
                 hoverAnimation: false,
@@ -264,24 +264,26 @@ function getSevenDate(num,step,data){
         day1=parseInt(day1)<10?"0"+day1:day1
         myHours1 =parseInt(myHours1)<10?"0"+myHours1:myHours1;
         getMinutes1 =parseInt(getMinutes1)<10?"0"+getMinutes1:getMinutes1;
+
         arr.push([year1+'-'+month1+'-'+day1+' '+myHours1+':'+getMinutes1+":00",data[i]]);
     }
 
-    var date2=new Date(year,month,myDay,myHours+1,getMinutes);
+    var date2=new Date(year,month,myDay,myHours,60);
     var year2 =date2.getFullYear()
     var month2=date2.getMonth()+1
     var day2=date2.getDate();
     var myHours2 =date2.getHours();
     var getMinutes2 =date2.getMinutes()
-    var date3=new Date(year,month,myDay,myHours+2,getMinutes);
+    var date3=new Date(year,month,myDay,myHours+1,60);
     var year3 =date3.getFullYear()
     var month3=date3.getMonth()+1
     var day3=date3.getDate();
     var myHours3 =date3.getHours();
     var getMinutes3 =date3.getMinutes()
      arr=arr.reverse();
+    getMinutes2 =parseInt(getMinutes2)<10?"0"+getMinutes2:getMinutes2;
     arr.push([year2+'-'+month2+'-'+day2+' '+myHours2+':'+getMinutes2+":00",'-']);
-
+    getMinutes3 =parseInt(getMinutes3)<10?"0"+getMinutes3:getMinutes3;
     arr.push([year3+'-'+month3+'-'+day3+' '+myHours3+':'+getMinutes3+":00",'-']);
     return arr;
 }

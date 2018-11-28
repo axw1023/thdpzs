@@ -260,11 +260,6 @@ function setThreePie(_d){
             formatter: '{a} <br/>{b} : {c} ({d}%)',
             fontWeight:400,
         },
-        legend: {
-            show: false,
-            itemGap: 12,
-            data: ['01', '02']
-        },
         toolbox: {
             show: false,
             feature: {
@@ -303,7 +298,6 @@ function setThreePie(_d){
                 },
                 data: [{
                     value:_d[0].value,
-                    name: '01',
                     itemStyle: {
                         normal: {
                             color:'#59b3ff',
@@ -339,7 +333,6 @@ function setThreePie(_d){
                     }
                 }, {
                     value: (100-_d[0].value),
-                    name: 'invisible',
                     itemStyle:{
                         normal: {
                             color:'#283169',
@@ -379,7 +372,6 @@ function setThreePie(_d){
                 },
                 data: [{
                     value: _d[1].value,
-                    name: '01',
                     itemStyle: {
                         normal: {
                             color:'#59b3ff',
@@ -413,7 +405,6 @@ function setThreePie(_d){
                     }
                 }, {
                     value: (100-_d[1].value),
-                    name: 'invisible',
                     itemStyle:{
                         normal: {
                             color:'#283169',
@@ -453,7 +444,6 @@ function setThreePie(_d){
                 },
                 data: [{
                     value:_d[2].value,
-                    name: '01',
                     itemStyle: {
                         normal: {
                             color:'#59b3ff',
@@ -487,7 +477,6 @@ function setThreePie(_d){
                     }
                 }, {
                     value: (100 - _d[2].value),
-                    name: 'invisible',
                     itemStyle:{
                         normal: {
                             color:'#283169',

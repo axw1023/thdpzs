@@ -13,8 +13,19 @@
     select 
     <include refid="Base_Column_List" />
     from wdth_tb_itjf
-    where sheetid = #{sheetid,jdbcType=INTEGER}
+
   </select>
+
+  <!--查询机房-->
+
+  <select id="jf" resultMap="BaseResultMap"  >
+    select
+    *
+    from wdth_tb_itjf
+
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from wdth_tb_itjf
     where sheetid = #{sheetid,jdbcType=INTEGER}

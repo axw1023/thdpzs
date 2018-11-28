@@ -54,24 +54,17 @@ function bing(arr) {
                 center: ['30%', '50%'],
                 avoidLabelOverlap: false,
 
-                label: {
-                    normal: {
-                        show: false,
-                        position: 'center'
-                    },
+
+
                     emphasis: {
-                        show: true,
+                        show: false,
                         formatter: "共{a|{c}}台",
                         rich:{
                             a:{
                                 fontSize: 41
                             }
-                        },
-                        textStyle: {
-                            fontSize: 25,
-                            color: '#92F1FF'
                         }
-                    }
+
                 },
                 labelLine: {
                     normal: {
@@ -83,7 +76,9 @@ function bing(arr) {
 
                 data: [
 
-                    { value:arr[4].value,name:arr[4].name,itemStyle:{ color: {
+                    { value:arr[4].value,name:arr[4].name,
+
+                        itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -95,6 +90,22 @@ function bing(arr) {
                                     offset: 1, color: '#4C31A9' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
+                            }},
+                        label: {
+                            normal: {
+                                show: true,
+                                position: 'center',
+                                formatter: "共{a|{c}}项",
+                                rich:{
+                                    a:{
+                                        fontSize: 41,
+                                        color: '#92F1FF'
+                                    }
+                                },
+                                textStyle: {
+                                    fontSize: 25,
+                                    color: '#92F1FF'
+                                }
                             }}
 
                     },
@@ -110,7 +121,10 @@ function bing(arr) {
                                     offset: 1, color: '#7F3C70' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }}
+                            }},
+                        label: {
+                            normal: {
+                                show: false,}}
                     },
                     {value:arr[2].value,name:arr[2].name,itemStyle:{ color: {
                                 type: 'linear',
@@ -124,7 +138,33 @@ function bing(arr) {
                                     offset: 1, color: '#DE7665' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }}},
+                            }},
+                        label: {
+                            normal: {
+                                show: false,
+                                position: 'center',
+                                formatter: "共{a|{c}}台",
+                                rich:{
+                                    a:{
+                                        fontSize: 41
+                                    }
+                                },
+                                textStyle: {
+                                    fontSize: 25,
+                                    color: '#92F1FF'
+                                }
+                            }
+                        },
+                        emphasis: {
+                            show: false,
+                            formatter: "共{a|{c}}台",
+                            rich:{
+                                a:{
+                                    fontSize: 41
+                                }
+                            }
+
+                        },},
                     {value:arr[1].value,name:arr[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
@@ -137,7 +177,10 @@ function bing(arr) {
                                     offset: 1, color: '#28E1B8' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }}}, {value:arr[0].value,name:arr[0].name,itemStyle:{ color: {
+                            }},label: {
+                            normal: {
+                                show: false,}}
+                            }, {value:arr[0].value,name:arr[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
                                 y: 0,
@@ -149,7 +192,9 @@ function bing(arr) {
                                     offset: 1, color: '#DE7665' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }}},
+                            }},label: {
+                            normal: {
+                                show: false,}},},
 
                 ]
             }
@@ -183,8 +228,8 @@ function bing(arr) {
 function getNumByGrade() {
     $.ajax({
         type: "get",
-        url: "/ITData/BusinessDetailsView",
-        async: false,
+        url: "/BusinessDetailsView",
+
         cache:false,
 
         success: function (rest) {
