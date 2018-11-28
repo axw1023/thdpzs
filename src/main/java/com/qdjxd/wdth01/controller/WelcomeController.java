@@ -91,4 +91,10 @@ public class WelcomeController {
     public String turnToFutureProspect() {
         return "ai-factory";
     }
+
+    //    结束页面14
+    @RequestMapping("/turnToEnd")
+    public String turnToEnd() {
+        return "end";
+    }
 }
