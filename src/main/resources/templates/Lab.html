@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>实验室</title>
+    <title>实验室信息管理系统</title>
+    <script type="text/javascript"   th:src="@{/Scripts/jquery-3.3.1.js}"></script>
 
     <script type="text/javascript">
 
@@ -15,8 +16,10 @@
             }
         });
     </script>
+
+
 </head>
 <body>
-<iframe style="width: 5632px;height: 1024px" src="http://58.57.156.167:8081/WebReport/ReportServer?formlet=%5B5927%5D%5B5c4f%5Dcs.fr"></iframe>
+<iframe id = "IFrameId" style="width: 5632px;height: 1024px" src="http://58.57.156.167:8081/WebReport/ReportServer?formlet=%5B5927%5D%5B5c4f%5Dcs.frm"></iframe>
 </body>
 </html>
