@@ -8,9 +8,10 @@
 		<meta name="keywords" content="modal, window, overlay, modern, box, css transition, css animation, effect, 3d, perspective" />
 		<meta name="author" content="Codrops" />
 		<link rel="shortcut icon" href="../favicon.ico">
-		<link href="../../ProjectCss/xx.css" rel="stylesheet" type="text/css" />
+		<link href="../../ProjectScripts/home/css/style.css" rel="stylesheet" type="text/css" />
+		<!--<link href="../../ProjectCss/xx.css" rel="stylesheet" type="text/css" />-->
 		<script src="../../Scripts/babel-browser.js" ></script>
-		<!--<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>-->
+		<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>
 		<script type="text/javascript"   src="../../Scripts/jquery.min.js"></script>
 
 		<!--旋转需要引用的js-->
@@ -27,6 +28,7 @@
 				z-index:9999;
 				width: 5632px;
 				height: 1024px;
+				z-index: 2;
 			}
 			/*背景图*/
 			#body{
@@ -39,7 +41,7 @@
 				/*background-repeat: no-repeat*/;
 				/*background-size: 100% 100%;*/
 				background-position: -75px 0;
-
+				z-index: 2;
 			}
 
 			#imgLeft1{
@@ -188,8 +190,21 @@
 				text-align: center;
 				color: #82EEFF;
 				font-family: "Microsoft YaHei";
+				z-index: 3;
 			}
 		</style>
+
+		<script type="text/javascript">
+
+            // 页面跳转
+            $(document).keydown(function(event){
+                if(event.keyCode == 39){
+                    window.location.href="/turnToERPandBI"
+                }else if(event.keyCode == 37){
+                    window.location.href="/turnToAllLink"
+                }
+            });
+		</script>
 
 
 	</head>
@@ -229,7 +244,7 @@
 	</div>
 	<canvas id="canvas"></canvas>
 	</body>
-	<script type="text/javascript" src="../../Scripts/xx.js" ></script>
+	<!--<script type="text/javascript" src="../../Scripts/xx.js" ></script>-->
 	<script>
 
 
