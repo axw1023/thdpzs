@@ -93,7 +93,6 @@ function getHkzssl() {
                 num.push(data[i].num)
                 num1.push(data[i].mou)
             }
-          
             //更新数据
             setHkzssl(name,num,num1);
         },
@@ -292,14 +291,14 @@ function setCbgc(data) {
                     }*/
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}项",
+                        formatter: "共{a|{c}}吨",
                         rich:{
                             a:{
-                                fontSize: 41
+                                fontSize: 30
                             }
                         },
                         textStyle: {
-                            fontSize: 25,
+                            fontSize: 15,
                             color: '#92F1FF'
                         }
                     },
@@ -475,14 +474,14 @@ function setSynhzb(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}项",
+                        formatter: "共{a|{c}}吨",
                         rich:{
                             a:{
-                                fontSize: 41
+                                fontSize: 30
                             }
                         },
                         textStyle: {
-                            fontSize: 25,
+                            fontSize: 15,
                             color: '#92F1FF'
                         }
                     },
@@ -651,14 +650,14 @@ function setXsqk(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}项",
+                        formatter: "共{a|{c}}吨",
                         rich:{
                             a:{
-                                fontSize: 41
+                                fontSize: 30
                             }
                         },
                         textStyle: {
-                            fontSize: 25,
+                            fontSize: 15,
                             color: '#92F1FF'
                         }
                     },
