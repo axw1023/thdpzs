@@ -1644,13 +1644,16 @@ function setJhzxl(num1,num,name) {
             splitLine:{show: false},//去除网格线
             axisLabel: {
                 color: '#92F1FF',
+            formatter:function(param){
+                return (param*100)+'%';
+            }
             },
             axisLine: {
                 lineStyle: {
                     // 设置轴颜色
                     color: 'rgba(1,1,1,0)'
                 }
-            },
+            }
         }
         ,
         series : [
