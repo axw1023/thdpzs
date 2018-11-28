@@ -17,7 +17,7 @@ const HOLE = {
   y: screenHeight / 2,
   r: smallerSize / 4
 };
-
+console.log(HOLE);
 class Star {
   constructor() {
     this.reset();
