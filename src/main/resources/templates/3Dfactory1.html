@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>3Dfactory</title>
+    <!--外部css-->
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">-->
+    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">
+    <!--外部js-->
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+
+    <script type="text/javascript">
+
+        // 页面跳转
+       /* function turnTo(){
+            window.location.href="/turnToEquipment"
+        }*/
+    </script>
+    <style type="text/css">
+        #all{background: url("../ProjectScripts/3D/all.png")}
+        #vide1{left: 346px;
+            position:absolute;top: 150px;width: 2000px;height: 857px;z-index:99}
+        #vide2{left: 1968px;
+            position:absolute;top: 150px;width: 1154px;height: 857px;z-index:99}
+        #vide3{left: 3590px;
+            position:absolute; top: 150px;width: 1154px;height: 857px}
+
+    </style>
+
+</head>
+<body>
+<div id="all" style="width: 5632px;height: 1024px;">
+    <div style="width: 5632px;height: 1024px;">
+        <div id="vide1" style="overflow: hidden">
+            <video id="3d1" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
+                <source src="../Video/3D/3DC1.MP4" ></video>
+        </div>
+        <div id="vide2" >
+            <video id="3d2" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
+                <source src="http://10.0.30.200:8008/3D/3DC2.mp4" ></video>
+        </div>
+        <div id="vide3">
+            <video id="3d3" autoplay="autoplay"   loop="loop"    style="width: 1480px;height: 825px;">
+                <source src="http://10.0.30.200:8008/3D/3DC3.mp4" ></video>
+        </div>
+    </div>
+</div>
+</body>
+
+<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI1.js}"></script>
+
+    <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>   
+</html>

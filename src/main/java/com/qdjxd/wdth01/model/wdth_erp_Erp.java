@@ -3,7 +3,7 @@ package com.qdjxd.wdth01.model;
 public class wdth_erp_Erp {
     private Integer sheetid;
 
-    private Integer num;
+    private double num;
 
     private String name;
 
@@ -15,11 +15,11 @@ public class wdth_erp_Erp {
         this.sheetid = sheetid;
     }
 
-    public Integer getNum() {
+    public double getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(double num) {
         this.num = num;
     }
 

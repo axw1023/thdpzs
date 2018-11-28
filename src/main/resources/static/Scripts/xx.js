@@ -58,8 +58,13 @@ function draw(){
     p.a += 0.008;
     p.x = centerX + Math.cos(i+p.a) * (p.dist*i*0.1);
     p.y = centerY + Math.sin(i+p.a) * (p.dist);
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(p.x, p.y,2, 2);
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,3,0,360,false);
+      ctx.fillStyle="#fff";//填充颜色,默认是黑色
+      ctx.fill();//画实心圆
+      ctx.closePath();
+  //  ctx.fillStyle = '#fff'
+   // ctx.fillRect(p.x, p.y,6, 6);
   }
 }
 

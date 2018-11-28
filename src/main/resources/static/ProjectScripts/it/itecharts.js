@@ -95,7 +95,7 @@ function bing(arr) {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: "共{a|{c}}台",
+                                formatter: "共{a|{c}}项",
                                 rich:{
                                     a:{
                                         fontSize: 41,

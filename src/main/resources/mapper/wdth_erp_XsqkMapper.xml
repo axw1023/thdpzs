@@ -3,7 +3,7 @@
 <mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_XsqkMapper" >
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Xsqk" >
     <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
-    <result column="num" property="num" jdbcType="INTEGER" />
+    <result column="num" property="num" jdbcType="DOUBLE" />
     <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getXsqk" resultMap="BaseResultMap">
