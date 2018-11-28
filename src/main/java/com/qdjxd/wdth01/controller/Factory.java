@@ -16,7 +16,7 @@ public class Factory {
 
     @Resource
     wdth_3d_dyflqMapper wdth_3d_dyflqMapper;
-    
+
     @Resource
     wdth_3d_fkgMapper wdth_3d_fkgMapper;
      @Resource
@@ -34,9 +34,11 @@ public class Factory {
         return "3Dfactory";
     }
     
-    @RequestMapping("/3Dfactory1")
-    public  String hello(){
-        return "3Dfactory1";
+    @RequestMapping(value = "/hello", method = RequestMethod. POST)
+    @ResponseBody
+    //获取ajax参数
+    public  void hello(){
+        System.out.println("hello");
     }
 
     @RequestMapping(value = "/1", method = RequestMethod. POST)

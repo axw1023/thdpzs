@@ -1,10 +1,10 @@
 //验证表单是否为空，若为空则将焦点聚焦在input表单上，否则表单通过，登录成功
 function check(form){
     var accountName = $("#accountName"),$password = $("#password");
-    var username = accountName.val(),password = $password.val();
-    if(!username || username == ""){
+    var accountName = accountName.val(),password = $password.val();
+    if(!accountName || accountName == ""){
         showMsg("请输入用户名");
-        form.username.focus ();
+        form.accountName.focus ();
         return false;
     }
     if(!password || password == ""){
@@ -12,16 +12,19 @@ function check(form){
         form.password.focus ();
         return false;
     }
-    
+    if (accountName == "123"){
+        if (password == "123") {
+            showMsg(("登录成功"))
+        }else showMsg("密码不正确")
+    } else showMsg("用户名不正确")
 //这里为用ajax获取用户信息并进行验证，如果账户密码不匹配则登录失败，如不需要验证用户信息，这段可不写
-   
-    
-    $.ajax({
-        url : "/login",// 获取自己系统后台用户信息接口
-        data :{"password":password,"username":username},
+/*    $.ajax({
+        url : "",// 获取自己系统后台用户信息接口
+        data :{"password":password,"accountName":accountName},
         type : "GET",
+        dataType: "json",
         success : function(data) {
-           /* if (data){
+            if (data){
                 if (data.code == "1111") { //判断返回值，这里根据的业务内容可做调整
                     setTimeout(function () {//做延时以便显示登录状态值
                         showMsg("正在登录中...");
@@ -32,13 +35,12 @@ function check(form){
                     showMsg(data.message);//显示登录失败的原因
                     return false;
                 }
-            }*/
-           document.location.href = data;
+            }
         },
         error : function(data){
             showMsg(data.message);
         }
-    });
+    });*/
 }
 
 //错误信息提醒
@@ -59,5 +61,4 @@ $(function(){
         }
         return true;
     }
-    
 });

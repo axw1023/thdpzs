@@ -3,27 +3,13 @@ package com.qdjxd.wdth01.model;
 public class wdth_erp_Hkzssl {
     private Integer sheetid;
 
-    private Integer num;
+    private double num;
 
-    private Integer day;
+    private double day;
 
-    private Integer mou;
+    private double mou;
 
-    public Integer getDay() {
-        return day;
-    }
 
-    public void setDay(Integer day) {
-        this.day = day;
-    }
-
-    public Integer getMou() {
-        return mou;
-    }
-
-    public void setMou(Integer mou) {
-        this.mou = mou;
-    }
 
     private String name;
 
@@ -35,12 +21,28 @@ public class wdth_erp_Hkzssl {
         this.sheetid = sheetid;
     }
 
-    public Integer getNum() {
+    public double getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(double num) {
         this.num = num;
+    }
+
+    public double getDay() {
+        return day;
+    }
+
+    public void setDay(double day) {
+        this.day = day;
+    }
+
+    public double getMou() {
+        return mou;
+    }
+
+    public void setMou(double mou) {
+        this.mou = mou;
     }
 
     public String getName() {

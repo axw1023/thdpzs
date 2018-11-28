@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.qdjxd.wdth01.dao.wdth_erp_HkzsslMapper" >
   <resultMap id="BaseResultMap" type="com.qdjxd.wdth01.model.wdth_erp_Hkzssl" >
-    <id column="sheetid" property="sheetid" jdbcType="INTEGER" />
-    <result column="num" property="num" jdbcType="INTEGER" />
-    <result column="day" property="day" jdbcType="INTEGER" />
-    <result column="mou" property="mou" jdbcType="INTEGER" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
+    <id column="sheetid" property="sheetid" javaType="int" jdbcType="INTEGER" />
+    <result column="num" property="num" javaType="double" jdbcType="DOUBLE" />
+    <result column="day" property="day" javaType="double" jdbcType="DOUBLE" />
+    <result column="mou" property="mou" javaType="double" jdbcType="DOUBLE" />
+    <result column="name" property="name" javaType="string" jdbcType="VARCHAR" />
   </resultMap>
   <select id="getHkzssl" resultMap="BaseResultMap">
     select * from wdth_erp_hkzssl
