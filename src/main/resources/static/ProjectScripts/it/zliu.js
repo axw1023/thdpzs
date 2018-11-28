@@ -211,7 +211,7 @@ function zcross (zshuchu,zshuru) {
 function getZ() {
     $.ajax({
         type: "get",
-
+        async: false,
         cache: false,
 
         url: "getZ",
@@ -265,21 +265,22 @@ function qgetSevenDate(num,step,data){
         qarr.push([qyear1+'-'+qmonth1+'-'+qday1+' '+qmyHours1+':'+qgetMinutes1+":00",data[i]])
     }
 
-    var qdate2=new Date(qyear,qmonth,qmyDay,qmyHours+1,qgetMinutes);
+    var qdate2=new Date(qyear,qmonth,qmyDay,qmyHours,60);
     var qyear2 =qdate2.getFullYear();
     var qmonth2=qdate2.getMonth()+1;
     var qday2=qdate2.getDate();
     var qmyHours2 =qdate2.getHours();
     var qgetMinutes2 =qdate2.getMinutes();
-    var qdate3=new Date(qyear,qmonth,qmyDay,qmyHours+2,qgetMinutes);
+    var qdate3=new Date(qyear,qmonth,qmyDay,qmyHours+1,60);
     var qyear3 =qdate3.getFullYear();
     var qmonth3=qdate3.getMonth()+1;
     var qday3=qdate3.getDate();
     var qmyHours3 =qdate3.getHours();
     var qgetMinutes3 =qdate3.getMinutes();
     qarr=qarr.reverse();
+    qgetMinutes2 =parseInt(qgetMinutes2)<10?"0"+qgetMinutes2:qgetMinutes2;
     qarr.push([qyear2+'-'+qmonth2+'-'+qday2+' '+qmyHours2+':'+qgetMinutes2+":00",'-']);
-
+    qgetMinutes3 =parseInt(qgetMinutes3)<10?"0"+qgetMinutes3:qgetMinutes3;
     qarr.push([qyear3+'-'+qmonth3+'-'+qday3+' '+qmyHours3+':'+qgetMinutes3+":00",'-']);
     return qarr;
 }
