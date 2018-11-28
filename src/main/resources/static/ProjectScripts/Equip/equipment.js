@@ -329,7 +329,7 @@ var equpEcharts = {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|台}'].join(''),
+                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|项}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,
