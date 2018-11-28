@@ -59,8 +59,8 @@ function draw(){
     p.x = centerX + Math.cos(i+p.a) * (p.dist*i*0.1);
     p.y = centerY + Math.sin(i+p.a) * (p.dist);
       ctx.beginPath();
-      ctx.arc(p.x,p.y,5,0,360,false);
-      ctx.fillStyle="#fff";//填充颜色,默认是黑色
+      ctx.arc(p.x,p.y,2,0,360,false);
+      ctx.fillStyle="#156fed";//填充颜色,默认是黑色
       ctx.fill();//画实心圆
       ctx.closePath();
   //  ctx.fillStyle = '#fff'
@@ -72,7 +72,8 @@ function draw(){
 function loop(){
   bg();
   draw();
-  window.requestAnimationFrame(loop);
+  //window.requestAnimationFrame(loop);
+    window.setTimeout(loop,150);
 }
 loop();
 
