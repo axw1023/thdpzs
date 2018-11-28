@@ -48,8 +48,9 @@
 				width: 5632px;
 				height: 1024px;
 				background-image: url("../../images/home/背景2.png");
-				background-repeat: no-repeat;
+				/*background-repeat: no-repeat*/;
 				/*background-size: 100% 100%;*/
+				background-position: -75px 0;
 
 			}
 
@@ -188,6 +189,16 @@
 				color:#82EEFF;
 			}
 			.big_title{
+				position: absolute;
+				top:0;
+				right:0;
+				left:0;
+				margin:auto;
+				display:inline-block;
+				font-size: 56px;
+				width:225px;
+				text-align: center;
+				color: #82EEFF;
 				font-family: "Microsoft YaHei";
 			}
 		</style>
@@ -205,10 +216,10 @@
 		</div>
 
 		<!--钻石图片-->
-		<div id = "imgLeft1" class="md-trigger" data-modal="modal-2"></div>
-		<div id = "imgLeft2" class="md-trigger" data-modal="modal-2"></div>
-		<div id = "imgRight1" class="md-trigger" data-modal="modal-2"></div>
-		<div id = "imgRight2" class="md-trigger" data-modal="modal-2"></div>
+	     <div id = "imgLeft1" class="md-trigger" data-modal="modal-2">	<div class="big_title">目标愿景</div></div>
+		<div id = "imgLeft2" class="md-trigger" data-modal="modal-2">	<div  class="big_title">建设进展</div></div>
+		<div id = "imgRight1" class="md-trigger" data-modal="modal-2">	<div class="big_title">成绩成果</div></div>
+		<div id = "imgRight2" class="md-trigger" data-modal="modal-2">  <div  class="big_title">计划展望</div></div>
 
 		<!--关闭方法-->
 		<div class="md-overlay"></div><!-- the overlay element -->
@@ -228,10 +239,10 @@
 		</div>
 
 		<!--文字-->
-		<div id = "word_mbyj" class="big_title">目标愿景</div>
-		<div id = "word_jsjz" class="big_title">建设进展</div>
-		<div id = "word_cjcg" class="big_title">成绩成果</div>
-		<div id = "word_mbzw" class="big_title">计划展望</div>
+
+
+
+
 	</div>
 	<canvas id="canvas"></canvas>
 	</body>
