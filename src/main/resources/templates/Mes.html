@@ -15,11 +15,28 @@
                 window.location.href="/turnToERPandBI"
             }
         });
+
+        $(function () {
+            getMesUrl();
+        });
+
+
+        function getMesUrl() {
+            $.ajax({
+                type: "get",
+                url: "/Mes/getMesUrl",
+                async: false,
+                success: function (data) {
+                    var url = data.value;
+                    document.getElementById("IFrameId").src = url;
+                },
+            });
+        }
     </script>
 
 
 </head>
 <body>
-<iframe id = "IFrameId" style="width: 5632px;height: 1024px" src="http://10.0.12.22:8081/WebReport/ReportServer?formlet=MES%5B5927%5D%5B5c4f%5D-%5B65b0%5D1.frm"></iframe>
+<iframe id = "IFrameId" style="width: 5632px;height: 1024px" src=""></iframe>
 </body>
 </html>
