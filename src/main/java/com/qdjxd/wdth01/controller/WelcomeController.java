@@ -83,7 +83,7 @@ public class WelcomeController {
 //    工具展示
     @RequestMapping("/turnToToolShow")
     public String turnToToolShow() {
-    return "toolShow";
+    return "tool";
 }
 
     //    未来展望13
@@ -96,5 +96,10 @@ public class WelcomeController {
     @RequestMapping("/turnToEnd")
     public String turnToEnd() {
         return "end";
+    }
+
+    @RequestMapping("tool/index")
+    public String toolShow(){
+        return "tool";
     }
 }

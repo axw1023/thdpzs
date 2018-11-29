@@ -6,108 +6,77 @@ $ (function () {
     getFlt();
     getFkg();
     getDyflq();
-//背景特效
-    window.onload = function() {
 
-        var config = {
-            vx: 4,
-            vy: 4,
-            height: 2,
-            width: 2,
-            count: 40,
-            color: "121, 162, 185",
-            stroke: "130,255,255",
-            dist: 6000,
-            e_dist: 20000,
-            max_conn: 10
+});
+var choose = 0;
+
+var v1 = document.getElementById("3d1");
+var v2 = document.getElementById("3d2");
+var v3 = document.getElementById("3d3");
+
+document.onkeydown= function(event){
+    var num = event.keyCode;
+    if(num == 13){
+        choose ++ ;
+        var flag = choose%3;
+        if(flag == 1){
+            //第一个视频播放
+            v1.play();
+            v2.pause();
+            v3.pause();
         }
+        if(flag == 2){
 
-        CanvasParticle(config);
+            //第二个视频播放
+            v2.play();
+            v1.pause();
+            v3.pause();
+        }
+        if(flag == 0){
+            //第三个视频播放
+            v3.play();
+            v2.pause();
+            v1.pause();
+            setTimeout(function () {
+                $('#change1').show();
+            },1600);
+            setTimeout(function () {
+                $('#change1').hide();
+            },6900);
+            setTimeout(function () {
+                $('#change2').show();
+            },11500);
+            setTimeout(function () {
+                $('#change2').hide();
+            },16700);
+            setTimeout(function () {
+                $('#hh1').show();
+            },19100);
+            setTimeout(function () {
+                $('#hh2').show();
+            },19500);
+            setTimeout(function () {
+                $('#hh3').show();
+            },19800);
+            setTimeout(function () {
+                $('#hh1').hide();
+                $('#hh2').hide();
+                $('#hh3').hide();
+            },24500);
+            setTimeout(function () {
+                $('#change4').show();
+            },28000);
+            setTimeout(function () {
+                $('#change4').hide();
+            },32000);
+
+        }
     }
+};
 
-    document.getElementById("3d1").playbackRate=0.6;
-    document.getElementById("3d2").playbackRate=0.6;
-    setTimeout(function () {
-        $('#change1').show();
-    },3000);
-    setTimeout(function () {
-        $('#change1').hide();
-    },7000);
-    setTimeout(function () {
-        $('#change2').show();
-    },12000);
-    setTimeout(function () {
-        $('#change2').hide();
-    },17000);
-    setTimeout(function () {
-        $('#hh1').show();
-    },19700);
-    setTimeout(function () {
-        $('#hh2').show();
-    },20000);
-    setTimeout(function () {
-        $('#hh3').show();
-    },20300);
-    setTimeout(function () {
-        $('#hh1').hide();
-        $('#hh2').hide();
-        $('#hh3').hide();
-    },24800);
-    setTimeout(function () {
-        $('#change4').show();
-    },28300);
-    setTimeout(function () {
-        $('#change4').hide();
-    },32000);
+document.getElementById("3d1").playbackRate=0.6;
+document.getElementById("3d2").playbackRate=0.6;
 
-
-    setInterval(function () {
-        setInterval(function () {
-            $('#change1').hide();
-            $('#change2').hide();
-            $('#hh1').hide();
-            $('#hh2').hide();
-            $('#hh3').hide();
-            $('#change4').hide();
-        },100)
-    },200000)
-
-    setInterval(function () {
-        setTimeout(function () {
-            $('#change1').show();
-        },2970);
-        setTimeout(function () {
-            $('#change1').hide();
-        },7000);
-        setTimeout(function () {
-            $('#change2').show();
-        },12000);
-        setTimeout(function () {
-            $('#change2').hide();
-        },17000);
-        setTimeout(function () {
-            $('#hh1').show();
-        },19700);
-        setTimeout(function () {
-            $('#hh2').show();
-        },20000);
-        setTimeout(function () {
-            $('#hh3').show();
-        },20300);
-        setTimeout(function () {
-            $('#hh1').hide();
-            $('#hh2').hide();
-            $('#hh3').hide();
-        },24800);
-        setTimeout(function () {
-            $('#change4').show();
-        },28300);
-        setTimeout(function () {
-            $('#change4').hide();
-        },32000);
-    },32200)
-    
-    });
 function getYlyr() {
     $.ajax({
         type: "post",
