@@ -1518,10 +1518,15 @@ function setKc(num1,num,name) {
         }],
         yAxis: [{
             type: 'value',
+            splitNumber:4,
             axisLabel: {
                 textStyle: {
                     color: "#9FCCFF",
                     fontSize:22
+                },
+                formatter:function (value,index) {
+                    var num = value/1000
+                    return num+"k"
                 }
             },
             axisTick: {
@@ -1540,7 +1545,8 @@ function setKc(num1,num,name) {
                 lineStyle: {
                     color: "#063374",
                 }
-            }
+            },
+
         }],
         series: [
             {
