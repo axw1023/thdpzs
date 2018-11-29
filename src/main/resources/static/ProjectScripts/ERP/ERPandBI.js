@@ -1524,10 +1524,10 @@ function setKc(num1,num,name) {
                     color: "#9FCCFF",
                     fontSize:22
                 },
-                formatter:function (value,index) {
-                    var num = value/1000
-                    return num+"k"
-                }
+                // formatter:function (value,index) {
+                //     var num = value/10000
+                //     return num+"万"
+                // }
             },
             axisTick: {
                 show: false,
