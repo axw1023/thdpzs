@@ -22,6 +22,7 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Controller
@@ -58,6 +59,7 @@ public class NetDataController {
         //查询GE1输入输出量
         Wdth_tb_it_netdata_ge1 ge1 = new Wdth_tb_it_netdata_ge1();
         Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy MM dd hh mm  ss");
         String id = UUID.randomUUID().toString();
 
         //url地址

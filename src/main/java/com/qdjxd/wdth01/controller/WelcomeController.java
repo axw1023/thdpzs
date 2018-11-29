@@ -97,4 +97,9 @@ public class WelcomeController {
     public String turnToEnd() {
         return "end";
     }
+
+    @RequestMapping("tool/index")
+    public String toolShow(){
+        return "tool";
+    }
 }
