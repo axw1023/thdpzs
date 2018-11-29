@@ -4,25 +4,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chorme=1" />
     <meta name="renderer" content="webkit">
     <meta http-equiv="content-type" content="text/html;charset=utf-8" />
-    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
-    <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
-    <script type="text/javascript"   th:src="@{/Scripts/ecStat.min.js}"></script>
-    <script type="text/javascript"   th:src="@{/Scripts/template.js}"></script>
-    <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
     <link th:href="@{/ProjectCss/BigData/first.css}" rel="stylesheet" type="text/css" />
     <link th:href="@{/ProjectCss/BigData/layer.css}" rel="stylesheet" type="text/css" />
     <title>大数据</title>
-    <script type="text/javascript">
 
-        // 页面跳转
-        $(document).keydown(function(event){
-            if(event.keyCode == 39){
-                window.location.href="/turnTo3DFactory"
-            }else if(event.keyCode == 37){
-                window.location.href="/turnToDigitalFactory"
-            }
-        });
-    </script>
 </head>
 <body id="body">
     <div id="BigData">
@@ -147,6 +132,22 @@
         </script>
     </div>
 </body>
+<script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+<script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+<script type="text/javascript"   th:src="@{/Scripts/ecStat.min.js}"></script>
+<script type="text/javascript"   th:src="@{/Scripts/template.js}"></script>
+<script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
+<script type="text/javascript">
+
+    // 页面跳转
+    $(document).keydown(function(event){
+        if(event.keyCode == 39){
+            window.location.href="/turnTo3DFactory"
+        }else if(event.keyCode == 37){
+            window.location.href="/turnToDigitalFactory"
+        }
+    });
+</script>
 <script>
     var myChart;
     var pointChart;
@@ -179,6 +180,11 @@
     //初始化
     function init(){
         getCoordData().then(setCoordData);
+        myChart = echarts.init(document.getElementById('charts1'));
+        pointChart = echarts.init(document.getElementById('point_char'));
+        threePie = echarts.init(document.getElementById('threePie'));
+        temChar = echarts.init(document.getElementById('temChar'));
+        three_line=echarts.init(document.getElementById('three_line'));
         getPointList().then(setPointList);
         getFeedList().then(setFeedList);
         getCharData().then(setCharData);
@@ -187,11 +193,7 @@
         getTemData().then(setTemChar);
         getThreeLine().then(setThreeData);
 
-        myChart = echarts.init(document.getElementById('charts1'));
-        pointChart = echarts.init(document.getElementById('point_char'));
-        threePie = echarts.init(document.getElementById('threePie'));
-        temChar = echarts.init(document.getElementById('temChar'));
-        three_line=echarts.init(document.getElementById('three_line'));
+
 
     }
     // 页面跳转

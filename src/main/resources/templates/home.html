@@ -10,16 +10,6 @@
 		<link rel="shortcut icon" href="../favicon.ico">
 		<link href="../../ProjectScripts/home/css/style.css" rel="stylesheet" type="text/css" />
 		<!--<link href="../../ProjectCss/xx.css" rel="stylesheet" type="text/css" />-->
-		<script src="../../Scripts/babel-browser.js" ></script>
-		<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>
-		<script type="text/javascript"   src="../../Scripts/jquery.min.js"></script>
-
-		<!--旋转需要引用的js-->
-		<script type="text/javascript" src = "../../Scripts/jquery.rotate.min.js"></script>
-		<script type="text/javascript" src = "../../Scripts/jquery.easing.min.js"></script>
-
-
-
 		<style type="text/css">
 			canvas{
 				position:absolute;
@@ -194,17 +184,7 @@
 			}
 		</style>
 
-		<script type="text/javascript">
 
-            // 页面跳转
-            $(document).keydown(function(event){
-                if(event.keyCode == 39){
-                    window.location.href="/turnToERPandBI"
-                }else if(event.keyCode == 37){
-                    window.location.href="/turnToAllLink"
-                }
-            });
-		</script>
 
 
 	</head>
@@ -244,6 +224,13 @@
 	</div>
 	<canvas id="canvas"></canvas>
 	</body>
+	<script src="../../Scripts/babel-browser.js" ></script>
+	<script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>
+	<script type="text/javascript"   src="../../Scripts/jquery.min.js"></script>
+
+	<!--旋转需要引用的js-->
+	<script type="text/javascript" src = "../../Scripts/jquery.rotate.min.js"></script>
+	<script type="text/javascript" src = "../../Scripts/jquery.easing.min.js"></script>
 	<!--<script type="text/javascript" src="../../Scripts/xx.js" ></script>-->
 	<script>
 
@@ -398,5 +385,15 @@
 			}
         });
 	</script>
+	<script type="text/javascript">
 
+        // 页面跳转
+        $(document).keydown(function(event){
+            if(event.keyCode == 39){
+                window.location.href="/turnToERPandBI"
+            }else if(event.keyCode == 37){
+                window.location.href="/turnToAllLink"
+            }
+        });
+	</script>
 </html>

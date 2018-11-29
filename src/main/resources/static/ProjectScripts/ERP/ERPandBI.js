@@ -291,14 +291,15 @@ function setCbgc(data) {
                     }*/
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}吨",
+                        formatter: "共 {a|{c}} 吨",
                         rich:{
                             a:{
-                                fontSize: 30
+                                fontSize: 33,
+                                fontWeight:900
                             }
                         },
                         textStyle: {
-                            fontSize: 15,
+                            fontSize: 25,
                             color: '#92F1FF'
                         }
                     },
@@ -474,14 +475,15 @@ function setSynhzb(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}吨",
+                        formatter: "共 {a|{c}} 吨",
                         rich:{
                             a:{
-                                fontSize: 30
+                                fontSize: 33,
+                                fontWeight:900
                             }
                         },
                         textStyle: {
-                            fontSize: 15,
+                            fontSize: 25,
                             color: '#92F1FF'
                         }
                     },
@@ -650,14 +652,15 @@ function setXsqk(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter: "共{a|{c}}吨",
+                        formatter: "共 {a|{c}} 吨",
                         rich:{
                             a:{
-                                fontSize: 30
+                                fontSize: 33,
+                                fontWeight:900
                             }
                         },
                         textStyle: {
-                            fontSize: 15,
+                            fontSize: 25,
                             color: '#92F1FF'
                         }
                     },
