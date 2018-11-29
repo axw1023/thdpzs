@@ -38,7 +38,7 @@ function cross (shijian,shuchu,shuru) {
     console.log(timeData);
     option = {
         title: {
-            text: '出口流速趋势(MB/s)',
+            text: '出口流量趋势(MB/s)',
             textStyle: {
                 color: "#92F1FF"
 
