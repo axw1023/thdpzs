@@ -27,42 +27,40 @@ $ (function () {
 
     document.getElementById("3d1").playbackRate=0.6;
     document.getElementById("3d2").playbackRate=0.6;
-    document.getElementById("3d3").playbackRate=0.6;
-    
     setTimeout(function () {
         $('#change1').show();
-    },3950);
+    },3000);
     setTimeout(function () {
         $('#change1').hide();
-    },12800);
+    },7000);
     setTimeout(function () {
         $('#change2').show();
-    },19700);
+    },12000);
     setTimeout(function () {
         $('#change2').hide();
-    },27500);
+    },17000);
     setTimeout(function () {
         $('#hh1').show();
-    },33600);
+    },19700);
     setTimeout(function () {
         $('#hh2').show();
-    },32800);
+    },20000);
     setTimeout(function () {
         $('#hh3').show();
-    },32000);
+    },20300);
     setTimeout(function () {
         $('#hh1').hide();
         $('#hh2').hide();
         $('#hh3').hide();
-    },40900);
+    },24800);
     setTimeout(function () {
         $('#change4').show();
-    },46700);
+    },28300);
     setTimeout(function () {
         $('#change4').hide();
-    },53500);
-    
-    
+    },32000);
+
+
     setInterval(function () {
         setInterval(function () {
             $('#change1').hide();
@@ -72,42 +70,42 @@ $ (function () {
             $('#hh3').hide();
             $('#change4').hide();
         },100)
-    },300000)
-    
-setInterval(function () {
-    setTimeout(function () {
-        $('#change1').show();
-    },3950);
-    setTimeout(function () {
-        $('#change1').hide();
-    },12800);
-    setTimeout(function () {
-        $('#change2').show();
-    },19700);
-    setTimeout(function () {
-        $('#change2').hide();
-    },27500);
-    setTimeout(function () {
-        $('#hh1').show();
-    },33600);
-    setTimeout(function () {
-        $('#hh2').show();
-    },32800);
-    setTimeout(function () {
-        $('#hh3').show();
-    },32000);
-    setTimeout(function () {
-        $('#hh1').hide();
-        $('#hh2').hide();
-        $('#hh3').hide();
-    },40900);
-    setTimeout(function () {
-        $('#change4').show();
-    },46700);
-    setTimeout(function () {
-        $('#change4').hide();
-    },53000);
-},53700)
+    },200000)
+
+    setInterval(function () {
+        setTimeout(function () {
+            $('#change1').show();
+        },2970);
+        setTimeout(function () {
+            $('#change1').hide();
+        },7000);
+        setTimeout(function () {
+            $('#change2').show();
+        },12000);
+        setTimeout(function () {
+            $('#change2').hide();
+        },17000);
+        setTimeout(function () {
+            $('#hh1').show();
+        },19700);
+        setTimeout(function () {
+            $('#hh2').show();
+        },20000);
+        setTimeout(function () {
+            $('#hh3').show();
+        },20300);
+        setTimeout(function () {
+            $('#hh1').hide();
+            $('#hh2').hide();
+            $('#hh3').hide();
+        },24800);
+        setTimeout(function () {
+            $('#change4').show();
+        },28300);
+        setTimeout(function () {
+            $('#change4').hide();
+        },32000);
+    },32200)
     
     });
 function getYlyr() {
