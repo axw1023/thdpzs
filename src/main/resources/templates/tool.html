@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>工具展示</title>
+    <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/tool/tool.css"/>
+</head>
+<body style="margin: 0px;padding: 0px">
+<div class = "body">
+    <div class="title">
+        <div class="title-img"></div>
+    </div>
+    <div class="video">
+        <div class="tool-v tool-video1">
+            <video  autoplay="autoplay" class="mp4"   loop="loop" >
+            <source src="http://10.0.30.200:8080/3D/3DC1.mp4" ></video>
+        </div>
+        <div class="tool-v tool-video2">
+            <video  autoplay="autoplay" class="mp4"   loop="loop" >
+                <source src="http://10.0.30.200:8080/3D/3DC2.mp4" ></video>
+        </div>
+        <div class="tool-v tool-video3">
+            <video autoplay="autoplay" class="mp4"   loop="loop" >
+                <source src="http://10.0.30.200:8080/3D/3DC3.mp4" ></video>
+        </div>
+    </div>
+   <!-- <img id = "title" src="../../images/toolShow/工具展示标题.png">
+    <img id = "leftImg" src="../../images/toolShow/工具展示框.png">
+    <img id = "centerImg" src="../../images/toolShow/工具展示框.png">
+    <img id = "rightImg" src="../../images/toolShow/工具展示框.png">-->
+</div>
+</body>
+<script src="../../ProjectScripts/tool/tool.js"></script>
+</html>

@@ -208,7 +208,7 @@ var equpEcharts = {
                     globalCoord: false // 缺省为 false
                 }
                 ],
-                series: [
+                    series: [
                     {
                         name:'缺陷级别分析',
                         type:'pie',
@@ -220,7 +220,7 @@ var equpEcharts = {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|台}'].join(''),
+                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|项}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,
@@ -329,7 +329,7 @@ var equpEcharts = {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|项}'].join(''),
+                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|台}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,

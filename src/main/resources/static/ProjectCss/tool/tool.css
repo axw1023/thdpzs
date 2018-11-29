@@ -1,0 +1,36 @@
+.body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 1024px;
+    width: 5632px;
+    background-image: url("../../images/toolShow/总背景.png");
+}
+
+.title{
+    width: 100%;
+}
+
+.title-img{
+    background: url("../../images/toolShow/工具展示标题.png");
+    width: 2097px;
+    height: 231px;
+    margin: auto;
+}
+
+.video{
+    margin-top: -118px;
+}
+
+.tool-v{
+    background: url("../../images/toolShow/工具展示框.png");
+    width: 1544px;
+    height: 902px;
+    margin-left: 232px;
+    float: left;
+}
+
+.mp4{
+    width: 1480px;
+    height: 825px;
+    margin: 30px 0px 0 30px;
+}
