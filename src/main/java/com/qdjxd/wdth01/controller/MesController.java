@@ -31,4 +31,14 @@ public class MesController {
         Wdth_xt_configer data = configerMapper.selectByPrimaryKey(id);
         return data;
     }
+
+
+    @RequestMapping(value = "/getLabUrl", method = RequestMethod.GET)
+    @ResponseBody
+    //获取ajax参数中信资源
+    public Wdth_xt_configer getLabUrl() {
+        int id = 2;
+        Wdth_xt_configer data = configerMapper.selectByPrimaryKey(id);
+        return data;
+    }
 }
