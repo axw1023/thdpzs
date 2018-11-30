@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -82,7 +85,20 @@ public class ERPandBI {
     @ResponseBody
     //获取ajax参数
     public List<wdth_erp_Jhzxl> getJhzxl(){
+
         List<wdth_erp_Jhzxl> getJhzxl =jhzxlMapper.getJhzxl();
+
+        SimpleDateFormat df = new SimpleDateFormat("MM月dd日");
+
+        for(int i = 0;i < 14;i++) {
+            Calendar c = Calendar.getInstance();
+            c.setTime(new Date());
+            c.add(Calendar.DATE, i-13);
+            Date d = c.getTime();
+            String day = df.format(d);
+            getJhzxl.get(i).setName(day);
+        }
+
         return getJhzxl;
     }
 
