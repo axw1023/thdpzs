@@ -15,11 +15,27 @@
                 window.location.href="/turnToMes"
             }
         });
+
+        $(function () {
+            getLabUrl();
+        });
+
+        function getLabUrl() {
+            $.ajax({
+                type: "get",
+                url: "/Mes/getLabUrl",
+                async: false,
+                success: function (data) {
+                    var url = data.value;
+                    document.getElementById("IFrameId").src = url;
+                },
+            });
+        }
     </script>
 
 
 </head>
 <body>
-<iframe id = "IFrameId" style="width: 5632px;height: 1024px" src="http://58.57.156.167:8081/WebReport/ReportServer?formlet=%5B5927%5D%5B5c4f%5Dcs.frm"></iframe>
+<iframe id = "IFrameId" style="width: 5632px;height: 1024px" src=""></iframe>
 </body>
 </html>
