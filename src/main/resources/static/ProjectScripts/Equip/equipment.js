@@ -218,20 +218,26 @@ var equpEcharts = {
                         label: {
 
                             normal: {
+                                show: false,
+                                position: 'center'
+                            },
+
+                            emphasis:{
                                 show: true,
-                                position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|项}'].join(''),
+                                formatter: ['{a|{b}：{c}项}\n','{b|共'+data.sum+'项}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,
                                         color: '#3bc5ff'
                                     },
                                     b: {
-                                        fontSize: 41,
-                                        color: '#3bc5ff'
+                                        fontSize: 25,
+                                        color: '#3bc5ff',
+                                        height: 36
                                     }
                                 }
-                            },
+
+                            }
 
                         },
                         labelLine: {
@@ -244,7 +250,33 @@ var equpEcharts = {
                 ]
             };
             defectLevelPie.setOption(defectOption);
+
+            var currentIndex = -1;
+            setInterval(function () {
+                var dataLen = defectOption.series[0].data.length;
+                // 取消之前高亮的图形
+                defectLevelPie.dispatchAction({
+                    type: 'downplay',
+                    seriesIndex: 0,
+                    dataIndex: currentIndex
+                });
+                currentIndex = (currentIndex + 1) % dataLen;
+                // 高亮当前图形
+                defectLevelPie.dispatchAction({
+                    type: 'highlight',
+                    seriesIndex: 0,
+                    dataIndex: currentIndex
+                });
+                // 显示 tooltip 显示悬停提示框
+                // youkezhengjianleixing_chart.dispatchAction({
+                //     type: 'showTip',
+                //     seriesIndex: 0,
+                //     dataIndex: currentIndex
+                // });
+            }, 1000);
         });
+
+
     },
     _warning_init: function(){
         $.ajax({
@@ -327,21 +359,26 @@ var equpEcharts = {
                         label: {
 
                             normal: {
-                                show: true,
+                                show: false,
                                 position: 'center',
-                                formatter: ['{a|共}','{b|'+data.sum+'}','{a|台}'].join(''),
+
+                            },
+                            emphasis:{
+                                show: true,
+                                formatter: ['{a|{b}：{c}台}\n','{b|共'+data.sum+'台}'].join(''),
                                 rich: {
                                     a:{
                                         fontSize: 25,
                                         color: '#3bc5ff'
                                     },
                                     b: {
-                                        fontSize: 41,
-                                        color: '#3bc5ff'
+                                        fontSize: 25,
+                                        color: '#3bc5ff',
+                                        height: 36
                                     }
                                 }
-                            },
 
+                            }
                         },
                         labelLine: {
                             normal: {
@@ -353,6 +390,30 @@ var equpEcharts = {
                 ]
             };
             warningPie.setOption(warningOption);
+
+            var currentIndex = -1;
+            setInterval(function () {
+                var dataLen = warningOption.series[0].data.length;
+                // 取消之前高亮的图形
+                warningPie.dispatchAction({
+                    type: 'downplay',
+                    seriesIndex: 0,
+                    dataIndex: currentIndex
+                });
+                currentIndex = (currentIndex + 1) % dataLen;
+                // 高亮当前图形
+                warningPie.dispatchAction({
+                    type: 'highlight',
+                    seriesIndex: 0,
+                    dataIndex: currentIndex
+                });
+                // 显示 tooltip 显示悬停提示框
+                // youkezhengjianleixing_chart.dispatchAction({
+                //     type: 'showTip',
+                //     seriesIndex: 0,
+                //     dataIndex: currentIndex
+                // });
+            }, 1000);
         });
 
 
@@ -451,6 +512,7 @@ var equpEcharts = {
         });
 
 
+
     },
     init: function(){
         equpEcharts._num_init();
@@ -458,3 +520,4 @@ var equpEcharts = {
         equpEcharts._warning_init();
     }
 }
+
