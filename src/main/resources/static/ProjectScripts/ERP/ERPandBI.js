@@ -4,7 +4,7 @@ $(function () {
 
 
     getCbgc();// 成本构成
-    
+
     //上月能耗指标
     getSynhzb();
     //销售情况
@@ -37,7 +37,7 @@ function getCbgc() {
             for (x in jsonData) {  //遍历JSON格式的数组取元素, x代表下标
 
                 for (y in jsonData[x].data) {
-                    alert(jsonData[x].occurTime[y]) ;//依次获取 
+                    alert(jsonData[x].occurTime[y]) ;//依次获取
                     alert(jsonData[x].data[y]);
                 }
             }*/
@@ -67,12 +67,12 @@ function getErp() {
             $("#yhq3").val(data[2].name);
             $("#bw2").val(data[3].num);
             $("#bw3").val(data[3].name);
-             $("#bx2").val(data[4].num);
-             $("#bx3").val(data[4].name);
-             $("#syj2").val(data[5].num);
-             $("#syj3").val(data[5].name);
-             
-        },   
+            $("#bx2").val(data[4].num);
+            $("#bx3").val(data[4].name);
+            $("#syj2").val(data[5].num);
+            $("#syj3").val(data[5].name);
+
+        },
         error: function (data) {
             alert("数据获取失败！")
         }
@@ -88,10 +88,12 @@ function getHkzssl() {
             var name=[];
             var num=[];
             var num1=[];
+            var date = [];
             for(i=0;i<data.length;i++){
-                name.push(data[i].name)
-                num.push(data[i].num)
-                num1.push(data[i].mou)
+                name.push(data[i].name);
+                num.push(data[i].num);
+                num1.push(data[i].num1);
+                date.push(data[i].date)
             }
             //更新数据
             setHkzssl(name,num,num1);
@@ -111,14 +113,17 @@ function getJhzxl() {
             var name=[];
             var num=[];
             var num1=[];
+            var date=[];
+
             for(i=0;i<data.length;i++){
-                name.push(data[i].name)
-                num.push(data[i].num)
-                num1.push(data[i].num1)
+                name.push(data[i].name);
+                num.push(data[i].num);
+                num1.push(data[i].num1);
+                date.push(data[i].date);
             }
-            
+
             //更新数据
-            setJhzxl(num1,num,name);
+            setJhzxl(num1,num,name,date);
         },
         error: function (data) {
             alert("数据获取失败！")
@@ -203,27 +208,32 @@ function setCbgc(data) {
     var myChart2 = echarts.init(document.getElementById('cbgc'));
     var currentIndex2= -1;
     var pieint=null;
+    var sum = 0;
+    for(i = 0;i < data.length;i++){
+        sum += data[i].num;
+    }
+
     // 指定图表的配置项和数据
     var  option = {
-     /*   title : {
-            text: '成本构成',
-            x:'center',
-            textStyle:{
-                //文字颜色
-                color:'#208198',
-                // //字体风格,'normal','italic','oblique'
-                // fontStyle:'normal',
-                // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
-                // fontWeight:'bold',
-                // //字体系列
-                // fontFamily:'sans-serif'
-                // //字体大小
-                // fontSize:18
-            },
-            subtextStyle:{
-                //与textStyle类似
-            },  
-        },*/
+        /*   title : {
+               text: '成本构成',
+               x:'center',
+               textStyle:{
+                   //文字颜色
+                   color:'#208198',
+                   // //字体风格,'normal','italic','oblique'
+                   // fontStyle:'normal',
+                   // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                   // fontWeight:'bold',
+                   // //字体系列
+                   // fontFamily:'sans-serif'
+                   // //字体大小
+                   // fontSize:18
+               },
+               subtextStyle:{
+                   //与textStyle类似
+               },
+           },*/
 
         color:['#208198','#2EABCC','#AA625A'],  //饼图颜色
 
@@ -243,7 +253,7 @@ function setCbgc(data) {
             formatter :'    {name}',
             data: data.name,
             textStyle:{
-                
+
                 color:'#92F1FF',
                 fontSize:20
             }
@@ -253,16 +263,16 @@ function setCbgc(data) {
         graphic:{
             type: 'text',
             // 这是四个相对于父元素的定位属性，每个属性可取『像素值』或者『百分比』或者 'center'/'middle'。
-            
+
             // bottom: '10%',
             left: '660', // 相对父元素居中
             top: '150',  // 相对父元素居中
             //可设置颜色 字体等等
-           /* style: {
-                fill: '#92F1FF',  //text颜色
-                text: '',
-                font: '33px Microsoft YaHei'
-            }*/
+            /* style: {
+                 fill: '#92F1FF',  //text颜色
+                 text: '',
+                 font: '33px Microsoft YaHei'
+             }*/
         },
 
 
@@ -271,7 +281,7 @@ function setCbgc(data) {
         //emphasis指的是鼠标移到饼图外围标签时,show为false的时候,标签文字不变化,当show为true时,鼠标移到饼图外围标签时,标签会变化,变化的属性在textStyle中
         series: [
             {
-                
+
                 center:['310','46.5%'],//圆形居中
                 type:'pie',
                 radius: ['50%', '65%'],
@@ -279,22 +289,28 @@ function setCbgc(data) {
                 label: {
                     show: false,
                     position: 'center',
-                  /*  emphasis: {
-                        show: true,
-                        formatter: "共{a|{c}}项",
-                        rich:{
-                            a:{
-                                fontSize: 41
-                            }
-                        },
-                      
-                    }*/
+                    /*  emphasis: {
+                          show: true,
+                          formatter: "共{a|{c}}项",
+                          rich:{
+                              a:{
+                                  fontSize: 41
+                              }
+                          },
+
+                      }*/
                     emphasis: {
                         show: true,
-                        formatter: "共 {a|{c}} 吨",
+                        // formatter: "共 {a|{c}} 吨",
+                        formatter:['{a|{b}：{c}项}\n\n','{b|共'+sum+'项}'].join(''),
+
                         rich:{
                             a:{
-                                fontSize: 33,
+                                fontSize: 23,
+                                fontWeight:900
+                            },
+                            b:{
+                                fontSize: 23,
                                 fontWeight:900
                             }
                         },
@@ -307,7 +323,7 @@ function setCbgc(data) {
                 labelLine: {
                     show:false
                 },
-               /* data:[{value:data[0].production,name:'生产'}]*/
+                /* data:[{value:data[0].production,name:'生产'}]*/
                 data:[
                     {value:data[0].num, name:data[0].name,itemStyle:{ color: {
                                 type: 'linear',
@@ -381,48 +397,53 @@ function setCbgc(data) {
 
 
 
-/* pieint=setInterval(function () {
-     var dataLen = option.series.length;
-     // 取消之前高亮的图形
-     myChart.dispatchAction({
-         type: 'downplay',
-         seriesIndex: 0,
-         dataIndex: currentIndex2
-     });
-     currentIndex2 = (currentIndex2 + 1) % dataLen;
-     // 高亮当前图形
-     myChart.dispatchAction({
-         type: 'highlight',
-         seriesIndex: 0,
-         dataIndex: currentIndex2
-     });
+    /* pieint=setInterval(function () {
+         var dataLen = option.series.length;
+         // 取消之前高亮的图形
+         myChart.dispatchAction({
+             type: 'downplay',
+             seriesIndex: 0,
+             dataIndex: currentIndex2
+         });
+         currentIndex2 = (currentIndex2 + 1) % dataLen;
+         // 高亮当前图形
+         myChart.dispatchAction({
+             type: 'highlight',
+             seriesIndex: 0,
+             dataIndex: currentIndex2
+         });
 
- }, 3000);*/
+     }, 3000);*/
 }
 
 function setSynhzb(data) {
     var myChart3 = echarts.init(document.getElementById('synhzb'));
     var currentIndex2= -1;
     var pieint=null;
+    var sum = 0;
+    for(i = 0;i < data.length;i++){
+        sum += data[i].num;
+    }
+
     // 指定图表的配置项和数据
     var  option = {
-       /* title : {
-            text: '上月能耗指标',
-            x:'center',
-            textStyle:{
-                //文字颜色
-                color:'#208198',
-                // //字体风格,'normal','italic','oblique'
-                // fontStyle:'normal',
-                // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
-                // fontWeight:'bold',
-                // //字体系列
-                // fontFamily:'sans-serif'
-                // //字体大小
-                // fontSize:18
-            },
-            subtextStyle:{},  //与textStyle类似
-        },*/
+        /* title : {
+             text: '上月能耗指标',
+             x:'center',
+             textStyle:{
+                 //文字颜色
+                 color:'#208198',
+                 // //字体风格,'normal','italic','oblique'
+                 // fontStyle:'normal',
+                 // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                 // fontWeight:'bold',
+                 // //字体系列
+                 // fontFamily:'sans-serif'
+                 // //字体大小
+                 // fontSize:18
+             },
+             subtextStyle:{},  //与textStyle类似
+         },*/
 
         color:['#208198','#2EABCC','#AA625A'],  //饼图颜色
 
@@ -453,11 +474,11 @@ function setSynhzb(data) {
             left: '160', // 相对父元素居中
             top: 'middle',  // 相对父元素居中
             //可设置颜色 字体等等
-           /* style: {
-                fill: '#92F1FF',  //text颜色
-                text: '共380项',
-                font: '33px Microsoft YaHei'
-            }*/
+            /* style: {
+                 fill: '#92F1FF',  //text颜色
+                 text: '共380项',
+                 font: '33px Microsoft YaHei'
+             }*/
         },
 
 
@@ -475,10 +496,15 @@ function setSynhzb(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter: "共 {a|{c}} 吨",
+                        // formatter: "共 {a|{c}} 吨",
+                        formatter:['{a|{b}：{c}项}\n\n','{b|共'+sum+'项}'].join(''),
                         rich:{
                             a:{
-                                fontSize: 33,
+                                fontSize: 23,
+                                fontWeight:900
+                            },
+                            b:{
+                                fontSize: 23,
                                 fontWeight:900
                             }
                         },
@@ -487,7 +513,7 @@ function setSynhzb(data) {
                             color: '#92F1FF'
                         }
                     },
-                    
+
                 },
                 labelLine: {
                     show:false
@@ -561,49 +587,53 @@ function setSynhzb(data) {
         });
 
     }, 3000);
-/*
-    pieint1=setInterval(function () {
-        var dataLen = option.series[0].data.length;
-        // 取消之前高亮的图形
-        myChart3.dispatchAction({
-            type: 'downplay',
-            seriesIndex: 0,
-            dataIndex: currentIndex1
-        });
-        currentIndex1 = (currentIndex2 + 1) % dataLen;
-        // 高亮当前图形
-        myChart3.dispatchAction({
-            type: 'highlight',
-            seriesIndex: 0,
-            dataIndex: currentIndex1
-        });
+    /*
+        pieint1=setInterval(function () {
+            var dataLen = option.series[0].data.length;
+            // 取消之前高亮的图形
+            myChart3.dispatchAction({
+                type: 'downplay',
+                seriesIndex: 0,
+                dataIndex: currentIndex1
+            });
+            currentIndex1 = (currentIndex2 + 1) % dataLen;
+            // 高亮当前图形
+            myChart3.dispatchAction({
+                type: 'highlight',
+                seriesIndex: 0,
+                dataIndex: currentIndex1
+            });
 
-    }, 3000);*/
+        }, 3000);*/
 }
 
 function setXsqk(data) {
     var myChart4 = echarts.init(document.getElementById('xsqk'));
     var currentIndex2= -1;
     var pieint=null;
+    var sum = 0;
+    for(i = 0;i < data.length;i++){
+        sum += data[i].num;
+    }
     // 指定图表的配置项和数据
     var  option = {
-     /*   title : {
-            text: '销售情况',
-            x:'center',
-            textStyle:{
-                //文字颜色
-                color:'#208198',
-                // //字体风格,'normal','italic','oblique'
-                // fontStyle:'normal',
-                // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
-                // fontWeight:'bold',
-                // //字体系列
-                // fontFamily:'sans-serif'
-                // //字体大小
-                // fontSize:18
-            },
-            subtextStyle:{},  //与textStyle类似
-        },*/
+        /*   title : {
+               text: '销售情况',
+               x:'center',
+               textStyle:{
+                   //文字颜色
+                   color:'#208198',
+                   // //字体风格,'normal','italic','oblique'
+                   // fontStyle:'normal',
+                   // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                   // fontWeight:'bold',
+                   // //字体系列
+                   // fontFamily:'sans-serif'
+                   // //字体大小
+                   // fontSize:18
+               },
+               subtextStyle:{},  //与textStyle类似
+           },*/
 
         color:['#208198','#2EABCC','#AA625A','#563688','#603962','#808854'],  //饼图颜色
 
@@ -620,7 +650,7 @@ function setXsqk(data) {
             formatter :'    {name}',
             data:data.name,
             textStyle:{
-                
+
                 color:'#92F1FF',
                 fontSize:20
             }
@@ -652,10 +682,15 @@ function setXsqk(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter: "共 {a|{c}} 吨",
+                        formatter:['{a|{b}：{c}项}\n\n','{b|共'+sum+'项}'].join(''),
+
                         rich:{
                             a:{
-                                fontSize: 33,
+                                fontSize: 23,
+                                fontWeight:900
+                            },
+                            b:{
+                                fontSize: 23,
                                 fontWeight:900
                             }
                         },
@@ -754,7 +789,7 @@ function setXsqk(data) {
             }
         ]
     };
-  
+
 
     // 使用刚指定的配置项和数据显示图表。
     myChart4.setOption(option);
@@ -782,31 +817,31 @@ function setHkzssl(name,num,num1) {
 
     // 指定图表的配置项和数据
     var  option = {
-    /*    title: {
-            show: true,
-            text:'海科装饰收率',
-            x:'center',
-            textStyle: {
-                //文字颜色
-                color: '#208198',
-            },
-        },*/
-/*        title : {
-            text: '销售情况',
-            x:'center',
-            textStyle:{
-                //文字颜色
-                color:'#208198',
-                  fontSize:18
-                // //字体风格,'normal','italic','oblique'
-                // fontStyle:'normal',
-                // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
-                // fontWeight:'bold',
-                // //字体系列
-                // fontFamily:'sans-serif'
-                // //字体大小
-                // fontSize:18
+        /*    title: {
+                show: true,
+                text:'海科装饰收率',
+                x:'center',
+                textStyle: {
+                    //文字颜色
+                    color: '#208198',
+                },
             },*/
+        /*        title : {
+                    text: '销售情况',
+                    x:'center',
+                    textStyle:{
+                        //文字颜色
+                        color:'#208198',
+                          fontSize:18
+                        // //字体风格,'normal','italic','oblique'
+                        // fontStyle:'normal',
+                        // //字体粗细 'normal','bold','bolder','lighter',100 | 200 | 300 | 400...
+                        // fontWeight:'bold',
+                        // //字体系列
+                        // fontFamily:'sans-serif'
+                        // //字体大小
+                        // fontSize:18
+                    },*/
         tooltip : {
             trigger: 'axis',
             axisPointer : {            // 坐标轴指示器，坐标轴触发有效
@@ -834,7 +869,7 @@ function setHkzssl(name,num,num1) {
             {
                 type : 'category',
                 data:name,
-               // data : [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name,data[6].name],
+                // data : [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name,data[6].name],
                 splitLine:{show: false},//去除网格
                 axisLine: {
                     lineStyle: {
@@ -848,23 +883,23 @@ function setHkzssl(name,num,num1) {
                     color:'#92F1FF',
                     interval: '0',
                     fontSize:20,
-                   
-                    
+
+
                     // rotate:-30,
                 },
-                
-/*                textStyle: {
-                    color: '#208198',
-                    align: 'center',
-                    whiteSpace: 'wrap',
-                    lineHeight: 15,
-                    height: 50,
-                    fontSize: 1
-                },*/
-            /*    textStyle:{
-                    color:'#208198',
-                    fontSize:2,
-                },*/
+
+                /*                textStyle: {
+                                    color: '#208198',
+                                    align: 'center',
+                                    whiteSpace: 'wrap',
+                                    lineHeight: 15,
+                                    height: 50,
+                                    fontSize: 1
+                                },*/
+                /*    textStyle:{
+                        color:'#208198',
+                        fontSize:2,
+                    },*/
             }
         ],
         yAxis : [
@@ -884,26 +919,26 @@ function setHkzssl(name,num,num1) {
             }
         ],
         series : [
-           /* {
-                name:'目标',
-                type:'bar',
-                barWidth : 8,
-                data:[data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num,data[6].num],
-                itemStyle:{ color: {
-                        type: 'linear',
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        colorStops: [{
-                            offset: 0, color: '#4360F1' // 0% 处的颜色
-                        }, {
-                            offset: 1, color: 'rgba(122, 127, 255,0)' // 100% 处的颜色
-                        }],
-                        globalCoord: false // 缺省为 false
-                    }}
+            /* {
+                 name:'目标',
+                 type:'bar',
+                 barWidth : 8,
+                 data:[data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num,data[6].num],
+                 itemStyle:{ color: {
+                         type: 'linear',
+                         x: 0,
+                         y: 0,
+                         x2: 0,
+                         y2: 1,
+                         colorStops: [{
+                             offset: 0, color: '#4360F1' // 0% 处的颜色
+                         }, {
+                             offset: 1, color: 'rgba(122, 127, 255,0)' // 100% 处的颜色
+                         }],
+                         globalCoord: false // 缺省为 false
+                     }}
 
-            },*/
+             },*/
             {
                 name:'计划收率',
                 type:'bar',
@@ -961,195 +996,195 @@ function setYlly(num1,num,name) {
     var myChart = echarts.init(document.getElementById('ylly'));
 
     // 指定图表的配置项和数据
- /*   var  option = {
-   /!*     title: {
-            text: '原料来源',
-            x:'center',
-            textStyle: {
-                //文字颜色
-                color: '#208198',
-            },
-        },*!/
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-                type: 'none',
-                crossStyle: {
-                    color: '#999'
-                }
-            }
-        },
-        xAxis: [{
-            type: 'category',
-            data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
-            axisPointer: {
-                type: 'none'
-            },
-            boundaryGap: true,
-            axisLabel: {
+    /*   var  option = {
+      /!*     title: {
+               text: '原料来源',
+               x:'center',
+               textStyle: {
+                   //文字颜色
+                   color: '#208198',
+               },
+           },*!/
+           tooltip: {
+               trigger: 'axis',
+               axisPointer: {
+                   type: 'none',
+                   crossStyle: {
+                       color: '#999'
+                   }
+               }
+           },
+           xAxis: [{
+               type: 'category',
+               data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
+               axisPointer: {
+                   type: 'none'
+               },
+               boundaryGap: true,
+               axisLabel: {
 
-                textStyle: {
-                    color: '#51e5fc'
-                }
-            },
-            axisLine: {
-                lineStyle: {
-                    // 设置x轴颜色
-                    color: 'rgba(1,1,1,0)'
-                }
-            },
+                   textStyle: {
+                       color: '#51e5fc'
+                   }
+               },
+               axisLine: {
+                   lineStyle: {
+                       // 设置x轴颜色
+                       color: 'rgba(1,1,1,0)'
+                   }
+               },
 
-            axisTick: {
-                show: false,
-            },
-        },
-            {
-                type: 'category',
-                show: false,
-                position: '',
-                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
-                offset:20,
-                axisPointer: {
-                    type: 'none',
-                    label: {
-                        show: false
-                    }
-                },
-                boundaryGap: false,
-            }
-        ],
-        yAxis: [{
-            type: 'value',
-            splitLine: {
-                show: false,
-            },
-            axisLabel: {
-                formatter: '{value}',
-                textStyle: {
-                    color: '#51e5fc'
-                },
+               axisTick: {
+                   show: false,
+               },
+           },
+               {
+                   type: 'category',
+                   show: false,
+                   position: '',
+                   data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
+                   offset:20,
+                   axisPointer: {
+                       type: 'none',
+                       label: {
+                           show: false
+                       }
+                   },
+                   boundaryGap: false,
+               }
+           ],
+           yAxis: [{
+               type: 'value',
+               splitLine: {
+                   show: false,
+               },
+               axisLabel: {
+                   formatter: '{value}',
+                   textStyle: {
+                       color: '#51e5fc'
+                   },
 
-            },
-            offset: 6,
-            axisLine: {
-                lineStyle: {
-                    // 设置x轴颜色
-                    color: 'rgba(1,1,1,0)'
-                }
-            },
+               },
+               offset: 6,
+               axisLine: {
+                   lineStyle: {
+                       // 设置x轴颜色
+                       color: 'rgba(1,1,1,0)'
+                   }
+               },
 
-            axisTick: {
-                show: false,
-            },
+               axisTick: {
+                   show: false,
+               },
 
-        },
-            {
-                type: 'value',
-                axisLabel: {
-                    show: false
-                },
-                axisLine: {
-                    show: false,
-                },
-                axisTick: {
-                    show: false,
-                },
-                splitLine: {
-                    show: false,
-                }
-            }
-        ],
-        series: [{
+           },
+               {
+                   type: 'value',
+                   axisLabel: {
+                       show: false
+                   },
+                   axisLine: {
+                       show: false,
+                   },
+                   axisTick: {
+                       show: false,
+                   },
+                   splitLine: {
+                       show: false,
+                   }
+               }
+           ],
+           series: [{
 
-            type: 'bar',
-            //                barWidth:27,
-            barWidth : 12,
-            
-            data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
-            itemStyle: {
-                normal: {
-                    barBorderRadius: 7,
-                    color: {
-                        type: 'linear',
-                        x: 0,
-                        y: 0,
-                        x2: 1,
-                        y2: 0,
-                        colorStops: [{
-                            offset: 0,
-                            color: '#51e5fc' // 0% 处的颜色
-                        }, {
-                            offset: 1,
-                            color: '#06bbff' // 100% 处的颜色
-                        }],
-                        globalCoord: false // 缺省为 false
-                    }
-                },
-                emphasis: {
-                    barBorderRadius: 7,
-                }
-            },
-            barCategoryGap: '-20%',
-        },
+               type: 'bar',
+               //                barWidth:27,
+               barWidth : 12,
 
-            {
-               /!* name: '所占比例',*!/
-                type:'line',
-                symbol:'star',//拐点样式
-                symbolSize: 8,//拐点大小
-                /!*yAxisIndex: 1,
-                xAxisIndex: 1,*!/
-                data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
-                itemStyle: {
-                    normal: {
-                        color: '#ee992f',
-                    }
-                },
-                areaStyle: {
-                    
-                    normal: {
-                        color: {
-                            type: 'linear',
-                            x: 0,
-                            y: 0,
-                            x2: 0,
-                            y2: 1,
-                            colorStops: [{
-                                offset: 0,
-                                color: 'rgba(255, 165,0,0.6)' // 0% 处的颜色
-                            }, {
-                                offset: 1,
-                                color: 'rgba(255, 165,0,0)' // 100% 处的颜色
-                            }],
-                            globalCoord: false // 缺省为 false
-                        }
-                    }
-                },
-                markPoint: {
-                    data: [{
-                        coord: ['0603', '140'],
-                        symbol: 'image://img/circle1.png'
-                    },
-                        {
-                            coord: ['0606', '170'],
-                            symbol: 'image://img/circle2.png'
-                        }, {
-                            coord: ['0609', '125'],
-                            symbol: 'image://img/circle1.png'
-                        }
+               data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
+               itemStyle: {
+                   normal: {
+                       barBorderRadius: 7,
+                       color: {
+                           type: 'linear',
+                           x: 0,
+                           y: 0,
+                           x2: 1,
+                           y2: 0,
+                           colorStops: [{
+                               offset: 0,
+                               color: '#51e5fc' // 0% 处的颜色
+                           }, {
+                               offset: 1,
+                               color: '#06bbff' // 100% 处的颜色
+                           }],
+                           globalCoord: false // 缺省为 false
+                       }
+                   },
+                   emphasis: {
+                       barBorderRadius: 7,
+                   }
+               },
+               barCategoryGap: '-20%',
+           },
+
+               {
+                  /!* name: '所占比例',*!/
+                   type:'line',
+                   symbol:'star',//拐点样式
+                   symbolSize: 8,//拐点大小
+                   /!*yAxisIndex: 1,
+                   xAxisIndex: 1,*!/
+                   data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
+                   itemStyle: {
+                       normal: {
+                           color: '#ee992f',
+                       }
+                   },
+                   areaStyle: {
+
+                       normal: {
+                           color: {
+                               type: 'linear',
+                               x: 0,
+                               y: 0,
+                               x2: 0,
+                               y2: 1,
+                               colorStops: [{
+                                   offset: 0,
+                                   color: 'rgba(255, 165,0,0.6)' // 0% 处的颜色
+                               }, {
+                                   offset: 1,
+                                   color: 'rgba(255, 165,0,0)' // 100% 处的颜色
+                               }],
+                               globalCoord: false // 缺省为 false
+                           }
+                       }
+                   },
+                   markPoint: {
+                       data: [{
+                           coord: ['0603', '140'],
+                           symbol: 'image://img/circle1.png'
+                       },
+                           {
+                               coord: ['0606', '170'],
+                               symbol: 'image://img/circle2.png'
+                           }, {
+                               coord: ['0609', '125'],
+                               symbol: 'image://img/circle1.png'
+                           }
 
 
-                    ],
-                    label: {
-                        normal: {
-                            show: false
-                        }
-                    }
-                },
-                smooth: false
-            }
-        ]
-    };*/
+                       ],
+                       label: {
+                           normal: {
+                               show: false
+                           }
+                       }
+                   },
+                   smooth: false
+               }
+           ]
+       };*/
     var option = {
         tooltip: {
             trigger: 'axis',
@@ -1277,197 +1312,197 @@ function setKc(num1,num,name) {
     var myChart = echarts.init(document.getElementById('kc'));
 
     // 指定图表的配置项和数据
-/*    var  option = {
-    /!*    title: {
-            text: '库存',
-            x:'center',
-            textStyle: {
-                //文字颜色
-                color: '#208198',
-            },
-        },*!/
-
-        tooltip: {
-            trigger: 'axis',
-            axisPointer: {
-                type: 'none',
-                crossStyle: {
-                    color: '#999'
-                }
-            }
-        },
-        xAxis: [{
-            
-            type: 'category',
-            data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
-            axisPointer: {
-                type: 'none'
-            },
-            boundaryGap: true,
-            axisLabel: {
-
+    /*    var  option = {
+        /!*    title: {
+                text: '库存',
+                x:'center',
                 textStyle: {
-                    
-                    color: '#51e5fc'
-                }
-            },
-            axisLine: {
-                lineStyle: {
-                    // 设置x轴颜色
-                    color: 'rgba(1,1,1,0)'
-                }
-            },
+                    //文字颜色
+                    color: '#208198',
+                },
+            },*!/
 
-            axisTick: {
-                show: false,
-            },
-        },
-            {
-                type: 'category',
-                show: false,
-                position: '',
-                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
-                offset:20,
+            tooltip: {
+                trigger: 'axis',
                 axisPointer: {
                     type: 'none',
-                    label: {
-                        show: false
+                    crossStyle: {
+                        color: '#999'
                     }
-                },
-                boundaryGap: false,
-            }
-        ],
-        yAxis: [{
-            type: 'value',
-            splitLine: {
-                show: false,
-            },
-            axisLabel: {
-                formatter: '{value}',
-                textStyle: {
-                    color: '#51e5fc'
-                },
-
-            },
-            offset: 6,
-            axisLine: {
-                show: false,
-                lineStyle: {
-                    color: '#51e5fc'
                 }
             },
-            axisTick: {
-                show: false,
-            },
+            xAxis: [{
 
-        },
-            {
-                type: 'value',
+                type: 'category',
+                data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
+                axisPointer: {
+                    type: 'none'
+                },
+                boundaryGap: true,
                 axisLabel: {
-                    show: false
+
+                    textStyle: {
+
+                        color: '#51e5fc'
+                    }
                 },
                 axisLine: {
+                    lineStyle: {
+                        // 设置x轴颜色
+                        color: 'rgba(1,1,1,0)'
+                    }
+                },
+
+                axisTick: {
                     show: false,
+                },
+            },
+                {
+                    type: 'category',
+                    show: false,
+                    position: '',
+                    data: [data[0].name,data[1].name,data[2].name,data[3].name,data[4].name,data[5].name],
+                    offset:20,
+                    axisPointer: {
+                        type: 'none',
+                        label: {
+                            show: false
+                        }
+                    },
+                    boundaryGap: false,
+                }
+            ],
+            yAxis: [{
+                type: 'value',
+                splitLine: {
+                    show: false,
+                },
+                axisLabel: {
+                    formatter: '{value}',
+                    textStyle: {
+                        color: '#51e5fc'
+                    },
+
+                },
+                offset: 6,
+                axisLine: {
+                    show: false,
+                    lineStyle: {
+                        color: '#51e5fc'
+                    }
                 },
                 axisTick: {
                     show: false,
                 },
-                splitLine: {
-                    show: false,
-                }
-            }
-        ],
-        series: [{
 
-            type: 'bar',
-            //                barWidth:27,
-            barWidth : 12,
-
-            data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
-            itemStyle: {
-                normal: {
-                    barBorderRadius: 7,
-                    color: {
-                        type: 'linear',
-                        x: 0,
-                        y: 0,
-                        x2: 1,
-                        y2: 0,
-                        colorStops: [{
-                            offset: 0,
-                            color: '#51e5fc' // 0% 处的颜色
-                        }, {
-                            offset: 1,
-                            color: '#06bbff' // 100% 处的颜色
-                        }],
-                        globalCoord: false // 缺省为 false
-                    }
-                },
-                emphasis: {
-                    barBorderRadius: 7,
-                }
             },
-            barCategoryGap: '-20%',
-        },
+                {
+                    type: 'value',
+                    axisLabel: {
+                        show: false
+                    },
+                    axisLine: {
+                        show: false,
+                    },
+                    axisTick: {
+                        show: false,
+                    },
+                    splitLine: {
+                        show: false,
+                    }
+                }
+            ],
+            series: [{
 
-            {
-                /!* name: '所占比例',*!/
-                type:'line',
-                symbol:'star',//拐点样式
-                symbolSize: 8,//拐点大小
-                /!*yAxisIndex: 1,
-                xAxisIndex: 1,*!/
-                data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
+                type: 'bar',
+                //                barWidth:27,
+                barWidth : 12,
+
+                data: [data[0].num,data[1].num,data[2].num,data[3].num,data[4].num,data[5].num],
                 itemStyle: {
                     normal: {
-                        color: '#06bbff',
-                    }
-                },
-                areaStyle: {
-
-                    normal: {
+                        barBorderRadius: 7,
                         color: {
                             type: 'linear',
                             x: 0,
                             y: 0,
-                            x2: 0,
-                            y2: 1,
+                            x2: 1,
+                            y2: 0,
                             colorStops: [{
                                 offset: 0,
-                                color: 'rgba(0,0,255,0.6)' // 0% 处的颜色
+                                color: '#51e5fc' // 0% 处的颜色
                             }, {
                                 offset: 1,
-                                color: 'rgba(0,0,255,0)' // 100% 处的颜色
+                                color: '#06bbff' // 100% 处的颜色
                             }],
                             globalCoord: false // 缺省为 false
                         }
-                    }
-                },
-                markPoint: {
-                    data: [{
-                        coord: ['0603', '140'],
-                        symbol: 'image://img/circle1.png'
                     },
-                        {
-                            coord: ['0606', '170'],
-                            symbol: 'image://img/circle2.png'
-                        }, {
-                            coord: ['0609', '125'],
-                            symbol: 'image://img/circle1.png'
-                        }
-
-
-                    ],
-                    label: {
-                        normal: {
-                            show: false
-                        }
+                    emphasis: {
+                        barBorderRadius: 7,
                     }
                 },
-                smooth: false
-            }
-        ]
-    };*/
+                barCategoryGap: '-20%',
+            },
+
+                {
+                    /!* name: '所占比例',*!/
+                    type:'line',
+                    symbol:'star',//拐点样式
+                    symbolSize: 8,//拐点大小
+                    /!*yAxisIndex: 1,
+                    xAxisIndex: 1,*!/
+                    data: [data[0].num1,data[1].num1,data[2].num1,data[3].num1,data[4].num1,data[5].num1],
+                    itemStyle: {
+                        normal: {
+                            color: '#06bbff',
+                        }
+                    },
+                    areaStyle: {
+
+                        normal: {
+                            color: {
+                                type: 'linear',
+                                x: 0,
+                                y: 0,
+                                x2: 0,
+                                y2: 1,
+                                colorStops: [{
+                                    offset: 0,
+                                    color: 'rgba(0,0,255,0.6)' // 0% 处的颜色
+                                }, {
+                                    offset: 1,
+                                    color: 'rgba(0,0,255,0)' // 100% 处的颜色
+                                }],
+                                globalCoord: false // 缺省为 false
+                            }
+                        }
+                    },
+                    markPoint: {
+                        data: [{
+                            coord: ['0603', '140'],
+                            symbol: 'image://img/circle1.png'
+                        },
+                            {
+                                coord: ['0606', '170'],
+                                symbol: 'image://img/circle2.png'
+                            }, {
+                                coord: ['0609', '125'],
+                                symbol: 'image://img/circle1.png'
+                            }
+
+
+                        ],
+                        label: {
+                            normal: {
+                                show: false
+                            }
+                        }
+                    },
+                    smooth: false
+                }
+            ]
+        };*/
     var option = {
         tooltip: {
             trigger: 'axis',
@@ -1598,131 +1633,285 @@ function setKc(num1,num,name) {
 
 }
 
-function setJhzxl(num1,num,name) {
+function setJhzxl(num1,num,name,date) {
     var myChart = echarts.init(document.getElementById('jhzxl'));
 
     // 指定图表的配置项和数据
+    // var option = {
+    //     /*title : {
+    //         text: '计划执行率',
+    //             x:'center',
+    //             textStyle: {
+    //                 //文字颜色
+    //                 color: '#208198',
+    //         },
+    //     },*/
+    //     tooltip : {
+    //         trigger: 'axis'
+    //     },
+    //     grid: {
+    //         left: '3%',
+    //         top:'20%',
+    //         containLabel: true
+    //     },
+    //     legend: {
+    //      /*   symbol: 'diamond',     //设定为实心点*/
+    //         symbol: 'circle',     //设定为实心点
+    //         symbolSize: 8,   //设定实心点的大小
+    //         x:'right',
+    //         y:'top',
+    //         data:['计划执行','实际执行'],
+    //         textStyle: {
+    //             color: '#51e5fc'
+    //         },
+    //
+    //     },
+    //     calculable : true,
+    //     xAxis : [
+    //         {
+    //             type : 'category',
+    //             boundaryGap : false,
+    //             data : name,
+    //
+    //             axisLabel: {
+    //
+    //                 textStyle: {
+    //                     color: '#51e5fc'
+    //                 }
+    //             },
+    //
+    //         }
+    //     ],
+    //     yAxis : {
+    //         show:true,
+    //         type : 'value',
+    //         splitLine:{show: false},//去除网格线
+    //         axisLabel: {
+    //             color: '#92F1FF',
+    //         formatter:function(param){
+    //             return (param*100)+'%';
+    //         }
+    //         },
+    //         axisLine: {
+    //             lineStyle: {
+    //                 // 设置轴颜色
+    //                 color: 'rgba(1,1,1,0)'
+    //             }
+    //         }
+    //     }
+    //     ,
+    //     series : [
+    //         {
+    //             name:'计划执行',
+    //             type:'line',
+    //             areaStyle: {
+    //                 normal: {type: 'default',
+    //                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+    //                         offset: 0,
+    //                         color: 'rgba(256,169,46,0.5)'
+    //                     }, {
+    //                         offset: 1,
+    //                         color: 'rgba(0,0,255,0.2)'
+    //                     }], false)
+    //                 }
+    //             },
+    //             smooth:false,
+    //             itemStyle: {
+    //                 normal: {areaStyle: {type: 'default'},
+    //                     color:'#FFA92E',
+    //                     lineStyle:{
+    //                         color:'#FFA92E'
+    //                     }
+    //                 }
+    //             },
+    //             data:num,
+    //         },
+    //         {
+    //             name:'实际执行',
+    //             type:'line',
+    //             areaStyle: {
+    //                 normal: {
+    //                     type: 'default',
+    //                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+    //                         offset: 0,
+    //                         color: 'rgba(48, 255, 28,0.5)'
+    //                     }, {
+    //                         offset: 1,
+    //                         color: 'rgba(19, 37, 250,0.2)'
+    //                     }], false)
+    //                 }
+    //             },
+    //             symbol: 'circle',     //设定为实心点
+    //             symbolSize: 8,   //设定实心点的大小
+    //             smooth:true,
+    //
+    //             itemStyle: {normal: {areaStyle: {type: 'default'},
+    //                     color:'#3BFF40',
+    //                     lineStyle:{
+    //                         color:'#3BFF40'
+    //                     }
+    //             }
+    //
+    //             },
+    //             data:num1,
+    //         }
+    //     ]
+    // };
+    // 使用刚指定的配置项和数据显示图表。
+
     var option = {
-        /*title : {
-            text: '计划执行率',
-                x:'center',
-                textStyle: {
-                    //文字颜色
-                    color: '#208198',
-            },
-        },*/
-        tooltip : {
-            trigger: 'axis'
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'cross',
+                crossStyle: {
+                    color: '#999'
+                }
+            }
         },
-        grid: {
-            left: '3%',
-            top:'20%',
-            containLabel: true
+        toolbox: {
+            feature: {
+                // dataView: {show: true, readOnly: false},
+                // magicType: {show: true, type: ['line', 'bar']},
+                // restore: {show: true},
+                // saveAsImage: {show: true}
+            }
         },
         legend: {
-         /*   symbol: 'diamond',     //设定为实心点*/
-            symbol: 'circle',     //设定为实心点
-            symbolSize: 8,   //设定实心点的大小
-            x:'right',
-            y:'top',
-            data:['计划执行','实际执行'],
+            data:['计划量','执行量','计划执行率'],
+            align: 'left',
+            right: 10,
             textStyle: {
-                color: '#51e5fc'
+                color: "#9FCCFF",
+                fontSize:20,
+                padding:[0,0,0,8]
             },
-            
+            itemWidth: 20,
+            itemHeight: 20,
+            itemGap: 35
         },
-        calculable : true,
-        xAxis : [
+        xAxis: [
             {
-                type : 'category',
-                boundaryGap : false,
-                data : name,
+                type: 'category',
+                data: date,
+                // data: ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'],
 
-                axisLabel: {
-
-                    textStyle: {
-                        color: '#51e5fc'
+                axisPointer: {
+                    type: 'shadow'
+                },
+                axisLine: {
+                    lineStyle: {
+                        // 设置x轴颜色
+                        color: 'rgba(1,1,1,0)'
                     }
                 },
-                
+
+                axisLabel:{
+                    type : 'category',
+                    color:'#92F1FF',
+                    interval: '0',
+                    fontSize:20,
+
+
+                    // rotate:-30,
+                },
             }
         ],
-        yAxis : {
-            show:true,
-            type : 'value',
-            splitLine:{show: false},//去除网格线
-            axisLabel: {
-                color: '#92F1FF',
-            formatter:function(param){
-                return (param*100)+'%';
-            }
-            },
-            axisLine: {
-                lineStyle: {
-                    // 设置轴颜色
-                    color: 'rgba(1,1,1,0)'
-                }
-            }
-        }
-        ,
-        series : [
+        yAxis: [
             {
-                name:'计划执行',
-                type:'line',
-                areaStyle: {
-                    normal: {type: 'default',
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(256,169,46,0.5)'
-                        }, {
-                            offset: 1,
-                            color: 'rgba(0,0,255,0.2)'
-                        }], false)
+                type: 'value',
+                name: '计划量',
+                min: 0,
+                max: 250,
+                interval: 50,
+                splitLine:{show: false},//去除网格
+                axisLabel: {
+                    color: '#92F1FF',
+                },
+                axisLine: {
+                    lineStyle: {
+                        // 设置x轴颜色
+                        color: 'rgba(1,1,1,0)'
                     }
                 },
-                smooth:false,
-                itemStyle: {
-                    normal: {areaStyle: {type: 'default'},
-                        color:'#FFA92E',
-                        lineStyle:{
-                            color:'#FFA92E'
-                        }
-                    }
-                },
-                data:num,
             },
             {
-                name:'实际执行',
-                type:'line',
-                areaStyle: {
-                    normal: {
-                        type: 'default',
-                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                            offset: 0,
-                            color: 'rgba(48, 255, 28,0.5)'
-                        }, {
-                            offset: 1,
-                            color: 'rgba(19, 37, 250,0.2)'
-                        }], false)
+                type: 'value',
+                name: '计划量',
+                min: 0,
+                max: 100,
+                interval: 25,
+                splitLine:{show: false},//去除网格
+                axisLabel: {
+                    color: '#92F1FF',
+                    formatter: '{value} %'
+                },
+                axisLine: {
+                    lineStyle: {
+                        // 设置x轴颜色
+                        color: 'rgba(1,1,1,0)'
                     }
                 },
-                symbol: 'circle',     //设定为实心点
-                symbolSize: 8,   //设定实心点的大小
-                smooth:true,
+            },
 
-                itemStyle: {normal: {areaStyle: {type: 'default'},
-                        color:'#3BFF40',
-                        lineStyle:{
-                            color:'#3BFF40'
-                        }
-                }
-                
+
+
+
+        ],
+        series: [
+            {
+                name:'计划量',
+                type:'bar',
+                // data:num,
+                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3,2.7,2.5],
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'RGBA(42, 156, 252, 1)'
+                        }, {
+                            offset: 1,
+                            color: 'RGBA(42, 156, 252, 0.1)'
+                        }]),
+                    }
                 },
-                data:num1,
+                barWidth : 20,
+            },
+            {
+                name:'执行量',
+                type:'bar',
+                // data:num1,
+                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3,2.1,1.8],
+                itemStyle: {
+                    normal: {
+                        color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                            offset: 0,
+                            color: 'RGBA(40, 225, 184, 1)'
+                        }, {
+                            offset: 1,
+                            color: 'RGBA(2, 172, 162, 0.1)'
+                        }]),
+                    }
+                },
+                barWidth : 20,
+
+            },
+            {
+                name:'计划执行率',
+                type:'line',
+                yAxisIndex: 1,
+                // data:name,
+                data:[80, 72, 90, 77, 63, 82, 93, 84, 90, 95, 89, 82,97,95],
+                itemStyle: {
+                    normal: {
+                        color: 'RGBA(40, 225, 184, 1)'
+                    }
+                }
             }
         ]
     };
-    // 使用刚指定的配置项和数据显示图表。
+
+
     myChart.setOption(option);
 
 }

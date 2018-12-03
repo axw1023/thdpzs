@@ -6,9 +6,11 @@
     <result column="num" property="num" jdbcType="DOUBLE" />
     <result column="num1" property="num1" jdbcType="DOUBLE" />
     <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+
   </resultMap>
   <select id="getJhzxl" resultMap="BaseResultMap">
-    select * from wdth_erp_jhzxl 
+    select * from wdth_erp_jhzxl
   </select>
   <insert id="insert" parameterType="com.qdjxd.wdth01.model.wdth_erp_Jhzxl" >
     insert into wdth_erp_jhzxl (jan, feb, mar, 
