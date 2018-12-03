@@ -95,11 +95,16 @@ function bing(arr) {
                             normal: {
                                 show: true,
                                 position: 'center',
-                                formatter: "共{a|{c}}项",
-                                rich:{
+                                formatter: ['{a|{b}：{c}台}\n','{b|共'+arr.length+'项}'].join(''),
+                                rich: {
                                     a:{
-                                        fontSize: 41,
-                                        color: '#92F1FF'
+                                        fontSize: 25,
+                                        color: '#3bc5ff'
+                                    },
+                                    b: {
+                                        fontSize: 25,
+                                        color: '#3bc5ff',
+                                        height: 36
                                     }
                                 },
                                 textStyle: {
@@ -194,7 +199,7 @@ function bing(arr) {
                                 globalCoord: false // 缺省为 false
                             }},label: {
                             normal: {
-                                show: false,}},},
+                                show: false,}},}
 
                 ]
             }
