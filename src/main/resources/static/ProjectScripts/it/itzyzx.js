@@ -23,7 +23,7 @@ $.ajax({
             var ls = data[i];
 
 
-            name +="<span style='font-size: 15px;padding-right: 139px'>"+ls.type+"</span>"
+            name +="<span style='font-size: 15px;padding-right: 143px'>"+ls.type+"</span>"
          }
 
 
