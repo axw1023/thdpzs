@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -96,7 +97,7 @@ public class ERPandBI {
             c.add(Calendar.DATE, i-13);
             Date d = c.getTime();
             String day = df.format(d);
-            getJhzxl.get(i).setName(day);
+            getJhzxl.get(i).setDate(day);
         }
 
         return getJhzxl;

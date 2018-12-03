@@ -1,5 +1,7 @@
 package com.qdjxd.wdth01.model;
 
+import java.util.Date;
+
 public class wdth_erp_Jhzxl {
     private Integer sheetid;
 
@@ -10,6 +12,8 @@ public class wdth_erp_Jhzxl {
     private double num1;
 
     private String name;
+
+    private String date;
 
     public Integer getSheetid() {
         return sheetid;
@@ -41,5 +45,13 @@ public class wdth_erp_Jhzxl {
 
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
