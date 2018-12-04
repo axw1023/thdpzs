@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>数字孪生工厂</title>
+    <title>万达天弘化学概况</title>
 
     <!--外部css-->
 <!--    <link rel="stylesheet" type="text/css" th:href="@{/ProjectScripts/it/it.css}">-->
@@ -44,23 +44,22 @@
 -->
     <div id="dy">
         <video id="number"   >
-            <source src="http://10.0.30.200:8080/number/number.mp4" controls="controls">
+            <source src="http://10.0.30.200:8080/151234115.mp4" controls="controls">
         </video>
     </div>
 
 </body>
 <!--<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI1.js}"></script>-->
-<script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
 <script type="text/javascript">
     var video = document.getElementById("number");
     var flag= true;
     // 页面跳转
     $(document).keydown(function(event){
         if(event.keyCode == 39){
-            window.location.href="/turnToBigData"
+            window.location.href="/turnToAllLink"
         }else if(event.keyCode == 37){
-            window.location.href="/turnToIT"
+            window.location.href="/"
         }else if(event.keyCode == 13){
             if(flag){
                 video.play();
@@ -72,4 +71,5 @@
         }
     });
 </script>
+<script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
 </html>
