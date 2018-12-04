@@ -1,31 +1,17 @@
 $(function () {
-
 // IT页面
     getNumByGrade() ;
-
 });
-var currentIndex2 = -1;
-var pieint=null;
-function bing(arr) {
+var itChart;
+var itOption;
+function bing(arr,rest) {
     var dom = document.getElementById("char");
-    var myChart2 = echarts.init((dom));
-
-
-
-
-
-    option = {
+    itChart = echarts.init((dom));
+    itOption = {
         color: [
-
             "#6F41FF", "#FC363F",
             "#FF824E", "#25CDAA"],
-        // tooltip: {
-        //     trigger: 'item',
-        //     formatter: "{a} <br/>{b}: {c} ({d}%)"
-        // },
-
         legend: {
-
             itemWidth: 6,   // 设置图例图形的宽
             itemHeight: 20,  // 设置图例图形的高
             itemGap: 47,
@@ -36,44 +22,43 @@ function bing(arr) {
               show: true,
             y:'right',
             right:'47px',
-
-
             textStyle: {
                 color: '#92F1FF',
                 fontSize: 20
-
             }
-
         },
         series: [
-
             {
-
                 type: 'pie',
                 radius: ['65%', '91%'],
                 center: ['30%', '50%'],
                 avoidLabelOverlap: false,
-
-
-
-                    emphasis: {
+                label: {
+                    normal: {
                         show: false,
-                        formatter: "共{a|{c}}台",
-                        rich:{
+                        position: 'center'
+                    },
+                    emphasis:{
+                        show: true,
+                        formatter: ['{a|{b}：{c}项}\n','{b|共'+rest.BusinessDetailsView.TotalRecords+'项}'].join(''),
+                        rich: {
                             a:{
-                                fontSize: 41
+                                fontSize: 25,
+                                color: '#3bc5ff'
+                            },
+                            b: {
+                                fontSize: 25,
+                                color: '#3bc5ff',
+                                height: 36
                             }
                         }
-
+                    }
                 },
                 labelLine: {
                     normal: {
                         show: false
                     }
                 },
-
-                // data:[{value:rest[0].num,name:rest[0].type}]
-
                 data: [
 
                     { value:arr[4].value,name:arr[4].name,
@@ -91,27 +76,6 @@ function bing(arr) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }},
-                        label: {
-                            normal: {
-                                show: true,
-                                position: 'center',
-                                formatter: ['{a|{b}：{c}台}\n','{b|共'+arr.length+'项}'].join(''),
-                                rich: {
-                                    a:{
-                                        fontSize: 25,
-                                        color: '#3bc5ff'
-                                    },
-                                    b: {
-                                        fontSize: 25,
-                                        color: '#3bc5ff',
-                                        height: 36
-                                    }
-                                },
-                                textStyle: {
-                                    fontSize: 25,
-                                    color: '#92F1FF'
-                                }
-                            }}
 
                     },
                     {value:arr[3].value,name:arr[3].name,itemStyle:{ color: {
@@ -127,9 +91,9 @@ function bing(arr) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }},
-                        label: {
+                        /*label: {
                             normal: {
-                                show: false,}}
+                                show: false,}*/
                     },
                     {value:arr[2].value,name:arr[2].name,itemStyle:{ color: {
                                 type: 'linear',
@@ -144,32 +108,7 @@ function bing(arr) {
                                 }],
                                 globalCoord: false // 缺省为 false
                             }},
-                        label: {
-                            normal: {
-                                show: false,
-                                position: 'center',
-                                formatter: "共{a|{c}}台",
-                                rich:{
-                                    a:{
-                                        fontSize: 41
-                                    }
-                                },
-                                textStyle: {
-                                    fontSize: 25,
-                                    color: '#92F1FF'
-                                }
-                            }
-                        },
-                        emphasis: {
-                            show: false,
-                            formatter: "共{a|{c}}台",
-                            rich:{
-                                a:{
-                                    fontSize: 41
-                                }
-                            }
-
-                        },},
+                    },
                     {value:arr[1].value,name:arr[1].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
@@ -182,9 +121,7 @@ function bing(arr) {
                                     offset: 1, color: '#28E1B8' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }},label: {
-                            normal: {
-                                show: false,}}
+                            }},
                             }, {value:arr[0].value,name:arr[0].name,itemStyle:{ color: {
                                 type: 'linear',
                                 x: 0,
@@ -197,36 +134,33 @@ function bing(arr) {
                                     offset: 1, color: '#DE7665' // 100% 处的颜色
                                 }],
                                 globalCoord: false // 缺省为 false
-                            }},label: {
-                            normal: {
-                                show: false,}},}
-
+                            }}}
                 ]
             }
         ]
     };
-    myChart2.setOption(option);
-
-    // pieint=setInterval(function () {
-    //     var dataLen = option.series[0].data.length;
-    //     // 取消之前高亮的图形
-    //     myChart2.dispatchAction({
-    //         type: 'downplay',
-    //         seriesIndex: 0,
-    //         dataIndex: currentIndex2
-    //     });
-    //     currentIndex2 = (currentIndex2 + 1) % dataLen;
-    //     // 高亮当前图形
-    //     myChart2.dispatchAction({
-    //         type: 'highlight',
-    //         seriesIndex: 0,
-    //         dataIndex: currentIndex2
-    //     });
-    //
-    // }, 3000);
-}
+    itChart.setOption(itOption);
+};
 
 
+var currentIndex = -1;
+setInterval(function () {
+    var dataLen = itOption.series[0].data.length;
+    // 取消之前高亮的图形
+    itChart.dispatchAction({
+        type: 'downplay',
+        seriesIndex: 0,
+        dataIndex: currentIndex
+    });
+    currentIndex = (currentIndex + 1) % dataLen;
+    // 高亮当前图形
+    itChart.dispatchAction({
+        type: 'highlight',
+        seriesIndex: 0,
+        dataIndex: currentIndex
+    });
+
+}, 1500);
 
 
 
@@ -262,7 +196,7 @@ function getNumByGrade() {
         }
 
 
-          bing(arr) ;
+          bing(arr,rest) ;
 
 
         }

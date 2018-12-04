@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-table/dist/bootstrap-table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../plugin/layer/mobile/need/layer.css"/>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/user/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/user/custom.css"/>
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/user/font-awesome.css"/>
+</head>
+<body class="cbp-spmenu-push">
+<div class="main-content">
+
+
+    <div id="page-wrapper">
+        <div class="main-page login-page ">
+            <!--<h3 class="title1">登录框</h3>-->
+            <div class="widget-shadow">
+                <div class="login-top">
+                    <h2>大屏系统维护登录 </h2>
+                </div>
+                <div class="login-body">
+                    <form action="">
+                        <input type="text" class="user" name="email" placeholder="Enter your user" required="">
+                        <input type="password" name="password" class="lock" placeholder="password">
+                        <input type="submit" name="Sign In" value="Sign In">
+                        <div class="forgot-grid">
+                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>记住我</label>
+                            <div class="forgot">
+                                <a href="#">忘记密码?</a>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--//footer-->
+</div>
+<!-- Classie -->
+<script src="js/classie.js"></script>
+<script>
+    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+        showLeftPush = document.getElementById( 'showLeftPush' ),
+        body = document.body;
+
+    showLeftPush.onclick = function() {
+        classie.toggle( this, 'active' );
+        classie.toggle( body, 'cbp-spmenu-push-toright' );
+        classie.toggle( menuLeft, 'cbp-spmenu-open' );
+        disableOther( 'showLeftPush' );
+    };
+
+    function disableOther( button ) {
+        if( button !== 'showLeftPush' ) {
+            classie.toggle( showLeftPush, 'disabled' );
+        }
+    }
+</script>
+<!--scrolling js-->
+<script src="js/jquery.nicescroll.js"></script>
+<script src="js/scripts.js"></script>
+<!--//scrolling js-->
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.js"> </script>
+</body>
+<script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/plugin/bootstrap/js/bootstrap.js}"></script>
+<script type="text/javascript" th:src="@{/plugin/bootstrap-table/dist/bootstrap-table.js}"></script>
+<script type="text/javascript" th:src="@{/plugin/layer/mobile/layer.js}"></script>
+</html>
