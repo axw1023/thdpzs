@@ -160,7 +160,7 @@ setInterval(function () {
         dataIndex: currentIndex
     });
 
-}, 1000);
+}, 1500);
 
 
 
