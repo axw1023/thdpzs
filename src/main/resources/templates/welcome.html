@@ -18,11 +18,26 @@
     </style>
     <script type="text/javascript">
 
+
+
+
+
         // 页面跳转
         $(document).keydown(function(event){
-            if(event.keyCode == 39){
-            window.location.href="/turnToAllLink"
-            }
+
+            $.ajax({
+                url: "/getTurnToPage",
+                type: "get",
+                async: false,
+                data: {mapper: "/"},
+                success: function (data) {
+
+                }
+            });
+
+            // if(event.keyCode == 39){
+            // window.location.href="/turnToAllLink"
+            // }
         });
     </script>
 </head>

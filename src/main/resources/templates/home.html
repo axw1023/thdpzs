@@ -276,22 +276,31 @@
 
 		// 箭头循环展示
 		function show (){
-            $("#img_jsjz_right").css('display','block');
-            $("#img_jsjz_left").css('display','block');
+            // $("#img_jsjz_right").css('display','block');
+            // $("#img_jsjz_left").css('display','block');
 
-            var left_lenght = [635,912,1336,1696];
-            var right_lenght = [600,1145,1663];
-            var i = 0;
+            var left_lenght = [635,912,1336,1696,1663,1145,600];
+            var top_lenght = [198,198,198,198,686,686,686];
             var j = 0;
-            setInterval(function () {
-                $("#img_jsjz_left").css('left',right_lenght[2-j%3]);
+            var interval = setInterval(function () {
+                debugger
+                if(i != 2 ){
+                    clearInterval(interval);//停止
+                }else {
+                    if (j % 7 < 4) {
+                        $("#img_jsjz_right").css('display', 'block');
+                        $("#img_jsjz_left").css('display', 'none');
+                        $("#img_jsjz_right").css('left', left_lenght[j % 7]);
+                        $("#img_jsjz_right").css('top', top_lenght[j % 7]);
+                    } else {
+                        $("#img_jsjz_right").css('display', 'none');
+                        $("#img_jsjz_left").css('display', 'block');
+                        $("#img_jsjz_left").css('left', left_lenght[j % 7]);
+                        $("#img_jsjz_left").css('top', top_lenght[j % 7]);
+                    }
+                }
                 j++;
             }, 1200);
-            setInterval(function () {
-                $("#img_jsjz_right").css('left',left_lenght[i%4]);
-                i++;
-            }, 900);
-
 		}
 
 
@@ -374,8 +383,10 @@
                     document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}else if(i==2){
 
-                    $("#img_jsjz_huan_left").hide();
-                    $("#img_jsjz_huan_right").hide();
+                    $("#img_jsjz_right").css('display','none');
+                    $("#img_jsjz_left").css('display','none');
+                    $("#img_jsjz_huan_left").css('display','none');
+                    $("#img_jsjz_huan_right").css('display','none');
 
                     $("#imgPlay1").animate({
                         "left":'500px',

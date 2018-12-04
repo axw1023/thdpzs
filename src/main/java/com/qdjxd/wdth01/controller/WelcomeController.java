@@ -1,10 +1,23 @@
 package com.qdjxd.wdth01.controller;
 
+import com.qdjxd.wdth01.dao.Wdth_xt_pageMapper;
+import com.qdjxd.wdth01.model.Wdth_xt_page;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class WelcomeController {
+
+    @Resource
+    private Wdth_xt_pageMapper pageMapper;
 
     //    欢迎页√1
     @RequestMapping("/")
@@ -102,4 +115,19 @@ public class WelcomeController {
     public String toolShow(){
         return "tool";
     }
+
+
+
+
+    @RequestMapping(value = "/getTurnToPage", method = RequestMethod.GET)
+    @ResponseBody
+    List<Wdth_xt_page> getPointData(@RequestParam("mapper")String mapper){
+        List<Wdth_xt_page> page = pageMapper.selectAll();
+        List<String> mappers = new ArrayList<>();
+        for(int i = 0;i < page.size();i++){
+        }
+        return page;
+    }
+
+
 }
