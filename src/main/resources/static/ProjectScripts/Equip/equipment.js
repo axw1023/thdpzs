@@ -269,12 +269,7 @@ var equpEcharts = {
                     seriesIndex: 0,
                     dataIndex: currentIndex
                 });
-                // 显示 tooltip 显示悬停提示框
-                // youkezhengjianleixing_chart.dispatchAction({
-                //     type: 'showTip',
-                //     seriesIndex: 0,
-                //     dataIndex: currentIndex
-                // });
+
             }, 1000);
         });
 
