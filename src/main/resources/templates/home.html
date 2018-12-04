@@ -76,12 +76,35 @@
 				position: absolute;
 				top:250px;
 				left:2000px;
-
 				width: 1554px;
 				height: 500px;
 				opacity: 1;
 				background-image: url("../../images/home/文字.png");
 				background-repeat: no-repeat;
+			}
+
+			#img_jsjz_right{
+				position: absolute;
+				top:198px;
+				left:635px;
+				width: 84px;
+				height: 99px;
+				opacity: 1;
+				background-image: url("../../images/home/建设进展_右.png");
+				background-repeat: no-repeat;
+				display:none;
+			}
+
+			#img_jsjz_left{
+				position: absolute;
+				top:686px;
+				left:1663px;
+				width: 84px;
+				height: 99px;
+				opacity: 1;
+				background-image: url("../../images/home/建设进展_左.png");
+				background-repeat: no-repeat;
+				display:none;
 			}
 
 			/*旋转光晕*/
@@ -193,10 +216,18 @@
 		<div class="md-modal md-effect-2" id="modal-2">
 			<div class="md-content">
 				<div id = "imgPlay1">
+					<!--建设进展动态图片-环、箭头-->
+					<div id = "img_jsjz_huan_left" class="rotating"></div>
+					<div id = "img_jsjz_huan_right" class="rotating"></div>
+					<div id = "img_jsjz_left"></div>
+					<div id = "img_jsjz_right"></div>
 					<button id ="close" class="md-close"style="display: none">Close me!</button>
 				</div>
 			</div>
 		</div>
+
+
+
 
 		<!--钻石图片-->
 	     <div id = "imgLeft1" class="md-trigger" data-modal="modal-2">	<div class="big_title">目标愿景</div></div>
@@ -243,6 +274,27 @@
             $(".rotating").rotate(angle);
         }, 70);
 
+		// 箭头循环展示
+		function show (){
+            $("#img_jsjz_right").css('display','block');
+            $("#img_jsjz_left").css('display','block');
+
+            var left_lenght = [635,912,1336,1696];
+            var right_lenght = [600,1145,1663];
+            var i = 0;
+            var j = 0;
+            setInterval(function () {
+                $("#img_jsjz_left").css('left',right_lenght[2-j%3]);
+                j++;
+            }, 1200);
+            setInterval(function () {
+                $("#img_jsjz_right").css('left',left_lenght[i%4]);
+                i++;
+            }, 900);
+
+		}
+
+
         $(document).keydown(function(event) {
             var e = event || window.event;
             var k = e.keyCode || e.which;
@@ -250,8 +302,7 @@
                 console.log(i);
 				if(i==0){
 				    i=0;
-                    $("#imgPlay1").animate({"opacity":0},300);
-                    setTimeout(function(){
+                    $("#imgPlay1").animate({"opacity":0},300,function(){
                         $("#imgPlay1").css({
                             "left":'200px',
                             "top":'100px',
@@ -260,15 +311,15 @@
                             "background-image":"url('../../images/home/目标愿景.png')",
                             "opacity":1
                         });
-						$("#imgPlay1").animate({
-							'width':'2344px',
+                        $("#imgPlay1").animate({
+                            'width':'2344px',
                             "top":'80px',
-							'height':'906px',
-							"left":'1600px',
-							"opacity":1,
+                            'height':'906px',
+                            "left":'1600px',
+                            "opacity":1,
 
-						},300);
-					},300);
+                        },300);
+					});
                     document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
 				}else if(i==1){
                     $("#imgPlay1").animate({
@@ -277,8 +328,7 @@
                         "width":0,
                         "height":0,
 
-                    },300);
-                    setTimeout(function() {
+                    },300,function(){
                         $("#imgPlay1").css({
                             "left": '500px',
                             "top": '200px',
@@ -292,37 +342,64 @@
                             'width': '2344px',
                             'height': '906px',
                             "left": '1600px',
-                      		"top":'80px',
+                            "top":'80px',
                             "opacity": 1,
                         }, 300);
-                    },300);
+
+                        $("#img_jsjz_huan_left").css({
+							"position":'absolute',
+                            "left": '450px',
+                            "top": '330px',
+                            "width": '326px',
+                            "height": '326px',
+                            "background-image": "url('../../images/home/建设进展_环.png')",
+                            "opacity": 1
+                        });
+
+                        $("#img_jsjz_huan_right").css({
+                            "position":'absolute',
+                            "left": '1575px',
+                            "top": '330px',
+                            "width": '326px',
+                            "height": '326px',
+                            "background-image": "url('../../images/home/建设进展_环.png')",
+                            "opacity": 1
+                        });
+						// 循环展示箭头
+                        show();
+
+
+					});
                     document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
                     document.getElementById("imgLeft1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}else if(i==2){
+
+                    $("#img_jsjz_huan_left").hide();
+                    $("#img_jsjz_huan_right").hide();
+
                     $("#imgPlay1").animate({
                         "left":'500px',
                         "top":'200px',
                         "width":0,
                         "height":0,
 
-                    },300);
-                   setTimeout(function(){
-                       $("#imgPlay1").css({
-                           "left":'4200px',
-                           "top":'500px',
-                           'width':'0',
-                           'height':'0',
-                           "background-image":"url('../../images/home/成绩成果.png')",
-                           "opacity":1
-                       });
-                       $("#imgPlay1").animate({
-                           'width':'2344px',
-                           'height':'906px',
-                           "top":'80px',
-                           'left':'1600px',
-                           "opacity":1,
-                       },300);
-				   },400)
+                    },300,function(){
+                        $("#imgPlay1").css({
+                            "left":'4200px',
+                            "top":'500px',
+                            'width':'0',
+                            'height':'0',
+                            "background-image":"url('../../images/home/成绩成果.png')",
+                            "opacity":1
+                        });
+                        $("#imgPlay1").animate({
+                            'width':'2344px',
+                            'height':'906px',
+                            "top":'80px',
+                            'left':'1600px',
+                            "opacity":1,
+                        },300);
+					});
                     document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
                     document.getElementById("imgLeft2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}else if(i==3){
@@ -332,9 +409,7 @@
                         "right":'auto',
                         "width":0,
                         "height":0,
-
-                    },300);
-                    setTimeout(function() {
+                    },300,function(){
                         $("#imgPlay1").css({
                             "left": '5000px',
                             "top": '200px',
@@ -343,14 +418,14 @@
                             "background-image": "url('../../images/home/计划展望.png')",
                             "opacity": 1
                         });
-                       $("#imgPlay1").animate({
+                        $("#imgPlay1").animate({
                             'width': '2344px',
                             'height': '906px',
-                             "top":'80px',
+                            "top":'80px',
                             'left': '1600px',
                             "opacity": 1,
                         }, 300);
-                    },300);
+					});
                     document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/点亮.png\")";
                     document.getElementById("imgRight1").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}else if(i==4){
@@ -361,8 +436,7 @@
                         "width":0,
                         "height":0,
 
-                    },300);
-                    setTimeout(function() {
+                    },300,function(){
                         $("#imgPlay1").css({
                             "left": '2000px',
                             "top": '250px',
@@ -378,7 +452,7 @@
                             "top": '250px',
                             "opacity": 1,
                         }, 300);
-                    },300);
+					});
                     document.getElementById("imgRight2").style.backgroundImage = "url(\"../../images/home/默认.png\")";
 				}
 				i++;
