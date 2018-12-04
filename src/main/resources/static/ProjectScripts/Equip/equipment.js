@@ -111,17 +111,17 @@ var dataFormat = {
             $.each(wasteArr2,function(i,n){
                 waste2 += '<tr  style="height: '+h2+'px;">';
                 waste2 += '<td>'+n.wasteName+'</td>';
-               if(n.so2Concentration<n.so2Standard||n.so2Standard==null||n.so2Standard=='') waste2 += '<td style="color: greenyellow;">'+n.so2Concentration+'</td>';
+               if(n.so2Concentration<n.so2Standard||n.so2Standard==null||n.so2Standard=='') waste2 += '<td style="color: #26ff26;">'+n.so2Concentration+'</td>';
                else waste2 += '<td style="color: red;">'+n.so2Concentration+'</td>';
                 if(n.so2Standard==null ||n.so2Standard == "")waste2+="<td></td>"
                 else waste2 += '<td>'+n.so2Standard+'</td>';
 
-                if(n.noConcentration<n.noStandard||n.noStandard==null||n.noStandard=='') waste2 += '<td style="color: greenyellow;">'+n.noConcentration+'</td>';
+                if(n.noConcentration<n.noStandard||n.noStandard==null||n.noStandard=='') waste2 += '<td style="color: #26ff26;">'+n.noConcentration+'</td>';
                 else waste2 += '<td style="color: red;">'+n.noConcentration+'</td>';
                 if(n.noStandard==null ||n.noStandard == "")waste2+="<td></td>"
                 else waste2 += '<td>'+n.noStandard+'</td>';
 
-                if(n.ycConcentration<n.ycStandard||n.ycStandard==null||n.ycStandard=='') waste2 += '<td style="color: greenyellow;">'+n.ycConcentration+'</td>';
+                if(n.ycConcentration<n.ycStandard||n.ycStandard==null||n.ycStandard=='') waste2 += '<td style="color: #26ff26;">'+n.ycConcentration+'</td>';
                 else waste2 += '<td style="color: red;">'+n.ycConcentration+'</td>';
                 if(n.ycStandard==null ||n.ycStandard == "")waste2+="<td></td>"
                 else waste2 += '<td>'+n.ycStandard+'</td>';

@@ -18,14 +18,10 @@
     </style>
     <script type="text/javascript">
 
-
-
-
-
         // 页面跳转
         $(document).keydown(function(event){
-
-            $.ajax({
+            window.location.href="/turnToDigitalFactory2"
+           /* $.ajax({
                 url: "/getTurnToPage",
                 type: "get",
                 async: false,
@@ -33,11 +29,7 @@
                 success: function (data) {
 
                 }
-            });
-
-            // if(event.keyCode == 39){
-            // window.location.href="/turnToAllLink"
-            // }
+            });*/
         });
     </script>
 </head>

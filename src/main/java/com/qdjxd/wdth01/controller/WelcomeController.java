@@ -74,7 +74,10 @@ public class WelcomeController {
     public String turnToDigitalFactory() {
         return "Number";
     }
-
+    @RequestMapping("/turnToDigitalFactory2")
+    public String turnToDigitalFactory2() {
+        return "Number2";
+    }
     //    大数据10
     @RequestMapping("/turnToBigData")
     public String turnToBigData() {

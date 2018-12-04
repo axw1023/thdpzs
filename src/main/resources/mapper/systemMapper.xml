@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.qdjxd.wdth01.dao.SystemMapper">
+    <resultMap id="MenuResult" type="com.qdjxd.wdth01.common.TreeNode">
+        <id column="id" property="id" jdbcType="VARCHAR"></id>
+        <result column="menu_name" property="name" jdbcType="VARCHAR"></result>
+        <result column="menu_path" property="path" jdbcType="VARCHAR"></result>
+        <result column="parent_menu" property="parent" jdbcType="VARCHAR"></result>
+    </resultMap>
+
+    <select id="getMenuList" resultMap="MenuResult">
+        SELECT
+            id,
+            menu_name,
+            menu_path,
+            parent_menu
+        FROM
+            wdth_system_menu
+        WHERE
+            m_enable = 1
+        ORDER BY
+            m_sort
+    </select>
+</mapper>

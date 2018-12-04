@@ -84,3 +84,20 @@ body{
     border-radius: 15px;
     margin-right: 15px;
 }
+
+
+.line-1
+{
+    width: 100px;
+    height: 100px;
+    position:relative;
+    animation:lightPoint_move 5s infinite;
+    background-image: url("../../images/allLink/椭圆.png");
+}
+
+@keyframes lightPoint_move
+{
+    from  {top:640px;left: 190px}
+    50% {top:640px;left:486px}
+    100%{ top:460px;left:740px}
+}
