@@ -776,34 +776,6 @@ function setThreeData(_d){
                     symbolSize: 10,
                     sampling: 'average',
                     lineStyle:{
-                        color:'#28E1B8'
-                    },
-                    itemStyle: {
-                        normal: {
-                            color: '#28E1B8'
-                        }
-                    },
-                    areaStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                                offset: 0,
-                                color: 'RGBA(40, 225, 184, 0.6)'
-                            }, {
-                                offset: 1,
-                                color: 'RGBA(2, 172, 162, 0)'
-                            }])
-                        }
-                    },
-                    data:data3
-                },
-                {
-                    name:name[0],
-                    type:'line',
-                    smooth: false,
-                    symbol: 'circle',
-                    symbolSize: 10,
-                    sampling: 'average',
-                    lineStyle:{
                         color:'#FF944D'
                     },
                     itemStyle: {
@@ -822,6 +794,34 @@ function setThreeData(_d){
                             }])
                         }
                     },
+                    data:data3
+                },
+                {
+                    name:name[0],
+                    type:'line',
+                    smooth: false,
+                    symbol: 'circle',
+                    symbolSize: 10,
+                    sampling: 'average',
+                    lineStyle:{
+                        color:'#D24B4C'
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#D24B4C'
+                        }
+                    },
+                    areaStyle: {
+                        normal: {
+                            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                                offset: 0,
+                                color: 'RGBA(210, 75, 76, 0.6)'
+                            }, {
+                                offset: 1,
+                                color: 'RGBA(210, 75, 76, 0)'
+                            }])
+                        }
+                    },
                     data: data1
                 },
                 {
@@ -832,21 +832,21 @@ function setThreeData(_d){
                     symbolSize: 10,
                     sampling: 'average',
                     lineStyle:{
-                        color:'#59B3FF'
+                        color:'#28E1B8'
                     },
                     itemStyle: {
                         normal: {
-                            color: '#59B3FF'
+                            color: '#28E1B8'
                         }
                     },
                     areaStyle: {
                         normal: {
                             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
                                 offset: 0,
-                                color: 'RGBA(89, 179, 255, .6)'
+                                color: 'RGBA(40, 255, 184, .6)'
                             }, {
                                 offset: 1,
-                                color: 'RGBA(89, 179, 255, 0)'
+                                color: 'RGBA(40, 255, 184, 0)'
                             }])
                         }
                     },
