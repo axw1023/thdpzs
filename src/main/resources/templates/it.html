@@ -51,11 +51,21 @@ video{margin-top: -130px /* 视频在他的固定div 中进行上下活动 黑�
 
         // 页面跳转
         $(document).keydown(function(event){
-            if(event.keyCode == 39){
-                window.location.href="/turnToDigitalFactory"
-            }else if(event.keyCode == 37){
-                window.location.href="/turnToEquipment"
-            }
+            $.ajax({
+                url: "/getTurnToPage",
+                type: "get",
+                async: false,
+                data: {mapper: "/turnToIT"},
+                success: function (data) {
+                    if(event.keyCode == 39){
+                        window.location.href=data[1];
+                    }else if(event.keyCode == 37){
+                        window.location.href=data[0];
+                    }else if(event.keyCode == 27){
+                        window.location.href="/";
+                    }
+                }
+            });
         });
     </script>
 
