@@ -14,11 +14,21 @@
 
         // 页面跳转
         $(document).keydown(function(event){
-            if(event.keyCode == 39){
-                window.location.href="/turnToToolShow"
-            }else if(event.keyCode == 37){
-                window.location.href="/turnToBigData"
-            }
+            $.ajax({
+                url: "/getTurnToPage",
+                type: "get",
+                async: false,
+                data: {mapper: "/turnTo3DFactory"},
+                success: function (data) {
+                    if(event.keyCode == 39){
+                        window.location.href=data[1];
+                    }else if(event.keyCode == 37){
+                        window.location.href=data[0];
+                    }else if(event.keyCode == 27){
+                        window.location.href="/";
+                    }
+                }
+            });
         });
     </script>
     <style type="text/css">
@@ -147,5 +157,4 @@
 
 <script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI1.js}"></script>
 
-    <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>   
 </html>

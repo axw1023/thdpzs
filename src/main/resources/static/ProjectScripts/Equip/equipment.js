@@ -101,8 +101,10 @@ var dataFormat = {
             $.each(wasteArr1,function(i,n){
                 waste1 += '<tr style="height: '+h1+'px;">';
                 waste1 += '<td>'+n.wasteName+'</td>';
-                if(!n.rtConcentration||n.rtConcentration==0)waste1 += '<td></td>'
-                else  waste1 += '<td>'+n.rtConcentration+'</td>';
+                // if(!n.rtConcentration||n.rtConcentration==0||n.controlRates=='')waste1 += '<td></td>'
+                if(n.rtConcentration<n.controlRates||n.rtConcentration==null||n.controlRates=='') waste1 += '<td style="color: #26ff26;">'+n.rtConcentration+'</td>';
+                // else  waste1 += '<td>'+n.rtConcentration+'</td>';
+                else waste1 += '<td style="color: red;">'+n.rtConcentration+'</td>';
                 waste1 += '<td> ≤ '+n.controlRates+'</td>';
                 waste1 += '</tr>';
             });

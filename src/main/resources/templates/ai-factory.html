@@ -14,11 +14,21 @@
 
         // 页面跳转
         $(document).keydown(function(event){
-            if(event.keyCode == 39){
-                window.location.href="/turnToEnd"
-            }else if(event.keyCode == 37){
-                window.location.href="/turnToToolShow"
-            }
+            $.ajax({
+                url: "/getTurnToPage",
+                type: "get",
+                async: false,
+                data: {mapper: "/turnToFutureProspect"},
+                success: function (data) {
+                    if(event.keyCode == 39){
+                        window.location.href=data[1];
+                    }else if(event.keyCode == 37){
+                        window.location.href=data[0];
+                    }else if(event.keyCode == 27){
+                        window.location.href="/";
+                    }
+                }
+            });
         });
     </script>
 
@@ -130,38 +140,34 @@
         }
     </script>
     <div class="factory">
-        <div class="line-1"></div>
+        <!--<div class="line-1"></div>
         <div class="line-2"></div>
-        <div class="line-3"></div>
+        <div class="line-3"></div>-->
         <div class="ai-factroy-1">
-            制定规划，顶层设计，基础先行，从业务、数据和技术三个层面实现整合和集成共享<br/>
-            建立实验室信息管理、生产执行、设备管理、安全环保、能源管控等生产层核心应用，有效支撑企业生产业务<br/>
-            按照“平台+应用”架构，建立智能制造平台及相关标准化体系
+
+            按照“平台+应用”架构，建立智能制造平台及相关标准化体系，<br/>
 
         </div>
         <div class="ai-factroy-2-1">
-            在数据资源整合的基础上，实现企业计划、生产执行和监控的一体化管理和优化，结合企业实际需求定制个性化应用服务
-        </div>
-        <div class="ai-factroy-2-2">
+            在数据资源整合的基础上，实现企业计划、生产执行和监控的一体化管理和优化，结合企业实际需求定制个性化应用服务<br/>
             完善提升已有信息系统，实现产供销的整体经营、生产业务协同和全流程的一体化优化
         </div>
+        <!--<div class="ai-factroy-2-2">
+
+        </div>-->
+
+
+
+
         <div class="ai-factroy-3-1">
             <ul>
                 <li>
                     <span class="cricle"></span>
-                    实现企业生产经营管理和信息化的深度融合
+                    数字产业化：分享炼化行业智能制造工具、标准和方案，建设石化行业智能制造云平
                 </li>
                 <li>
                     <span class="cricle"></span>
-                    完善模型库、规则库、知识库、数据库，深化局部智能应用
-                </li>
-                <li>
-                    <span class="cricle"></span>
-                    充分应用大数据，提高生产及经营层面的分析决策水平
-                </li>
-                <li>
-                    <span class="cricle"></span>
-                    建全控制优化等应用，实现智能工厂目标
+                    产业数字化：完善数据库、模型库、知识库，推动区域及产业链的高效协同。
                 </li>
             </ul>
        </div>

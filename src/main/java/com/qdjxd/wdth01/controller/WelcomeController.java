@@ -96,11 +96,11 @@ public class WelcomeController {
 //        return "3Dfactory1";
 //    }
 
-//    工具展示
-    @RequestMapping("/turnToToolShow")
-    public String turnToToolShow() {
-    return "tool";
-}
+////    工具展示
+//    @RequestMapping("/turnToToolShow")
+//    public String turnToToolShow() {
+//    return "tool";
+//}
 
     //    未来展望13
     @RequestMapping("/turnToFutureProspect")
@@ -114,6 +114,7 @@ public class WelcomeController {
         return "end";
     }
 
+//    工具展示
     @RequestMapping("tool/index")
     public String toolShow(){
         return "tool";
@@ -121,15 +122,32 @@ public class WelcomeController {
 
 
 
-
+//    页面跳转控制
     @RequestMapping(value = "/getTurnToPage", method = RequestMethod.GET)
     @ResponseBody
-    List<Wdth_xt_page> getPointData(@RequestParam("mapper")String mapper){
+    List<String> getPointData(@RequestParam("mapper")String mapper){
         List<Wdth_xt_page> page = pageMapper.selectAll();
         List<String> mappers = new ArrayList<>();
-        for(int i = 0;i < page.size();i++){
+
+        int i = 0;
+        for(int j = 0;j < page.size();j++){
+            if (page.get(j).getValue().equals(mapper)){
+                i = j;
+                break;
+            }
         }
-        return page;
+        if(i == 0){
+            mappers.add(page.get(page.size()-1).getValue());
+        }else{
+            mappers.add(page.get(i-1).getValue());
+        }
+        if(i == page.size()-1 ){
+            mappers.add(page.get(0).getValue());
+        }else{
+            mappers.add(page.get(i+1).getValue());
+        }
+
+        return mappers;
     }
 
 

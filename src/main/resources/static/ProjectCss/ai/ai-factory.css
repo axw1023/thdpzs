@@ -30,21 +30,22 @@ body{
 }
 .ai-factroy-1{
     display: inline-block;
-    height: 302.4px;
+    height: 278.4px;
     width: 1559px;
     position: absolute;
-    margin: 448px 0 0 183px;
+    margin: 507px 0 0 150px;
     text-align: center;
     line-height: 96px;
 }
 
 .ai-factroy-2-1{
-    line-height: 60px;
-    width: 807px;
-    height: 177px;
+    line-height: 96px;
+    width: 1559px;
+    height: 278px;
     display: inline-block;
     position: absolute;
-    margin: 208px 0 0 2834px;
+    margin: 415px 0 0 2104px;
+    text-align: center;
 }
 
 .ai-factroy-2-2{
@@ -57,11 +58,11 @@ body{
 }
 
 .ai-factroy-3-1{
-    width: 1624px;
-    height: 290px;
+    width: 1559px;
+    height: 277px;
     display: inline-block;
     position: absolute;
-    margin: 460px 0 0 3953px;
+    margin: 366px 0 0 4015px;
     line-height: 70px;
 }
 
@@ -70,10 +71,10 @@ body{
 }
 
 .ai-factroy-3-1 ul li{
-    width: 50%;
     list-style: disc;
     display: inline-block;
     float: left;
+    height: 96px;
 }
 
 .cricle{

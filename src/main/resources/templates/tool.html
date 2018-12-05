@@ -13,23 +13,43 @@
     </div>
     <div class="video">
         <div class="tool-v tool-video1">
-            <video  autoplay="autoplay" muted="muted" class="mp4"   loop="loop" >
-            <source src="http://10.0.30.200:8080/3D/3DC2.mp4" ></video>
+            <video id="v1"   muted="muted" class="mp4"   loop="loop" >
+                <source src="http://10.0.30.200:8080/3D/3DC2.mp4" ></video>
         </div>
         <div class="tool-v tool-video2">
-            <video  autoplay="autoplay" muted="muted" class="mp4"   loop="loop" >
+            <video id="v2"  muted="muted" class="mp4"   loop="loop" >
                 <source src="http://10.0.30.200:8080/3D/3DC1.mp4" ></video>
         </div>
         <div class="tool-v tool-video3">
-            <video autoplay="autoplay" muted="muted" class="mp4"   loop="loop" >
+            <video id="v3" muted="muted" class="mp4"   loop="loop" >
                 <source src="http://10.0.30.200:8080/3D/3DC3.mp4" ></video>
         </div>
     </div>
-   <!-- <img id = "title" src="../../images/toolShow/工具展示标题.png">
-    <img id = "leftImg" src="../../images/toolShow/工具展示框.png">
-    <img id = "centerImg" src="../../images/toolShow/工具展示框.png">
-    <img id = "rightImg" src="../../images/toolShow/工具展示框.png">-->
+    <!-- <img id = "title" src="../../images/toolShow/工具展示标题.png">
+     <img id = "leftImg" src="../../images/toolShow/工具展示框.png">
+     <img id = "centerImg" src="../../images/toolShow/工具展示框.png">
+     <img id = "rightImg" src="../../images/toolShow/工具展示框.png">-->
 </div>
 </body>
 <script src="../../ProjectScripts/tool/tool.js"></script>
+<script>
+    var flag = true;
+    var v1 = document.getElementById("v1");
+    var v2 = document.getElementById("v2");
+    var v3 = document.getElementById("v3");
+    document.onkeydown = function(event){
+        var key = event.keyCode;
+        if(key==13){
+            v1.play();
+            v2.play();
+            v3.play();
+            flag = false;
+        }else{
+            v1.pause();
+            v2.pause();
+            v3.pause();
+            flag = true;
+        }
+    }
+</script>
 </html>
