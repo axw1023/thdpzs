@@ -35,21 +35,30 @@
     </style>
     <script type="text/javascript">
 
+        // // 页面跳转
+        // $(document).keydown(function(event){
+        //     $.ajax({
+        //         url: "/getTurnToPage",
+        //         type: "get",
+        //         async: false,
+        //         data: {mapper: "/turnToEnd"},
+        //         success: function (data) {
+        //             if(event.keyCode == 39){
+        //                 window.location.href=data[1];
+        //             }else if(event.keyCode == 37){
+        //                 window.location.href=data[0];
+        //             }
+        //         }
+        //     });
+        // });
+
         // 页面跳转
         $(document).keydown(function(event){
-            $.ajax({
-                url: "/getTurnToPage",
-                type: "get",
-                async: false,
-                data: {mapper: "/turnToEnd"},
-                success: function (data) {
-                    if(event.keyCode == 39){
-                        window.location.href=data[1];
-                    }else if(event.keyCode == 37){
-                        window.location.href=data[0];
-                    }
-                }
-            });
+            if(event.keyCode == 37){
+                window.location.href="/turnToFutureProspect"
+            }else if(event.keyCode == 13){
+                window.location.href="/"
+            }
         });
 
         //背景特效
