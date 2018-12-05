@@ -6,6 +6,8 @@
 
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
+    <script src="../../Scripts/babel-browser.js" ></script>
+    <script type="text/babel" src="../../ProjectScripts/home/js/index.js" ></script>
 
 
 
@@ -24,12 +26,22 @@
             left:2041px;
             width: 1554px;
             height: 500px;
-            background-image: url("../../images/home/文字.png");
+            background-image: url("../../images/home/文字_end.png");
         }
 
         #body{
             position: absolute;
             z-index:999
+        }
+
+        canvas{
+            position:absolute;
+            top:0;
+            left:0;
+            z-index:9999;
+            width: 5632px;
+            height: 1024px;
+            z-index: 2;
         }
 
     </style>
@@ -58,6 +70,8 @@
                 window.location.href="/turnToFutureProspect"
             }else if(event.keyCode == 13){
                 window.location.href="/"
+            }else if(event.keyCode == 27){
+                window.location.href="/";
             }
         });
 
@@ -87,5 +101,6 @@
 <div style="width: 5632px;height: 1024px;color: transparent" id="body"></div>
 <div id = "img" ></div>
 <div id = "text"></div>
+<canvas id="canvas"></canvas>
 </body>
 </html>

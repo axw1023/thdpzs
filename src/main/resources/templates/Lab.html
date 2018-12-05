@@ -9,11 +9,21 @@
 
         // 页面跳转
         $(document).keydown(function(event){
-            if(event.keyCode == 39){
-                window.location.href="/turnToEquipment"
-            }else if(event.keyCode == 37){
-                window.location.href="/turnToMes"
-            }
+            $.ajax({
+                url: "/getTurnToPage",
+                type: "get",
+                async: false,
+                data: {mapper: "/turnToLab"},
+                success: function (data) {
+                    if(event.keyCode == 39){
+                        window.location.href=data[1];
+                    }else if(event.keyCode == 37){
+                        window.location.href=data[0];
+                    }else if(event.keyCode == 27){
+                        window.location.href="/";
+                    }
+                }
+            });
         });
 
         $(function () {

@@ -78,21 +78,48 @@
 <script type="text/javascript">
     var video = document.getElementById("number");
     var flag= true;
+    // // 页面跳转
+    // $(document).keydown(function(event){
+    //     if(event.keyCode == 39){
+    //         window.location.href="/turnToBigData"
+    //     }else if(event.keyCode == 37){
+    //         window.location.href="/turnToIT"
+    //     }else if(event.keyCode == 13){
+    //         if(flag){
+    //             video.play();
+    //             flag = false;
+    //         }else {
+    //             video.pause();
+    //             flag = true;
+    //         }
+    //     }
+    // });
+
     // 页面跳转
     $(document).keydown(function(event){
-        if(event.keyCode == 39){
-            window.location.href="/turnToBigData"
-        }else if(event.keyCode == 37){
-            window.location.href="/turnToIT"
-        }else if(event.keyCode == 13){
-            if(flag){
-                video.play();
-                flag = false;
-            }else {
-                video.pause();
-                flag = true;
+        $.ajax({
+            url: "/getTurnToPage",
+            type: "get",
+            async: false,
+            data: {mapper: "/turnToDigitalFactory"},
+            success: function (data) {
+                if(event.keyCode == 39){
+                    window.location.href=data[1];
+                }else if(event.keyCode == 37){
+                    window.location.href=data[0];
+                }else if(event.keyCode == 13){
+                    if(flag){
+                        video.play();
+                        flag = false;
+                    }else {
+                        video.pause();
+                        flag = true;
+                    }
+                }else if(event.keyCode == 27){
+                    window.location.href="/";
+                }
             }
-        }
+        });
     });
 </script>
 </html>
