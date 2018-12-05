@@ -33,7 +33,7 @@ body{
     height: 278.4px;
     width: 1559px;
     position: absolute;
-    margin: 507px 0 0 150px;
+    margin: 544px 0 0 150px;
     text-align: center;
     line-height: 96px;
 }
@@ -44,7 +44,7 @@ body{
     height: 278px;
     display: inline-block;
     position: absolute;
-    margin: 415px 0 0 2104px;
+    margin: 452px 0 0 2104px;
     text-align: center;
 }
 
@@ -62,7 +62,7 @@ body{
     height: 277px;
     display: inline-block;
     position: absolute;
-    margin: 366px 0 0 4015px;
+    margin: 384px 0 0 4015px;
     line-height: 70px;
 }
 
@@ -75,6 +75,8 @@ body{
     display: inline-block;
     float: left;
     height: 96px;
+    width: 100%;
+    text-align: center;
 }
 
 .cricle{
@@ -89,16 +91,48 @@ body{
 
 .line-1
 {
-    width: 100px;
-    height: 100px;
+    width: 219px;
+    height: 8px;
     position:relative;
-    animation:lightPoint_move 5s infinite;
-    background-image: url("../../images/allLink/椭圆.png");
+    animation:lightPoint_move 4s linear 0s;
+    background-image: url("../../image/ai-factory/light.png");
+    display: inline-block;
 }
 
 @keyframes lightPoint_move
 {
-    from  {top:640px;left: 190px}
-    50% {top:640px;left:486px}
-    100%{ top:460px;left:740px}
+    from  {top:892px;left: 0px}
+    100%{ top:892px;left:1700px}
+}
+
+.line-2
+{
+    width: 219px;
+    height: 8px;
+    position:relative;
+    animation:lightPoint_move2 4s linear 0s;
+    background-image: url("../../image/ai-factory/light.png");
+    display: inline-block;
+}
+
+@keyframes lightPoint_move2
+{
+    from  {top:847px;left: 1900px}
+    to  {top:847px;left:3600px}
+}
+
+.line-3
+{
+    width: 219px;
+    height: 8px;
+    position:relative;
+    animation:lightPoint_move3 4s linear 0s;
+    background-image: url("../../image/ai-factory/light.png");
+    display: inline-block;
+}
+
+@keyframes lightPoint_move3
+{
+    from  {top:807px;left: 3800px}
+    to  {top:807px;left:5430px}
 }
