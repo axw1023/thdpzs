@@ -22,7 +22,7 @@
     select
     <include refid="Base_Column_List" />
     from wdth_xt_page
-    where ifshow != '0' GROUP by code,id,name,value,ifshow
+    where ifshow != '0' GROUP by code asc
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

@@ -74,6 +74,8 @@ public class WelcomeController {
     public String turnToDigitalFactory() {
         return "Number";
     }
+
+    //万达天弘化学概况
     @RequestMapping("/turnToDigitalFactory2")
     public String turnToDigitalFactory2() {
         return "Number2";
