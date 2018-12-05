@@ -8,8 +8,7 @@ $.ajax({
     var text22 = data['0202'];
     var text31 = data['0301'];
 
-    $('.ai-factroy-2-1').html(text21[0]);
-    $('.ai-factroy-2-2').html(text22[0]);
+    $('.ai-factroy-2-1').html(text21[0]+"<br/>"+text22[0]);
     var str1 = ''
     $.each(text11,function(i,n){
         str1 += n ;

@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <table id="101" table_name="" name_cloumn="" value_column=""></table>
+    <!-- 设备与安环 -->
+    <table id="101" table_name="wdth_sbyah_equipment_composition" name_cloumn="equip_type_name" value_column="equip_num" title="设备类型名称" value_title="设备数量">
+        <property>
+        </property>
+    </table>
+
+    <table name="wdth_sbyah_equipment_composition">
+        <id name="equip_com_id"></id>
+        <cloumn name="equip_type_name" derc></cloumn>
+        <cloumn></cloumn>
+    </table>
+
 </root>
