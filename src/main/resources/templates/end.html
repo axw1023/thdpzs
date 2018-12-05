@@ -48,36 +48,38 @@
     <script type="text/javascript">
 
         // 页面跳转
-       /* $(document).keydown(function(event){
+        $(document).keydown(function(event){
             $.ajax({
                 url: "/getTurnToPage",
                 type: "get",
                 async: false,
                 data: {mapper: "/turnToEnd"},
                 success: function (data) {
-                    if(event.keyCode == 39){
-                        window.location.href=data[1];
-                    }else if(event.keyCode == 37){
+                    if(event.keyCode == 37){
                         window.location.href=data[0];
+                    }else if(event.keyCode == 13){
+                        window.location.href=data[1];
+                    }else if(event.keyCode == 27){
+                        window.location.href="/";
                     }
                 }
             });
-        });*/
-        $(document).keydown(function(event){
-            if(event.keyCode == 37){
-                window.location.href="/turnToFutureProspect"
-            }else if(event.keyCode == 13){
-                window.location.href="/"
-            }
-        $(document).keydown(function(event){
-            if(event.keyCode == 37){
-                window.location.href="/turnToFutureProspect"
-            }else if(event.keyCode == 13){
-                window.location.href="/"
-            }else if(event.keyCode == 27){
-                window.location.href="/";
-            }
         });
+        // $(document).keydown(function(event){
+        //     if(event.keyCode == 37){
+        //         window.location.href="/turnToFutureProspect"
+        //     }else if(event.keyCode == 13){
+        //         window.location.href="/"
+        //     }
+        // $(document).keydown(function(event){
+        //     if(event.keyCode == 37){
+        //         window.location.href="/turnToFutureProspect"
+        //     }else if(event.keyCode == 13){
+        //         window.location.href="/"
+        //     }else if(event.keyCode == 27){
+        //         window.location.href="/";
+        //     }
+        // });
 
         //背景特效
         window.onload = function () {
