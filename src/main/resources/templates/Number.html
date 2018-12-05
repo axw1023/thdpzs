@@ -34,6 +34,28 @@
             height:calc(100% - 40px);
             margin:10px;
         }
+
+        .left{
+            background: url("../../images/left.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 740px;
+            width: 574px;
+            position: absolute;
+            display: inline-block;
+            margin: 116px 0 0 478px;
+        }
+
+        .right{
+            background: url("../../images/right.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            height: 740px;
+            width: 574px;
+            position: absolute;
+            display: inline-block;
+            margin: 116px 0px 0px 212px;
+        }
     </style>
 
 
@@ -42,12 +64,13 @@
 <!--
         <iframe id="number" src="mda-D:\number\number.MP4" frameborder=0 allowfullscreen></iframe>
 -->
+    <div class="left"></div>
     <div id="dy">
         <video id="number"   >
             <source src="http://10.0.30.200:8080/number/number.mp4" controls="controls">
         </video>
     </div>
-
+    <div class="right"></div>
 </body>
 <!--<script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI.js}"></script>
 <script type="text/javascript"   th:src="@{/ProjectScripts/ERP/ERPandBI1.js}"></script>-->

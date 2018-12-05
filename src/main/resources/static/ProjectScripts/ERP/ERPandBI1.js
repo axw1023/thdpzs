@@ -7,7 +7,7 @@ $ (function () {
     getFkg();
     getDyflq();
 //背景特效
-    window.onload = function() {
+    /*window.onload = function() {
 
         var config = {
             vx: 4,
@@ -23,7 +23,7 @@ $ (function () {
         }
 
         CanvasParticle(config);
-    }
+    }*/
 
     document.getElementById("3d1").playbackRate=0.6;
     document.getElementById("3d2").playbackRate=0.6;
