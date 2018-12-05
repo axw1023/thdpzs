@@ -20,7 +20,18 @@ $.ajax({
 
     var str3 = '';
     $.each(text31,function(i,n){
-         str3 += '<li><span class="cricle"></span>'+n+'</li>';
+         str3 += '<li>'+n+'</li>';
     });
     $('.ai-factroy-3-1 ul').html(str3);
 });
+var i =0;
+setInterval(function(){
+     var t = i%3;
+     var t2 = (i+1)%3;
+     var c1 = "line-" +(t+1);
+     var c2 = "line-" +(t2+1);
+     $("#light").removeClass(c1);
+     $("#light").addClass(c2);
+     i++;
+},4000);
+
