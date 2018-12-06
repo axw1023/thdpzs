@@ -93,7 +93,7 @@ body{
 {
     width: 219px;
     height: 8px;
-    position:relative;
+    position:absolute;
     animation:lightPoint_move 4s linear 0s;
     background-image: url("../../image/ai-factory/light.png");
     display: inline-block;
@@ -101,15 +101,15 @@ body{
 
 @keyframes lightPoint_move
 {
-    from  {top:892px;left: 0px}
-    100%{ top:892px;left:1700px}
+    from  {top:917px;left: 0px}
+    100%{ top:917px;left:1700px}
 }
 
 .line-2
 {
     width: 219px;
     height: 8px;
-    position:relative;
+    position:absolute;
     animation:lightPoint_move2 4s linear 0s;
     background-image: url("../../image/ai-factory/light.png");
     display: inline-block;
@@ -117,15 +117,15 @@ body{
 
 @keyframes lightPoint_move2
 {
-    from  {top:847px;left: 1900px}
-    to  {top:847px;left:3600px}
+    from  {top:872px;left: 1900px}
+    to  {top:872px;left:3600px}
 }
 
 .line-3
 {
     width: 219px;
     height: 8px;
-    position:relative;
+    position:absolute;
     animation:lightPoint_move3 4s linear 0s;
     background-image: url("../../image/ai-factory/light.png");
     display: inline-block;
@@ -133,6 +133,6 @@ body{
 
 @keyframes lightPoint_move3
 {
-    from  {top:807px;left: 3800px}
-    to  {top:807px;left:5430px}
+    from  {top:832px;left: 3800px}
+    to  {top:832px;left:5430px}
 }

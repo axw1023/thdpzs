@@ -8,10 +8,27 @@
 
     <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
     <script type="text/javascript"   th:src="@{/Scripts/echarts.min.js}"></script>
+    <script type="text/javascript"   th:src="@{/ProjectScripts/Equip/equipment.js}"></script>
     <script type="text/javascript"   th:src="@{/ProjectScripts/ocx/ocx.js}"></script>
     <script type="text/javascript"   th:src="@{/ProjectScripts/ocx/ocx2.js}"></script>
     <script>
         function init(){
+            equpEcharts.init();
+            dataFormat.init();
+            var config = {
+                vx: 4,
+                vy: 4,
+                height: 2,
+                width: 2,
+                count: 40,
+                color: "121, 162, 185",
+                stroke: "130,255,255",
+                dist: 6000,
+                e_dist: 20000,
+                max_conn: 10
+            }
+
+            CanvasParticle(config);
                 init_v1();
                 init_v2();
         }
@@ -30,11 +47,14 @@
                 data: {mapper: "/turnToEquipment"},
                 success: function (data) {
                     if(event.keyCode == 39){
-                        window.location.href=data[1];
+                        // window.location.href=data[1];
+                        window.open(data[1]);
                     }else if(event.keyCode == 37){
-                        window.location.href=data[0];
+                        // window.location.href=data[0];
+                        window.open(data[0]);
                     }else if(event.keyCode == 27){
-                        window.location.href="/";
+                        // window.location.href="/";
+                        window.open("/")
                     }
                 }
             });
@@ -52,22 +72,7 @@
                     </div>
                 </div>
                 <div class="left-content-1">
-                   <!-- <div class="left-content-1-title lc1">
-                        <label>M 类设备</label>
-                        <div>0</div>
-                    </div>
-                    <div class="left-content-1-title lc2">
-                        <label>S 类设备</label>
-                        <div>0</div>
-                    </div>
-                    <div class="left-content-1-title lc3">
-                        <label>E 类设备</label>
-                        <div>0</div>
-                    </div>
-                    <div class="left-content-1-title lc4">
-                        <label>I 类设备</label>
-                        <div>0</div>
-                    </div>-->
+
                 </div>
             </div>
             <div class="left-1 left-1-2">
@@ -90,70 +95,7 @@
                             </tr>
                         </thead>
                         <tbody id="pollContent">
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span> 90%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span> 90%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span> 90%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low green-low"></span> 100%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span> 90%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span> 90%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span> 90%
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td1">MCC装置</td>
-                                <td class="td2">****类型</td>
-                                <td class="td3">20</td>
-                                <td class="td4">
-                                    <span class="low yello-low"></span>  90%
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -191,41 +133,7 @@
                     <div class="center-table center-table-1">
                         <div class="center-sub-title">作业备案</div>
                         <div class="table1-content">
-                            <div class="center8-list">
-                                <div class="center8 c8-1">
-                                    <label>用火</label>
-                                    <div>0</div>
-                                </div>
-                                <!--<div class="center8 c8-2">
-                                    <label>受限空间</label>
-                                    <div>0</div>
-                                </div>
-                                <div class="center8 c8-3">
-                                    <label>高度作业</label>
-                                    <div>0</div>
-                                </div>
-                                <div class="center8 c8-4">
-                                    <label>临时用电</label>
-                                    <div>0</div>
-                                </div>
-                                <div class="center8 c8-5">
-                                    <label>射线作业</label>
-                                    <div>0</div>
-                                </div>
-                                <div class="center8 c8-6">
-                                    <label>起重作业</label>
-                                    <div>0</div>
-                                </div>
-                                <div class="center8 c8-7">
-                                    <label>破土作业</label>
-                                    <div>0</div>
-                                </div>
-                                <div class="center8 c8-8">
-                                    <label>设备检修</label>
-                                    <div>0</div>
-                                </div>-->
 
-                            </div>
                         </div>
                     </div>
                     <div class="center-table center-table-2">
@@ -278,7 +186,7 @@
         </div>
     </div>
 </body>
-<script type="text/javascript"   th:src="@{/ProjectScripts/Equip/equipment.js}"></script>
+
 <script type="text/javascript"   th:src="@{/Scripts/backEffect/canvas-particle.js}"></script>
 
 
