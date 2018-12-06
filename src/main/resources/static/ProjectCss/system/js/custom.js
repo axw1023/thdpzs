@@ -48,7 +48,21 @@ var system ={
             $('#side-menu').metisMenu();
         });
     },
+    event_format: function(){
+        $("#side-menu").on("click","ul li",function(){
+            var text = $(this).children("a").text();
+            var type = $(this).attr("data-path");
+            $(".title1").text(text);
+            //发送ajax
+            $.ajax({
+                type: 'get',
+                // url: '/system/table/'+type
+            }).then(function (_data) {  });
+
+        });
+    },
     init: function(){
         system.menu_init();
+        system.event_format();
     }
 }
