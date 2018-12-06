@@ -85,6 +85,7 @@ function getHkzssl() {
         url: "/ERPandBI/hkzssl",
         async: false,
         success: function (data) {
+            debugger
             var name=[];
             var num=[];
             var num1=[];
@@ -92,7 +93,7 @@ function getHkzssl() {
             for(i=0;i<data.length;i++){
                 name.push(data[i].name);
                 num.push(data[i].num);
-                num1.push(data[i].num1);
+                num1.push(data[i].mou);
                 date.push(data[i].date)
             }
             //更新数据
