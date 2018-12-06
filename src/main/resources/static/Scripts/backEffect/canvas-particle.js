@@ -163,6 +163,7 @@ var CanvasParticle = (function(){
 			// 如果鼠标进入画布
 			// point to mouse
 			if(mouse){
+				return;
 				dist = Math.round(canvas.points[i].x - mouse.x) * Math.round(canvas.points[i].x - mouse.x) + 
 						Math.round(canvas.points[i].y - mouse.y) * Math.round(canvas.points[i].y - mouse.y);
 				// 遇到鼠标吸附距离时加速，直接改变point的x，y值达到加速效果
