@@ -1,5 +1,7 @@
 package com.qdjxd.wdth01.service.impl;
 
+import com.qdjxd.wdth01.common.TableOption;
+import com.qdjxd.wdth01.common.TableOptionBuilder;
 import com.qdjxd.wdth01.common.TreeNode;
 import com.qdjxd.wdth01.dao.SystemMapper;
 import com.qdjxd.wdth01.service.SystemService;
@@ -15,6 +17,9 @@ import java.util.List;
 public class SystemServiceImpl implements SystemService {
 
     @Autowired
+    private TableOptionBuilder builder;
+
+    @Autowired
     private SystemMapper systemMapper;
 
     @Override
@@ -26,8 +31,8 @@ public class SystemServiceImpl implements SystemService {
 
     @Override
     public ResponseEntity getTableFormatData(String type) {
-        
-        return null;
+        TableOption tableOption = builder.getTableOptionByKey(type);
+        return ResponseEntity.ok(tableOption);
     }
 
     private List<TreeNode> formatNodes(List<TreeNode> nodes) {
