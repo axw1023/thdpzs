@@ -48,7 +48,7 @@ var system ={
         });
     },
     formatTable: function(type,data){
-        $(".table").bootstrapTable("refreshOptions",{});
+        // $('.table').bootstrapTable('refreshOptions',null);
         //TODO 表格初始化
         $(".table").bootstrapTable({
             url: '/system/table/info/'+type,
@@ -76,8 +76,14 @@ var system ={
                 type: 'get',
                 url: '/system/table/'+type
             }).then(function (_data) {
+                if(_data == null||_data == ""){
+                    $(".table").bootstrapTable("destroy");
+                    return;
+                };
                 //初始化表格
                 system.formatTable(type,_data);
+            },function (reason) {
+
             });
 
         });

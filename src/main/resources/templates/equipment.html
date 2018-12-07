@@ -16,13 +16,15 @@
 
         // 1000220$1$0$30
         // 1000209$1$0$23
+
         function init(){
             $.ajax({
                 type: 'get',
                 url: '/equip/ip'
             }).then(function(data){
-                init_v1(data[0]);
-                init_v2(data[1]);
+                var arr = data.split(';');
+                init_v1(arr[0]);
+                init_v2(arr[1]);
             });
         }
 
@@ -55,7 +57,7 @@
     </script>
 
 </head>
-<body id="body" ><!--onload="init()" onunload="logout()"-->
+<body id="body" onload="init()" onunload="logout()"><!--onload="init()" onunload="logout()"-->
     <div class="content-all" ondblclick="window.location.href='/turnToLab'">
         <div class="e-left">
             <div class="left-1 left-1-1">
@@ -113,12 +115,12 @@
             <div class="center-content">
 
                 <div class="center-video2">
-                   <!--<div class="center-v1">
+                   <div class="center-v1">
                         <object id="video1" classid="CLSID:D3E383B6-765D-448D-9476-DFD8B499926D" style="width: 100%; height: 100%" codebase="DpsdkOcx.cab#version=1.0.0.0"></object>
                     </div>
                     <div class="center-v2">
                         <object id="video2" classid="CLSID:D3E383B6-765D-448D-9476-DFD8B499926D" style="width: 100%; height: 100%" codebase="DpsdkOcx.cab#version=1.0.0.0"></object>
-                    </div>-->
+                    </div>
                 </div>
 
 

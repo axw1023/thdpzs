@@ -2,7 +2,7 @@
 <root>
     <!-- 设备与安环 -->
     <table key="101" name="wdth_sbyah_equipment_composition">
-        <column field="equip_com_id" title="true" radio="true"></column>
+        <column field="equip_com_id" ></column>
         <column field="equip_type_name" title="设备类型名称"></column>
         <column field="equip_num" title="设备数量"></column>
         <column field="enable" title="是否展示"></column>

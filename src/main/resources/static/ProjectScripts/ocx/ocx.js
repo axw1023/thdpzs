@@ -29,7 +29,7 @@ function init_v1(ip){
     gWndId = obj.DPSDK_CreateSmartWnd(0, 0, 100, 100);
 
     ButtonCreateWnd_onclick_v1();
-    obj.DPSDK_SetLog(2, "D:\\video1_log", false, false); //初始化后设置日志路径
+    // obj.DPSDK_SetLog(2, "D:\\log\\video1_log", false, false); //初始化后设置日志路径
     ShowCallRetInfo_v1(obj.DPSDK_Login("10.0.22.245", 9000, "大屏展示2", "admin123"), "登录");
     var nWndNo = obj.DPSDK_GetSelWnd(gWndId);
     ShowCallRetInfo_v1(obj.DPSDK_DirectRealplayByWndNo(gWndId, nWndNo,ip , 1, 1, 1), "直接实时播放");

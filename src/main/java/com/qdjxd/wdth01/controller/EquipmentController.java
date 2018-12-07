@@ -92,7 +92,7 @@ public class EquipmentController {
      * 获取ip
      */
     @RequestMapping("ip")
-    public String getIpList(){
+    public ResponseEntity getIpList(){
 
         FileReader fileReader= null;
         BufferedReader bufferedReader=null;
@@ -105,7 +105,7 @@ public class EquipmentController {
             bufferedReader=new BufferedReader(fileReader);
              String str;
             while ((str=bufferedReader.readLine())!=null){
-                stringBuilder.append(str);
+                stringBuilder.append(str).append(";");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -117,7 +117,7 @@ public class EquipmentController {
                 e.printStackTrace();
             }
         }
-        return stringBuilder.toString();
+        return ResponseEntity.ok(stringBuilder.toString()) ;
         }
 
 
