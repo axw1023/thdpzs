@@ -59,17 +59,17 @@ function getErp() {
         async: false,
         success: function (data) {
             //更新数据
-            $("#qy2").val(data[0].num);
+            $("#qy2").val(data[0].num + '吨');
             $("#qy3").val(data[0].name);
-            $("#cy2").val(data[1].num);
+            $("#cy2").val(data[1].num+ '吨');
             $("#cy3").val(data[1].name);
-            $("#yhq2").val(data[2].num);
+            $("#yhq2").val(data[2].num+ '吨');
             $("#yhq3").val(data[2].name);
-            $("#bw2").val(data[3].num);
+            $("#bw2").val(data[3].num+ '吨');
             $("#bw3").val(data[3].name);
-            $("#bx2").val(data[4].num);
+            $("#bx2").val(data[4].num+ '吨');
             $("#bx3").val(data[4].name);
-            $("#syj2").val(data[5].num);
+            $("#syj2").val(data[5].num+ '吨');
             $("#syj3").val(data[5].name);
 
         },
@@ -85,7 +85,6 @@ function getHkzssl() {
         url: "/ERPandBI/hkzssl",
         async: false,
         success: function (data) {
-            debugger
             var name=[];
             var num=[];
             var num1=[];
@@ -303,7 +302,7 @@ function setCbgc(data) {
                     emphasis: {
                         show: true,
                         // formatter: "共 {a|{c}} 吨",
-                        formatter:['{a|{b}：{c}项}\n\n','{b|共'+sum+'项}'].join(''),
+                        formatter:['{a|{b}：{c}吨}\n\n','{b|共'+sum+'吨}'].join(''),
 
                         rich:{
                             a:{
@@ -498,7 +497,7 @@ function setSynhzb(data) {
                     emphasis: {
                         show: true,
                         // formatter: "共 {a|{c}} 吨",
-                        formatter:['{a|{b}：{c}项}\n\n','{b|共'+sum+'项}'].join(''),
+                        formatter:['{a|{b}：{c}}\n\n','{b|'+sum+'}'].join(''),
                         rich:{
                             a:{
                                 fontSize: 23,
@@ -683,7 +682,7 @@ function setXsqk(data) {
                     position: 'center',
                     emphasis: {
                         show: true,
-                        formatter:['{a|{b}：{c}项}\n\n','{b|共'+sum+'项}'].join(''),
+                        formatter:['{a|{b}：{c}吨}\n\n','{b|共'+sum+'吨}'].join(''),
 
                         rich:{
                             a:{
@@ -1822,9 +1821,9 @@ function setJhzxl(num1,num,name,date) {
             {
                 type: 'value',
                 name: '计划量',
-                min: 0,
-                max: 250,
-                interval: 50,
+                min: 11000,
+                max: 15000,
+                interval: 1000,
                 splitLine:{show: false},//去除网格
                 axisLabel: {
                     color: '#92F1FF',
@@ -1838,10 +1837,10 @@ function setJhzxl(num1,num,name,date) {
             },
             {
                 type: 'value',
-                name: '计划量',
-                min: 0,
-                max: 100,
-                interval: 25,
+                name: '计划执行率',
+                min: 95,
+                max: 105,
+                interval: 2,
                 splitLine:{show: false},//去除网格
                 axisLabel: {
                     color: '#92F1FF',
@@ -1863,8 +1862,8 @@ function setJhzxl(num1,num,name,date) {
             {
                 name:'计划量',
                 type:'bar',
-                // data:num,
-                data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3,2.7,2.5],
+                data:num,
+                // data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3,2.7,2.5],
                 itemStyle: {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -1881,8 +1880,8 @@ function setJhzxl(num1,num,name,date) {
             {
                 name:'执行量',
                 type:'bar',
-                // data:num1,
-                data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3,2.1,1.8],
+                data:num1,
+                // data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3,2.1,1.8],
                 itemStyle: {
                     normal: {
                         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
@@ -1901,8 +1900,8 @@ function setJhzxl(num1,num,name,date) {
                 name:'计划执行率',
                 type:'line',
                 yAxisIndex: 1,
-                // data:name,
-                data:[80, 72, 90, 77, 63, 82, 93, 84, 90, 95, 89, 82,97,95],
+                data:name,
+                // data:[80, 72, 90, 77, 63, 82, 93, 84, 90, 95, 89, 82,97,95],
                 itemStyle: {
                     normal: {
                         color: 'RGBA(40, 225, 184, 1)'
