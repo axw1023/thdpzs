@@ -497,7 +497,7 @@ function setSynhzb(data) {
                     emphasis: {
                         show: true,
                         // formatter: "共 {a|{c}} 吨",
-                        formatter:['{a|{b}：{c}}\n\n','{b|'+sum+'}'].join(''),
+                        formatter:['{a|{b}：{c}}'].join(''),
                         rich:{
                             a:{
                                 fontSize: 23,
