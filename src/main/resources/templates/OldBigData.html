@@ -10,53 +10,48 @@
 
 </head>
 <body id="body">
-<!--new-->
-<div id="bg" >
-
-
-</div>
     <div id="BigData">
         <div id="first">
 
         </div>
-        <script id="tpl1" type="text/html">
-            {{each first as item index}}
-                <div class="first" style="top:{{item.value_coord_y}}px">
-                    {{item.value}}
-                </div>
-                <div class="unit" style="top:{{item.unit_coord_y}}px;left:{{item.unit_coord_x}}px" >{{item.unit}}</div>
-                <div class="f_label" style="top:{{item.name_coord_y}}px">{{item.name}}</div>
-            {{/each}}
-        </script>
-        <div id="second">
-        </div>
-        <script id="tpl2" type="text/html">
-            {{each second as item index}}
-            <div  class="second" style="top:{{item.value_coord_y}}px;left:{{item.value_coord_x}}px">
-                {{item.value}}
-            </div>
-            {{if item.other_value}}
-                <div  class="second prop" style="top:{{item.other_value_coord_y}}px;left:{{item.other_value_coord_x}}px">
-                    {{item.other_value}}
-                </div>
-            {{/if}}
-            {{/each}}
-        </script>
-        <div id="three">
+        <!--<script id="tpl1" type="text/html">-->
+            <!--{{each first as item index}}-->
+                <!--<div class="first" style="top:{{item.value_coord_y}}px">-->
+                    <!--{{item.value}}-->
+                <!--</div>-->
+                <!--<div class="unit" style="top:{{item.unit_coord_y}}px;left:{{item.unit_coord_x}}px" >{{item.unit}}</div>-->
+                <!--<div class="f_label" style="top:{{item.name_coord_y}}px">{{item.name}}</div>-->
+            <!--{{/each}}-->
+        <!--</script>-->
+        <!--<div id="second">-->
+        <!--</div>-->
+        <!--<script id="tpl2" type="text/html">-->
+            <!--{{each second as item index}}-->
+            <!--<div  class="second" style="top:{{item.value_coord_y}}px;left:{{item.value_coord_x}}px">-->
+                <!--{{item.value}}-->
+            <!--</div>-->
+            <!--{{if item.other_value}}-->
+                <!--<div  class="second prop" style="top:{{item.other_value_coord_y}}px;left:{{item.other_value_coord_x}}px">-->
+                    <!--{{item.other_value}}-->
+                <!--</div>-->
+            <!--{{/if}}-->
+            <!--{{/each}}-->
+        <!--</script>-->
+        <!--<div id="three">-->
 
-        </div>
-        <script id="tpl3" type="text/html">
-            {{each three as item index}}
-                <div  class="three" style="top:{{item.value_coord_y}}px">{{item.value}}</div>
-                <div  class="unit" style="top:{{item.unit_coord_y}}px;left:{{item.unit_coord_x}}px">{{item.unit}}</div>
-                <div   class="t_label" style="top:{{item.name_coord_y}}px">{{item.name}}</div>
-                <ul   class="point" style="top:{{item.other_value_coord_y}}px">
-                    {{each item.other_value.split("") as it index}}
-                        {{if it==1}}<li class="point_red"></li>{{else}}<li class="point_green"></li>{{/if}}
-                    {{/each}}
-                </ul>
-            {{/each}}
-        </script>
+        <!--</div>-->
+        <!--<script id="tpl3" type="text/html">-->
+            <!--{{each three as item index}}-->
+                <!--<div  class="three" style="top:{{item.value_coord_y}}px">{{item.value}}</div>-->
+                <!--<div  class="unit" style="top:{{item.unit_coord_y}}px;left:{{item.unit_coord_x}}px">{{item.unit}}</div>-->
+                <!--<div   class="t_label" style="top:{{item.name_coord_y}}px">{{item.name}}</div>-->
+                <!--<ul   class="point" style="top:{{item.other_value_coord_y}}px">-->
+                    <!--{{each item.other_value.split("") as it index}}-->
+                        <!--{{if it==1}}<li class="point_red"></li>{{else}}<li class="point_green"></li>{{/if}}-->
+                    <!--{{/each}}-->
+                <!--</ul>-->
+            <!--{{/each}}-->
+        <!--</script>-->
         <div id="four">
             <div id="four_1" class="four">
                 <div class="title">

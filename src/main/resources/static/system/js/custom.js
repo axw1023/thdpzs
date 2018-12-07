@@ -35,7 +35,6 @@ var system ={
             url : '/system/menu',
             type: 'get'
         }).then(function(data){
-
             var content = '';
             $.each(data,function(i,n){
                 content += '<li><a href="#"><i class="fa fa-cogs nav_icon"></i>'+n.name+'<span class="nav-badge">'+n.childrenNodes.length+'</span> <span class="fa arrow"></span></a><ul class="nav nav-second-level collapse">'
@@ -48,6 +47,25 @@ var system ={
             $('#side-menu').metisMenu();
         });
     },
+    formatTable: function(type,data){
+        $(".table").bootstrapTable("refreshOptions",{});
+        //TODO 表格初始化
+        $(".table").bootstrapTable({
+            url: '/system/table/info/'+type,
+            method : 'POST',
+            cache: false,            //禁用ajax缓存
+            striped: true,
+            queryParams: function(param){
+                param.tableName = data.tableName;
+                return param;
+            },
+            singleSelect:true,        //单选checkbox
+            idField:data.idColumn,
+            clickToSelect: true,
+            columns: data.columns
+        });
+
+    },
     event_format: function(){
         $("#side-menu").on("click","ul li",function(){
             var text = $(this).children("a").text();
@@ -56,8 +74,11 @@ var system ={
             //发送ajax
             $.ajax({
                 type: 'get',
-                // url: '/system/table/'+type
-            }).then(function (_data) {  });
+                url: '/system/table/'+type
+            }).then(function (_data) {
+                //初始化表格
+                system.formatTable(type,_data);
+            });
 
         });
     },

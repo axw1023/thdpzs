@@ -1,13 +1,12 @@
 package com.qdjxd.wdth01.controller;
 
-import com.qdjxd.wdth01.model.EquipmentComposition;
 import com.qdjxd.wdth01.service.EquipmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
+import java.io.*;
 
 /**
  * 装置Controller
@@ -88,4 +87,39 @@ public class EquipmentController {
         ResponseEntity result = equipmentService.getWasteList();
         return result;
     }
+
+    /**
+     * 获取ip
+     */
+    @RequestMapping("ip")
+    public String getIpList(){
+
+        FileReader fileReader= null;
+        BufferedReader bufferedReader=null;
+        StringBuilder stringBuilder=null;
+
+
+        try {
+            stringBuilder=new StringBuilder();
+            fileReader=new FileReader("D:\\ip.txt");
+            bufferedReader=new BufferedReader(fileReader);
+             String str;
+            while ((str=bufferedReader.readLine())!=null){
+                stringBuilder.append(str);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                bufferedReader.close();
+                fileReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return stringBuilder.toString();
+        }
+
+
+
 }

@@ -11,9 +11,19 @@
     <script type="text/javascript"   th:src="@{/ProjectScripts/ocx/ocx.js}"></script>
     <script type="text/javascript"   th:src="@{/ProjectScripts/ocx/ocx2.js}"></script>
     <script>
+        //1000206$1$0$4
+        // 1000206$1$0$9
+
+        // 1000220$1$0$30
+        // 1000209$1$0$23
         function init(){
-                init_v1();
-                init_v2();
+            $.ajax({
+                type: 'get',
+                url: '/equip/ip'
+            }).then(function(data){
+                init_v1(data[0]);
+                init_v2(data[1]);
+            });
         }
 
         function logout(){
@@ -30,14 +40,14 @@
                 data: {mapper: "/turnToEquipment"},
                 success: function (data) {
                     if(event.keyCode == 39){
-                        window.location.href=data[1];
-                        // window.open(data[1]);
+                        // window.location.href=data[1];
+                        window.open(data[1]);
                     }else if(event.keyCode == 37){
-                        window.location.href=data[0];
-                        // window.open(data[0]);
+                        // window.location.href=data[0];
+                        window.open(data[0]);
                     }else if(event.keyCode == 27){
-                        window.location.href="/page/menu";
-                        // window.open("/")
+                        // window.location.href="/";
+                        window.open("/page/menu")
                     }
                 }
             });
