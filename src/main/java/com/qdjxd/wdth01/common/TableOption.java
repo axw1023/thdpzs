@@ -8,7 +8,6 @@ public class TableOption {
     private String idColumn;
     private List<Column> columns;
 
-
     public String getIdColumn() {
         return idColumn;
     }

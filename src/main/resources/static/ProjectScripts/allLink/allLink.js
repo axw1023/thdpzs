@@ -50,10 +50,10 @@ function getAllLinkData(){
                 var rcly="";
                 var rcs="";
                 rcdw+="<span >("+data[5].unit+")</span>"
-                rcly+="<span >"+data[5].name+"</span><br>"
-                rcly+="<span >"+data[6].name+"</span>"
-                rcs+="<span >"+data[5].value+"</span><br>"
-                rcs+="<span >"+data[6].value+"</span>"
+                rcly+="<span >"+data[5].name+"</span>"
+                // rcly+="<span >"+data[6].name+"</span>"
+                rcs+="<span >"+data[5].value+"</span>"
+                // rcs+="<span >"+data[6].value+"</span>"
                 $("#dailyOutput_remark").html(rcdw);
                 $("#dailyOutput_value1").html(rcly);
                 $("#dailyOutput_value2").html(rcs);
@@ -62,14 +62,14 @@ function getAllLinkData(){
                 var rcl="";
                 var rcls="";
                 rcldw+="<span >("+data[7].unit+")</span>"
-                rcl+="<span >"+data[7].name+"</span><br>"
-                rcl+="<span >"+data[8].name+"</span><br>"
-                rcl+="<span >"+data[9].name+"</span><br>"
-                rcl+="<span >"+data[10].name+"</span>"
-                rcls+="<span >"+data[7].value+"</span><br>"
-                rcls+="<span >"+data[8].value+"</span><br>"
-                rcls+="<span >"+data[9].value+"</span><br>"
-                rcls+="<span >"+data[10].value+"</span>"
+                rcl+="<span >"+data[7].name+"</span>"
+                // rcl+="<span >"+data[8].name+"</span><br>"
+                // rcl+="<span >"+data[9].name+"</span><br>"
+                // rcl+="<span >"+data[10].name+"</span>"
+                rcls+="<span >"+data[7].value+"</span>"
+                // rcls+="<span >"+data[8].value+"</span><br>"
+                // rcls+="<span >"+data[9].value+"</span><br>"
+                // rcls+="<span >"+data[10].value+"</span>"
                 $("#chemicalDailyOutput_remark").html(rcldw);
                 $("#chemicalDailyOutput_value1").html(rcl);
                 $("#chemicalDailyOutput_value2").html(rcls);
@@ -109,6 +109,20 @@ function getAllLinkData(){
                 $("#sell_ship_remark").html(xlhdw);
                 $("#sell_ship_value1").html(xlhy);
                 $("#sell_ship_value2").html(xlhs);
+
+
+                var rjgl_name = "";
+                var rjgl_remark="";
+                var rjgl_value1="";
+                var rjgl_value2="";
+                rjgl_name+="<span >"+data[14].type+"</span>"
+                rjgl_remark+="<span >("+data[14].unit+")</span>"
+                rjgl_value1+="<span >"+data[14].name+"</span>"
+                rjgl_value2+="<span >"+data[14].value+"</span>"
+                $("#processingDay_name").html(rjgl_name);
+                $("#processingDay_remark").html(rjgl_remark);
+                $("#processingDay_value_name").html(rjgl_value1);
+                $("#processingDay_value").html(rjgl_value2);
                 
             },
     });

@@ -21,4 +21,13 @@
         ORDER BY
             m_sort
     </select>
+    
+    <select id="getTableList" parameterType="com.qdjxd.wdth01.common.TableOption" resultType="java.util.Map">
+        SELECT
+          <foreach collection="columns" item="item" separator="," >
+              ${item.field}
+          </foreach>
+        FROM
+          ${tableName}
+    </select>
 </mapper>

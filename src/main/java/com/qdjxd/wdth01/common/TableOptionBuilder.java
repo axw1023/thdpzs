@@ -1,14 +1,11 @@
 package com.qdjxd.wdth01.common;
 
-import com.mysql.cj.xdevapi.Table;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
-import org.springframework.util.StringValueResolver;
 
 import java.io.IOException;
 import java.io.InputStream;
