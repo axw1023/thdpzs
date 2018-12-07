@@ -21,8 +21,8 @@ function ButtonLogout_onclick_v2()
     }
 }
 
-
-function init_v2(){
+//"1000008$1$0$0"
+function init_v2(ip){
 
     var obj = document.getElementById("video2");
     gWndId = obj.DPSDK_CreateSmartWnd(0, 0, 100, 100);
@@ -31,7 +31,7 @@ function init_v2(){
     obj.DPSDK_SetLog(2, "D:\\video2_log", false, false); //初始化后设置日志路径
     ShowCallRetInfo_v2(obj.DPSDK_Login("10.0.22.245", 9000, "大屏展示2", "admin123"), "登录");
     var nWndNo = obj.DPSDK_GetSelWnd(gWndId);
-    ShowCallRetInfo_v2(obj.DPSDK_DirectRealplayByWndNo(gWndId, nWndNo, "1000008$1$0$0", 1, 1, 1), "直接实时播放");
+    ShowCallRetInfo_v2(obj.DPSDK_DirectRealplayByWndNo(gWndId, nWndNo,ip , 1, 1, 1), "直接实时播放");
     bLogin=1;
 }
 

@@ -5,5 +5,8 @@
         <column field="equip_com_id" ></column>
         <column field="equip_type_name" title="设备类型名称"></column>
         <column field="equip_num" title="设备数量"></column>
+        <column field="enable" title="是否展示"></column>
+        <column field="sort" title="排序"></column>
     </table>
+
 </root>
