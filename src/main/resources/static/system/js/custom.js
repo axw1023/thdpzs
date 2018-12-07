@@ -74,10 +74,10 @@ var system ={
             //发送ajax
             $.ajax({
                 type: 'get',
-                url: '/system/table/101'
+                url: '/system/table/'+type
             }).then(function (_data) {
                 //初始化表格
-                system.formatTable("101",_data);
+                system.formatTable(type,_data);
             });
 
         });
