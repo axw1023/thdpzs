@@ -76,4 +76,31 @@
         <column field="text_sort" title="排序"></column>
         <column field="ai_enable" title="是否展示(0或1)"></column>
     </table>
+    
+    
+    <table key="401" name="wdth_bd_common">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="数值"></column>
+        <where column="type">1</where>
+    </table>
+    
+    <table key="402" name="wdth_bd_common">
+        <id field="id"></id>
+        <column field="name" title="第几天"></column>
+        <column field="value" title="额外数值"></column>
+        <column field="other_value" title="基础数值"></column>
+        <where column="type">2</where>
+    </table>
+    
+
+    
+    <table key="404" name="wdth_bd_feed">
+        <id field="id"></id>
+        <column field="feed_name" title="第一列"></column>
+        <column field="value" title="第二列"></column>
+        <column field="standard" title="第三列"></column>
+    </table>
+
+
 </root>

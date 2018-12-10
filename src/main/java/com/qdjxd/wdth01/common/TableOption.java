@@ -7,7 +7,38 @@ public class TableOption {
     private String tableName ;
     private String idColumn;
     private List<Column> columns;
+    private List<Where> wheres;
 
+    public void addWhere(String name ,String value){
+        if (wheres==null) wheres = new LinkedList<>();
+        wheres.add(new Where(name,value));
+    }
+
+    class Where{
+        private String name;
+        private String value ;
+
+        public Where(String name, String value) {
+            this.name = name;
+            this.value = value;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
 
     public String getIdColumn() {
         return idColumn;
