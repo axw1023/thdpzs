@@ -43,7 +43,7 @@ public class TableOptionBuilder {
             String tableName = table.attribute("name").getValue();
             TableOption tableOption = new TableOption(tableName);
             //获取Cloumn元素
-            Iterator<Element> columns = table.elementIterator("column");
+            Iterator<Element> columns = table.elementIterator();
             //存入TableOption
             insertColumnToTableOption(tableOption,columns);
             tableMap.put(key,tableOption);
@@ -53,20 +53,20 @@ public class TableOptionBuilder {
     }
 
     private void insertColumnToTableOption(TableOption tableOption, Iterator<Element> columns) {
-        boolean flag = true;
         while(columns.hasNext()){
-
             Element column = columns.next();
+
             boolean visible = true;
-            boolean radio = false;
+
             String field = null;
             String title = null;
             String align = "center";
             String width = null;
             String valign = "middle";
             Attribute fieldArr = column.attribute("field");
-            if (flag) tableOption.setIdColumn(fieldArr.getValue());
-            flag = false;
+            String name = column.getName();
+            if ("id".equals(name))
+             tableOption.setIdColumn(fieldArr.getValue());
             Attribute titleArr = column.attribute("title");
             Attribute alignArr = column.attribute("align");
             Attribute widthArr = column.attribute("width");
@@ -78,9 +78,9 @@ public class TableOptionBuilder {
             else title = titleArr.getValue();
             if (alignArr!=null) align = alignArr.getValue();
             if (valignArr != null) valign = valignArr.getValue();
-            if (widthArr != null) width = widthArr.getValue();
-            if (radioArr != null && "true".equals(radioArr.getValue())) radio = true;
-            tableOption.addColumn(radio,visible,title,align,width,valign,field);
+            if (widthArr != null) width = widthArr.getValue() +"px";
+
+            tableOption.addColumn(visible,title,align,width,valign,field);
         }
     }
 }

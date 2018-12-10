@@ -40,8 +40,8 @@ public class TableOption {
         columns = new LinkedList<>();
     }
 
-    public void addColumn(boolean radio,boolean visible, String title, String align, String width, String valign, String field){
-        Column column = new Column(radio,visible,title,align,width,valign,field);
+    public void addColumn(boolean visible, String title, String align, String width, String valign, String field){
+        Column column = new Column(visible,title,align,width,valign,field);
         columns.add(column);
     }
 

@@ -61,24 +61,25 @@ var system ={
                 param.tableName = data.tableName;
                 return param;
             },
-            onDblClickCell: function(field, value, row, $element){
+            onDblClickCell: function(field, val, row, $element){
                 var idColumn = $(".table").bootstrapTable("getOptions").idField;
                 var valueColumn = field;
                 var name =  table_data.tableName;
-                var val = $element.text();
+                var idVal = row[idColumn];
                 layer.prompt({title: '修改为', formType: 2,value: val}, function(text, index){
                    //发送请求修改数据
                    $.ajax({
                        type: "POST",
-                       url: "system/update",
+                       url: "/system/table/update",
                        data: {
                            name :  name,
                            idCol: idColumn,
                            valueCol : valueColumn,
+                           idVal : idVal,
                            value : text
                        }
                    }).then(function(){
-
+                       $(".table").bootstrapTable("refresh");
                    });
                     layer.close(index);
 
@@ -101,8 +102,8 @@ var system ={
                 type: 'get',
                 url: '/system/table/'+type
             }).then(function (_data) {
+                $(".table").bootstrapTable("destroy");
                 if(_data == null||_data == ""){
-                    $(".table").bootstrapTable("destroy");
                     return;
                 };
                 //初始化表格

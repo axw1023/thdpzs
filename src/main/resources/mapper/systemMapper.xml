@@ -30,4 +30,8 @@
         FROM
           ${tableName}
     </select>
+
+    <update id="updateTableInfo" parameterType="com.qdjxd.wdth01.common.TableInfo">
+        UPDATE ${name} SET ${valueCol} = #{value} WHERE ${idCol} = #{idVal}
+    </update>
 </mapper>

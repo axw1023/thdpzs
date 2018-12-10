@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root>
+
+<root xmlns="http://www.w3school.com.cn"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.w3school.com.cn http://10.0.30.200:8080/table.xsd">
     <!-- 设备与安环 -->
     <table key="101" name="wdth_sbyah_equipment_composition">
-        <column field="equip_com_id" ></column>
+        <id field="equip_com_id" ></id>
         <column field="equip_type_name" title="设备类型名称"></column>
         <column field="equip_num" title="设备数量"></column>
-        <column field="enable" title="是否展示"></column>
         <column field="sort" title="排序"></column>
+        <column field="enable" title="是否展示"></column>
     </table>
 
+    <table key="102" name="wdth_sbyah_unit_area">
+        <id field="unit_area_id"></id>
+        <column field="unit_area_name" title="设备区域名称"></column>
+        <column field="unit_num" title="设备数量"></column>
+        <column field="unit_sort" title="设备排序"></column>
+        <column field="unit_enable" title="是否可用"></column>
+    </table>
+
+    <!--<table key="103" name="wdth_sbyah_inspect_statistics">
+        <id field=""></id>
+        <column field="" title=""></column>
+        <column field="" title=""></column>
+        <column field="" title=""></column>
+        <column field="" title=""></column>
+        <column field="" title=""></column>
+    </table>
+-->
 </root>

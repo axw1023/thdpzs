@@ -1,5 +1,6 @@
 package com.qdjxd.wdth01.service.impl;
 
+import com.qdjxd.wdth01.common.TableInfo;
 import com.qdjxd.wdth01.common.TableOption;
 import com.qdjxd.wdth01.common.TableOptionBuilder;
 import com.qdjxd.wdth01.common.TreeNode;
@@ -41,6 +42,12 @@ public class SystemServiceImpl implements SystemService {
         TableOption tableOption = builder.getTableOptionByKey(type);
         List<Map> dataMap = systemMapper.getTableList(tableOption);
         return ResponseEntity.ok(dataMap);
+    }
+
+    @Override
+    public ResponseEntity updateTableInfo(TableInfo table) {
+        systemMapper.updateTableInfo(table);
+        return null;
     }
 
     private List<TreeNode> formatNodes(List<TreeNode> nodes) {

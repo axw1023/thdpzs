@@ -1,5 +1,6 @@
 package com.qdjxd.wdth01.dao;
 
+import com.qdjxd.wdth01.common.TableInfo;
 import com.qdjxd.wdth01.common.TableOption;
 import com.qdjxd.wdth01.common.TreeNode;
 import org.apache.ibatis.annotations.Mapper;
@@ -14,4 +15,6 @@ public interface SystemMapper {
     List<TreeNode> getMenuList();
 
     List<Map> getTableList(TableOption tableName);
+
+    void updateTableInfo(TableInfo table);
 }

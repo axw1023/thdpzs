@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.w3school.com.cn"
+           xmlns="http://www.w3school.com.cn"
+           elementFormDefault="qualified">
+
+    <xs:element name="root">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="table" maxOccurs="unbounded">
+                    <xs:complexType mixed="true">
+                        <xs:sequence >
+                            <xs:element name="id" minOccurs="1" maxOccurs="1">
+                                <xs:complexType>
+                                    <xs:attribute name="field" type="xs:string" use="required" ></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="column"  maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:attribute name="field" type="xs:string" use="required"></xs:attribute>
+                                    <xs:attribute name="title" type="xs:string" use="required"></xs:attribute>
+                                    <xs:attribute name="align" >
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="center"></xs:enumeration>
+                                                <xs:enumeration value="left"></xs:enumeration>
+                                                <xs:enumeration value="right"></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="width" type="xs:int"></xs:attribute>
+                                    <xs:attribute name="valign">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="top"></xs:enumeration>
+                                                <xs:enumeration value="middle"></xs:enumeration>
+                                                <xs:enumeration value="bottom"></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="visible">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="true"></xs:enumeration>
+                                                <xs:enumeration value="false"></xs:enumeration>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="key" use="required" type="xs:string"></xs:attribute>
+                        <xs:attribute name="name" use="required" type="xs:string"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+    </xs:element>
+</xs:schema>

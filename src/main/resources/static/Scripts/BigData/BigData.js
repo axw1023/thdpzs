@@ -922,7 +922,7 @@ function setCoordData(_d){
         }
         var html3 = template('tpl3',data3);
         document.getElementById('three').innerHTML = html3;
-    },data.layer[0].time)
+    },data.layer[0].time*2);
 
     layerData=data.layer;
     beginLayerShow();
