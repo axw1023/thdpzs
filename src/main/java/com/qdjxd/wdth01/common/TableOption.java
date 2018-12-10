@@ -2,7 +2,7 @@ package com.qdjxd.wdth01.common;
 
 import java.util.LinkedList;
 import java.util.List;
-
+//
 public class TableOption {
     private String tableName ;
     private String idColumn;
