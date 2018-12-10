@@ -9,7 +9,7 @@
         <column field="equip_type_name" title="设备类型名称"></column>
         <column field="equip_num" title="设备数量"></column>
         <column field="sort" title="排序"></column>
-        <column field="enable" title="是否展示"></column>
+        <column field="enable" title="是否展示(0或1)"></column>
     </table>
 
     <table key="102" name="wdth_sbyah_unit_area">
@@ -17,7 +17,7 @@
         <column field="unit_area_name" title="设备区域名称"></column>
         <column field="unit_num" title="设备数量"></column>
         <column field="unit_sort" title="设备排序"></column>
-        <column field="unit_enable" title="是否可用"></column>
+        <column field="unit_enable" title="是否展示(0或1)"></column>
     </table>
 
     <table key="103" name="wdth_sbyah_inspect_statistics">
@@ -26,7 +26,54 @@
         <column field="inspect_num" title="巡查数量"></column>
         <column field="inspect_percent" title="巡查覆盖率"></column>
         <column field="inspect_sort" title="排序"></column>
-        <column field="inspect_enable" title="是否可用"></column>
+        <column field="inspect_enable" title="是否展示(0或1)"></column>
+    </table>
+    
+    <table key="104" name="wdth_sbyah_warning">
+        <id field="warning_id"></id>
+        <column field="warning_name" title="年限分类"></column>
+        <column field="warning_num" title="设备数量"></column>
+        <column field="warning_sort" title="排序"></column>
+        <column field="warning_enable" title="是否展示(0或1)"></column>
+    </table>
+    
+    <table key="105" name="wdth_sbyah_defect_level">
+        <id field="defect_id"></id>
+        <column field="defect_name" title="缺陷级别"></column>
+        <column field="defect_num" title="项数"></column>
+        <column field="defect_sort" title="排序"></column>
+        <column field="defect_enable" title="是否展示(0或1)"></column>
+    </table>
+    
+    <table key="106" name="wdth_sbyah_job_record">
+        <id field="job_record_id"></id>
+        <column field="job_record_name" title="作业分类名称"></column>
+        <column field="job_record_num" title="作业数量"></column>
+        <column field="job_record_sort" title="排序"></column>
+        <column field="job_enable" title="是否展示(0或1)"></column>
+    </table>
+    
+    <table key="107" name="wdth_sbyah_waste">
+        <id field="waste_id"></id>
+        <column field="waste_name" title="外排物类型"></column>
+        <column field="rt_concentration" title="实时溶度"></column>
+        <column field="control_rates" title="设计出水水质"></column>
+        <column field="so2_concentration" title="二氧化硫浓度"></column>
+        <column field="so2_standard" title="二氧化硫标准值"></column>
+        <column field="no_concentration" title="氮氧化物浓度"></column>
+        <column field="no_standard" title="氮氧化物标准值"></column>
+        <column field="yc_concentration" title="烟尘浓度"></column>
+        <column field="yc_standard" title="烟尘标准值"></column>
+        <column field="waste_sort" title="排序"></column>
+        <column field="waste_enable" title="是否展示(0或1)"></column>
     </table>
 
+    <table key="201" name="wdth_zngc_ai_factroy">
+        <id field="ai_factroy_id"></id>
+        <column field="ai_factroy_text" title="文本" align="left"></column>
+        <column field="text_type" title="文本类型"></column>
+        <column field="text_type_explain" title="文本类型备注"></column>
+        <column field="text_sort" title="排序"></column>
+        <column field="ai_enable" title="是否展示(0或1)"></column>
+    </table>
 </root>

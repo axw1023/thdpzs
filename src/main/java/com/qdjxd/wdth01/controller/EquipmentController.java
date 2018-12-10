@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -89,4 +93,38 @@ public class EquipmentController {
         ResponseEntity result = equipmentService.getWasteList();
         return result;
     }
+
+    /**
+     * 获取ip
+     */
+    @RequestMapping("ip")
+    @ResponseBody
+    public String getIpList(){
+
+        FileReader fileReader= null;
+        BufferedReader bufferedReader=null;
+        StringBuilder stringBuilder=null;
+
+
+        try {
+            stringBuilder=new StringBuilder();
+            fileReader=new FileReader("D:\\ip.txt");
+            bufferedReader=new BufferedReader(fileReader);
+            String str;
+            while ((str=bufferedReader.readLine())!=null){
+                stringBuilder.append(str).append(";");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                bufferedReader.close();
+                fileReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return stringBuilder.toString();
+    }
+
 }
