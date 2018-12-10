@@ -1,5 +1,6 @@
 package com.qdjxd.wdth01.controller;
 
+import com.qdjxd.wdth01.common.TableInfo;
 import com.qdjxd.wdth01.common.TableOptionBuilder;
 import com.qdjxd.wdth01.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +38,11 @@ public class SystemController {
     @RequestMapping("table/info")
     public ResponseEntity getTableList(String tableName){
         return null;
+    }
+
+    @RequestMapping("table/update")
+    public ResponseEntity updateTableInfo(TableInfo table){
+        ResponseEntity result = systemService.updateTableInfo(table);
+        return result;
     }
 }

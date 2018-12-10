@@ -922,7 +922,7 @@ function setCoordData(_d){
         }
         var html3 = template('tpl3',data3);
         document.getElementById('three').innerHTML = html3;
-    },data.layer[0].time)
+    },data.layer[0].time*2);
 
     layerData=data.layer;
     beginLayerShow();
@@ -950,7 +950,7 @@ function beginLayerShow(){
         var top=layerData[layerNum].layer_coord_y+'px';
         var left=layerData[layerNum].layer_coord_x+'px'
         $("#layer").css({top:top,left:left});
-    },layerData[0].time);
+    },layerData[0].time*1.6);
 
 }
 

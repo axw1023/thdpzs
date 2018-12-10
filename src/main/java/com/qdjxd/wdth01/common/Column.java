@@ -3,15 +3,13 @@ package com.qdjxd.wdth01.common;
 public class Column {
     private String field;
     private String title;
-    private boolean radio = false;
-    private String align = "center";
+    private String align ;
     private String width ;
-    private String valign = "middle";
+    private String valign;
     private boolean  visible = true;
 
 
-    public Column(boolean radio, boolean visible, String title, String align, String width, String valign, String field ) {
-        this.radio = radio;
+    public Column( boolean visible, String title, String align, String width, String valign, String field ) {
         this.title = title;
         this.align = align;
         this.width = width;
@@ -40,14 +38,6 @@ public class Column {
 
     public void setField(String field) {
         this.field = field;
-    }
-
-    public boolean isRadio() {
-        return radio;
-    }
-
-    public void setRadio(boolean radio) {
-        this.radio = radio;
     }
 
     public String getTitle() {
