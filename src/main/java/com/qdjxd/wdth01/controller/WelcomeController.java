@@ -24,14 +24,14 @@ public class WelcomeController {
     @Resource
     Wdth_xt_configerMapper configerMapper;
 
-    //登录页
-    @RequestMapping("/")
-    public String userWelcomeLogin(){
-        return "user/Welcomelogin";
-    }
+//    //登录页
+//    @RequestMapping("/")
+//    public String userWelcomeLogin(){
+//        return "user/Welcomelogin";
+//    }
 
     //    欢迎页√1
-    @RequestMapping("/welcome")
+    @RequestMapping("/")
     public String index() {
         return "welcome";
     }
