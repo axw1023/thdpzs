@@ -1,3 +1,4 @@
+var table_data ;
 $(function() {
     system.init();
 
@@ -48,6 +49,7 @@ var system ={
         });
     },
     formatTable: function(type,data){
+        table_data = data;
         // $('.table').bootstrapTable('refreshOptions',null);
         //TODO 表格初始化
         $(".table").bootstrapTable({
@@ -58,6 +60,29 @@ var system ={
             queryParams: function(param){
                 param.tableName = data.tableName;
                 return param;
+            },
+            onDblClickCell: function(field, value, row, $element){
+                var idColumn = $(".table").bootstrapTable("getOptions").idField;
+                var valueColumn = field;
+                var name =  table_data.tableName;
+                var val = $element.text();
+                layer.prompt({title: '修改为', formType: 2,value: val}, function(text, index){
+                   //发送请求修改数据
+                   $.ajax({
+                       type: "POST",
+                       url: "system/update",
+                       data: {
+                           name :  name,
+                           idCol: idColumn,
+                           valueCol : valueColumn,
+                           value : text
+                       }
+                   }).then(function(){
+
+                   });
+                    layer.close(index);
+
+                });
             },
             singleSelect:true,        //单选checkbox
             idField:data.idColumn,
