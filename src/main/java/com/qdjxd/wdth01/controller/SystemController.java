@@ -35,10 +35,9 @@ public class SystemController {
         return result;
     }
 
-    @RequestMapping("table/info/{type}")
-    public ResponseEntity getTableList(@PathVariable String type){
-        ResponseEntity result = systemService.getTableList(type);
-        return result;
+    @RequestMapping("table/info")
+    public ResponseEntity getTableList(String tableName){
+        return null;
     }
 
     @RequestMapping("table/update")

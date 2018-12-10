@@ -1,6 +1,8 @@
 package com.qdjxd.wdth01.controller;
 
+import com.qdjxd.wdth01.dao.Wdth_xt_configerMapper;
 import com.qdjxd.wdth01.dao.Wdth_xt_pageMapper;
+import com.qdjxd.wdth01.model.Wdth_xt_configer;
 import com.qdjxd.wdth01.model.Wdth_xt_page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +21,17 @@ public class WelcomeController {
     @Resource
     private Wdth_xt_pageMapper pageMapper;
 
-    //    欢迎页√1
+    @Resource
+    Wdth_xt_configerMapper configerMapper;
+
+    //登录页
     @RequestMapping("/")
+    public String userWelcomeLogin(){
+        return "user/Welcomelogin";
+    }
+
+    //    欢迎页√1
+    @RequestMapping("/welcome")
     public String index() {
         return "welcome";
     }
@@ -150,6 +161,18 @@ public class WelcomeController {
         }
 
         return mappers;
+    }
+
+
+
+//    获取欢迎页面背景图片
+    @RequestMapping(value = "/getWelcomeBackImg", method = RequestMethod.GET)
+    @ResponseBody
+    //获取ajax参数中信资源
+    public Wdth_xt_configer getWelcomeBackImg() {
+        int id = 3;
+        Wdth_xt_configer data = configerMapper.selectByPrimaryKey(id);
+        return data;
     }
 
 

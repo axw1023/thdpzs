@@ -400,15 +400,6 @@ body {
     background-image:url("../../images/BigData/大数据分析-font-bg.png");
 
 }
-#bg{
-    width:1744px;
-    height:867px;
-    position: absolute;
-    left:493px;
-    z-index: 5;
-    top:118px;
-    background-image:url("../../images/BigData/Big.png");
-}
 #four_1 ul{
     padding:0;
     margin:40px 0 0 0 ;
@@ -555,7 +546,6 @@ body {
     margin-top:50px;
     width:100%;
     height:350px;
-
 }
 #five{
     position: absolute;

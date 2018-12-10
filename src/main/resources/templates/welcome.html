@@ -13,7 +13,7 @@
             background-repeat: no-repeat;
             height: 1024px;
             width: 5632px;
-            background-image: url("../../images/welcome/welcome.png");
+            /*background-image: url("../../images/welcome/welcome_pro.png");*/
         }
     </style>
     <script type="text/javascript">
@@ -36,6 +36,27 @@
                 }
             });
         });
+
+        $(function () {
+            getWelcomeBackImg();
+        });
+
+        function getWelcomeBackImg() {
+            $.ajax({
+                type: "get",
+                url: "/getWelcomeBackImg",
+                async: false,
+                success: function (data) {
+                    debugger
+                    var imgurl = data.value;
+                    if(imgurl == "市委"){
+                        $("#img").css("background-image","url(../../images/welcome/welcome_pro.png)")
+                    }else if(imgurl == "普通"){
+                        $("#img").css("background-image","url(../../images/welcome/welcome_simple.png)")
+                    }
+                },
+            });
+        }
     </script>
 </head>
 <body style="margin: 0;padding: 0">
