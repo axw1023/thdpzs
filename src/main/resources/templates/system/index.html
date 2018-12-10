@@ -7,11 +7,11 @@
     <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-table/dist/bootstrap-table.css"/>
     <link rel="stylesheet" type="text/css" href="../../plugin/layer/mobile/need/layer.css"/>
-    <link rel="stylesheet" type="text/css" href="../../system/css/style.css"/>
-    <link rel="stylesheet" type="text/css" href="../../system/css/font-awesome.css"/>
-    <link rel="stylesheet" type="text/css" href="../../system/css/custom.css">
-    <link href="../../system/css/animate.css" rel="stylesheet" type="text/css" media="all">
-    <link rel="stylesheet" type="text/css" href="../../system/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/system/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/system/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/system/css/custom.css">
+    <link href="../../ProjectCss/system/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="../../ProjectCss/system/index.css"/>
 
 </head>
 <body class="cbp-spmenu-push">
@@ -21,7 +21,21 @@
         <div class="navbar-collapse">
             <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
                 <ul class="nav" id="side-menu">
-
+                    <li>
+                        <a href="index.html"><i class="fa fa-cogs nav_icon"></i>Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-cogs nav_icon"></i>Components <span class="nav-badge">12</span> <span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="grids.html">Grid System</a>
+                            </li>
+                            <li>
+                                <a href="media.html">Media Objects</a>
+                            </li>
+                        </ul>
+                        <!-- /nav-second-level -->
+                    </li>
                 </ul>
                 <div class="clearfix"> </div>
                 <!-- //sidebar-collapse -->
@@ -53,7 +67,7 @@
                     <li class="dropdown profile_details_drop">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                             <div class="profile_img">
-                                <span class="prfil-img"><!--<img src="/system/images/a.png" alt=""> --></span>
+                                <span class="prfil-img"><!--<img src="/ProjectCss/system/images/a.png" alt=""> --></span>
                                 <div class="user-name">
                                     <p>Admin</p>
                                     <span>Administrator</span>
@@ -79,19 +93,47 @@
             <div class="tables">
                 <h3 class="title1">首页</h3>
                 <div class="panel-body widget-shadow">
-                    <!--<h4>Basic Table:</h4>-->
-                    <table class="table table-hover">
-
+                    <h4>Basic Table:</h4>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Username</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>the Bird</td>
+                            <td>@twitter</td>
+                        </tr>
+                        </tbody>
                     </table>
                 </div>
 
             </div>
 
+            <!-- <table id="systemTable" class="table"></table>-->
         </div>
     </div>
 </div>
 <!-- Classie -->
-<script src="/system/js/classie.js"></script>
+<script src="/ProjectCss/system/js/classie.js"></script>
 <script>
     var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
         showLeftPush = document.getElementById( 'showLeftPush' ),
@@ -116,6 +158,6 @@
     <script type="text/javascript" th:src="@{/plugin/bootstrap/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{/plugin/bootstrap-table/dist/bootstrap-table.js}"></script>
     <script type="text/javascript" th:src="@{/plugin/layer/mobile/layer.js}"></script>
-    <script type="text/javascript" src="/system/js/metisMenu.min.js"></script>
-    <script type="text/javascript" src="/system/js/custom.js"></script>
+    <script type="text/javascript" src="/ProjectCss/system/js/metisMenu.min.js"></script>
+    <script type="text/javascript" src="/ProjectCss/system/js/custom.js"></script>
 </html>

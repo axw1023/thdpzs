@@ -6,6 +6,4 @@ public interface SystemService {
     ResponseEntity getMenuList();
 
     ResponseEntity getTableFormatData(String type);
-
-    ResponseEntity getTableList(String type);
 }

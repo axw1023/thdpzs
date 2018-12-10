@@ -12,7 +12,6 @@ import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class SystemServiceImpl implements SystemService {
@@ -34,13 +33,6 @@ public class SystemServiceImpl implements SystemService {
     public ResponseEntity getTableFormatData(String type) {
         TableOption tableOption = builder.getTableOptionByKey(type);
         return ResponseEntity.ok(tableOption);
-    }
-
-    @Override
-    public ResponseEntity getTableList(String type) {
-        TableOption tableOption = builder.getTableOptionByKey(type);
-        List<Map> dataMap = systemMapper.getTableList(tableOption);
-        return ResponseEntity.ok(dataMap);
     }
 
     private List<TreeNode> formatNodes(List<TreeNode> nodes) {
