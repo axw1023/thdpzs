@@ -27,6 +27,7 @@ public class EquipmentController {
     /**
      * 获取设备构成信息
      * @return
+     *
      */
     @RequestMapping("num/list")
     public ResponseEntity getEquipNumList(){
