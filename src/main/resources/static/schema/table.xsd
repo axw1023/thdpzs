@@ -17,35 +17,40 @@
                             </xs:element>
                             <xs:element name="column"  maxOccurs="unbounded">
                                 <xs:complexType>
-                                    <xs:attribute name="field" type="xs:string" use="required"></xs:attribute>
-                                    <xs:attribute name="title" type="xs:string" use="required"></xs:attribute>
+                                    <xs:attribute name="field" type="xs:string" use="required"/>
+                                    <xs:attribute name="title" type="xs:string" use="required"/>
                                     <xs:attribute name="align" >
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
-                                                <xs:enumeration value="center"></xs:enumeration>
-                                                <xs:enumeration value="left"></xs:enumeration>
-                                                <xs:enumeration value="right"></xs:enumeration>
+                                                <xs:enumeration value="center"/>
+                                                <xs:enumeration value="left"/>
+                                                <xs:enumeration value="right"/>
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:attribute>
-                                    <xs:attribute name="width" type="xs:int"></xs:attribute>
+                                    <xs:attribute name="width" type="xs:int"/>
                                     <xs:attribute name="valign">
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
-                                                <xs:enumeration value="top"></xs:enumeration>
-                                                <xs:enumeration value="middle"></xs:enumeration>
-                                                <xs:enumeration value="bottom"></xs:enumeration>
+                                                <xs:enumeration value="top"/>
+                                                <xs:enumeration value="middle"/>
+                                                <xs:enumeration value="bottom"/>
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:attribute>
                                     <xs:attribute name="visible">
                                         <xs:simpleType>
                                             <xs:restriction base="xs:string">
-                                                <xs:enumeration value="true"></xs:enumeration>
-                                                <xs:enumeration value="false"></xs:enumeration>
+                                                <xs:enumeration value="true"/>
+                                                <xs:enumeration value="false"/>
                                             </xs:restriction>
                                         </xs:simpleType>
                                     </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="where" minOccurs="0" maxOccurs="unbounded">
+                                <xs:complexType mixed="true">
+                                    <xs:attribute name="column" type="xs:string" use="required"></xs:attribute>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>

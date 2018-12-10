@@ -58,7 +58,6 @@ public class TableOptionBuilder {
     private void insertColumnToTableOption(TableOption tableOption, Iterator<Element> columns) {
         while(columns.hasNext()){
             Element column = columns.next();
-
             boolean visible = true;
 
             String field = null;
@@ -70,10 +69,11 @@ public class TableOptionBuilder {
             String name = column.getName();
             if ("id".equals(name))
              tableOption.setIdColumn(fieldArr.getValue());
+            if ("where".equals(name))
+                setWhereToOption(column,tableOption);
             Attribute titleArr = column.attribute("title");
             Attribute alignArr = column.attribute("align");
             Attribute widthArr = column.attribute("width");
-            Attribute radioArr = column.attribute("radio");
             Attribute valignArr = column.attribute("valign");
             //验证
             if (fieldArr!=null) field = fieldArr.getValue();
@@ -85,5 +85,16 @@ public class TableOptionBuilder {
 
             tableOption.addColumn(visible,title,align,width,valign,field);
         }
+    }
+
+    /**
+     * 给表格初始化设置查询条件
+     * @param column
+     * @param tableOption
+     */
+    private void setWhereToOption(Element column, TableOption tableOption) {
+        String name = column.attribute("column").getValue();
+        String value = column.getText();
+        tableOption.addWhere(name,value);
     }
 }

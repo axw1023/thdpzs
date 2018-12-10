@@ -29,6 +29,13 @@
           </foreach>
         FROM
           ${tableName}
+        <where>
+            <if test="wheres != null">
+               <foreach collection="wheres" item="item" separator="and">
+                  ${item.name} = #{item.value}
+               </foreach>
+            </if>
+        </where>
     </select>
 
     <update id="updateTableInfo" parameterType="com.qdjxd.wdth01.common.TableInfo">

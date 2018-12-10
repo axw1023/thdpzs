@@ -40,7 +40,7 @@ var system ={
             $.each(data,function(i,n){
                 content += '<li><a href="#"><i class="fa fa-cogs nav_icon"></i>'+n.name+'<span class="nav-badge">'+n.childrenNodes.length+'</span> <span class="fa arrow"></span></a><ul class="nav nav-second-level collapse">'
                 $.each(n.childrenNodes,function(j,m){
-                    content+= '<li data-path="'+m.path+'" id="'+m.id+'"><a href="#">'+m.name+'</a></li>';
+                    content+= '<li  class="menu_system" data-path="'+m.path+'" id="'+m.id+'"><a href="#">'+m.name+'</a></li>';
                 });
                 content += '</li></ul>';
             });
@@ -93,7 +93,7 @@ var system ={
 
     },
     event_format: function(){
-        $("#side-menu").on("click","ul li",function(){
+        $("#side-menu").on("click",".menu_system",function(){
             var text = $(this).children("a").text();
             var type = $(this).attr("data-path");
             $(".title1").text(text);
