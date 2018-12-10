@@ -391,15 +391,25 @@ body {
     left: 2719px;
     width: 1728px;
 }
-#four_1{
+#four_1 {
     position: absolute;
-    left:30px;
-    width:766px;
-    height:281px;
-    top:102px;
-    background-image:url("../../images/BigData/大数据分析-font-bg.png");
+    left: 30px;
+    width: 766px;
+    height: 281px;
+    top: 102px;
+    background-image: url("../../images/BigData/大数据分析-font-bg.png");
 
 }
+#bg{
+    width:1744px;
+    height:867px;
+    position: absolute;
+    left:493px;
+    z-index: 5;
+    top:118px;
+    background-image:url("../../images/BigData/Big.png");
+}
+
 #four_1 ul{
     padding:0;
     margin:40px 0 0 0 ;

@@ -20,13 +20,13 @@
         <column field="unit_enable" title="是否可用"></column>
     </table>
 
-    <!--<table key="103" name="wdth_sbyah_inspect_statistics">
-        <id field=""></id>
-        <column field="" title=""></column>
-        <column field="" title=""></column>
-        <column field="" title=""></column>
-        <column field="" title=""></column>
-        <column field="" title=""></column>
+    <table key="103" name="wdth_sbyah_inspect_statistics">
+        <id field="inspect_sta_id"></id>
+        <column field="inspect_area_name" title="巡查区域名称"></column>
+        <column field="inspect_num" title="巡查数量"></column>
+        <column field="inspect_percent" title="巡查覆盖率"></column>
+        <column field="inspect_sort" title="排序"></column>
+        <column field="inspect_enable" title="是否可用"></column>
     </table>
 
 </root>
