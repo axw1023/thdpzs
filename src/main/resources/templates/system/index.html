@@ -6,6 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-table/dist/bootstrap-table.css"/>
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-fileinput/fileinput.css"/>
     <link rel="stylesheet" type="text/css" href="../../plugin/layer/mobile/need/layer.css"/>
     <link rel="stylesheet" type="text/css" href="../../system/css/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../system/css/font-awesome.css"/>
@@ -76,6 +77,25 @@
     </div>
     <div id="page-wrapper">
         <div class="main-page">
+
+            <!--图片上传-->
+            <div id="div_upload" class="modal-dialog modal-lg" role="document" style="height: 200px;display: none">
+                <div class="modal-content">
+                    <form id="form" method="post" action="/img/imgUpdate" enctype="multipart/form-data" target="formsubmit">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel" style="float: left">请选择图片</h4>
+                            <button type="submit" class="btn btn-primary" style="float: right">提交</button>
+                        </div>
+                        <div class="modal-body" style="padding: 40px">
+                            <input type="file" name="txt_file" id="txt_file"/>
+                        </div>
+                        <iframe name="formsubmit" id="myFrame" style="display: none"></iframe>
+
+                    </form>
+                </div>
+            </div>
+
+
             <div class="tables">
                 <h3 class="title1">首页</h3>
                 <div class="panel-body widget-shadow">
@@ -87,7 +107,11 @@
 
             </div>
 
+
+
         </div>
+
+
     </div>
 </div>
 <!-- Classie -->
@@ -116,6 +140,13 @@
     <script type="text/javascript" th:src="@{/plugin/bootstrap/js/bootstrap.js}"></script>
     <script type="text/javascript" th:src="@{/plugin/bootstrap-table/dist/bootstrap-table.js}"></script>
     <script type="text/javascript" th:src="@{/plugin/layer/layer.js}"></script>
+    <script type="text/javascript" th:src="@{/plugin/bootstrap-fileinput/fileinput.js}"></script>
     <script type="text/javascript" src="/system/js/metisMenu.min.js"></script>
     <script type="text/javascript" src="/system/js/custom.js"></script>
+<script>
+    $('#myFrame').load(function(){
+        var text=$(this).contents().find("body").text();
+        alert(text);
+    });
+</script>
 </html>

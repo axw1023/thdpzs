@@ -24,14 +24,14 @@ public class WelcomeController {
     @Resource
     Wdth_xt_configerMapper configerMapper;
 
-//    //登录页
-//    @RequestMapping("/")
-//    public String userWelcomeLogin(){
-//        return "user/Welcomelogin";
-//    }
+    //登录页
+    @RequestMapping("/")
+    public String userWelcomeLogin() {
+        return "user/Welcomelogin";
+    }
 
     //    欢迎页√1
-    @RequestMapping("/")
+    @RequestMapping("/welcome")
     public String index() {
         return "welcome";
     }
@@ -73,7 +73,6 @@ public class WelcomeController {
     }
 
 
-
     //    IT基础设施√8
     @RequestMapping("/turnToIT")
     public String IT() {
@@ -91,6 +90,7 @@ public class WelcomeController {
     public String turnToDigitalFactory2() {
         return "Number2";
     }
+
     //    大数据10
     @RequestMapping("/turnToBigData")
     public String turnToBigData() {
@@ -127,45 +127,43 @@ public class WelcomeController {
         return "end";
     }
 
-//    工具展示
+    //    工具展示
     @RequestMapping("tool/index")
-    public String toolShow(){
+    public String toolShow() {
         return "tool";
     }
 
 
-
-//    页面跳转控制
+    //    页面跳转控制
     @RequestMapping(value = "/getTurnToPage", method = RequestMethod.GET)
     @ResponseBody
-    List<String> getPointData(@RequestParam("mapper")String mapper){
+    List<String> getPointData(@RequestParam("mapper") String mapper) {
         List<Wdth_xt_page> page = pageMapper.selectAll();
         List<String> mappers = new ArrayList<>();
 
         int i = 0;
-        for(int j = 0;j < page.size();j++){
-            if (page.get(j).getValue().equals(mapper)){
+        for (int j = 0; j < page.size(); j++) {
+            if (page.get(j).getValue().equals(mapper)) {
                 i = j;
                 break;
             }
         }
-        if(i == 0){
-            mappers.add(page.get(page.size()-1).getValue());
-        }else{
-            mappers.add(page.get(i-1).getValue());
+        if (i == 0) {
+            mappers.add(page.get(page.size() - 1).getValue());
+        } else {
+            mappers.add(page.get(i - 1).getValue());
         }
-        if(i == page.size()-1 ){
+        if (i == page.size() - 1) {
             mappers.add(page.get(0).getValue());
-        }else{
-            mappers.add(page.get(i+1).getValue());
+        } else {
+            mappers.add(page.get(i + 1).getValue());
         }
 
         return mappers;
     }
 
 
-
-//    获取欢迎页面背景图片
+    //    获取欢迎页面背景图片
     @RequestMapping(value = "/getWelcomeBackImg", method = RequestMethod.GET)
     @ResponseBody
     //获取ajax参数中信资源

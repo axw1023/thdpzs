@@ -96,6 +96,18 @@ var system ={
         $("#side-menu").on("click",".menu_system",function(){
             var text = $(this).children("a").text();
             var type = $(this).attr("data-path");
+
+            // 如果是欢迎页图片配置页面隐藏列表
+            if (type == 301) {
+                $(".tables")[0].style.display = 'none';
+                $(".modal-dialog")[0].style.display = 'block';
+                return
+            } else {
+                $(".tables")[0].style.display = 'block';
+                $(".modal-dialog")[0].style.display = 'none';
+            }
+
+
             $(".title1").text(text);
             //发送ajax
             $.ajax({
@@ -117,5 +129,5 @@ var system ={
     init: function(){
         system.menu_init();
         system.event_format();
-    }
+    },
 }
