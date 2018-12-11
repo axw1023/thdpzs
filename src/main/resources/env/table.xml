@@ -140,4 +140,18 @@
         <column field="unit" title="单位"></column>
         <where column="layer_show">1</where>
     </table>
+    
+    <table key="501" name="wdth_tb_it_yjszxzy">
+        <id field="sheetid"></id>
+        <column field="type" title="名称"></column>
+        <column field="allnum" title="当前资源"></column>
+        <column field="usenum" title="可用资源"></column>
+    </table>
+
+    <table key="502" name="wdth_tb_it_zcxx">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
 </root>
