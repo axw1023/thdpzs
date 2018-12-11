@@ -92,15 +92,52 @@
         <column field="other_value" title="基础数值"></column>
         <where column="type">2</where>
     </table>
-    
-
-    
+    <!-- 收率优化建议 -->
+    <table key="403" name="wdth_bd_common">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="数值"></column>
+        <where column="type">3</where>
+    </table>
+    <!-- 投料化验分析 -->
     <table key="404" name="wdth_bd_feed">
         <id field="id"></id>
         <column field="feed_name" title="第一列"></column>
         <column field="value" title="第二列"></column>
         <column field="standard" title="第三列"></column>
     </table>
+    <!-- 管出口温度 -->
+    <table key="405" name="wdth_bd_common">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="数值"></column>
+        <column field="other_value" title="对照值"></column>
+        <where column="type">4</where>
+    </table>
+    <!--收率优化历史曲线-->
+    <table key="406" name="wdth_bd_common">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="值(按照顺序排列)"></column>
+        <column field="other_value" title="基础值"></column>
+        <where column="type">5</where>
+    </table>
+    <!-- 点位相关性 -->
+    <table key="407" name="wdth_bd_common">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="正相关系数"></column>
+        <column field="value" title="负相关系数"></column>
+        <where column="type">6</where>
+    </table>
 
-
+    <table key="408" name="wdtd_bd_coord">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="数值"></column>
+        <column field="other_value" title="标识值"></column>
+        <column field="time" title="气泡切换时间"></column>
+        <column field="unit" title="单位"></column>
+        <where column="layer_show">1</where>
+    </table>
 </root>

@@ -950,7 +950,7 @@ function beginLayerShow(){
         var top=layerData[layerNum].layer_coord_y+'px';
         var left=layerData[layerNum].layer_coord_x+'px'
         $("#layer").css({top:top,left:left});
-    },layerData[0].time*1.6);
+    },layerData[0].time);
 
 }
 

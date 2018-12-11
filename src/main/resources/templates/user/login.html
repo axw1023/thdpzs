@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="../../ProjectCss/user/style.css"/>
     <link rel="stylesheet" type="text/css" href="../../ProjectCss/user/custom.css"/>
     <link rel="stylesheet" type="text/css" href="../../ProjectCss/user/font-awesome.css"/>
+
+
 </head>
 <body class="cbp-spmenu-push">
 <div class="main-content">
@@ -23,55 +25,36 @@
                     <h2>大屏系统维护登录 </h2>
                 </div>
                 <div class="login-body">
-                    <form action="/user/login"  method="post">
-                        <input type="text" class="user" name="username" placeholder="Enter your user" required="">
-                        <input type="password" name="password" class="lock" placeholder="password">
-                        <input type="submit" name="Sign In" value="Sign In">
-                        <div class="forgot-grid">
-                            <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>记住我</label>
-                            <div class="forgot">
-                                <a href="#">忘记密码?</a>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
+                    <form action="/login/system"  method="post">
+                        <input id="username" type="text" class="user" name="username" placeholder="Enter your user" required=""/>
+                        <input id="password" type="password" name="password" class="lock" placeholder="password" required=""/>
+                        <input id="submit" type="submit" name="Sign In" value="登 录">
                     </form>
                 </div>
             </div>
-
         </div>
     </div>
 
     <!--//footer-->
 </div>
-<!-- Classie -->
-<script src="js/classie.js"></script>
-<script>
-    var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-        showLeftPush = document.getElementById( 'showLeftPush' ),
-        body = document.body;
 
-    showLeftPush.onclick = function() {
-        classie.toggle( this, 'active' );
-        classie.toggle( body, 'cbp-spmenu-push-toright' );
-        classie.toggle( menuLeft, 'cbp-spmenu-open' );
-        disableOther( 'showLeftPush' );
-    };
-
-    function disableOther( button ) {
-        if( button !== 'showLeftPush' ) {
-            classie.toggle( showLeftPush, 'disabled' );
-        }
-    }
-</script>
-<!--scrolling js-->
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
-<!--//scrolling js-->
 <!-- Bootstrap Core JavaScript -->
-<script src="js/bootstrap.js"> </script>
 </body>
 <script type="text/javascript"   th:src="@{/Scripts/jquery.min.js}"></script>
 <script type="text/javascript" th:src="@{/plugin/bootstrap/js/bootstrap.js}"></script>
 <script type="text/javascript" th:src="@{/plugin/bootstrap-table/dist/bootstrap-table.js}"></script>
 <script type="text/javascript" th:src="@{/plugin/layer/mobile/layer.js}"></script>
+<script th:inline="javascript">
+    $(function(){
+
+        var msg = [[${session.msg}]];
+        if(msg){
+            $("#username").css('border-color',"red").css('color','#000').attr('placeholder',msg);
+            $("#password").css('border-color',"red").attr('placeholder','')
+                .focus(function () {
+                    $('#password').css('color','#A8A8A8;')
+                });;
+        }
+    });
+</script>
 </html>

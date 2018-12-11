@@ -41,4 +41,16 @@
     <update id="updateTableInfo" parameterType="com.qdjxd.wdth01.common.TableInfo">
         UPDATE ${name} SET ${valueCol} = #{value} WHERE ${idCol} = #{idVal}
     </update>
+    
+    <select id="login" resultType="com.qdjxd.wdth01.model.User" parameterType="com.qdjxd.wdth01.model.User">
+        SELECT
+            sheetid userid,
+            user_name username
+        FROM
+            wdth_system_user
+        WHERE
+            user_name = #{username}
+            AND pass_word = #{password}
+            AND `is_ enabled` = 1
+    </select>
 </mapper>
