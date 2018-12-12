@@ -1,6 +1,7 @@
 package com.qdjxd.wdth01.controller;
 
 
+import com.qdjxd.wdth01.common.ConfigInfo;
 import com.qdjxd.wdth01.model.User;
 import com.qdjxd.wdth01.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,5 +33,11 @@ public class LoginController {
     public String login(User user,  HttpServletRequest request){
         String result = loginService.login(user,request);
         return result;
+    }
+
+    @RequestMapping("loginout")
+    public ResponseEntity loginout(HttpSession session){
+        session.removeAttribute(ConfigInfo.SYSTEM_USER);
+        return ResponseEntity.ok(null);
     }
 }

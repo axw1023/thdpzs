@@ -27,7 +27,7 @@ public class WelcomeController {
     //登录页
     @RequestMapping("/")
     public String userWelcomeLogin() {
-        return "user/Welcomelogin";
+        return "user/welcomeLogin";
     }
 
     //    欢迎页√1

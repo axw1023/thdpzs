@@ -56,7 +56,7 @@ body a:hover{
 }
 .header-left {
     float: left;
-    width: 45%;
+	width: 283px;
 }
 .header-right {
     float: right;
@@ -92,12 +92,13 @@ button#showLeftPush:hover {
 	position: fixed;
 }
 .cbp-spmenu-vertical {
-    width: 282px;
-    height: 100%;
-    top: 76px;
-    z-index: 1000;
-    background-color:#4F52BA;
+	width: 299px;
+	height: 89%;
+	top: 77px;
+	z-index: 1000;
+	background-color: #4F52BA;
 	padding: 2em 0;
+	overflow-y: scroll;
 }
 .cbp-spmenu-left {
     left: 0;

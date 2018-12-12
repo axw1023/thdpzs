@@ -29,80 +29,89 @@
             line-height: 185px;
         }
 
-        #button1{
+        #button0{
             top:100px;
             left:520px;
+        }
+
+        #button1{
+            top:100px;
+            left:1520px;
         }
 
         #button2{
             top:100px;
-            left:1520px;
+            left:2520px;
         }
 
         #button3{
             top:100px;
-            left:2520px;
+            left:3520px;
         }
 
         #button4{
             top:100px;
-            left:3520px;
+            left:4520px;
         }
 
         #button5{
-            top:100px;
-            left:4520px;
+            top:350px;
+            left:520px;
         }
 
         #button6{
             top:350px;
-            left:520px;
+            left:1520px;
         }
 
         #button7{
             top:350px;
-            left:1520px;
+            left:2520px;
         }
 
         #button8{
             top:350px;
-            left:2520px;
+            left:3520px;
         }
 
         #button9{
             top:350px;
-            left:3520px;
-        }
-
-        #button10{
-            top:350px;
             left:4520px;
         }
 
-        #button11{
+        #button10{
             top:600px;
             left:520px;
         }
 
-        #button12{
+        #button11{
             top:600px;
             left:1520px;
         }
 
-        #button13{
+        #button12{
             top:600px;
             left:2520px;
         }
 
-        #button14{
+        #button13{
             top:600px;
             left:3520px;
         }
 
-        #button15{
+        #button14{
             top:600px;
             left:4520px;
         }
+
+
+
+        .focus{
+            background: url('../../images/page/按钮_点击.png');
+            color : rgba(255,255,255,1)
+        }
+
+
 
     </style>
 
@@ -114,21 +123,21 @@
 <body style="margin: 0;padding: 0">
 <div id = "img" ></div>
 
-<div id = "button1" class = "button">欢迎页</div>
-<div id = "button2" class = "button">万达天弘化学概况</div>
-<div id = "button3" class = "button">全产业链</div>
-<div id = "button4" class = "button">智能制造总体规划</div>
-<div id = "button5" class = "button">ERP</div>
-<div id = "button6" class = "button">MES及能源</div>
-<div id = "button7" class = "button">实验室</div>
-<div id = "button8" class = "button">设备和安环</div>
-<div id = "button9" class = "button">IT基础设施</div>
-<div id = "button10" class = "button">数字孪生工厂</div>
-<div id = "button11" class = "button">大数据</div>
-<div id = "button12" class = "button">三维数字工厂</div>
-<div id = "button13" class = "button">工具展示</div>
-<div id = "button14" class = "button">未来展望</div>
-<div id = "button15" class = "button">结束页</div>
+<div id = "button0" class = "button  focus">欢迎页</div>
+<div id = "button1" class = "button ">万达天弘化学概况</div>
+<div id = "button2" class = "button ">全产业链</div>
+<div id = "button3" class = "button ">智能制造总体规划</div>
+<div id = "button4" class = "button ">ERP</div>
+<div id = "button5" class = "button ">MES及能源</div>
+<div id = "button6" class = "button ">实验室</div>
+<div id = "button7" class = "button ">设备和安环</div>
+<div id = "button8" class = "button ">IT基础设施</div>
+<div id = "button9" class = "button ">数字孪生工厂</div>
+<div id = "button10" class = "button ">大数据</div>
+<div id = "button11" class = "button ">三维数字工厂</div>
+<div id = "button12" class = "button ">工具展示</div>
+<div id = "button13" class = "button ">未来展望</div>
+<div id = "button14" class = "button ">结束页</div>
 
 
 
@@ -138,54 +147,23 @@
 
 <script type="text/javascript">
 
-    $(function () {
-        $("#button1").css('background','url(../../images/page/按钮_点击.png)');
+    var url = ["/welcome","/turnToDigitalFactory2","/turnToAllLink","/turnToOverallPlanning","/turnToERPandBI","/turnToMes","/turnToLab","/turnToEquipment","/turnToIT","/turnToDigitalFactory","/turnToBigData","/turnTo3DFactory","/tool/index","/turnToFutureProspect","/turnToEnd"];
 
-    })
-
-
-    var i = 1;
-    var url = ["/","/turnToDigitalFactory2","/turnToAllLink","/turnToOverallPlanning","/turnToERPandBI","/turnToMes","/turnToLab","/turnToEquipment","/turnToIT","/turnToDigitalFactory","/turnToBigData","/turnTo3DFactory","/tool/index","/turnToFutureProspect","/turnToEnd"]
-    $(document).keydown(function(event){
-        if(event.keyCode == 39){
-            if(i == 15){
-                $("#button1").css('background','url(../../images/page/按钮_点击.png)');
-                $("#button1").css('color','rgba(255,255,255,1)');
-                $("#button15").css('background','url(../../images/page/按钮_默认.png)');
-                $("#button15").css('color','#82EEFF');
-                i = 1;
-                return;
-            }else{
-                $("#button" + (i + 1)).css('background','url(../../images/page/按钮_点击.png)');
-                $("#button" + (i + 1)).css('color','rgba(255,255,255,1)');
-                $("#button" + i).css('background','url(../../images/page/按钮_默认.png)');
-                $("#button" + i).css('color','#82EEFF');
-
-            }
-            i = i + 1;
-        }else if(event.keyCode == 37){
-            if(i == 1){
-                $("#button15").css('background','url(../../images/page/按钮_点击.png)');
-                $("#button15").css('color','rgba(255,255,255,1)');
-                $("#button1").css('background','url(../../images/page/按钮_默认.png)');
-                $("#button1").css('color','#82EEFF');
-                i = 15;
-                return;
-            }else{
-                $("#button" + (i - 1)).css('background','url(../../images/page/按钮_点击.png)');
-                $("#button" + (i - 1)).css('color','rgba(255,255,255,1)');
-                $("#button" + i).css('background','url(../../images/page/按钮_默认.png)');
-                $("#button" + i).css('color','#82EEFF');
-            }
-            i = i - 1;
-        }else if(event.keyCode == 13){
-            window.location.href=url[i-1];
+    var i = 0;
+    var buttons = $(".button");
+    $(document).keydown(function (event) {
+        var index = event.keyCode;
+        if(index==13){
+            window.location.href=url[i];
         }
+        if(index == 39) i = (i + 1)%15;
+        if(index == 37) i = (i+15-1)%15;
+        if(index == 38) i = (i+15-5)%15;
+        if(index == 40) i = (i+15+5)%15;
+        var focusBtn = buttons[i];
+        $('.focus').removeClass('focus');
+        $(focusBtn).addClass('focus');
     });
-
-
-
-
 
 
 </script>

@@ -1,8 +1,6 @@
 var table_data ;
 $(function() {
     system.init();
-
-
 });
 
 //页面初始化
@@ -51,7 +49,6 @@ var system ={
     formatTable: function(type,data){
         table_data = data;
         // $('.table').bootstrapTable('refreshOptions',null);
-        //TODO 表格初始化
         $(".table").bootstrapTable({
             url: '/system/table/info/'+type,
             method : 'POST',
@@ -124,6 +121,16 @@ var system ={
 
             });
 
+        });
+
+        //TODO 登出
+        $(".loginout").click(function () {
+            $.ajax({
+                type:'get',
+                url: '/login/loginout'
+            }).then(function (value) {
+                window.location.reload();
+            })
         });
     },
     init: function(){
