@@ -1,5 +1,7 @@
 package com.qdjxd.wdth01.controller;
 
+import com.qdjxd.wdth01.dao.Wdth_xt_configerMapper;
+import com.qdjxd.wdth01.model.Wdth_xt_configer;
 import org.apache.tomcat.util.bcel.Const;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.io.File;
 import java.io.IOException;
 
@@ -17,6 +20,9 @@ import java.io.IOException;
 @Controller
 @RequestMapping("/img")
 public class WelcomeImgUploadController {
+
+    @Resource
+    private Wdth_xt_configerMapper wdth_xt_configerMapper;
 
     @RequestMapping(value = "/imgUpdate", produces = "application/json; charset=utf-8", method = RequestMethod.POST)
     @ResponseBody
@@ -53,5 +59,25 @@ public class WelcomeImgUploadController {
         }
         return ("文件上传失败");
 
+    }
+
+
+    @RequestMapping(value = "/updateWelcomeImg", method = RequestMethod.GET)
+    @ResponseBody
+    public int updateWelcomeImg(@RequestParam("parm")String urlId){
+        Wdth_xt_configer wxc = new Wdth_xt_configer();
+        String type = "";
+        if("1".equals(urlId)){
+            type = "普通";
+        }else if("2".equals(urlId)){
+            type = "市委";
+        }else if("3".equals(urlId)){
+            type = "上传图片";
+        }
+        wxc.setId(3);
+        wxc.setName("欢迎页图片");
+        wxc.setValue(type);
+        int result = wdth_xt_configerMapper.updateByPrimaryKey(wxc);
+        return result;
     }
 }

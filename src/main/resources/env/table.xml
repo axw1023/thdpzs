@@ -245,8 +245,8 @@
     <table key="801" name="wdth_xt_page">
         <id field="id"></id>
         <column field="name" title="页面名称"></column>
-        <column field="code" title="排序"></column>
-        <column field="ifshow" title="显示控制"></column>
+        <column field="code" title="页面展示顺序（数值小者展示在前)"></column>
+        <column field="ifshow" title="显示控制（0：隐藏；1：显示）"></column>
     </table>
 
     <table key="901" name="wdth_xt_configer">

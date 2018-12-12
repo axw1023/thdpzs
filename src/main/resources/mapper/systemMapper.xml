@@ -35,6 +35,9 @@
                   ${item.name} = #{item.value}
                </foreach>
             </if>
+            <if test="tableName == 'wdth_xt_configer'">
+                AND id != '3'
+            </if>
         </where>
     </select>
 
