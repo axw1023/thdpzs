@@ -79,19 +79,30 @@
         <div class="main-page">
 
             <!--图片上传-->
-            <div id="div_upload" class="modal-dialog modal-lg" role="document" style="height: 200px;display: none">
+            <div id="div_upload" class="modal-dialog modal-lg" role="document" style="height: 500px;display: none">
                 <div class="modal-content">
+                        <div style="padding:30px;height: 80px" class="modal-header">
+                            <h4 class="modal-title" id="myModalLabel" style="float: left">请选择图片：</h4>
+                        </div>
+                        <div style="height: 150px">
+                            <div style="height: auto;width: auto">
+                            <button  class="btn btn-primary" style="margin-top:60px;margin-left: 170px" onclick="type1()">通用背景</button>
+                            <button  class="btn btn-primary" style="margin-top:60px;margin-left: 100px" onclick="type2()">市委领导背景</button>
+                            <button  class="btn btn-primary" style="margin-top:60px;margin-left: 100px" onclick="type3()">自定义图片</button>
+                            </div>
+                        </div>
                     <form id="form" method="post" action="/img/imgUpdate" enctype="multipart/form-data" target="formsubmit">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel" style="float: left">请选择图片</h4>
-                            <button type="submit" class="btn btn-primary" style="float: right">提交</button>
+                    <div class="modal-header"style="padding:30px;height: 80px">
+                            <h4 class="modal-title" id="myModalLabel1" style="float: left">自定义图片上传（png格式）：</h4>
                         </div>
-                        <div class="modal-body" style="padding: 40px">
-                            <input type="file" name="txt_file" id="txt_file"/>
+                        <div style="height:100px">
+                            <input type="file" name="txt_file" id="txt_file" style="float:left;margin-left: 160px;margin-top: 30px"/>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 20px">提交</button>
                         </div>
-                        <iframe name="formsubmit" id="myFrame" style="display: none"></iframe>
-
                     </form>
+
+                    <iframe name="formsubmit" id="myFrame" style="display: none"></iframe>
+
                 </div>
             </div>
 
@@ -148,5 +159,27 @@
         var text=$(this).contents().find("body").text();
         alert(text);
     });
+    
+    function type1() {
+        edtiImg(1);
+    }
+    function type2() {
+        edtiImg(2);
+    }
+    function type3() {
+        edtiImg(3);
+    }
+
+    function edtiImg(parm){
+        $.ajax({
+            url: "/img/updateWelcomeImg",
+            type: "get",
+            async: false,
+            data: {parm: parm},
+            success: function (data) {
+                alert("应用成功");
+            }
+        });
+    }
 </script>
 </html>
