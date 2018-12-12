@@ -154,4 +154,104 @@
         <column field="num" title="数值"></column>
     </table>
 
+    <table key="601" name="wdth_erp_cbgc">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="602" name="wdth_erp_Synhzb">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="603" name="wdth_erp_Xsqk">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="604" name="wdth_erp_Hkzssl">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="计划收率"></column>
+        <column field="mou" title="实际收率"></column>
+    </table>
+
+    <table key="605" name="wdth_erp_Ylly">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="本月"></column>
+        <column field="num1" title="上月"></column>
+    </table>
+
+    <table key="606" name="wdth_erp_Kc">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="本月"></column>
+        <column field="num1" title="上月"></column>
+    </table>
+
+    <table key="607" name="wdth_erp_Jhzxl">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="计划"></column>
+        <column field="num1" title="实际"></column>
+    </table>
+
+    <table key="608" name="wdth_erp_Erp">
+        <id field="sheetid"></id>
+        <column field="name" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="701" name="wdth_3d_ylyr">
+        <id field="sheetid"></id>
+        <column field="diesel" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="702" name="wdth_3d_dyflq">
+        <id field="sheetid"></id>
+        <column field="diesel" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="703" name="wdth_3d_hhjl1">
+        <id field="sheetid"></id>
+        <column field="diesel" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="704" name="wdth_3d_hhjl2">
+        <id field="sheetid"></id>
+        <column field="diesel" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="705" name="wdth_3d_flt">
+        <id field="sheetid"></id>
+        <column field="diesel" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="706" name="wdth_3d_fkg">
+        <id field="sheetid"></id>
+        <column field="diesel" title="名称"></column>
+        <column field="num" title="数值"></column>
+    </table>
+
+    <table key="801" name="wdth_xt_page">
+        <id field="id"></id>
+        <column field="name" title="页面名称"></column>
+        <column field="code" title="排序"></column>
+        <column field="ifshow" title="显示控制"></column>
+    </table>
+
+    <table key="901" name="wdth_xt_configer">
+        <id field="id"></id>
+        <column field="name" title="名称"></column>
+        <column field="value" title="参数"></column>
+    </table>
 </root>
