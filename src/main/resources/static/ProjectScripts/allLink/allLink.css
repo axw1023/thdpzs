@@ -424,8 +424,8 @@
 #processingDay{
     background-repeat: no-repeat;
     position: absolute;
-    width: 188px;
-    height: 204px;
+    width: 235px;
+    height: 163px;
     top: 625px;
     right: 3794px;
     background-image: url("../../images/allLink/组.png");
@@ -436,7 +436,7 @@
 #processingDay_name{
     position: absolute;
     top: 660px;
-    right: 3875px;
+    right: 3900px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -450,7 +450,7 @@
 #processingDay_remark{
     position: absolute;
     top: 663px;
-    right: 3796px;
+    right: 3821px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -461,7 +461,7 @@
 #processingDay_value_name{
     position: absolute;
     top: 717px;
-    right: 3888px;
+    right: 3913px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -475,7 +475,7 @@
 #processingDay_value{
     position: absolute;
     top: 717px;
-    right: 3802px;
+    right: 3827px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -546,10 +546,10 @@
 /*化工产品日产量*/
 #chemicalDailyOutput{
     position: absolute;
-    width: 188px;
-    height: 204px;
+    width: 235px;
+    height: 163px;
     top:282px;
-    right: 1877px;
+    right: 1817px;
     background-image: url("../../images/allLink/组.png");
     background-repeat: no-repeat;
 }
@@ -558,7 +558,7 @@
 #chemicalDailyOutput_name{
     position: absolute;
     top: 329px;
-    right: 1958px;
+    right: 1923px;
     font-size:25px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -570,7 +570,7 @@
 #chemicalDailyOutput_remark{
     position: absolute;
     top: 332px;
-    right: 1878px;
+    right: 1843px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -582,7 +582,7 @@
 #chemicalDailyOutput_value1{
     position: absolute;
     top: 369px;
-    right: 1965px;
+    right: 1930px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
@@ -594,7 +594,7 @@
 #chemicalDailyOutput_value2{
     position: absolute;
     top: 369px;
-    right: 1896px;
+    right: 1861px;
     font-size:20px;
     font-family:MicrosoftYaHei;
     font-weight:900;
