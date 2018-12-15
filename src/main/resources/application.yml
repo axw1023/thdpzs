@@ -31,3 +31,5 @@ mybatis:
 
 thymeleaf:
   cache:false
+
+img-http-head: http://10.0.30.200:8080/welcome/

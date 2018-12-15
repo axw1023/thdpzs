@@ -79,7 +79,6 @@ var system ={
                        $(".table").bootstrapTable("refresh");
                    });
                     layer.close(index);
-
                 });
             },
             singleSelect:true,        //单选checkbox
@@ -93,37 +92,32 @@ var system ={
         $("#side-menu").on("click",".menu_system",function(){
             var text = $(this).children("a").text();
             var type = $(this).attr("data-path");
-
-            // 如果是欢迎页图片配置页面隐藏列表
-            if (type == 301) {
-                $(".tables")[0].style.display = 'none';
-                $(".modal-dialog")[0].style.display = 'block';
-                return
-            } else {
-                $(".tables")[0].style.display = 'block';
-                $(".modal-dialog")[0].style.display = 'none';
-            }
-
-
             $(".title1").text(text);
-            //发送ajax
-            $.ajax({
-                type: 'get',
-                url: '/system/table/'+type
-            }).then(function (_data) {
-                $(".table").bootstrapTable("destroy");
-                if(_data == null||_data == ""){
-                    return;
-                };
-                //初始化表格
-                system.formatTable(type,_data);
-            },function (reason) {
+            $('.add-img').hide();
+            $('.img').hide();
+            $(".table").bootstrapTable("destroy");
+            // 如果是欢迎页图片配置页面隐藏列表
+            if(type == 301){
+                $('.add-img').show();
+                $('.img').show();
+                system.img_format();
+            }else{
+                //发送ajax
+                $.ajax({
+                    type: 'get',
+                    url: '/system/table/'+type
+                }).then(function (_data) {
+                    if(_data == null||_data == ""){
+                        return;
+                    };
+                    //初始化表格
+                    system.formatTable(type,_data);
+                },function (reason) {
 
-            });
-
+                });
+            }
         });
 
-        //TODO 登出
         $(".loginout").click(function () {
             $.ajax({
                 type:'get',
@@ -132,6 +126,102 @@ var system ={
                 window.location.reload();
             })
         });
+
+        $('.add-img').click(function(){
+            //TODO 上传页面
+            layer.open({
+                type: 1,
+                skin: 'layui-layer-rim', //加上边框
+                area: ['520px', '220px'], //宽高
+                content: $('.upload-img'),
+                btn: ['保存','取消'],
+                yes: function (index) {
+                    //获取上传文件信息
+                    var file = document.getElementById('file').files[0];
+                    if (typeof (file) == "undefined" || file.size <= 0) {
+                        layer.alert("请选择图片");
+                        return;
+                    }
+                    var formFile = new FormData();
+                    formFile.append('file',file);
+                    formFile.append('name',$("#name").val());
+
+                    $.ajax({
+                        url: '/img/entity',
+                        data: formFile,
+                        type:'post',
+                        cache: false,
+                        processData: false,
+                        contentType: false
+                    }).then(function (data) {
+                        system.img_format();
+                        layer.closeAll();
+                    },function(){
+                        layer.msg('保存失败',{icon:2})
+                    });
+                }
+            });
+        });
+    },
+    img_format: function(){
+        //加载模板列表
+        $.ajax({
+            type: 'get',
+            url: '/img/list'
+        }).then(function(_data){
+            var contentStr = '';
+            $.each(_data,function(i,n){
+                var css = '';
+                if(n.type==1){
+                    css = 'choose-img'
+                }
+                contentStr += '<div class="col-md-6 '+css+'">';
+                contentStr += '<div class="hovereffect">';
+                contentStr += '<img class="img-responsive" src="'+n.path+'" alt=""><div class="overlay"><p>';
+                contentStr += '<a data-id="'+n.id+'" class="img-a use" href="javascript:void(0)">应 用</a>';
+                contentStr += '<a data-id="'+n.id+'" class="img-a del" href="javascript:void(0)">删 除</a>';
+                contentStr += '</p></div></div></div>';
+            });
+            $('.img').html(contentStr);
+        });
+
+        $(".img").on('click','.use',function(){
+            var id = $(this).attr("data-id");
+            $.ajax({
+                type: "POST",
+                data: {
+                    id: id
+                },
+                url : '/img/use'
+            }).then(function () {
+                layer.msg('应用成功',{
+                    icon:1
+                });
+                system.img_format();
+            });
+        });
+
+        $(".img").on('click','.del',function(){
+            var id = $(this).attr("data-id");
+            layer.confirm('确认删除吗',{
+                btn: ['确定','取消']
+            },function(){
+                $.ajax({
+                    type: "POST",
+                    data: {
+                        id: id
+                    },
+                    url : '/img/del'
+                }).then(function () {
+                    layer.msg('删除成功',{
+                        icon:1
+                    });
+                    system.img_format();
+                });
+            });
+
+        });
+
     },
     init: function(){
         system.menu_init();

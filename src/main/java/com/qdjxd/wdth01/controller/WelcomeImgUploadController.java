@@ -2,7 +2,9 @@ package com.qdjxd.wdth01.controller;
 
 import com.qdjxd.wdth01.dao.Wdth_xt_configerMapper;
 import com.qdjxd.wdth01.model.Wdth_xt_configer;
-import org.apache.tomcat.util.bcel.Const;
+import com.qdjxd.wdth01.service.SystemService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +25,9 @@ public class WelcomeImgUploadController {
 
     @Resource
     private Wdth_xt_configerMapper wdth_xt_configerMapper;
+
+    @Autowired
+    private SystemService systemService;
 
     @RequestMapping(value = "/imgUpdate", produces = "application/json; charset=utf-8", method = RequestMethod.POST)
     @ResponseBody
@@ -78,6 +83,66 @@ public class WelcomeImgUploadController {
         wxc.setName("欢迎页图片");
         wxc.setValue(type);
         int result = wdth_xt_configerMapper.updateByPrimaryKey(wxc);
+        return result;
+    }
+
+    /**
+     * 获取展示页面
+     * @return
+     */
+    @RequestMapping("welcome")
+    public ResponseEntity welcomeImg(){
+        ResponseEntity result = systemService.welcomeImg();
+        return result;
+    }
+
+    /**
+     * 查询图片列表
+     * @return
+     */
+    @RequestMapping("list")
+    public ResponseEntity getImgList(){
+        ResponseEntity result = systemService.getImgList();
+        return result;
+    }
+
+    /**
+     * 保存首页方案
+     * @param name
+     * @param file
+     * @return
+     */
+    @RequestMapping("/entity")
+    public ResponseEntity uploadImg(String name , MultipartFile file){
+        ResponseEntity result = null;
+        try {
+            result = systemService.uploadImg(name,file);
+            return result;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return  ResponseEntity.status(404).body("上传失败");
+        }
+    }
+
+    /**
+     * 应用
+     * @param id
+     * @return
+     */
+    @RequestMapping("use")
+    public ResponseEntity useImg(String id){
+        ResponseEntity result = systemService.useImg(id);
+        return result;
+    }
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    @RequestMapping("del")
+    public ResponseEntity delImg(String id){
+        ResponseEntity result = systemService.delImg(id);
         return result;
     }
 }

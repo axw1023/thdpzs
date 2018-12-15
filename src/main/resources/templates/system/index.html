@@ -78,7 +78,7 @@
         <div class="main-page">
 
             <!--图片上传-->
-            <div id="div_upload" class="modal-dialog modal-lg" role="document" style="height: 500px;display: none">
+            <!--<div id="div_upload" class="modal-dialog modal-lg" role="document" style="height: 500px;">
                 <div class="modal-content">
                         <div style="padding:30px;height: 80px" class="modal-header">
                             <h4 class="modal-title" id="myModalLabel" style="float: left">请选择图片：</h4>
@@ -103,7 +103,7 @@
                     <iframe name="formsubmit" id="myFrame" style="display: none"></iframe>
 
                 </div>
-            </div>
+            </div>-->
 
 
             <div class="tables">
@@ -111,17 +111,28 @@
                 <div class="panel-body widget-shadow">
                     <!--<h4>Basic Table:</h4>-->
                     <table class="table table-hover">
-
                     </table>
+                    <div class="btn-div col-md-12">
+                        <button class="btn btn-default add-img glyphicon glyphicon-plus"></button>
+                    </div>
+                    <div class="img row ">
+
+                    </div>
+                    </div>
                 </div>
-
             </div>
-
-
-
         </div>
+    </div>
+</div>
 
-
+<div class="upload-img">
+    <div class="form">
+        <label>名 称:</label>
+        <input id="name" type="text" class="form-group"/>
+    </div>
+    <div class="form">
+        <label>图 片:</label>
+        <input id="file" type="file" class="form-group" accept="image/png"/>
     </div>
 </div>
 <!-- Classie -->

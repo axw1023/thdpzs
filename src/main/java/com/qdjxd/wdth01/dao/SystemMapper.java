@@ -7,6 +7,7 @@ import com.qdjxd.wdth01.model.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,4 +21,16 @@ public interface SystemMapper {
     void updateTableInfo(TableInfo table);
 
     User login(User user);
+
+    HashMap<String,Object> welcomeImg();
+
+    List<HashMap<String,Object>> getImgList();
+
+    void insertImg(HashMap<String, String> insertImg);
+
+    void useImg(String id);
+
+    void emptyUse();
+
+    void delImg(String id);
 }

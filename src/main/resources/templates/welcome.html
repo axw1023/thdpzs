@@ -38,7 +38,16 @@
         });
 
         $(function () {
-            getWelcomeBackImg();
+            // getWelcomeBackImg();
+            $.ajax({
+                type: 'get',
+                url: '/img/welcome',
+                cache:false
+            }).then(function (data) {
+                if(data&&data.path){
+                    $("#img").css("background-image","url("+data.path+")")
+                }
+            });
         });
 
         function getWelcomeBackImg() {
@@ -55,7 +64,7 @@
                     }else if(imgurl == "上传图片"){
                         $("#img").css("background","url('http://10.0.30.200:8080/welcome_upload.png')")
                     }
-                },
+                }
             });
         }
     </script>

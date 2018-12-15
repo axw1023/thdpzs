@@ -56,4 +56,41 @@
             AND pass_word = #{password}
             AND `is_ enabled` = 1
     </select>
+
+    <select id="welcomeImg" resultType="java.util.HashMap">
+      SELECT
+        id,
+        name,
+        path
+      FROM
+        wdth_system_img WHERE type = 1
+    </select>
+    
+    <select id="getImgList" resultType="java.util.HashMap">
+      SELECT
+        id,
+        name,
+        path,
+        type
+      FROM
+        wdth_system_img
+      WHERE
+        type != 2
+    </select>
+    
+    <insert id="insertImg" parameterType="java.util.HashMap">
+        INSERT INTO wdth_system_img (id,name,path) VALUES (#{id},#{name},#{path})
+    </insert>
+
+    <update id="emptyUse">
+        UPDATE wdth_system_img SET type = 0 WHERE type = 1
+    </update>
+
+    <update id="useImg" parameterType="java.lang.String">
+        UPDATE wdth_system_img SET type = 1 WHERE id = #{VALUE}
+    </update>
+
+    <update id="delImg" parameterType="java.lang.String">
+        UPDATE wdth_system_img SET type = 2 WHERE id = #{VALUE}
+    </update>
 </mapper>
