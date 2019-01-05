@@ -13,7 +13,7 @@ public class TableOption {
     private List<Where> wheres;
 
     public void addWhere(String name ,String value){
-        if (wheres==null) wheres = new LinkedList<>();
+        if (wheres==null){ wheres = new LinkedList<>();}
         wheres.add(new Where(name,value));
     }
 

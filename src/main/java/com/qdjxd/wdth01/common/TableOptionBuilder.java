@@ -1,14 +1,11 @@
 package com.qdjxd.wdth01.common;
 
-import com.mysql.cj.xdevapi.Table;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 import org.springframework.stereotype.Repository;
-import org.springframework.util.StringUtils;
-import org.springframework.util.StringValueResolver;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +15,7 @@ import java.util.*;
 public class TableOptionBuilder {
 
     private final Map<String,TableOption> tableMap = new HashMap<>();
-    private static final  String path = "/env/table.xml";
+    private static final  String PATH = "/env/table.xml";
 
     public TableOptionBuilder() throws DocumentException, IOException {
         //解析dom4j
@@ -33,7 +30,7 @@ public class TableOptionBuilder {
 
     private void analysisTableXml() throws DocumentException, IOException {
         SAXReader reader = new SAXReader();
-        InputStream in = this.getClass().getResourceAsStream(path);
+        InputStream in = this.getClass().getResourceAsStream(PATH);
         Document doc = reader.read(in);
         //获取根节点元素
         Element root = doc.getRootElement();
@@ -67,21 +64,19 @@ public class TableOptionBuilder {
             String valign = "middle";
             Attribute fieldArr = column.attribute("field");
             String name = column.getName();
-            if ("id".equals(name))
-             tableOption.setIdColumn(fieldArr.getValue());
-            if ("where".equals(name))
-                setWhereToOption(column,tableOption);
+            if ("id".equals(name)) { tableOption.setIdColumn(fieldArr.getValue());}
+            if ("where".equals(name)) {setWhereToOption(column,tableOption);}
             Attribute titleArr = column.attribute("title");
             Attribute alignArr = column.attribute("align");
             Attribute widthArr = column.attribute("width");
             Attribute valignArr = column.attribute("valign");
             //验证
-            if (fieldArr!=null) field = fieldArr.getValue();
-            if (titleArr==null) visible = false;
-            else title = titleArr.getValue();
-            if (alignArr!=null) align = alignArr.getValue();
-            if (valignArr != null) valign = valignArr.getValue();
-            if (widthArr != null) width = widthArr.getValue() +"px";
+            if (fieldArr!=null) {field = fieldArr.getValue();}
+            if (titleArr==null){ visible = false;}
+            else {title = titleArr.getValue();}
+            if (alignArr!=null) {align = alignArr.getValue();}
+            if (valignArr != null){ valign = valignArr.getValue();}
+            if (widthArr != null) {width = widthArr.getValue() +"px";}
 
             tableOption.addColumn(visible,title,align,width,valign,field);
         }

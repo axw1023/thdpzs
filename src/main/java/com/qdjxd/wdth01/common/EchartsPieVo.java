@@ -2,7 +2,7 @@ package com.qdjxd.wdth01.common;
 
 import java.util.LinkedList;
 
-public class EchartsPieVo extends EchartsVo{
+public class EchartsPieVo extends BaseEchartsVo{
 
     private LinkedList<One> seriesData ;
 

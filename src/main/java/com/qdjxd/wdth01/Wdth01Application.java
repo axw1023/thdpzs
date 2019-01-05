@@ -20,17 +20,4 @@ public class Wdth01Application {
 		SpringApplication.run(Wdth01Application.class, args);
 	}
 
-	/**
-	 * 文件上传配置
-	 * @return
-	 */
-	@Bean
-	public MultipartConfigElement multipartConfigElement() {
-		MultipartConfigFactory factory = new MultipartConfigFactory();
-		//文件最大
-		factory.setMaxFileSize("102400KB"); //KB,MB
-		/// 设置总上传数据总大小
-		factory.setMaxRequestSize("1024000KB");
-		return factory.createMultipartConfig();
-	}
 }

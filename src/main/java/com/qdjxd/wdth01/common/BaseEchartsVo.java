@@ -2,7 +2,7 @@ package com.qdjxd.wdth01.common;
 
 import java.util.List;
 
-public abstract class EchartsVo {
+abstract class BaseEchartsVo {
 
     protected String title;
 

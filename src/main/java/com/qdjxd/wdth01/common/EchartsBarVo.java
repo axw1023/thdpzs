@@ -3,7 +3,7 @@ package com.qdjxd.wdth01.common;
 import java.util.LinkedList;
 import java.util.List;
 
-public class EchartsBarVo extends EchartsVo {
+public class EchartsBarVo extends BaseEchartsVo {
 
     private List<String> xlineList;
 

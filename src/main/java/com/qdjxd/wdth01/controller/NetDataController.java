@@ -30,11 +30,11 @@ import java.util.*;
 public class NetDataController {
 
     @Resource
-    Wdth_tb_it_netdata_ge1Mapper ge1_dao;
+    private Wdth_tb_it_netdata_ge1Mapper ge1_dao;
     @Resource
-    Wdth_tb_it_netdata_allMapper all_dao;
+    private Wdth_tb_it_netdata_allMapper all_dao;
     @Resource
-    Wdth_tb_itjfMapper itjf_dao;
+    private Wdth_tb_itjfMapper itjf_dao;
 
 
     //循环获取网络流量进出入情况(每隔一个小时)
@@ -64,7 +64,7 @@ public class NetDataController {
 
         //url地址
         String urlStr = "http://10.1.11.114/api/json/device/getInterfaces?apiKey=1152d6804e60e481629e6f2acb678e5f&name=10.0.0.2";
-        String data = (new NetDataController()).getURLContent(urlStr);
+        String data = getURLContent(urlStr);
         //先转Array再转object
         JSONArray objects = JSONArray.parseArray(data);
         JSONObject object = objects.getJSONObject(27);
@@ -76,13 +76,10 @@ public class NetDataController {
         ge1.setTime(date);
         int recode = ge1_dao.insert(ge1);
 
-//            Thread.sleep(60000);
-
-
         //查询流量输入、输出总量
         Wdth_tb_it_netdata_all all = new Wdth_tb_it_netdata_all();
         String urlStr_all = "http://10.1.11.114/api/json/device/getInterfaces?apiKey=1152d6804e60e481629e6f2acb678e5f&name=10.0.10.9";
-        String data_all = (new NetDataController()).getURLContent(urlStr_all);
+        String data_all = getURLContent(urlStr_all);
         JSONArray objects_all = JSONArray.parseArray(data_all);
 
         double inTraffic_sum = 0;
@@ -104,7 +101,6 @@ public class NetDataController {
         all.setAllIntraffic(inTraffic_sum);
         all.setAllOuttraffic(outTraffic_sum);
         all.setTime(date);
-
         int result = all_dao.insert(all);
     }
 
@@ -137,53 +133,46 @@ public class NetDataController {
             }
         }
         String result = sb.toString();
-//        System.out.println(result);
+
         return result;
     }
 
 
     //    IT机房
     @Scheduled(fixedRate = 3600000)
-    public void Itjf() {
+    public void itjf() {
 //        //发送 GET 请求
-//        String s=sendGet("http://localhost:6144/Home/RequestString", "key=123&v=456");
-//        System.out.println(s);
-
-
-
         //发送 POST 请求(机柜、漏水、市电、ups)
-        List<String> name = new ArrayList<String>();
-        List<String> value = new ArrayList<String>();
+        List<String> name = new ArrayList<>();
+        List<String> value = new ArrayList<>();
 
         String jg = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"WSD02_\"]}");
         String ls = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"LS01_\"]}");
         String sd = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"SDDLY01_\"]}");
         String ups = sendPost("http://10.0.10.103:16017/ljdimsiface/", "{\"jsonrpc\":\"2.0\",\"id\":84,\"session\":\"1467798515187\",\"method\":\"Rtd_GetByDevAlias\",\"params\":[\"UPS01_\"]}");
 
-        System.out.println(jg);
-        System.out.println(ls);
-        System.out.println(sd);
-        System.out.println(ups);
-
         JSONObject jObj = JSONObject.parseObject(jg);
         JSONObject lsob = JSONObject.parseObject(ls);
         JSONObject sdob = JSONObject.parseObject(sd);
         JSONObject upsob = JSONObject.parseObject(ups);
 
-        try {
+        setJOToList(name , value, jObj);
+        setLSToList(name , value,lsob);
+        setUpToList(name , value , upsob );
+        setSDToList(name, value,sdob);
 
-//        温度
-            String wdst = jObj.getJSONArray("result").getJSONObject(1).getString("RtValue");
-            String wdstname = jObj.getJSONArray("result").getJSONObject(1).getString("Name");
-            value.add(wdst);
-            name.add(wdstname);
 
-//        湿度
-            String sdst = jObj.getJSONArray("result").getJSONObject(2).getString("RtValue");
-            String sdstname = jObj.getJSONArray("result").getJSONObject(2).getString("Name");
-            value.add(sdst);
-            name.add(sdstname);
-//        空调漏水
+        for(int i = 0;i < name.size();i++){
+            Wdth_tb_itjf itjf = new Wdth_tb_itjf();
+            itjf.setSheetid(i);
+            itjf.setName(name.get(i));
+            itjf.setValue(Double.parseDouble(value.get(i)));
+            itjf_dao.updateByPrimaryKey(itjf);
+        }
+    }
+
+    private void setLSToList(List<String> name, List<String> value,JSONObject lsob){
+        try{
             String ktlsst = lsob.getJSONArray("result").getJSONObject(1).getString("AlarmType");
             String ktlsstname = lsob.getJSONArray("result").getJSONObject(1).getString("Name");
             value.add(ktlsst);
@@ -192,23 +181,13 @@ public class NetDataController {
             String xfbjstname = lsob.getJSONArray("result").getJSONObject(2).getString("Name");
             value.add(xfbjst);
             name.add(xfbjstname);//        市电停电报警
-            String sdtdbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
-            String sdtdbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
-            value.add(sdtdbj);
-            name.add(sdtdbjname);//        A相电压断相报警
-            String axddbj = sdob.getJSONArray("result").getJSONObject(15).getString("AlarmType");
-            String axddbjname = sdob.getJSONArray("result").getJSONObject(15).getString("Name");
-            value.add(axddbj);
-            name.add(axddbjname);
-//        B相电压断相报警
-            String bxddbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
-            String bxddbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
-            value.add(bxddbj);
-            name.add(bxddbjname);//        C相电压断相报警
-            String cxddbj = sdob.getJSONArray("result").getJSONObject(17).getString("AlarmType");
-            String cxddbjname = sdob.getJSONArray("result").getJSONObject(17).getString("Name");
-            value.add(cxddbj);
-            name.add(cxddbjname);//        A相输出电流
+        }catch (Exception e){
+            return;
+        }
+    }
+
+    private void setUpToList(List<String> name, List<String> value,JSONObject upsob){
+        try{
             String axscdl = upsob.getJSONArray("result").getJSONObject(7).getString("RtValue");
             String axscdlname = upsob.getJSONArray("result").getJSONObject(7).getString("Name");
             value.add(axscdl);
@@ -229,26 +208,48 @@ public class NetDataController {
         }catch (Exception e){
             return;
         }
-
-        for(int i = 0;i < name.size();i++){
-            Wdth_tb_itjf itjf = new Wdth_tb_itjf();
-            itjf.setSheetid(i);
-            itjf.setName(name.get(i));
-            itjf.setValue(Double.parseDouble(value.get(i)));
-            itjf_dao.updateByPrimaryKey(itjf);
-        }
-
-
-
-
-
-
-
-
-
-
     }
 
+    private void setSDToList(List<String> name, List<String> value,JSONObject sdob){
+        try{
+            String sdtdbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
+            String sdtdbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
+            value.add(sdtdbj);
+            name.add(sdtdbjname);//        A相电压断相报警
+            String axddbj = sdob.getJSONArray("result").getJSONObject(15).getString("AlarmType");
+            String axddbjname = sdob.getJSONArray("result").getJSONObject(15).getString("Name");
+            value.add(axddbj);
+            name.add(axddbjname);
+    //        B相电压断相报警
+            String bxddbj = sdob.getJSONArray("result").getJSONObject(16).getString("AlarmType");
+            String bxddbjname = sdob.getJSONArray("result").getJSONObject(16).getString("Name");
+            value.add(bxddbj);
+            name.add(bxddbjname);//        C相电压断相报警
+            String cxddbj = sdob.getJSONArray("result").getJSONObject(17).getString("AlarmType");
+            String cxddbjname = sdob.getJSONArray("result").getJSONObject(17).getString("Name");
+            value.add(cxddbj);
+            name.add(cxddbjname);//        A相输出电流
+        }catch (Exception e){
+            return;
+        }
+    }
+
+    private void setJOToList(List<String> name, List<String> value, JSONObject jObj ){
+        try {
+//        温度
+            String wdst = jObj.getJSONArray("result").getJSONObject(1).getString("RtValue");
+            String wdstname = jObj.getJSONArray("result").getJSONObject(1).getString("Name");
+            value.add(wdst);
+            name.add(wdstname);
+//        湿度
+            String sdst = jObj.getJSONArray("result").getJSONObject(2).getString("RtValue");
+            String sdstname = jObj.getJSONArray("result").getJSONObject(2).getString("Name");
+            value.add(sdst);
+            name.add(sdstname);
+        }catch (Exception e){
+            return;
+        }
+    }
 
     /**
      * 向指定URL发送GET方法的请求

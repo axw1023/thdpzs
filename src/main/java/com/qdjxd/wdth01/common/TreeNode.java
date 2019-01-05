@@ -52,7 +52,7 @@ public class TreeNode {
     }
 
     public void add(TreeNode node){
-        if (childrenNodes == null) childrenNodes=new LinkedList<>();
+        if (childrenNodes == null){ childrenNodes=new LinkedList<>();}
         childrenNodes.add(node);
     }
 
@@ -63,7 +63,7 @@ public class TreeNode {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj==null|| !(obj instanceof TreeNode)) return false;
+        if (obj==null|| !(obj instanceof TreeNode)){ return false;}
         return this.id.equals(((TreeNode) obj).getId());
     }
 }

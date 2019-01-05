@@ -113,13 +113,16 @@ public class SystemServiceImpl implements SystemService {
         List<TreeNode> result = new ArrayList<>();
         for (TreeNode node:
              nodes) {
-            if (StringUtils.isEmpty(node.getParent())) result.add(node);
+            if (StringUtils.isEmpty(node.getParent())){
+                result.add(node);
+            }
         }
         for (TreeNode node:
              nodes) {
             for (TreeNode r: result){
-                if (r.getId().equals(node.getParent()))
+                if (r.getId().equals(node.getParent())){
                     r.add(node);
+                }
             }
         }
         return result;

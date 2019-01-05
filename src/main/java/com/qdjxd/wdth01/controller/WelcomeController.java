@@ -103,18 +103,6 @@ public class WelcomeController {
         return "3Dfactory";
     }
 
-//    //    大数据和数据工厂展示-qzy12-备份用
-//    @RequestMapping("/turnToDataAndFactory")
-//    public String turnToDataAndFactory() {
-//        return "3Dfactory1";
-//    }
-
-////    工具展示
-//    @RequestMapping("/turnToToolShow")
-//    public String turnToToolShow() {
-//    return "tool";
-//}
-
     //    未来展望13
     @RequestMapping("/turnToFutureProspect")
     public String turnToFutureProspect() {

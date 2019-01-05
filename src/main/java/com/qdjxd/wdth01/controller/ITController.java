@@ -81,7 +81,6 @@ com.qdjxd.wdth01.dao.Wdth_tb_itjfMapper itjf;
     @ResponseBody
     //获取ajax参数中全部流量
     public List<Wdth_tb_it_netdata_ge1> getNumByLiu() throws Exception {
-//        itda.main();
       List<Wdth_tb_it_netdata_ge1> getNumByLiu = itNetdataGe1.ByAll();
         return getNumByLiu;
     }

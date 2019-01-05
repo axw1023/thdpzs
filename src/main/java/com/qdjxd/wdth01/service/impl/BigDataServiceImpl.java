@@ -41,29 +41,29 @@ public class BigDataServiceImpl implements BigDataService {
 
         return wdth_bd_Mapper1.getPointData();
     }
-
+    @Override
     public List<BigDataFeed> getFeedData(){
        return wdth_bd_Mapper1.getFeedData();
     }
-
+    @Override
     public List<BigDataCommon> getCharData(){
         return wdth_bd_Mapper1.getCharData();
     }
 
-
+    @Override
     public List<BigDataCommon> getThreePie(){
         return wdth_bd_Mapper1.getThreePie();
     }
-
+    @Override
     public List<BigDataCommon> getTemData(){
         return wdth_bd_Mapper1.getTemData();
     }
-
+    @Override
     public List<BigDataCommon> getThreeLine(){
         return wdth_bd_Mapper1.getThreeLine();
     }
-
-   public List<BigDataCommon> getDoubleBar(){
+    @Override
+    public List<BigDataCommon> getDoubleBar(){
        return wdth_bd_Mapper1.getDoubleBar();
    }
 
